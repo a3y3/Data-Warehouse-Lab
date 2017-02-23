@@ -175,7 +175,7 @@
     </outputs>
     <operator href="Question2B.etlmetadataxmi#//@operatorMap.2/@value"/>
   </elements>
-  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="702" y="329" height="-1" width="-1" type="http:///com/ibm/datatools/etl/dataflow/base.ui.oplib/Target/DBTargets/SQLInsert">
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="700" y="328" height="-1" width="-1" type="http:///com/ibm/datatools/etl/dataflow/base.ui.oplib/Target/DBTargets/SQLInsert">
     <inputs incomingConnection="//@elements.2">
       <fields name="ID">
         <input incomingConnection="//@elements.2/@elements.1"/>
