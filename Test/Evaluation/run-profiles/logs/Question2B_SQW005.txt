@@ -1,0 +1,33 @@
+ Data-Flows  Feb 23, 2017 3:28:40 PM   SQW03415I: Flow execution started for SQW005 (/Evaluation/data-flows/Question2B)
+ Data-Flows  Feb 23, 2017 3:28:40 PM   SQW38501I: Execution log file:  E:/140911090/Test/Evaluation/run-profiles/logs/Question2B_SQW005.txt
+ Data-Flows  Feb 23, 2017 3:28:40 PM   SQW38509I: Execution temporary work directory:  E:/140911090/Test/Evaluation/run-profiles/tmp\Question2B_SQW005
+ Data-Flows  Feb 23, 2017 3:28:42 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA688F21_1a"" through JDBC connection finished successfully
+ Data-Flows  Feb 23, 2017 3:28:42 PM   SQW03275I: Execution of SQL statement "INSERT INTO EVALUATION090.RESULT2B (ID, FIRST_NAME)
+  SELECT Q452.ID AS ID, Q452.FIRST_NAME AS FIRST_NAME
+    FROM EVALUATION090.CUSTOMER090 Q452, EVALUATION090.ORDER090 Q459
+    WHERE (Q459.CUSTOMER_ID <> Q452.ID)" through JDBC connection finished successfully
+ Data-Flows  Feb 23, 2017 3:28:42 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 688F21
+     ${RESERVED/APP_NAME} = Question2B
+     ${RESERVED/APP_PATH} = E:/140911090/Test/Evaluation/run-profiles/rp68832a/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-23 15:28:41
+     ${RESERVED/DATE} = 2017-02-23
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 23
+     ${RESERVED/INSTANCE_NAME} = SQW005
+     ${RESERVED/MISC_DIR} = E:/140911090/Test\Evaluation\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question2B
+     ${RESERVED/RUN_ID} = 688F21
+     ${RESERVED/START_TIMESTAMP} = 2017-02-23 15:28:41
+     ${RESERVED/TIME} = 15:28:41
+     ${RESERVED/TMP_DIR} = E:/140911090/Test/Evaluation/run-profiles/tmp\Question2B_SQW005
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 23, 2017 3:28:42 PM   SQW03408I: Flow execution finished for SQW005 (/Evaluation/data-flows/Question2B)
+ Data-Flows  Feb 23, 2017 3:28:42 PM   SQW38508I: Closing log file E:/140911090/Test/Evaluation/run-profiles/logs/Question2B_SQW005.txt.

@@ -1,0 +1,35 @@
+ Data-Flows  Feb 23, 2017 3:13:04 PM   SQW03415I: Flow execution started for SQW001 (/Evaluation/data-flows/Question2A)
+ Data-Flows  Feb 23, 2017 3:13:04 PM   SQW38501I: Execution log file:  E:/140911090/Test/Evaluation/run-profiles/logs/Question2A_SQW001.txt
+ Data-Flows  Feb 23, 2017 3:13:04 PM   SQW38509I: Execution temporary work directory:  E:/140911090/Test/Evaluation/run-profiles/tmp\Question2A_SQW001
+ Data-Flows  Feb 23, 2017 3:13:07 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA5A4A79_2"" through JDBC connection finished successfully
+ Data-Flows  Feb 23, 2017 3:13:07 PM   SQW03275I: Execution of SQL statement "INSERT INTO EVALUATION090.RESULT2A (ORDERID, FIRST_NAME, LAST_NAME,
+  CITY, COUNTRY, PHONE)
+  SELECT Q720.ID AS ID, Q723.FIRST_NAME AS FIRST_NAME, Q723.LAST_NAME AS LAST_NAME,
+         Q723.CITY AS CITY, Q723.COUNTRY AS COUNTRY, Q723.PHONE AS PHONE
+    FROM EVALUATION090.ORDER090 Q720, EVALUATION090.CUSTOMER090 Q723
+    WHERE (Q720.CUSTOMER_ID = Q723.ID)" through JDBC connection finished successfully
+ Data-Flows  Feb 23, 2017 3:13:07 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 5A4A79
+     ${RESERVED/APP_NAME} = Question2A
+     ${RESERVED/APP_PATH} = E:/140911090/Test/Evaluation/run-profiles/rp5a3b94/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-23 15:13:06
+     ${RESERVED/DATE} = 2017-02-23
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 23
+     ${RESERVED/INSTANCE_NAME} = SQW001
+     ${RESERVED/MISC_DIR} = E:/140911090/Test\Evaluation\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question2A
+     ${RESERVED/RUN_ID} = 5A4A79
+     ${RESERVED/START_TIMESTAMP} = 2017-02-23 15:13:06
+     ${RESERVED/TIME} = 15:13:06
+     ${RESERVED/TMP_DIR} = E:/140911090/Test/Evaluation/run-profiles/tmp\Question2A_SQW001
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 23, 2017 3:13:07 PM   SQW03408I: Flow execution finished for SQW001 (/Evaluation/data-flows/Question2A)
+ Data-Flows  Feb 23, 2017 3:13:07 PM   SQW38508I: Closing log file E:/140911090/Test/Evaluation/run-profiles/logs/Question2A_SQW001.txt.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.dataflow.view:ETLFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.dataflow.view="http:///com/ibm/datatools/etl/dataflow/view.ecore">
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="-1" y="-1" height="-1" width="-1">
+    <outputs type="OutputPort">
+      <operatorPort href="FirstControlFlow.cflowxmi#//@operatorMap.0/@value/@outputPortMap.0/@value"/>
+    </outputs>
+    <outputs type="OutputPort">
+      <operatorPort href="FirstControlFlow.cflowxmi#//@operatorMap.0/@value/@outputPortMap.1/@value"/>
+    </outputs>
+    <outputs type="OutputPort">
+      <operatorPort href="FirstControlFlow.cflowxmi#//@operatorMap.0/@value/@outputPortMap.2/@value"/>
+    </outputs>
+    <operator href="FirstControlFlow.cflowxmi#//@operatorMap.0/@value"/>
+  </elements>
+  <dataflow href="FirstControlFlow.cflowxmi#/"/>
+</com.ibm.datatools.etl.dataflow.view:ETLFlow>

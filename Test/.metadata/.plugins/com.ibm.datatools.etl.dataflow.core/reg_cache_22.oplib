@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="notes.oplib" bundleName="com.ibm.datatools.etl.dataflow.toolentry.ui" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/toolentry.oplib" fileName="toolentry.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/toolentry.oplib/PaletteGroup" name="PaletteGroup" bundleName="com.ibm.datatools.etl.dataflow.toolentry.ui">
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/toolentry.oplib/PaletteGroup/Note" name="Note" label="Note" bundleName="com.ibm.datatools.etl.dataflow.toolentry.ui" registered="true">
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.toolentry.ui.rewriters.NoteRewriter"/>
+    </definitionList>
+  </children>
+</com.ibm.datatools.etl.operatorlibrary:Library>

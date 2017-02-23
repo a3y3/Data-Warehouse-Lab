@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srcmgt:SourceMgr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:srcmgt="com.ibm.datatools.dwe.srcmgt.nsuri" saveLocation="Evaluation/generated-code/.inc.bld/mgr" genId="2">
+  <sourceMap key="/Evaluation/data-flows/Question2A.etlmetadataxmi">
+    <value href="mgr_se_1#/"/>
+  </sourceMap>
+  <sourceMap key="/Evaluation/data-flows/Question2B.etlmetadataxmi">
+    <value href="mgr_se_2#/"/>
+  </sourceMap>
+</srcmgt:SourceMgr>

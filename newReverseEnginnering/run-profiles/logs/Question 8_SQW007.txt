@@ -1,0 +1,39 @@
+ Data-Flows  Feb 16, 2017 4:26:01 PM   SQW03415I: Flow execution started for SQW007 (/newReverseEnginnering/data-flows/Question 8)
+ Data-Flows  Feb 16, 2017 4:26:01 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Question 8_SQW007.txt
+ Data-Flows  Feb 16, 2017 4:26:01 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 8_SQW007
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA909223_26"" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW03275I: Execution of SQL statement "CREATE VIEW INPUT_03_0(
+  EMPLOYEE_NAME, 
+  COMPANY_NAME, 
+  SALARY
+) AS 
+SELECT Q120.EMPLOYEE_NAME AS EMPLOYEE_NAME, Q120.COMPANY_NAME AS COMPANY_NAME,
+       Q120.SALARY AS SALARY
+  FROM EMPLOYEE090.WORKS Q120" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW03276E: Execution of SQL statement "INSERT INTO EMPLOYEE090.RESULT8(NAME, SALARY) SELECT Q416.EMPLOYEE_NAME AS EMPLOYEE_NAME, Q420.SALARY AS SALARY_1 FROM  ( SELECT "INPUT_03_0"."EMPLOYEE_NAME"  AS "EMPLOYEE_NAME", "INPUT_03_0"."COMPANY_NAME"  AS "COMPANY_NAME", AVG("INPUT_03_0"."SALARY")  AS "SALARY"  FROM  "INPUT_03_0"  GROUP BY "INPUT_03_0"."COMPANY_NAME")  Q416, EMPLOYEE090.WORKS  Q420 WHERE (Q416.EMPLOYEE_NAME = Q420.EMPLOYEE_NAME) AND (Q420.SALARY > Q416.SALARY)" through JDBC connection failed. Exception: SQL Exception. SQL state = 42803; error code = -119; error Message = An expression starting with "EMPLOYEE_NAME" specified in a SELECT clause, HAVING clause, or ORDER BY clause is not specified in the GROUP BY clause or it is in a SELECT clause, HAVING clause, or ORDER BY clause with a column function and no GROUP BY clause is specified.. SQLCODE=-119, SQLSTATE=42803, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-119", SQLSTATE "42803" and message tokens "EMPLOYEE_NAME".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-119", SQLSTATE "42803" and message tokens "EMPLOYEE_NAME".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW03275I: Execution of SQL statement "DROP VIEW INPUT_03_0" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 909223
+     ${RESERVED/APP_NAME} = Question 8
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp907fa5/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-16 16:26:04
+     ${RESERVED/DATE} = 2017-02-16
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 16
+     ${RESERVED/INSTANCE_NAME} = SQW007
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question 8
+     ${RESERVED/RUN_ID} = 909223
+     ${RESERVED/START_TIMESTAMP} = 2017-02-16 16:26:04
+     ${RESERVED/TIME} = 16:26:04
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 8_SQW007
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW03408I: Flow execution finished for SQW007 (/newReverseEnginnering/data-flows/Question 8)
+ Data-Flows  Feb 16, 2017 4:26:04 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Question 8_SQW007.txt.

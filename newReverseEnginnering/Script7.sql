@@ -1,0 +1,9 @@
+--<ScriptOptions statementTerminator="!"/>
+
+CREATE TABLE EMPLOYEE090.RESULT2 (
+		NAME VARCHAR(20),
+		STREET VARCHAR(20),
+		CITY VARCHAR(20)
+	)
+	DATA CAPTURE NONE!
+

@@ -1,0 +1,37 @@
+ Data-Flows  Feb 16, 2017 3:29:19 PM   SQW03415I: Flow execution started for SQW005 (/newReverseEnginnering/data-flows/Question 6)
+ Data-Flows  Feb 16, 2017 3:29:19 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Question 6_SQW005.txt
+ Data-Flows  Feb 16, 2017 3:29:19 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 6_SQW005
+ Data-Flows  Feb 16, 2017 3:29:21 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA5CA637_1a"" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 3:29:21 PM   SQW03275I: Execution of SQL statement "INSERT INTO EMPLOYEE090.RESULT6 (NAME)
+  SELECT Q246.EMPLOYEE_NAME AS EMPLOYEE_NAME
+    FROM (SELECT MAX(Q42.SALARY) AS SALARY
+            FROM (SELECT Q31.SALARY AS SALARY
+                    FROM EMPLOYEE090.WORKS Q31
+                    WHERE (Q31.COMPANY_NAME = 'Nike')) Q42) Q244,
+         EMPLOYEE090.WORKS Q246
+    WHERE (Q246.SALARY >= Q244.SALARY)" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 3:29:21 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 5CA637
+     ${RESERVED/APP_NAME} = Question 6
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp5c982d/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-16 15:29:21
+     ${RESERVED/DATE} = 2017-02-16
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 16
+     ${RESERVED/INSTANCE_NAME} = SQW005
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question 6
+     ${RESERVED/RUN_ID} = 5CA637
+     ${RESERVED/START_TIMESTAMP} = 2017-02-16 15:29:21
+     ${RESERVED/TIME} = 15:29:21
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 6_SQW005
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 16, 2017 3:29:21 PM   SQW03408I: Flow execution finished for SQW005 (/newReverseEnginnering/data-flows/Question 6)
+ Data-Flows  Feb 16, 2017 3:29:21 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Question 6_SQW005.txt.

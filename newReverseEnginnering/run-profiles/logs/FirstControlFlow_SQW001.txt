@@ -1,0 +1,48 @@
+ Control-Flows  Feb 23, 2017 2:15:30 PM   SQW03415I: Flow execution started for SQW001 (/newReverseEnginnering/control-flows/FirstControlFlow)
+ Control-Flows  Feb 23, 2017 2:15:30 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/FirstControlFlow_SQW001.txt
+ Control-Flows  Feb 23, 2017 2:15:30 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\FirstControlFlow_SQW001
+ Control-Flows  Feb 23, 2017 2:15:34 PM   SQW03202I: Start of task: Parallel_Container_02
+ Control-Flows  Feb 23, 2017 2:15:34 PM   SQW030813I: Starting execution for parallel activity Parallel_Container_02.
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA259D33_2"" through JDBC connection finished successfully
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA259D33_4"" through JDBC connection finished successfully
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03275I: Execution of SQL statement "INSERT INTO EMPLOYEE090.RESULT1 (NAME, CITY)
+  SELECT Q547.EMPLOYEE_NAME AS EMPLOYEE_NAME, Q551.CITY AS CITY
+    FROM EMPLOYEE090.WORKS Q547, EMPLOYEE090.EMPLOYEE Q551
+    WHERE (Q547.COMPANY_NAME = 'Nike') AND (Q547.EMPLOYEE_NAME = Q551.EMPLOYEE_NAME)" through JDBC connection finished successfully
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03275I: Execution of SQL statement "INSERT INTO EMPLOYEE090.RESULT2 (NAME, STREET, CITY)
+  SELECT Q701.EMPLOYEE_NAME AS EMPLOYEE_NAME, Q701.STREET AS STREET,
+         Q701.CITY AS CITY
+    FROM EMPLOYEE090.EMPLOYEE Q701, EMPLOYEE090.WORKS Q705
+    WHERE (Q705.COMPANY_NAME = 'Nike') AND (Q705.SALARY >= 10)
+    AND (Q701.EMPLOYEE_NAME = Q705.EMPLOYEE_NAME)" through JDBC connection finished successfully
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03201I: EPGBlockPseudoTask <Data_Flow_02_0> task completed successfully
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03201I: EPGBlockPseudoTask <Data_Flow_02_1> task completed successfully
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW030814I: Parallel activity Parallel_Container_02 execution status - SUCCESS.
+ Control-Flows  Feb 23, 2017 2:15:35 PM   
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03273I: Failed explicitly: Fail_04.
+ Control-Flows  Feb 23, 2017 2:15:35 PM   
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 259D33
+     ${RESERVED/APP_NAME} = FirstControlFlow
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp258296/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-23 14:15:34
+     ${RESERVED/DATE} = 2017-02-23
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 23
+     ${RESERVED/INSTANCE_NAME} = SQW001
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = FirstControlFlow
+     ${RESERVED/RUN_ID} = 259D33
+     ${RESERVED/START_TIMESTAMP} = 2017-02-23 14:15:34
+     ${RESERVED/TIME} = 14:15:34
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\FirstControlFlow_SQW001
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW03408I: Flow execution finished for SQW001 (/newReverseEnginnering/control-flows/FirstControlFlow)
+ Control-Flows  Feb 23, 2017 2:15:35 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/FirstControlFlow_SQW001.txt.

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynOpr:ControlFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dynOpr="dyn:///com/ibm/datatools/etl/core.oplib" xsi:schemaLocation="dyn:///com/ibm/datatools/etl/core.oplib file:/E:/140911090/.metadata/.plugins/com.ibm.datatools.etl.dataflow.core/reg_cache.oplibpkg" iD="0" definitionID="ControlFlow" itemName="FirstControlFlow" itemTag="" version="2.2.1" lastAssignedID="1">
+  <operatorMap key="01">
+    <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph" iD="01" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph" itemName="StartGraph" itemTag="/op:01" itemLabel="Start" editable="false" version="2.2.1">
+      <outputPortMap key="start">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::start" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::start" itemName="start" itemTag="/op:01/output:start:0" itemLabel="Start" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <outputPortMap key="on-error">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::on-error" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::on-error" itemName="on-error" itemTag="/op:01/output:on-error:0" itemLabel="On Failure" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <outputPortMap key="cleanup">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::cleanup" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::cleanup" itemName="cleanup" itemTag="/op:01/output:cleanup:0" itemLabel="Cleanup" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+    </value>
+  </operatorMap>
+  <eventManager/>
+  <exampleCFlowProp iD="34" itemName="exampleCFlowProp" hidden="true"/>
+  <breakPoints iD="35" itemName="breakPoints" hidden="true"/>
+  <logLevel iD="36" itemName="logLevel" itemType="LogLevel"/>
+  <traceLevel iD="37" itemName="traceLevel" itemType="TraceLevel"/>
+</dynOpr:ControlFlow>

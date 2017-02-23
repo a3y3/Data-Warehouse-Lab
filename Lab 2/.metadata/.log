@@ -1,0 +1,1103 @@
+!SESSION 2017-02-02 14:07:25.074 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows Vista x86-32 jvmwi3260sr5-20090519_35743 (JIT enabled, AOT enabled)
+J9VM - 20090519_035743_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.196
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/schema.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/tables.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/constraints.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/expressions.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/statements.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:09:27.212
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/routines.ecore'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2017-02-02 14:09:40.010
+!MESSAGE There were unresolved dependencies for action provider extensions to a Common Navigator.
+Verify that the "dependsOn" attribute for each <actionProvider /> element is valid.
+Unresolved dependency specified for actionProvider: com.ibm.datatools.db2.util.ui.compressionActionProvider
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.Dimension_ColAttributes
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.FactsColMeasures
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:22:34.977
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: Routine "SYSPROC.SNAPSHOT_CONTAINER" (specific name "SNAPSHOT_CONTAINER") has returned an error SQLSTATE with diagnostic text "SNAPSHOT_CONTAINER".. SQLCODE=-443, SQLSTATE=38553, DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.catalog.LUWCatalogDatabase.getDatabaseContainer(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadContainers(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getContainers(Unknown Source)
+	at com.ibm.db.models.db2.luw.impl.LUWTableSpaceImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findAllRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:22:35.087
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: Routine "SYSPROC.SNAPSHOT_CONTAINER" (specific name "SNAPSHOT_CONTAINER") has returned an error SQLSTATE with diagnostic text "SNAPSHOT_CONTAINER".. SQLCODE=-443, SQLSTATE=38553, DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.catalog.LUWCatalogDatabase.getDatabaseContainer(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadContainers(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getContainers(Unknown Source)
+	at com.ibm.db.models.db2.luw.impl.LUWTableSpaceImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findAllRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:22:35.602
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: "ITSTUDENTB1" does not have the authority to perform the requested command or operation.. SQLCODE=-1092, SQLSTATE=     , DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.eIsSet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.copyAttribute(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneSingleObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findOrCloneExternalObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:22:35.649
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: "ITSTUDENTB1" does not have the authority to perform the requested command or operation.. SQLCODE=-1092, SQLSTATE=     , DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.eIsSet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.copyAttribute(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneSingleObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findOrCloneExternalObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.jface 4 0 2017-02-02 14:22:40.556
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.run(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.run(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jface.viewers.CustomHashtable.hashCode(Unknown Source)
+	at org.eclipse.jface.viewers.CustomHashtable.get(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItems(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItem(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.testFindItem(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ResourceListener$5.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	... 47 more
+
+!ENTRY org.eclipse.jface 4 0 2017-02-02 14:22:40.556
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.run(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.run(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jface.viewers.CustomHashtable.hashCode(Unknown Source)
+	at org.eclipse.jface.viewers.CustomHashtable.get(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItems(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItem(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.testFindItem(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ResourceListener$7.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	... 47 more
+
+!ENTRY org.eclipse.ui.workbench 2 0 2017-02-02 14:24:25.255
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2017-02-02 14:24:25.255
+!MESSAGE Conflict for 'org.eclipse.wst.sse.ui.format':
+HandlerActivation(commandId=org.eclipse.wst.sse.ui.format,
+	handler=org.eclipse.wst.sse.ui.internal.handlers.FormatHandler,
+	expression=org.eclipse.core.internal.expressions.ReferenceExpression@2c63552c,sourcePriority=1073741824)
+HandlerActivation(commandId=org.eclipse.wst.sse.ui.format,
+	handler=org.eclipse.wst.sse.ui.internal.handlers.FormatHandler,
+	expression=org.eclipse.core.internal.expressions.ReferenceExpression@429a8fde,sourcePriority=1073741824)
+!SESSION 2017-02-02 14:24:49.009 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows Vista x86-32 jvmwi3260sr5-20090519_35743 (JIT enabled, AOT enabled)
+J9VM - 20090519_035743_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.568
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/schema.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.568
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/tables.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.568
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/constraints.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.583
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.583
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/expressions.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.583
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/statements.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.583
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:24:53.583
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/routines.ecore'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2017-02-02 14:25:00.343
+!MESSAGE There were unresolved dependencies for action provider extensions to a Common Navigator.
+Verify that the "dependsOn" attribute for each <actionProvider /> element is valid.
+Unresolved dependency specified for actionProvider: com.ibm.datatools.db2.util.ui.compressionActionProvider
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.Dimension_ColAttributes
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.FactsColMeasures
+!SESSION 2017-02-02 14:26:47.281 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows Vista x86-32 jvmwi3260sr5-20090519_35743 (JIT enabled, AOT enabled)
+J9VM - 20090519_035743_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/schema.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/tables.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/constraints.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/expressions.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/statements.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-02 14:26:51.010
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/routines.ecore'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2017-02-02 14:26:53.947
+!MESSAGE There were unresolved dependencies for action provider extensions to a Common Navigator.
+Verify that the "dependsOn" attribute for each <actionProvider /> element is valid.
+Unresolved dependency specified for actionProvider: com.ibm.datatools.db2.util.ui.compressionActionProvider
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.Dimension_ColAttributes
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.FactsColMeasures
+
+!ENTRY org.eclipse.ui.workbench 2 0 2017-02-02 14:27:04.928
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2017-02-02 14:27:04.928
+!MESSAGE Conflict for 'org.eclipse.wst.sse.ui.format':
+HandlerActivation(commandId=org.eclipse.wst.sse.ui.format,
+	handler=org.eclipse.wst.sse.ui.internal.handlers.FormatHandler,
+	expression=org.eclipse.core.internal.expressions.ReferenceExpression@2c63552c,sourcePriority=1073741824)
+HandlerActivation(commandId=org.eclipse.wst.sse.ui.format,
+	handler=org.eclipse.wst.sse.ui.internal.handlers.FormatHandler,
+	expression=org.eclipse.core.internal.expressions.ReferenceExpression@429a8fde,sourcePriority=1073741824)
+
+!ENTRY org.eclipse.jface 4 0 2017-02-02 14:28:24.398
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.run(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.run(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jface.viewers.CustomHashtable.hashCode(Unknown Source)
+	at org.eclipse.jface.viewers.CustomHashtable.get(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItems(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItem(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.testFindItem(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ResourceListener$5.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	... 47 more
+
+!ENTRY org.eclipse.jface 4 0 2017-02-02 14:28:24.398
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.run(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.run(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jface.viewers.CustomHashtable.hashCode(Unknown Source)
+	at org.eclipse.jface.viewers.CustomHashtable.get(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItems(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItem(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.testFindItem(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ResourceListener$7.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	... 47 more
+
+!ENTRY org.eclipse.jface 2 0 2017-02-02 14:28:25.335
+!MESSAGE Ignored reentrant call while viewer is busy. This is only logged once per viewer instance, but similar calls will still be ignored.
+!STACK 0
+java.lang.RuntimeException
+	at org.eclipse.jface.viewers.ColumnViewer.checkBusy(Unknown Source)
+	at org.eclipse.jface.viewers.ColumnViewer.refresh(Unknown Source)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(Unknown Source)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(Unknown Source)
+	at com.ibm.datatools.olap.ui.explorers.content.SecurityContentProvider.inputChanged(Unknown Source)
+	at org.eclipse.ui.internal.navigator.extensions.SafeDelegateTreeContentProvider$2.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.ui.internal.navigator.extensions.SafeDelegateTreeContentProvider.inputChanged(Unknown Source)
+	at org.eclipse.ui.internal.navigator.extensions.StructuredViewerManager.initialize(Unknown Source)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension.internalGetContentProvider(Unknown Source)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension.getContentProvider(Unknown Source)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.findParents(Unknown Source)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.findPaths(Unknown Source)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.findPaths(Unknown Source)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.getParents(Unknown Source)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getParentElement(Unknown Source)
+	at org.eclipse.jface.viewers.TreeViewer.getParentElement(Unknown Source)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalExpand(Unknown Source)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.expandToLevel(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ProjectExplorerEMFAdapter.sendNewRootEvent(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.services.EMFExplorerAdapters.sendNewRootEvent(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.commands.NewModelAction.postProcessing(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.commands.NewModelAction.makeNewDataDiagram(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.commands.NewModelAction.access$1(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.commands.NewModelAction$1.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.commands.NewModelAction.execute(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.executePostModelCommand(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:30:11.294
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: Routine "SYSPROC.SNAPSHOT_CONTAINER" (specific name "SNAPSHOT_CONTAINER") has returned an error SQLSTATE with diagnostic text "SNAPSHOT_CONTAINER".. SQLCODE=-443, SQLSTATE=38553, DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.catalog.LUWCatalogDatabase.getDatabaseContainer(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadContainers(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getContainers(Unknown Source)
+	at com.ibm.db.models.db2.luw.impl.LUWTableSpaceImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findAllRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:30:11.481
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: Routine "SYSPROC.SNAPSHOT_CONTAINER" (specific name "SNAPSHOT_CONTAINER") has returned an error SQLSTATE with diagnostic text "SNAPSHOT_CONTAINER".. SQLCODE=-443, SQLSTATE=38553, DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.catalog.LUWCatalogDatabase.getDatabaseContainer(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadContainers(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getContainers(Unknown Source)
+	at com.ibm.db.models.db2.luw.impl.LUWTableSpaceImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findAllRequiredExternalReferencedObjects(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:30:12.044
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: "ITSTUDENTB1" does not have the authority to perform the requested command or operation.. SQLCODE=-1092, SQLSTATE=     , DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.eIsSet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.copyAttribute(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneSingleObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findOrCloneExternalObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.datatools.connectivity.sqm.core 4 4 2017-02-02 14:30:12.137
+!MESSAGE com.ibm.db2.jcc.am.SqlException
+!STACK 0
+com.ibm.db2.jcc.am.SqlException: "ITSTUDENTB1" does not have the authority to perform the requested command or operation.. SQLCODE=-1092, SQLSTATE=     , DRIVER=4.7.89
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.dd.a(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.b(Unknown Source)
+	at com.ibm.db2.jcc.am.cm.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.a(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.m(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.i(Unknown Source)
+	at com.ibm.db2.jcc.t4.db.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.t.c(Unknown Source)
+	at com.ibm.db2.jcc.t4.sb.i(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.ib(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.a(Unknown Source)
+	at com.ibm.db2.jcc.am.nm.executeQuery(Unknown Source)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.StatementAdapter.executeQuery(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.loadManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.getManagementType(Unknown Source)
+	at com.ibm.datatools.db2.luw.storage.catalog.LUWCatalogTableSpace.eIsSet(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.copyAttribute(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneSingleObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.findOrCloneExternalObject(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap2(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.access$1(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil$3.run(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsNonRecordingCommand.doExecuteWithResult(Unknown Source)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(Unknown Source)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(Unknown Source)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.execute(Unknown Source)
+	at com.ibm.datatools.core.commands.DataToolsCommandManager.runCommand(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.cloneWithElementMap(Unknown Source)
+	at com.ibm.datatools.internal.core.util.CloneUtil.clone(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.cloneVertex(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.handleDatabaseVendors(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.loadAndBuild(Unknown Source)
+	at com.ibm.datatools.internal.core.util.DatabaseREProvider.reverseEngineer(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.createResource(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.access$0(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard$1.execute(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(Unknown Source)
+	at org.eclipse.core.internal.resources.Workspace.run(Unknown Source)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(Unknown Source)
+
+!ENTRY org.eclipse.jface 4 0 2017-02-02 14:30:13.747
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.run(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.run(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jface.viewers.CustomHashtable.hashCode(Unknown Source)
+	at org.eclipse.jface.viewers.CustomHashtable.get(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItems(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItem(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.testFindItem(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ResourceListener$5.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	... 47 more
+
+!ENTRY org.eclipse.jface 4 0 2017-02-02 14:30:13.747
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.run(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.run(Unknown Source)
+	at com.ibm.datatools.core.internal.ui.wizards.newphysicalmodel.NewModelWizard.performFinish(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(Unknown Source)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(Unknown Source)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.jface.window.Window.runEventLoop(Unknown Source)
+	at org.eclipse.jface.window.Window.open(Unknown Source)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jface.viewers.CustomHashtable.hashCode(Unknown Source)
+	at org.eclipse.jface.viewers.CustomHashtable.get(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItems(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.findItem(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.testFindItem(Unknown Source)
+	at com.ibm.datatools.project.internal.ui.explorer.providers.content.impl.ResourceListener$7.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	... 47 more
+
+!ENTRY org.eclipse.osgi 2 1 2017-02-02 15:02:54.033
+!MESSAGE NLS unused message: _UI_DIALOG_SELECT_OUTPUT_DIRECTORY in: com.ibm.ccl.xtt.sqlxml.ui.extract.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-02-02 15:02:54.064
+!MESSAGE NLS unused message: _ERROR_XML_GENERATION in: com.ibm.ccl.xtt.sqlxml.ui.extract.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-02-02 15:02:54.064
+!MESSAGE NLS unused message: _ERROR_ILLEGAL_XML_CHAR in: com.ibm.ccl.xtt.sqlxml.ui.extract.messages
+
+!ENTRY org.eclipse.datatools.sqltools.data.ui 4 0 2017-02-02 16:43:49.781
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at com.ibm.datatools.db2.luw.catalog.LUWCatalogTable.getConnection(Unknown Source)
+	at org.eclipse.datatools.sqltools.data.internal.core.editor.TableDataImpl.<init>(Unknown Source)
+	at org.eclipse.datatools.sqltools.data.internal.ui.editor.TableDataEditor.doRefresh(Unknown Source)
+	at org.eclipse.datatools.sqltools.data.internal.ui.editor.TableDataEditorActionBarContributor$6.run(Unknown Source)
+	at org.eclipse.jface.action.Action.runWithEvent(Unknown Source)
+	at org.eclipse.jface.commands.ActionHandler.execute(Unknown Source)
+	at org.eclipse.core.commands.Command.executeWithChecks(Unknown Source)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(Unknown Source)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(Unknown Source)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(Unknown Source)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(Unknown Source)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(Unknown Source)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(Unknown Source)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(Unknown Source)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.filterEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.wmKeyDown(Unknown Source)
+	at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Unknown Source)
+	at org.eclipse.swt.widgets.Control.windowProc(Unknown Source)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Unknown Source)
+	at org.eclipse.swt.widgets.Display.windowProc(Unknown Source)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.runUI(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.access$4(Unknown Source)
+	at org.eclipse.ui.internal.Workbench$5.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Unknown Source)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(Unknown Source)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

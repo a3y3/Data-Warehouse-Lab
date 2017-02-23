@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srcmgt:SourceElement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:srcmgt="com.ibm.datatools.dwe.srcmgt.nsuri" saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr_se_15" genId="15" location="/newReverseEnginnering/data-flows/Question 2.etlmetadataxmi" syncTimeStamp="1487241085018">
+  <actionMap key="val">
+    <value actionType="val" syncTimeStamp="1487241085018" lastStatus="SUCCESS">
+      <sourceActionInfo>
+        <resultEObjectsMap key="valMsg">
+          <value saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr_se_15_sa_val_valMsg"/>
+        </resultEObjectsMap>
+      </sourceActionInfo>
+    </value>
+  </actionMap>
+  <actionMap key="cgen">
+    <value actionType="cgen" syncTimeStamp="1487241085018" lastStatus="SUCCESS">
+      <sourceActionInfo>
+        <resultEObjectsMap key="cgenMsg">
+          <value saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr_se_15_sa_cgen_cgenMsg"/>
+        </resultEObjectsMap>
+        <resultEObjectsMap key="cgenEpgs">
+          <value saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr_se_15_sa_cgen_cgenEpgs"/>
+        </resultEObjectsMap>
+        <resultStringsMap key="CURRENT_RESOURCE_GEN_CODE_DIR" value="newReverseEnginnering/generated-code/.inc.bld/data-flows.Question 2/out"/>
+        <resultStringsMap key="EXECUTE_HOME_DIR" value="newReverseEnginnering/generated-code/.inc.bld/data-flows.Question 2"/>
+      </sourceActionInfo>
+    </value>
+  </actionMap>
+</srcmgt:SourceElement>

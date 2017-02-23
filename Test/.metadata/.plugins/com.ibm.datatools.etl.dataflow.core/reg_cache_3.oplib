@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="mining_cflowops" description="Contribution to Cflow Operators Library" label="mining_cflowops" bundleName="com.ibm.datatools.datamining.miningeditor" lastModified="0" nsURI="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib" fileName="miningcflow.oplib">
+  <children iD="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.datamining.miningeditor">
+    <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib/Flow/MiningFlowActivity" name="MiningFlowActivity" label="Mining Flow" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity" bundleName="com.ibm.datatools.datamining.miningeditor" registered="true">
+      <definitionParams name="extItemRefProperty" value="miningFlowRef" usageType="codegen"/>
+      <propertyList name="miningFlowRef" label="Mining Flow" bundleName="com.ibm.datatools.datamining.miningeditor" type="ExternalItemRef">
+        <definitionParams name="selectionType" value="miningFlow" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor" optional="true">
+        <definitionParams name="selectionType" value="miningFlow" usageType="validation" label="Mining Flow"/>
+      </propertyList>
+      <propertyList name="inputParameters" description="ExternalActivity.inputParameters.desc" label="ExternalActivity.inputParameters.label" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignment" upperBound="-1">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.DataFlowActivityCodeGenerator"/>
+      <validatorClass className="com.ibm.datatools.datamining.miningeditor.MiningActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib/Flow/MiningFlowActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib/Flow/MiningFlowActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib/Flow/MiningFlowActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/miningcflow.oplib/Flow/MiningFlowActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+</com.ibm.datatools.etl.operatorlibrary:Library>

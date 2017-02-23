@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" width="1024" x="130" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="CFlowEditor" itemType="typeToolBarContribution" x="394" y="22"/>
+<coolItem id="DataFlowEditor" itemType="typeToolBarContribution" x="379" y="22"/>
+<coolItem id="org.eclipse.datatools.sqltools.data.internal.ui.editor.tableDataEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="ERPhysicalDiagramEditor" itemType="typePlaceholder" x="841" y="22"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="com.ibm.cic.licensing.common.ui.controlContribution" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page focus="true" label="Workspace - Data Warehousing">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="DataFlowEditor" name="Question 9.etlmetadataxmi" partName="Question 9" path="E:/140911090/newReverseEnginnering/data-flows/Question 9.etlmetadataxmi" title="Question 9" tooltip="newReverseEnginnering/data-flows/Question 9 (GSDBIT3 Online)" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newReverseEnginnering/data-flows/Question 9.etlmetadataxmi"/>
+</editor>
+<editor id="com.ibm.datatools.project.ui.PhysicalModelEditor" name="Dynamic Data Model-GSDBIT3.dbm" partName="Dynamic Data Model-GSDBIT3.dbm" path="E:/140911090/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm" title="Dynamic Data Model-GSDBIT3.dbm" tooltip="\newReverseEnginnering\databases\Dynamic Data Model-GSDBIT3.dbm" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+</editor>
+<editor id="DataFlowEditor" name="Question 4.etlmetadataxmi" partName="Question 4" path="E:/140911090/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi" title="Question 4" tooltip="newReverseEnginnering/data-flows/Question 4 (GSDBIT3 Online)" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi"/>
+</editor>
+<editor id="DataFlowEditor" name="Question 6.etlmetadataxmi" partName="Question 6" path="E:/140911090/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi" title="Question 6" tooltip="newReverseEnginnering/data-flows/Question 6 (GSDBIT3 Online)" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi"/>
+</editor>
+<editor id="DataFlowEditor" name="Question 8.etlmetadataxmi" partName="Question 8" path="E:/140911090/newReverseEnginnering/data-flows/Question 8.etlmetadataxmi" title="Question 8" tooltip="newReverseEnginnering/data-flows/Question 8 (GSDBIT3 Online)" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newReverseEnginnering/data-flows/Question 8.etlmetadataxmi"/>
+</editor>
+<editor activePart="true" focus="true" id="CFlowEditor" name="FirstControlFlow.cflowxmi" partName="FirstControlFlow" path="E:/140911090/newReverseEnginnering/control-flows/FirstControlFlow.cflowxmi" title="FirstControlFlow" tooltip="newReverseEnginnering/control-flows/FirstControlFlow" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newReverseEnginnering/control-flows/FirstControlFlow.cflowxmi"/>
+</editor>
+</editors>
+<views>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.JobStatusView" partName="Job Status"/>
+<view id="org.eclipse.datatools.sqltools.result.resultView" partName="SQL Results">
+<viewState columnWidth0="80" columnWidth1="80" columnWidth2="0" columnWidth3="80" columnWidth4="0" columnWidth5="0" columnWidth6="80"/>
+</view>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator"/>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
+<view id="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView" partName="Execution Status">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline"/>
+<view id="com.ibm.datatools.project.ui.projectExplorer" partName="Data Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
+</view>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" showCategories="true"/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems"/>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.DSSExplorer" partName="DataStage Servers"/>
+</views>
+<perspectives activePart="CFlowEditor" activePerspective="com.ibm.datatools.dwe.BIPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.ibm.datatools.dwe.biperspective.BIPerspective" id="com.ibm.datatools.dwe.BIPerspective" label="Data Warehousing"/>
+<alwaysOnActionSet id="com.ibm.rational.welcome.core.webResourcesActionSet"/>
+<alwaysOnActionSet id="com.ibm.cic.licensing.common.ui.actionSet"/>
+<alwaysOnActionSet id="com.ibm.datatools.eclipse.help.menu.action.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.ETLActionSet_ImportDSParJob"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.ETLActionSet_VarMgmt"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.SQWActionSet_ResMgmt"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.ETLActionSet"/>
+<alwaysOnActionSet id="com.ibm.datatools.sqw.migration.client.actions"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.datatools.sqltools.result.resultView"/>
+<show_view_action id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<show_view_action id="com.ibm.datatools.project.ui.projectExplorer"/>
+<new_wizard_action id="com.ibm.datatools.datamining.miningblox.prep.wizards.CreateMbloxWizard"/>
+<new_wizard_action id="com.ibm.datatools.datamining.miningeditor.wizards.MiningFlowCreationWizard"/>
+<new_wizard_action id="com.ibm.datatools.dwh.project.ui.dbdesignproject"/>
+<new_wizard_action id="com.ibm.datatools.dwh.project.ui.dwh_project_wizard"/>
+<new_wizard_action id="com.ibm.datatools.etl.controlflow.ui.wizard.new.controlflow"/>
+<new_wizard_action id="com.ibm.datatools.etl.dataflow.wizard.new.macro"/>
+<new_wizard_action id="com.ibm.datatools.etl.dataflow.wizard.new.dataflow"/>
+<new_wizard_action id="com.ibm.datatools.etl.deployment.prep.ui.wizards.BuildProfileWizard"/>
+<new_wizard_action id="com.ibm.datatools.etl.fileformat.ui.wizards.new"/>
+<new_wizard_action id="com.ibm.datatools.etl.resources.profile.ui.wizards.new"/>
+<new_wizard_action id="com.ibm.datatools.sqw.ui.wizards.NewModelWizard"/>
+<new_wizard_action id="com.ibm.datatools.sqw.solution.ui.wizards.SolutionCreationWizard"/>
+<new_wizard_action id="com.ibm.datatools.sqw.subprocess.wizard.new.subprocess"/>
+<new_wizard_action id="com.ibm.uima.pear.ui.wizards.ImportPearWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.oplib.ui.wizards.NewDictionaryWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.oplib.ui.wizards.NewRulesWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.oplib.ui.wizards.NewTermExtractionWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.taxonomy.wizards.CreateTaxonomyWizard"/>
+<view id="com.ibm.datatools.project.ui.projectExplorer"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.DSSExplorer"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.datatools.sqltools.result.resultView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView"/>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.JobStatusView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="com.ibm.datatools.project.ui.projectExplorer" appearance="2" expanded="2">
+<page content="com.ibm.datatools.project.ui.projectExplorer" label="Data Project Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@75be75be" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.29298893" ratioLeft="397" ratioRight="958" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.71048254" ratioLeft="427" ratioRight="174" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.datatools.sqltools.result.resultView" label="SQL Results"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView" label="Execution Status"/>
+<page content="com.ibm.datatools.etl.ascrun.ui.core.views.JobStatusView" label="Job Status"/>
+<page content="com.ibm.datatools.sqw.solution.ui.explorationview" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.6496599" ratioLeft="382" ratioRight="206" relationship="4" relative="topLeft">
+<folder activePageID="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" appearance="2" expanded="2">
+<page content="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="com.ibm.datatools.etl.ascrun.ui.core.views.DSSExplorer" label="DataStage Servers"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 12.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 7.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 8.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 9.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 7.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/Question 1.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/newReverseEnginnering/data-flows/CHK.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="CFlowEditor" path="/newReverseEnginnering/control-flows/FirstControlFlow.cflowxmi"/>
+</editors>
+<item historyLabel="Question 12" index="1"/>
+<item historyLabel="Question 4" index="0"/>
+<item historyLabel="Question 12" index="1"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="2"/>
+<item historyLabel="Question 12" index="1"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="3"/>
+<item historyLabel="Question 12" index="1"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="3"/>
+<item historyLabel="Question 12" index="1"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="5"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="6"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="7"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="8"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Question 12" index="1"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Question 7" index="9"/>
+<item historyLabel="Question 6" index="4"/>
+<item historyLabel="Question 7" index="9"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="10"/>
+<item historyLabel="Question 7" index="9"/>
+<item historyLabel="Question 8" index="11"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="12"/>
+<item historyLabel="Question 8" index="11"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="12"/>
+<item historyLabel="Question 8" index="11"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="12"/>
+<item historyLabel="Question 9" index="13"/>
+<item historyLabel="Question 7" index="14"/>
+<item historyLabel="Question 9" index="13"/>
+<item historyLabel="Dynamic Data Model-GSDBIT3.dbm" index="15"/>
+<item historyLabel="Question 9" index="13"/>
+<item historyLabel="Question 4" index="16"/>
+<item historyLabel="Question 6" index="17"/>
+<item historyLabel="Question 8" index="11"/>
+<item historyLabel="Question 9" index="13"/>
+<item historyLabel="Question 1" index="18"/>
+<item historyLabel="CHK" index="19"/>
+<item historyLabel="Question 1" index="18"/>
+<item historyLabel="Question 9" index="13"/>
+<item historyLabel="FirstControlFlow" index="20"/>
+<item historyLabel="Question 9" index="13"/>
+<item historyLabel="FirstControlFlow" index="20"/>
+<item historyLabel="Question 9" index="13"/>
+<item active="true" historyLabel="FirstControlFlow" index="20"/>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="CFlowEditor" name="FirstControlFlow.cflowviewxmi" tooltip="newReverseEnginnering/control-flows/FirstControlFlow.cflowviewxmi">
+<persistable path="/newReverseEnginnering/control-flows/FirstControlFlow.cflowviewxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="CHK.dataflowxmi" tooltip="newReverseEnginnering/data-flows/CHK.dataflowxmi">
+<persistable path="/newReverseEnginnering/data-flows/CHK.dataflowxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 1.etlmetadataxmi" tooltip="newReverseEnginnering/data-flows/Question 1.etlmetadataxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 1.etlmetadataxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 8.etlmetadataxmi" tooltip="newReverseEnginnering/data-flows/Question 8.etlmetadataxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 8.etlmetadataxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 6.etlmetadataxmi" tooltip="newReverseEnginnering/data-flows/Question 6.etlmetadataxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 4.etlmetadataxmi" tooltip="newReverseEnginnering/data-flows/Question 4.etlmetadataxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" name="Dynamic Data Model-GSDBIT3.dbm" tooltip="newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm">
+<persistable path="/newReverseEnginnering/databases/Dynamic Data Model-GSDBIT3.dbm"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 7.etlmetadataxmi" tooltip="newReverseEnginnering/data-flows/Question 7.etlmetadataxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 7.etlmetadataxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 9.dataflowxmi" tooltip="newReverseEnginnering/data-flows/Question 9.dataflowxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 9.dataflowxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 8.dataflowxmi" tooltip="newReverseEnginnering/data-flows/Question 8.dataflowxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 8.dataflowxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 7.dataflowxmi" tooltip="newReverseEnginnering/data-flows/Question 7.dataflowxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 7.dataflowxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question 6.dataflowxmi" tooltip="newReverseEnginnering/data-flows/Question 6.dataflowxmi">
+<persistable path="/newReverseEnginnering/data-flows/Question 6.dataflowxmi"/>
+</file>
+</mruList>
+</workbench>

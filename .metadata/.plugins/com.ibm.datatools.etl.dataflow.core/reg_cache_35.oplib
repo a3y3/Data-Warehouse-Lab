@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="dyn:///com/ibm/datatools/etl/core.oplib" nsURI="dyn:///com/ibm/datatools/etl/core.oplib">
+  <propertyTypeList name="TransientEnumValue" registered="true" emfClassName="TransientEnumValue" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="Item" registered="true" emfClassName="Item" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="VirtualTable" registered="true" emfClassName="VirtualTable" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="ColumnMap" registered="true" emfClassName="ColumnMap" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="Boolean" registered="true" emfClassName="EBoolean" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true"/>
+  <propertyTypeList name="ConcatString" registered="true" emfClassName="ConcatString" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="ProjectExpression" registered="true" emfClassName="ProjectExpression" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="Condition" registered="true" emfClassName="Condition" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="MapExpression" registered="true" emfClassName="MapExpression" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="ExternalItemRef" registered="true" emfClassName="ExternalItemRef" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="double" registered="true" emfClassName="EDouble" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true"/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

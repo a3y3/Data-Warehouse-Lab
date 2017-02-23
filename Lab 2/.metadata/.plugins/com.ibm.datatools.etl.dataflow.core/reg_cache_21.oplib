@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatordefinition="http:///com/ibm/datatools/etl/operatordefinition.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="xmlsqw" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib" fileName="etc/sqwxml.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/Flow/Decompose" name="Decompose" label="Decompose" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="file" description="The XML file to be decomposed" label="XML file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+      <propertyList name="schema" description="The name of an existing XML schema registered with the XML schema repository to be used for document decomposition." label="Schema ID" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SchemaID" defaultValueLiteral=""/>
+      <propertyList name="validate" description="If validation is set, the input XML document is validated first. If the XML document is valid, the XML document is decomposed." label="Validate" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Boolean" defaultValueLiteral="false"/>
+      <propertyList name="dbConn" description="" label="" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="DBServer">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.DecomposeActivityCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/Flow/Decompose::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/Flow/Decompose::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/Flow/Decompose::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/Flow/Decompose::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter" name="XMLCutter" label="XMLCutter" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="nsDeclaration" description="Namespace declarations: DEFAULT 'http://www.example.org', 'http://www.namespace.org' AS &quot;name&quot;" label="Namespaces" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="NamespaceDeclaration"/>
+    <propertyList name="XMLColumn" label="XMLColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="singleXMLColumnSelection" label="singleXMLColumnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="singleXMLColumnSelection">
+      <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+      <definitionParams type="property" name="XMLColumn" usageType="mapTo" label="Output_Group_Field"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="cuttedVT" label="cuttedVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="ProjectExpression">
+      <definitionParams type="input" name="input"/>
+    </propertyList>
+    <propertyList name="restVT" label="restVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="ProjectExpression">
+      <definitionParams type="input" name="input"/>
+    </propertyList>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLCutterCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLCutterValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::output::cut" name="cut" label="extract" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" upperBound="-1" rule="BY_PARAMS">
+      <definitionParams type="property" name="output::cut::cuttedVT"/>
+      <propertyList name="cuttedVT" label="cuttedVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="input"/>
+      </propertyList>
+      <propertyList name="cutDefinition" label="Extracted node tags" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="CutDefinition">
+        <definitionParams name="allowStubs" value="true"/>
+      </propertyList>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::output::rest" name="rest" label="rest" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS" numMinLinks="0">
+      <definitionParams type="property" name="restVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRename" name="XMLRename" label="XMLRename" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="nsDeclaration" description="Namespace declarations: DEFAULT 'http://www.example.org', 'http://www.namespace.org' AS &quot;name&quot;" label="Namespaces" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="NamespaceDeclaration"/>
+    <propertyList name="XMLColumn" label="XMLColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="singleXMLColumnSelection" label="singleXMLColumnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="singleXMLColumnSelection">
+      <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+      <definitionParams type="property" name="XMLColumn" usageType="mapTo" label="Output_Group_Field"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="xPath" description="XPath to use to rename the nodes" label="XPath" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="newName" description="New name for the selected nodes" label="New name" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Expression">
+      <definitionParams type="input" name="input"/>
+    </propertyList>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="ProjectExpression">
+      <definitionParams type="input" name="input"/>
+    </propertyList>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLRenameCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLRenameValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRename::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRename::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLDecomposer" name="XMLDecomposer" label="XMLDecomposer" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="xmlFile" description="The XML file to be decomposed." label="XML file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <propertyList name="xmlSchemaFile" description="The XML schema file that will be used for document decomposition." label="Schema file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLDecomposerChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLDecomposerCodeGen"/>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLDecomposer::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" upperBound="-1" rule="BY_PARAMS">
+      <definitionParams type="property" name="output::output::DDL"/>
+      <propertyList name="TableID" label="TableID" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+      <propertyList name="DDL" label="DDL" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="DBTable"/>
+      <stagingInfoList type="PERSISTENT_TABLE"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping" name="XMLMapping" label="XMLMapping" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="columnExpressions" description="" label="Column expressions" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="ProjectExpression">
+      <definitionParams type="input" name="input"/>
+      <definitionParams type="property" name="XMLTable"/>
+    </propertyList>
+    <propertyList name="XMLTable" label="" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLVirtualTable"/>
+    <propertyList name="namespaces" description="Namespace declarations: DEFAULT 'http://www.example.org', 'http://www.namespace.org' AS &quot;name&quot;" label="Namespaces" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="NamespaceDeclaration"/>
+    <propertyList name="XQuery" description="The XQuery expression runs on the XML column, and returns an output XQuery sequence where a row is generated for each item in the sequence." label="XQuery expression" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XPath" defaultValueLiteral=""/>
+    <propertyList name="XMLColumn" label="XMLColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="singleXMLColumnSelection" label="singleXMLColumnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="singleXMLColumnSelection">
+      <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+      <definitionParams type="property" name="XMLColumn" usageType="mapTo" label="Output_Group_Field"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    </propertyList>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLMappingCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLMappingValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="columnExpressions"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader" name="XMLReader" label="XMLReader" composite="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true" resolverPropertyName="cutterEnabled">
+    <definitionParams type="property" name="cutterEnabled" usageType="compositionRule"/>
+    <definitionParams value="no" usageType="compositionResolution" label="No"/>
+    <definitionParams value="yes" usageType="compositionResolution" label="Yes"/>
+    <propertyList name="cutterEnabled" description="Cuts a document into smaller sub-documents." label="Extract nodes" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="cutterEnabledSwitcherEnum" defaultValueLiteral="no"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="file" description="The file that contains the XML data to be read." label="XML file" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <propertyList name="cutDefinition" description="Specify the nodes to extract" label="Extracted nodes" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="CutDefinition"/>
+    <propertyList name="nsDeclaration" description="Namespace declarations: DEFAULT 'http://www.example.org', 'http://www.namespace.org' AS &quot;name&quot;" label="Namespaces" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="NamespaceDeclaration"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLReaderChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLReaderCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLReaderValidator"/>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="PERSISTENT_TABLE"/>
+    </outputList>
+    <opDefResolverMap key="no" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderNoCut"/>
+    <opDefResolverMap key="yes" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderCut"/>
+    <resolverLabelMap key="no" value="No"/>
+    <resolverLabelMap key="yes" value="Yes"/>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderNoCut" name="XMLReaderNoCut" label="XMLReaderNoCut" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="no" usageType="compositionResolution" label="No"/>
+    <definitionParams type="property" name="cutterEnabled" usageType="compositionRule"/>
+    <propertyList name="cutterEnabled" description="Cuts a document into smaller sub-documents." label="Extract nodes" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="cutterEnabledSwitcherEnum" defaultValueLiteral="no"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="file" description="The file that contains the XML data to be read." label="XML file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLReaderChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLReaderCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLReaderValidator"/>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderNoCut::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="PERSISTENT_TABLE"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderCut" name="XMLReaderCut" label="XMLReaderCut" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="yes" usageType="compositionResolution" label="Yes"/>
+    <definitionParams type="property" name="cutterEnabled" usageType="compositionRule"/>
+    <propertyList name="cutDefinition" description="Specify the nodes to extract" label="Extracted nodes" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="CutDefinition"/>
+    <propertyList name="nsDeclaration" description="Namespace declarations: DEFAULT 'http://www.example.org', 'http://www.namespace.org' AS &quot;name&quot;" label="Namespaces" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="NamespaceDeclaration"/>
+    <propertyList name="cutterEnabled" description="Cuts a document into smaller sub-documents." label="Extract nodes" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="cutterEnabledSwitcherEnum" defaultValueLiteral="no"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="file" description="The file that contains the XML data to be read." label="XML file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLReaderChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLReaderCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLReaderValidator"/>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderCut::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="PERSISTENT_TABLE"/>
+    </outputList>
+  </definitionList>
+  <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" name="XSLTransform" label="XSLTransform" composite="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true" resolverPropertyName="XSLInputType">
+    <definitionParams type="property" name="XSLInputType" usageType="compositionRule"/>
+    <definitionParams value="string" usageType="compositionResolution" label="String"/>
+    <definitionParams value="file" usageType="compositionResolution" label="File"/>
+    <definitionParams value="column" usageType="compositionResolution" label="Column"/>
+    <propertyList name="XSLInputType" description="" label="XSL style sheet source" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XSLInputTypeSwitcherEnum"/>
+    <propertyList name="xmlColumn" label="xmlColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="xmlColumnSelection" description="" label="XML Column" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="xmlColumn" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="transformationOutput" label="Transformation output" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="XSLString" description="" label="XSL style sheet" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="XSLFile" description="" label="File" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <propertyList name="xslColumn" label="xslColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="xslColumnSelection" description="" label="XSL style sheet column" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="xslColumn" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XSLTransformChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XSLTransformCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLTransformValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="transformationOutput"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+    <opDefResolverMap key="string" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform"/>
+    <opDefResolverMap key="file" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform"/>
+    <opDefResolverMap key="column" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform"/>
+    <resolverLabelMap key="string" value="String"/>
+    <resolverLabelMap key="file" value="File"/>
+    <resolverLabelMap key="column" value="Column"/>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform" name="StringXSLTransform" label="StringXSLTransform" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="string" usageType="compositionResolution" label="String"/>
+    <definitionParams type="property" name="XSLInputType" usageType="compositionRule"/>
+    <propertyList name="XSLString" description="" label="XSL style sheet" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="XSLInputType" description="" label="XSL style sheet source" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XSLInputTypeSwitcherEnum"/>
+    <propertyList name="xmlColumn" label="xmlColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="xmlColumnSelection" description="" label="XML Column" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="xmlColumn" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="transformationOutput" label="Transformation output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XSLTransformChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XSLTransformCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLTransformValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="transformationOutput"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform" name="FileXSLTransform" label="FileXSLTransform" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="file" usageType="compositionResolution" label="File"/>
+    <definitionParams type="property" name="XSLInputType" usageType="compositionRule"/>
+    <propertyList name="XSLFile" description="" label="File" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <propertyList name="XSLInputType" description="" label="XSL style sheet source" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XSLInputTypeSwitcherEnum"/>
+    <propertyList name="xmlColumn" label="xmlColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="xmlColumnSelection" description="" label="XML Column" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="xmlColumn" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="transformationOutput" label="Transformation output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XSLTransformChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XSLTransformCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLTransformValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="transformationOutput"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform" name="ColumnXSLTransform" label="ColumnXSLTransform" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="column" usageType="compositionResolution" label="Column"/>
+    <definitionParams type="property" name="XSLInputType" usageType="compositionRule"/>
+    <propertyList name="xslColumn" label="xslColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="xslColumnSelection" description="" label="XSL style sheet column" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="xslColumn" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="XSLInputType" description="" label="XSL style sheet source" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XSLInputTypeSwitcherEnum"/>
+    <propertyList name="xmlColumn" label="xmlColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="xmlColumnSelection" description="" label="XML Column" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="xmlColumn" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="transformationOutput" label="Transformation output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XSLTransformChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XSLTransformCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLTransformValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="transformationOutput"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter" name="XMLWriter" label="XMLWriter" composite="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true" resolverPropertyName="XMLWriterType">
+    <definitionParams type="property" name="XMLWriterType" usageType="compositionRule"/>
+    <definitionParams value="single" usageType="compositionResolution" label="One file"/>
+    <definitionParams value="multiple" usageType="compositionResolution" label="One file per row"/>
+    <propertyList name="XMLWriterType" description="The number of files that will be generated" label="Number of files" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLWriterTypeEnum"/>
+    <propertyList name="XMLColumn" label="XMLColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="XMLColumnSelection" label="XMLColumnSelection" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="singleXMLColumnSelection">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="XMLColumn" usageType="mapTo" label="XML Column"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="rootTag" description="The name for the root tag in the output document." label="Root tag" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="file" description="The file that the XML will be written to." label="File" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <propertyList name="fileNameExpr" description="The SQL Expression that dynamically defines the file name for each row." label="File name" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Expression">
+      <definitionParams type="input" name="input"/>
+    </propertyList>
+    <propertyList name="directory" description="The directory where the generated files will be stored" label="Directory" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Directory"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLWriterCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLWriterValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <opDefResolverMap key="single" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterSingleFile"/>
+    <opDefResolverMap key="multiple" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterMultipleFiles"/>
+    <resolverLabelMap key="single" value="One file"/>
+    <resolverLabelMap key="multiple" value="One file per row"/>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterSingleFile" name="XMLWriterSingleFile" label="XMLWriterSingleFile" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="single" usageType="compositionResolution" label="One file"/>
+    <definitionParams type="property" name="XMLWriterType" usageType="compositionRule"/>
+    <propertyList name="rootTag" description="The name for the root tag in the output document." label="Root tag" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="file" description="The file that the XML will be written to." label="File" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="File"/>
+    <propertyList name="XMLWriterType" description="The number of files that will be generated" label="Number of files" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLWriterTypeEnum"/>
+    <propertyList name="XMLColumn" label="XMLColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="XMLColumnSelection" label="XMLColumnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="singleXMLColumnSelection">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="XMLColumn" usageType="mapTo" label="XML Column"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    </propertyList>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLWriterCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLWriterValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterSingleFile::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterMultipleFiles" name="XMLWriterMultipleFiles" label="XMLWriterMultipleFiles" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="multiple" usageType="compositionResolution" label="One file per row"/>
+    <definitionParams type="property" name="XMLWriterType" usageType="compositionRule"/>
+    <propertyList name="fileNameExpr" description="The SQL Expression that dynamically defines the file name for each row." label="File name" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Expression">
+      <definitionParams type="input" name="input"/>
+    </propertyList>
+    <propertyList name="directory" description="The directory where the generated files will be stored" label="Directory" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Directory"/>
+    <propertyList name="XMLWriterType" description="The number of files that will be generated" label="Number of files" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLWriterTypeEnum"/>
+    <propertyList name="XMLColumn" label="XMLColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualColumn"/>
+    <propertyList name="XMLColumnSelection" label="XMLColumnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="singleXMLColumnSelection">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="XMLColumn" usageType="mapTo" label="XML Column"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    </propertyList>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLWriterCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLWriterValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterMultipleFiles::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+  </definitionList>
+  <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer" name="XMLComposer" label="XMLComposer" composite="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true" resolverPropertyName="composerType">
+    <definitionParams type="property" name="composerType" usageType="compositionRule"/>
+    <definitionParams value="Group" usageType="compositionResolution" label="Yes"/>
+    <definitionParams value="Row" usageType="compositionResolution" label="No"/>
+    <propertyList name="composerType" description="Specifies whether the result rows should be grouped into asingle document" label="Row grouping" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLRowTypeSwitcherEnum"/>
+    <propertyList name="XMLMap" description="Select columns and specify their corresponding paths to compose the new XML column" label="Composition map" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLComposerMap">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="input::XMLChild::childVT" usageType="mapFrom"/>
+      <definitionParams type="property" name="XMLComposedVT" usageType="mapTo"/>
+    </propertyList>
+    <propertyList name="rowTag" label="Row tag name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="XMLComposedVT" label="XMLComposedVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="rootTag" label="Root tag name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLComposerChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLComposerCodeGen"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::input::XMLChild" name="XMLChild" label="XMLChild" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+      <propertyList name="predicate" description="Specify the join condition of all input tables." label="Join condition" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Condition">
+        <definitionParams type="input" name="input" label="XMLComposer.Details.Condition.ParentTable.label"/>
+        <definitionParams type="input" name="XMLChild"/>
+      </propertyList>
+      <propertyList name="childVT" label="XMLChild" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+    <opDefResolverMap key="Group" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup"/>
+    <opDefResolverMap key="Row" value="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow"/>
+    <resolverLabelMap key="Group" value="Yes"/>
+    <resolverLabelMap key="Row" value="No"/>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposerNew" name="XMLComposerNew" label="XMLComposerNew" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="composedXMLVT" label="Selected Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="XMLMap" description="Select columns and specify their corresponding paths to compose the new XML column" label="Composition map" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLComposerMap">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="composedXMLVT" usageType="mapTo" label="Selected Columns"/>
+    </propertyList>
+    <propertyList name="joinCondition" description="Specify the join condition of all input tables." label="Join condition" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Condition">
+      <definitionParams type="input" name="input" label="XMLComposer.Details.Condition.ParentTable.label"/>
+    </propertyList>
+    <propertyList name="nodeConditions" label="nodeConditions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true" type="Condition" upperBound="-1"/>
+    <propertyList name="rowTag" description="Node tag of each row" label="Row tag" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="rootTag" description="The tag of the root node that contains all the returned rows as child nodes." label="Root node tag" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="groupingOption" description="Group all returned rows into one XML document" label="Row grouping" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="GroupOption">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="xmlFormat" description="This is the XML format you specified in the XML Composition Map." label="XML format" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="CodeOptions">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="SQLCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true" type="ButtonString">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLComposerNewChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLComposerNewCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XMLComposerNewValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposerNew::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" lowerBound="0" upperBound="-1">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposerNew::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup" name="XMLGroup" label="XMLGroup" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="Group" usageType="compositionResolution" label="Yes"/>
+    <definitionParams type="property" name="composerType" usageType="compositionRule"/>
+    <propertyList name="rootTag" label="Root tag name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="composerType" description="Specifies whether the result rows should be grouped into asingle document" label="Row grouping" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLRowTypeSwitcherEnum"/>
+    <propertyList name="XMLMap" description="Select columns and specify their corresponding paths to compose the new XML column" label="Composition map" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLComposerMap">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="input::XMLChild::childVT" usageType="mapFrom"/>
+      <definitionParams type="property" name="XMLComposedVT" usageType="mapTo"/>
+    </propertyList>
+    <propertyList name="rowTag" label="Row tag name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="XMLComposedVT" label="XMLComposedVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLComposerChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLComposerCodeGen"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::input::XMLChild" name="XMLChild" label="XMLChild" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+      <propertyList name="predicate" description="Specify the join condition of all input tables." label="Join condition" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Condition">
+        <definitionParams type="input" name="input" label="XMLComposer.Details.Condition.ParentTable.label"/>
+        <definitionParams type="input" name="XMLChild"/>
+      </propertyList>
+      <propertyList name="childVT" label="XMLChild" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow" name="XMLRow" label="XMLRow" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <definitionParams value="Row" usageType="compositionResolution" label="No"/>
+    <definitionParams type="property" name="composerType" usageType="compositionRule"/>
+    <propertyList name="composerType" description="Specifies whether the result rows should be grouped into asingle document" label="Row grouping" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLRowTypeSwitcherEnum"/>
+    <propertyList name="XMLMap" description="Select columns and specify their corresponding paths to compose the new XML column" label="Composition map" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="XMLComposerMap">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="input::XMLChild::childVT" usageType="mapFrom"/>
+      <definitionParams type="property" name="XMLComposedVT" usageType="mapTo"/>
+    </propertyList>
+    <propertyList name="rowTag" label="Row tag name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="XMLComposedVT" label="XMLComposedVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XMLComposerChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XMLComposerCodeGen"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::input::XMLChild" name="XMLChild" label="XMLChild" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+      <propertyList name="predicate" description="Specify the join condition of all input tables." label="Join condition" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="Condition">
+        <definitionParams type="input" name="input" label="XMLComposer.Details.Condition.ParentTable.label"/>
+        <definitionParams type="input" name="XMLChild"/>
+      </propertyList>
+      <propertyList name="childVT" label="XMLChild" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XQuery" name="XQuery" label="XQuery" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="XMLColumnMap" description="Assigns a variable name to each XML input column " label="Variable Map" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="property" name="ColumnMapVT" usageType="mapTo" label="Selected XML columns"/>
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+      <definitionParams name="allowEditNameOfMapToColumns" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="ColumnMapVT" label="ColumnMapVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="omitEmpty" description="Omit empty sequence in the query result" label="Omit empty sequence" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true" type="Boolean"/>
+    <propertyList name="WrapQueryResult" description="When a breakpoint is set for this operator or the output of this operator is inserted into a table, the query result might be a sequence instead of a single node. In such scenario, the query result need to be wrapper into one XML document." label="Wrap query result in an XML document" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true" type="DynamicBoolean"/>
+    <propertyList name="wrapperName" description="When &quot;Wrap query result in an XML document&quot; is selected, a node tag needs to be set for the wrapper node." label="Node tag for wrapper" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="query" description="" label="XQuery" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.XQueryChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.XQueryCodeGen"/>
+    <validatorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.validators.XQueryValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XQuery::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XQuery::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder2" name="DocumentBuilder2" label="DocumentBuilder2" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="template" description="DocumentBuilder.Details.Template.desc" label="DocumentBuilder.Details.Template.label" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="outputVT" label="outputVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="selectionVT" label="selectionVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="columnSelection" label="columnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="selectionVT" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.DocumentBuilderChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.DocumentBuilder2CodeGen"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder2::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" upperBound="-1">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder2::output::output" name="output" label="XML" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder" name="DocumentBuilder" label="DocumentBuilder" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="template" description="DocumentBuilder.Details.Template.desc" label="DocumentBuilder.Details.Template.label" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib"/>
+    <propertyList name="outputVT" label="outputVT" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="selectionVT" label="selectionVT" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="VirtualTable"/>
+    <propertyList name="columnSelection" label="columnSelection" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" type="SubSelect">
+      <definitionParams type="input" name="input" usageType="mapFrom"/>
+      <definitionParams type="property" name="selectionVT" usageType="mapTo"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+      <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.handlers.DocumentBuilderChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.sqwxml.oplib.codegen.DocumentBuilderCodeGen"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib">
+      <stagingInfoList type="VIEW"/>
+    </inputList>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder::output::output" name="output" label="XML" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" rule="BY_PARAMS">
+      <definitionParams type="property" name="outputVT"/>
+      <stagingInfoList type="VIEW"/>
+    </outputList>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileExport" name="FileExport" label="FileExport" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/ExternalFileExport" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true" type="Boolean" defaultValueLiteral="true"/>
+    <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int"/>
+    <propertyList name="file" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+    <propertyList name="fileFormat" label="fileFormat" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormat"/>
+    <propertyList name="exportFileType" label="Define the file format " bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ExportFileFormatFileType" defaultValueLiteral="DELIMITED"/>
+    <propertyList name="fieldDelimiter" label="Field delimiter" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatFieldDelim"/>
+    <propertyList name="stringDelimiter" label="String delimiter" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatStringDelim"/>
+    <propertyList name="codePage" description="Enter the IBM-defined code page ID, as mapped from the operating system code set. For example, the ID for UTF-8 on any operating system is 1208. For a complete list of code page IDs, refer to the DB2 documentation." label="Code page" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt"/>
+    <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+      <definitionParams name="fieldDelimiters" value="[,&quot;%&amp;'*()]"/>
+      <definitionParams name="invalidExtensions" value="bin,zip,exe"/>
+      <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+    </propertyList>
+    <propertyList name="additionalFileTypeModifiers" description="Specify additional file type modifiers that are not available in the other fields on this page. These modifiers must adhere to the DB2 EXPORT syntax that is defined in the DB2 documentation. Do not enter the MODIFIED BY keywords. Type a space between each separate modifier. For example, two valid file type modifiers are NODOUBLEDEL and DATESISO." label="Additional file type modifiers" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+    <propertyList name="FileLocationOptions" label="File location" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="FileLocationOption" defaultValueLiteral="OnClientSide"/>
+    <propertyList name="XMLFileName" label="XMLFileName" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="XMLPath" label="XMLPath" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+    <propertyList name="XMLSaveSchema" description="Specifies if XML schema information should be saved for all XML columns" label="Save schemas" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="boolean"/>
+    <propertyList name="XMLInSeparateFile" description="When this option is selected, each exported XML document is written to a separate XML file" label="XML in separate files" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="boolean"/>
+    <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+    <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.ExternalFileExportChangeHandler"/>
+    <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.ExternalFileExportValidator"/>
+    <inputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileExport::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_IN_LINK_REF"/>
+  </definitionList>
+  <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport" name="FileImport" label="FileImport" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true">
+    <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" optional="true" type="Boolean" defaultValueLiteral="true"/>
+    <propertyList name="fileFormat" label="Define the file format " bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatDescriptor"/>
+    <propertyList name="file" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+    <propertyList name="saveCount" label="SAVECOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+      <definitionParams name="min" value="0" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="rowCount" label="ROWCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+      <definitionParams name="min" value="0" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+      <definitionParams name="min" value="0" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="commitCount" label="COMMITCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+      <definitionParams name="min" value="0" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+    <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+    <propertyList name="columnSelectList" label="columnSelectList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="VirtualTable"/>
+    <propertyList name="subSelect" label="subSelect" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ColumnMap">
+      <definitionParams type="property" name="fileFormat" usageType="mapFrom" label="InputFile_Fields"/>
+      <definitionParams type="property" name="columnSelectList" usageType="mapTo" label="Subset_of_Fields"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+      <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+      <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+      <definitionParams name="fieldDelimiters" value="[\t \r,&quot;%&amp;'*()]"/>
+      <definitionParams name="invalidExtensions" value="zip,exe,bin"/>
+      <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+      <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+      <definitionParams name="rowCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+      <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+    </propertyList>
+    <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+    <propertyList name="partitioningKeys" label="Details.partioningKeys" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+      <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+      <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+    <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+      <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+      <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+      <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="FileLocationOptions" label="File location" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileLocationOption" defaultValueLiteral="OnClientSide"/>
+    <propertyList name="programUsed" label="File import method" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="FileImportProgramOption" defaultValueLiteral="DB2Load"/>
+    <propertyList name="numRowToSkip" label="RESTARTCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+      <definitionParams name="min" value="0" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="XMLPath" label="XMLPath" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+    <propertyList name="XMLValidation" label="XMLValidation" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="XMLValidationType"/>
+    <propertyList name="XMLSchema" label="XMLSchema" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+    <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+    <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.ExternalFileImportChangeHandler"/>
+    <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.FileExtractValidator"/>
+    <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+      <definitionParams type="property" name="subSelect"/>
+    </outputList>
+  </definitionList>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::output::cut::cuttedVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="cut" fIDef="//@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::restVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="rest" fIDef="//@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRename::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLDecomposer::output::output::DDL">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReader::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderNoCut::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.5"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLReaderCut::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.6"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform::transformationOutput">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform::transformationOutput">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.8"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform::transformationOutput">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform::transformationOutput">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.10"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.14"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.14"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.14"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposerNew::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.15"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.16"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.17"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XQuery::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.18"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder2::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.19"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder::outputVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.20"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport::subSelect">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@definitionList.22"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterSingleFile::XMLColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnSelection" fIDef="//@definitionList.12"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::input::XMLChild::childVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.14"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::XMLComposedVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.14"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterMultipleFiles::XMLColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnSelection" fIDef="//@definitionList.13"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform::xslColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xslColumnSelection" fIDef="//@definitionList.10"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform::xmlColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.10"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter::XMLColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnSelection" fIDef="//@definitionList.11"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::input::XMLChild::childVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.17"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::XMLComposedVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.17"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::XMLColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleXMLColumnSelection" fIDef="//@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform::xmlColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.8"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping::XMLTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping::XMLColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleXMLColumnSelection" fIDef="//@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder2::selectionVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelection" fIDef="//@definitionList.19"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform::xmlColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform::xslColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xslColumnSelection" fIDef="//@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposerNew::composedXMLVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.15"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport::fileFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@definitionList.22"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@definitionList.22"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@definitionList.22"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport::columnSelectList">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@definitionList.22"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@definitionList.22"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileImport::subsetRangeVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@definitionList.22"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform::xmlColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRename::XMLColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleXMLColumnSelection" fIDef="//@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XQuery::ColumnMapVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnMap" fIDef="//@definitionList.18"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::input::XMLChild::childVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.16"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::XMLComposedVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.16"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder::selectionVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelection" fIDef="//@definitionList.20"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterSingleFile::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnSelection" fIDef="//@definitionList.12"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.14"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@definitionList.14/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposer::XMLChild">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@definitionList.14/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriterMultipleFiles::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="fileNameExpr" fIDef="//@definitionList.13"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnSelection" fIDef="//@definitionList.13"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/ColumnXSLTransform::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xslColumnSelection" fIDef="//@definitionList.10"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.10"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLWriter::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnSelection" fIDef="//@definitionList.11"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="fileNameExpr" fIDef="//@definitionList.11"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.17"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@definitionList.17/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRow::XMLChild">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@definitionList.17/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLCutter::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleXMLColumnSelection" fIDef="//@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="cuttedVT" fIDef="//@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="restVT" fIDef="//@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="cuttedVT" fIDef="//@definitionList.0/@outputList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/StringXSLTransform::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.8"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLMapping::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleXMLColumnSelection" fIDef="//@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder2::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelection" fIDef="//@definitionList.19"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XSLTransform::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xslColumnSelection" fIDef="//@definitionList.7"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLComposerNew::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.15"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="joinCondition" fIDef="//@definitionList.15"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/FileXSLTransform::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="xmlColumnSelection" fIDef="//@definitionList.9"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLRename::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleXMLColumnSelection" fIDef="//@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="newName" fIDef="//@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="outputVT" fIDef="//@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XQuery::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLColumnMap" fIDef="//@definitionList.18"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="XMLMap" fIDef="//@definitionList.16"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@definitionList.16/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/XMLGroup::XMLChild">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@definitionList.16/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/sqwxml/sqwxml.oplib/DocumentBuilder::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelection" fIDef="//@definitionList.20"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="SchemaID" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true"/>
+  <propertyTypeList name="CutDefinition" registered="true" emfClassName="CutDefinition" emfPkgUri="http:///com/ibm/datatools/etl/dataflows/sqwxml/runtime/xmltypes.ecore" wrapped="true"/>
+  <propertyTypeList name="NamespaceDeclaration" registered="true" emfClassName="NamespaceDeclaration" emfPkgUri="http:///com/ibm/datatools/etl/dataflows/sqwxml/runtime/xmltypes.ecore" wrapped="true"/>
+  <propertyTypeList name="XMLComposerMap" registered="true" emfClassName="SubSelect" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore">
+    <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+    <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+    <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+    <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+    <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+    <definitionParams name="allowEditNameOfMapToColumns" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="XPath" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true"/>
+  <propertyTypeList name="XMLVirtualTable" registered="true" emfClassName="VirtualTable" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="SingleColumnSelect" registered="true" emfClassName="SubSelect" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="singleXMLColumnSelection" registered="true" emfClassName="SubSelect" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="XSLInputTypeSwitcherEnum" registered="true" emfClassName="XSLInputTypeSwitcherEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="cutterEnabledSwitcherEnum" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true" emfClassName="cutterEnabledSwitcherEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+    <definitionParams name="no" usageType="enumLiteral" label="No"/>
+    <definitionParams name="yes" usageType="enumLiteral" label="Yes"/>
+  </propertyTypeList>
+  <propertyTypeList name="XMLRowTypeSwitcherEnum" registered="true" emfClassName="XMLRowTypeSwitcherEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="XMLRowTypeSwitcherEnum2" registered="true" emfClassName="XMLRowTypeSwitcherEnum2EEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="XMLWriterTypeEnum" registered="true" emfClassName="XMLWriterTypeEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="GroupOption" bundleName="com.ibm.datatools.etl.dataflow.sqwxml.oplib" registered="true" emfClassName="GroupOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="No" usageType="enumLiteral" label="NO"/>
+    <definitionParams name="Yes" usageType="enumLiteral" label="YES"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="CodeOptions" emfClassName="enum">
+    <definitionParams name="systemGenerated" usageType="enumLiteral" label="Generated code"/>
+    <definitionParams name="userCustomized" usageType="enumLiteral" label="Customized code"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

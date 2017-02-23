@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.common:ContainedObjLookup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.common="http:///com/ibm/datatools/etl/common.ecore">
+  <table key="/newReverseEnginnering/data-flows/Question1.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question2.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question3.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 12.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 7.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 8.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 9.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/data-flows/Question 1.etlmetadataxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+  <table key="/newReverseEnginnering/control-flows/FirstControlFlow.cflowxmi">
+    <value xsi:type="com.ibm.datatools.etl.common:StringList"/>
+  </table>
+</com.ibm.datatools.etl.common:ContainedObjLookup>

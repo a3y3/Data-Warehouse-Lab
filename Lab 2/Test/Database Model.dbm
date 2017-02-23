@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/7.5.2.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB2Model="http:///com/ibm/db/models/db2/db2.ecore" xmlns:LUW="http:///com/ibm/db/models/db2/luw.ecore" xmlns:datanotation="http:///datanotation.ecore">
+  <LUW:LUWDatabase xmi:id="_wPh5MeklEeai8tosxnMw8A" name="Database" vendor="DB2 UDB" version="V9.7" schemas="_wRdy4OklEeai8tosxnMw8A"/>
+  <DB2Model:DB2Schema xmi:id="_wRdy4OklEeai8tosxnMw8A" name="Schema" database="_wPh5MeklEeai8tosxnMw8A">
+    <eAnnotations xmi:id="_wRwt0OklEeai8tosxnMw8A" source="diagram">
+      <contents xsi:type="datanotation:DataDiagram" xmi:id="_wRwt0eklEeai8tosxnMw8A" type="IE_CrowFoot" name="Diagram1" viewKind="ProjectExplorer" notation="IE_CrowFoot" kind="Physical">
+        <styles xsi:type="datanotation:DataAttributeStyle" xmi:id="_wRwt0uklEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataCompartmentStyle" xmi:id="_wRwt0-klEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataDisplayStyle" xmi:id="_wRwt1OklEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataDiagramRelationshipStyle" xmi:id="_wRwt1eklEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataShapeNameStyle" xmi:id="_wRwt1uklEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataDiagramFormattingStyle" xmi:id="_wRwt1-klEeai8tosxnMw8A"/>
+        <element xsi:nil="true"/>
+      </contents>
+    </eAnnotations>
+  </DB2Model:DB2Schema>
+</xmi:XMI>

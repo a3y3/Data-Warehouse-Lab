@@ -1,0 +1,33 @@
+ Data-Flows  Feb 16, 2017 3:47:27 PM   SQW03415I: Flow execution started for SQW006 (/newReverseEnginnering/data-flows/Question 7)
+ Data-Flows  Feb 16, 2017 3:47:27 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Question 7_SQW006.txt
+ Data-Flows  Feb 16, 2017 3:47:27 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 7_SQW006
+ Data-Flows  Feb 16, 2017 3:47:30 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA6D42D5_20"" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 3:47:30 PM   SQW03275I: Execution of SQL statement "INSERT INTO EMPLOYEE090.RESULT7 (NAME)
+  SELECT Q234.COMPANY_NAME AS COMPANY_NAME_1
+    FROM EMPLOYEE090.COMPANY Q231, EMPLOYEE090.COMPANY Q234
+    WHERE (Q234.CITY = Q231.CITY) AND (Q231.CITY = 'Nasik') AND (Q234.CITY = 'Nasik')" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 3:47:30 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 6D42D5
+     ${RESERVED/APP_NAME} = Question 7
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp6d33e0/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-16 15:47:30
+     ${RESERVED/DATE} = 2017-02-16
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 16
+     ${RESERVED/INSTANCE_NAME} = SQW006
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question 7
+     ${RESERVED/RUN_ID} = 6D42D5
+     ${RESERVED/START_TIMESTAMP} = 2017-02-16 15:47:30
+     ${RESERVED/TIME} = 15:47:30
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 7_SQW006
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 16, 2017 3:47:30 PM   SQW03408I: Flow execution finished for SQW006 (/newReverseEnginnering/data-flows/Question 7)
+ Data-Flows  Feb 16, 2017 3:47:30 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Question 7_SQW006.txt.

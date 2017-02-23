@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" bundleName="com.ibm.datatools.sqw.subprocess" lastModified="0" nsURI="http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib" fileName="etc/subprocess.oplib">
+  <definitionList iD="http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity" name="SubProcessActivity" label="Subprocess" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity" bundleName="com.ibm.datatools.sqw.subprocess" registered="true">
+    <definitionParams name="extItemRefProperty" value="subProcessRef" usageType="codegen"/>
+    <definitionParams name="CanStepInto" value="true" usageType="debugging"/>
+    <propertyList name="exportParameters" description="SubProcessActivity.exportParameters.desc" label="SubProcessActivity.exportParameters.label" bundleName="com.ibm.datatools.sqw.subprocess" optional="true" type="VariableAssignment" upperBound="-1">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="subProcessRef" label="Subprocess" bundleName="com.ibm.datatools.sqw.subprocess" type="ExternalItemRef">
+      <definitionParams name="selectionType" value="subProcess" usageType="semantics"/>
+    </propertyList>
+    <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.sqw.subprocess" optional="true">
+      <definitionParams name="selectionType" value="subProcess" usageType="validation" label="Subprocess"/>
+    </propertyList>
+    <propertyList name="inputParameters" description="ExternalActivity.inputParameters.desc" label="ExternalActivity.inputParameters.label" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignment" upperBound="-1">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+    <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+    <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+      <paramOption phase="OTHER" paramName="@IGNORE"/>
+    </propertyList>
+    <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+      <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+    </propertyList>
+    <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+    <codeGeneratorClass className="com.ibm.datatools.sqw.subprocess.codegen.SubProcessActivityCodeGenerator"/>
+    <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ExternalActivityValidator"/>
+    <inputList iD="http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+    <outputList iD="http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    <outputList iD="http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    <outputList iD="http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+  </definitionList>
+  <dataFlowDefinitionList iD="SubProcess" name="SubProcess">
+    <definitionParams name="com.ibm.datatools.etl.cflow.core" value="com.ibm.datatools.etl.cflow.codegen.CodeGenMain" usageType="flowCodeGenerator"/>
+    <definitionParams name="sflowxmi" usageType="flowFileExtension"/>
+    <definitionParams name="Debugger" value="com.ibm.datatools.etl.cflow.EPGControlFlowDebugger" usageType="debugging"/>
+    <definitionParams name="CanvasTracer" value="com.ibm.datatools.etl.dataflow.ui.ControlFlowExecutionListener" usageType="executing"/>
+    <definitionParams name="ExecViewTracer" value="com.ibm.datatools.etl.dataflow.ui.ControlFlowExecutionViewListener" usageType="executing"/>
+    <definitionParams name="CompatibleFlows" value="ControlFlow|SubProcess" usageType="editing"/>
+    <definitionParams name="GenerateNewFlowsForSelection" value="SubProcess" usageType="editing"/>
+    <definitionParams name="FlowDragAndDrop_CopyOperators_SrcFlowType" value="cflowxmi|sflowxmi" usageType="editing"/>
+    <definitionParams name="FlowDragAndDrop_CreateRefOperator_SrcFlowType" value="sflowxmi::{http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity}||etlmetadataxmi|idsdataflowxmi|zdataflowxmi::{http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity}" usageType="editing"/>
+    <definitionParams name="disableInputLinkValidation" value="true" usageType="validation"/>
+    <propertyList name="breakPoints" hidden="true" optional="true" upperBound="-1"/>
+    <operatorBean className="DataFlow" pkgNsURI="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  </dataFlowDefinitionList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

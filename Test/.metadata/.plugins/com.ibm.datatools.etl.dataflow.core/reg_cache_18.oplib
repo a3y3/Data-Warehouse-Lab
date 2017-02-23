@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="Macro Operator Library" description="Subflow and Subflow Special Operators" label="Macro Operator Library" bundleName="com.ibm.datatools.etl.dataflow.macro" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/macro.oplib" fileName="macro.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/macro.oplib/MacroContainer" name="MacroContainer" bundleName="com.ibm.datatools.etl.dataflow.macro">
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/macro.oplib/MacroContainer/MacroInput" name="MacroInput" label="MacroInput" bundleName="com.ibm.datatools.etl.dataflow.macro" registered="true">
+      <propertyList name="columnList" label="columnList" bundleName="com.ibm.datatools.etl.dataflow.macro" type="VirtualTable"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/macro.oplib/MacroContainer/MacroInput::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.macro" rule="BY_PARAMS">
+        <definitionParams type="property" name="columnList"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/macro.oplib/MacroContainer/MacroOutput" name="MacroOutput" label="MacroOutput" bundleName="com.ibm.datatools.etl.dataflow.macro" registered="true">
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.macro" className="com.ibm.datatools.etl.dataflow.macro.validation.MacroOutputValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/macro.oplib/MacroContainer/MacroOutput::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.macro" rule="BY_IN_LINK_REF"/>
+    </definitionList>
+  </children>
+  <dataFlowDefinitionList iD="Subflow" name="Subflow">
+    <definitionParams name="macroflowxmi" usageType="flowFileExtension"/>
+    <definitionParams name="propagationSupport" value="yes" usageType="actionEnable"/>
+    <definitionParams name="CompatibleFlows" value="DefaultDataFlow|Subflow" usageType="editing"/>
+    <definitionParams name="GenerateNewFlowsForSelection" value="Subflow" usageType="editing"/>
+    <definitionParams name="FlowDragAndDrop_CopyOperators_SrcFlowType" value="etlmetadataxmi|macroflowxmi" usageType="editing"/>
+    <definitionParams name="FlowDragAndDrop_CreateRefOperator_SrcFlowType" value="macroflowxmi::{http:///com/ibm/datatools/etl/dataflow/macro_ui.oplib/MacroCreator/MacroChooser}" usageType="editing"/>
+    <operatorBean className="DataFlow" pkgNsURI="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  </dataFlowDefinitionList>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/macro.oplib/MacroContainer/MacroInput::columnList">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <propertyTypeList name="DBTable" emfClassName="DBTable" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

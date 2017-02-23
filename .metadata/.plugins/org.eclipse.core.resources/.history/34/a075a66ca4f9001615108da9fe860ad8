@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynOpr:ControlFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.coretypes="http:///com/ibm/datatools/etl/coretypes.ecore" xmlns:com.ibm.datatools.etl.dataflow.view="http:///com/ibm/datatools/etl/dataflow/view.ecore" xmlns:dynOpr="dyn:///com/ibm/datatools/etl/core.oplib" xsi:schemaLocation="dyn:///com/ibm/datatools/etl/core.oplib file:/E:/140911090/.metadata/.plugins/com.ibm.datatools.etl.dataflow.core/reg_cache.oplibpkg" iD="0" definitionID="ControlFlow" itemName="FirstControlFlow" itemTag="" version="2.2.1" lastAssignedID="8" externalReferences="//@operatorMap.1/@value/@operatorMap.0/@value/@dataFlowRef //@operatorMap.1/@value/@operatorMap.1/@value/@dataFlowRef">
+  <operatorMap key="01">
+    <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph" iD="01" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph" itemName="StartGraph" itemTag="/op:01" itemLabel="Start" editable="false" version="2.2.1">
+      <outputPortMap key="start">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::start" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::start" itemName="start" itemTag="/op:01/output:start:0" itemLabel="Start" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false" mappable="false" toLink="//@linkList.0">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <outputPortMap key="on-error">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::on-error" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::on-error" itemName="on-error" itemTag="/op:01/output:on-error:0" itemLabel="On Failure" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <outputPortMap key="cleanup">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::cleanup" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::cleanup" itemName="cleanup" itemTag="/op:01/output:cleanup:0" itemLabel="Cleanup" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+    </value>
+  </operatorMap>
+  <operatorMap key="02">
+    <value xsi:type="dynOpr:com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity" iD="02" definitionID="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity" itemName="ParallelControlFlowActivity" itemTag="/op:02" itemLabel="Parallel_Container_02" version="2.2.1" lastAssignedID="3">
+      <operatorMap key="02_0">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" iD="02_0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" itemName="DataFlowActivity" itemTag="/op:02/op:02_0" itemLabel="Data_Flow_02_0" version="2.2.1">
+          <inputPortMap key="in">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::input::in" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::input::in" itemName="in" itemTag="/op:02/op:02_0/input:in:0" itemLabel="Input" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </inputPortMap>
+          <outputPortMap key="on-success">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-success" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-success" itemName="on-success" itemTag="/op:02/op:02_0/output:on-success:0" itemLabel="On Success" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </outputPortMap>
+          <outputPortMap key="on-failure">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-failure" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-failure" itemName="on-failure" itemTag="/op:02/op:02_0/output:on-failure:0" itemLabel="On Failure" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </outputPortMap>
+          <outputPortMap key="unconditional">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::unconditional" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::unconditional" itemName="unconditional" itemTag="/op:02/op:02_0/output:unconditional:0" itemLabel="Unconditional" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </outputPortMap>
+          <dataFlowRef iD="31" itemName="dataFlowRef" itemTag="/op:02/op:02_0/prop:dataFlowRef" itemLabel="Question 1.etlmetadataxmi" itemType="ExternalItemRef" refType="dataFlow" refUri="/newReverseEnginnering/data-flows/Question 1.etlmetadataxmi"/>
+          <validationRigor iD="32" itemName="validationRigor" itemTag="/op:02/op:02_0/prop:validationRigor" hidden="true"/>
+          <inputParameters iD="33" itemName="inputParameters" itemTag="/op:02/op:02_0/prop:inputParameters" itemType="VariableAssignment"/>
+          <logLevel iD="34" itemName="logLevel" itemTag="/op:02/op:02_0/prop:logLevel" itemType="LogLevel"/>
+          <traceLevel iD="35" itemName="traceLevel" itemTag="/op:02/op:02_0/prop:traceLevel" itemType="TraceLevel"/>
+          <skipLabel iD="36" itemName="skipLabel" itemTag="/op:02/op:02_0/prop:skipLabel" itemType="dummyLabel"/>
+          <activityDisabled iD="37" itemName="activityDisabled" itemTag="/op:02/op:02_0/prop:activityDisabled" itemType="boolean"/>
+        </value>
+      </operatorMap>
+      <operatorMap key="02_1">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" iD="02_1" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" itemName="DataFlowActivity" itemTag="/op:02/op:02_1" itemLabel="Data_Flow_02_1" version="2.2.1">
+          <inputPortMap key="in">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::input::in" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::input::in" itemName="in" itemTag="/op:02/op:02_1/input:in:0" itemLabel="Input" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </inputPortMap>
+          <outputPortMap key="on-success">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-success" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-success" itemName="on-success" itemTag="/op:02/op:02_1/output:on-success:0" itemLabel="On Success" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </outputPortMap>
+          <outputPortMap key="on-failure">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-failure" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-failure" itemName="on-failure" itemTag="/op:02/op:02_1/output:on-failure:0" itemLabel="On Failure" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </outputPortMap>
+          <outputPortMap key="unconditional">
+            <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::unconditional" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::unconditional" itemName="unconditional" itemTag="/op:02/op:02_1/output:unconditional:0" itemLabel="Unconditional" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+              <stagingInfoList type="NONE"/>
+            </value>
+          </outputPortMap>
+          <dataFlowRef iD="31" itemName="dataFlowRef" itemTag="/op:02/op:02_1/prop:dataFlowRef" itemLabel="Question 2.etlmetadataxmi" itemType="ExternalItemRef" refType="dataFlow" refUri="/newReverseEnginnering/data-flows/Question 2.etlmetadataxmi"/>
+          <validationRigor iD="32" itemName="validationRigor" itemTag="/op:02/op:02_1/prop:validationRigor" hidden="true"/>
+          <inputParameters iD="33" itemName="inputParameters" itemTag="/op:02/op:02_1/prop:inputParameters" itemType="VariableAssignment"/>
+          <logLevel iD="34" itemName="logLevel" itemTag="/op:02/op:02_1/prop:logLevel" itemType="LogLevel"/>
+          <traceLevel iD="35" itemName="traceLevel" itemTag="/op:02/op:02_1/prop:traceLevel" itemType="TraceLevel"/>
+          <skipLabel iD="36" itemName="skipLabel" itemTag="/op:02/op:02_1/prop:skipLabel" itemType="dummyLabel"/>
+          <activityDisabled iD="37" itemName="activityDisabled" itemTag="/op:02/op:02_1/prop:activityDisabled" itemType="boolean"/>
+        </value>
+      </operatorMap>
+      <inputPortMap key="in">
+        <value xsi:type="dynOpr:com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::input::in" iD="0" definitionID="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::input::in" itemName="in" itemTag="/op:02/input:in:0" itemLabel="Input" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false" schema="//@operatorMap.1/@value/@inputPortMap.0/@value/@ownedSchema" fromLink="//@linkList.0">
+          <changeParamTable key="/op:01/output:start:0,LINK">
+            <value xsi:type="com.ibm.datatools.etl.coretypes:VTParamEntry" paramID="/op:01/output:start:0" paramName="start" paramType="output" paramUsage="LINK" subParamID="0" sortIdx="-1" paramValue="//@operatorMap.0/@value/@outputPortMap.0/@value" paramParent="//@operatorMap.0/@value"/>
+          </changeParamTable>
+          <ownedSchema iD="IN_02_0" itemTag="/op:02/input:in:0" name="IN_02_0"/>
+          <stagingInfoList type="NONE"/>
+        </value>
+      </inputPortMap>
+      <outputPortMap key="on-success">
+        <value xsi:type="dynOpr:com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::on-success" iD="0" definitionID="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::on-success" itemName="on-success" itemTag="/op:02/output:on-success:0" itemLabel="On Success" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false" mappable="false" toLink="//@linkList.1">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <outputPortMap key="on-failure">
+        <value xsi:type="dynOpr:com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::on-failure" iD="0" definitionID="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::on-failure" itemName="on-failure" itemTag="/op:02/output:on-failure:0" itemLabel="On Failure" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false" mappable="false" toLink="//@linkList.2">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <outputPortMap key="unconditional">
+        <value xsi:type="dynOpr:com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::unconditional" iD="0" definitionID="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::unconditional" itemName="unconditional" itemTag="/op:02/output:unconditional:0" itemLabel="Unconditional" enabled="false" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false">
+          <stagingInfoList type="NONE"/>
+        </value>
+      </outputPortMap>
+      <etloperators iD="36" itemName="etloperators" itemTag="/op:02/prop:etloperators" itemType="ParallelContainerActivity">
+        <Flow_ParallelControlFlowActivity_etloperators xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" height="-1" width="-1" type="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" operator="//@operatorMap.1/@value/@operatorMap.0/@value"/>
+        <Flow_ParallelControlFlowActivity_etloperators xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" height="-1" width="-1" type="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" operator="//@operatorMap.1/@value/@operatorMap.1/@value"/>
+      </etloperators>
+      <executionOrder iD="37" itemName="executionOrder" itemTag="/op:02/prop:executionOrder" itemType="ExecutionOrder"/>
+      <logOption iD="38" itemName="logOption" itemTag="/op:02/prop:logOption" itemType="LogOption"/>
+      <logLevel iD="39" itemName="logLevel" itemTag="/op:02/prop:logLevel" itemType="LogLevel"/>
+      <traceLevel iD="40" itemName="traceLevel" itemTag="/op:02/prop:traceLevel" itemType="TraceLevel"/>
+      <skipLabel iD="41" itemName="skipLabel" itemTag="/op:02/prop:skipLabel" itemType="dummyLabel"/>
+      <activityDisabled iD="42" itemName="activityDisabled" itemTag="/op:02/prop:activityDisabled" itemType="boolean"/>
+    </value>
+  </operatorMap>
+  <operatorMap key="03">
+    <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/End" iD="03" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/End" itemName="End" itemTag="/op:03" itemLabel="End_03" version="2.2.1">
+      <inputPortMap key="end">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/End::input::end" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/End::input::end" itemName="end" itemTag="/op:03/input:end:0" itemLabel="End" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false" schema="//@operatorMap.2/@value/@inputPortMap.0/@value/@ownedSchema" fromLink="//@linkList.2">
+          <changeParamTable key="/op:02/output:on-failure:0,LINK">
+            <value xsi:type="com.ibm.datatools.etl.coretypes:VTParamEntry" paramID="/op:02/output:on-failure:0" paramName="on-failure" paramType="output" paramUsage="LINK" subParamID="0" sortIdx="-1" paramValue="//@operatorMap.1/@value/@outputPortMap.1/@value" paramParent="//@operatorMap.1/@value"/>
+          </changeParamTable>
+          <ownedSchema iD="END_03_0" itemTag="/op:03/input:end:0" name="END_03_0"/>
+          <stagingInfoList type="NONE"/>
+        </value>
+      </inputPortMap>
+      <exitOption iD="22" itemName="exitOption" itemTag="/op:03/prop:exitOption" hidden="true" itemType="ExitOptionEnum"/>
+    </value>
+  </operatorMap>
+  <operatorMap key="04">
+    <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Fail" iD="04" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Fail" itemName="Fail" itemTag="/op:04" itemLabel="Fail_04" version="2.2.1">
+      <inputPortMap key="end">
+        <value xsi:type="dynOpr:http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Fail::input::end" iD="0" definitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Fail::input::end" itemName="end" itemTag="/op:04/input:end:0" itemLabel="Fail" editable="false" version="2.2.1" lastAsssignedID="0" delPortEnabled="false" schema="//@operatorMap.3/@value/@inputPortMap.0/@value/@ownedSchema" fromLink="//@linkList.1">
+          <changeParamTable key="/op:02/output:on-success:0,LINK">
+            <value xsi:type="com.ibm.datatools.etl.coretypes:VTParamEntry" paramID="/op:02/output:on-success:0" paramName="on-success" paramType="output" paramUsage="LINK" subParamID="0" sortIdx="-1" paramValue="//@operatorMap.1/@value/@outputPortMap.0/@value" paramParent="//@operatorMap.1/@value"/>
+          </changeParamTable>
+          <ownedSchema iD="END_04_0" itemTag="/op:04/input:end:0" name="END_04_0"/>
+          <stagingInfoList type="NONE"/>
+        </value>
+      </inputPortMap>
+    </value>
+  </operatorMap>
+  <eventManager>
+    <causeToDependentsLookup value="//@operatorMap.1/@value/@inputPortMap.0/@value" key="//@operatorMap.0/@value/@outputPortMap.0/@value"/>
+    <causeToDependentsLookup value="//@operatorMap.3/@value/@inputPortMap.0/@value" key="//@operatorMap.1/@value/@outputPortMap.0/@value"/>
+    <causeToDependentsLookup value="//@operatorMap.2/@value/@inputPortMap.0/@value" key="//@operatorMap.1/@value/@outputPortMap.1/@value"/>
+    <dependentToCausesLookup value="//@operatorMap.0/@value/@outputPortMap.0/@value" key="//@operatorMap.1/@value/@inputPortMap.0/@value"/>
+    <dependentToCausesLookup value="//@operatorMap.1/@value/@outputPortMap.0/@value" key="//@operatorMap.3/@value/@inputPortMap.0/@value"/>
+    <dependentToCausesLookup value="//@operatorMap.1/@value/@outputPortMap.1/@value" key="//@operatorMap.2/@value/@inputPortMap.0/@value"/>
+  </eventManager>
+  <linkList xsi:type="dynOpr:Link" iD="05" definitionID="Link" itemTag="/link:05" toPort="//@operatorMap.1/@value/@inputPortMap.0/@value" fromPort="//@operatorMap.0/@value/@outputPortMap.0/@value"/>
+  <linkList xsi:type="dynOpr:Link" iD="06" definitionID="Link" itemTag="/link:06" toPort="//@operatorMap.3/@value/@inputPortMap.0/@value" fromPort="//@operatorMap.1/@value/@outputPortMap.0/@value"/>
+  <linkList xsi:type="dynOpr:Link" iD="07" definitionID="Link" itemTag="/link:07" toPort="//@operatorMap.2/@value/@inputPortMap.0/@value" fromPort="//@operatorMap.1/@value/@outputPortMap.1/@value"/>
+  <exampleCFlowProp iD="34" itemName="exampleCFlowProp" hidden="true"/>
+  <breakPoints iD="35" itemName="breakPoints" hidden="true"/>
+  <logLevel iD="36" itemName="logLevel" itemType="LogLevel"/>
+  <traceLevel iD="37" itemName="traceLevel" itemType="TraceLevel"/>
+</dynOpr:ControlFlow>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.errmsgs:Message xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.errmsgs="http:///com/ibm/datatools/etl/errmsgs.ecore" msgNum="12209" timestamp="1487839244941" msgTxt="Validation succeeded for the 'FirstControlFlow' flow. However, there were warnings." msgSeverity="WARN" component="dataflow.validation" msgDescTxt="Validation succeeded for FirstControlFlow with warnings." msgCause="" msgResponse="" entityType="DataFlow">
+  <expandedMsgs msgNum="12208" timestamp="1487839244941" msgTxt="Validation succeeded for the 'flowLabel'." msgSeverity="LOG" component="dataflow.validation" msgDescTxt="Validation succeeded for flowLabel." msgCause="" msgResponse="" entityType="DataFlow" operatorID="01">
+    <expandedMsgs msgNum="81014" timestamp="1487839244941" msgTxt="The activity 'Start' is missing an output link for the 'Start' output" msgSeverity="FATAL" component="cflow.core" msgDescTxt="The output 'Start' in the activity 'Start' is missing an output link." msgCause="An output port is missing an outgoing link." msgResponse="All paths should have a termination point. Use the end operator to indicate the end of a path." entityType="CONTROLFLOW" operatorID="01"/>
+  </expandedMsgs>
+</com.ibm.datatools.etl.errmsgs:Message>

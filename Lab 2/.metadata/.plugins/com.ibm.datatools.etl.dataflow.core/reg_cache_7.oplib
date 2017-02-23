@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatordefinition="http:///com/ibm/datatools/etl/operatordefinition.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="AdvSrcTgt" description="Advanced Source and Targets Data Flow Operator Library" label="AdvSrcTgt" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib" fileName="advsrctgt.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract" name="Extract" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+    <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources" name="FileSources" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract" name="FileExtract" description="Extract rows from a source that is a flat file" label="File Import" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <propertyList name="fileFormat" label="Define the file format " bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatDescriptor"/>
+        <propertyList name="file" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+        <propertyList name="saveCount" label="SAVECOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="rowCount" label="ROWCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="commitCount" label="COMMITCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="columnSelectList" label="columnSelectList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="VirtualTable"/>
+        <propertyList name="subSelect" label="subSelect" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ColumnMap">
+          <definitionParams type="property" name="fileFormat" usageType="mapFrom" label="InputFile_Fields"/>
+          <definitionParams type="property" name="columnSelectList" usageType="mapTo" label="Subset_of_Fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="fieldDelimiters" value="[\t \r,&quot;%&amp;'*()]"/>
+          <definitionParams name="invalidExtensions" value="zip,exe,bin"/>
+          <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="rowCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+        <propertyList name="partitioningKeys" label="Details.partioningKeys" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+          <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+          <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+        <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+          <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+          <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="FileLocationOptions" label="File location" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileLocationOption" defaultValueLiteral="OnClientSide"/>
+        <propertyList name="programUsed" label="File import method" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="FileImportProgramOption" defaultValueLiteral="DB2Load"/>
+        <propertyList name="numRowToSkip" label="RESTARTCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="XMLPath" label="XMLPath" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="XMLValidation" label="XMLValidation" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="XMLValidationType"/>
+        <propertyList name="XMLSchema" label="XMLSchema" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.ExternalFileImportChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.FileExtractValidator"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="subSelect"/>
+        </outputList>
+      </definitionList>
+    </children>
+    <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources" name="DBSources" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract" name="JDBCExtract" description="Extract rows from a source table using Java Database Connectivity (JDBC)" label="JDBC Source" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/core.oplib/Extract/DBSources/TableExtract" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/core.oplib/Extract/DBSources/TableExtract" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <definitionParams value="JDBC" usageType="compositionResolution" label="Remote database"/>
+        <definitionParams value="JDBC" usageType="compositionResolution" label="Remote database"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.TableExtractUpgradeHandler" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="accessMethod" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <definitionParams name="synAndPropagate" value="rdbTable" usageType="synAndPropagate"/>
+        <definitionParams type="property" name="accessMethod" usageType="compositionRule"/>
+        <propertyList name="stagingTableName" description="Details.stagingTableName.desc" label="Details.stagingTableName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="tempTableSpace" description="Details.tableSpace.temp.desc" label="Details.tempTableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+        <propertyList name="partitioningKeys" label="Details.partioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+          <definitionParams type="property" name="rdbTable" usageType="mapFrom"/>
+          <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+        <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+          <definitionParams type="property" name="rdbTable" usageType="mapFrom"/>
+          <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="jdbcBatchSize" description="JDBCExtract.jdbcBatchSize.desc" label="JDBCExtract.jdbcBatchSize" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="JDBCDriver" label="JDBCDriver" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="com.driver"/>
+        <propertyList name="DBURL" label="DBURL" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="DBType" label="DBType" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="DB2"/>
+        <propertyList name="UserName" label="UserName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="Password" label="Password" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="SampleData" label="Debug sample type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DebugSampleTypes" defaultValueLiteral="WholeData"/>
+        <propertyList name="SampleData_firstdata" label="Sample size (n)" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer"/>
+        <propertyList name="SampleData_Randomdata" label="Sampling Rate" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Double"/>
+        <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+        <propertyList name="rdbTable" label="Source database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+        <propertyList name="filterCondition" description="Specify the condition on the table that is evaluated in the database where the source table resides." label="Filter condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Condition">
+          <definitionParams type="property" name="rdbTable" label="InputTable"/>
+        </propertyList>
+        <propertyList name="columnExpressions" description="Specify expressions that are evaluated in the database where the source table resides." label="Source Column Expressions" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+          <definitionParams type="property" name="rdbTable" label="InputTable"/>
+        </propertyList>
+        <propertyList name="sourceVirtualTable" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DBTable" referenceOnly="true"/>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.TableExtractChangeHandler"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="columnExpressions"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/ODBCTableExtract" name="ODBCTableExtract" description="Extract data rows from a source table using Open Database Connectivity (ODBC)" label="ODBC Source" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <propertyList name="srcDSN" label="Source DSN" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="rdbTable" label="Table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="srcDbType" label="Source DB Type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="srcUserName" label="Source User Name" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="srcPassword" label="Source Password" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME" encrypt="true"/>
+        </propertyList>
+        <propertyList name="project" label="project" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ProjectExpression">
+          <definitionParams type="property" name="rdbTable"/>
+        </propertyList>
+        <propertyList name="condition" label="condition" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+        </propertyList>
+        <propertyList name="rowsetSize" label="Array Fetch Size" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int" defaultValueLiteral="1">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="traceFilePath" label="Trace Path" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.advsrctgt.odbc.ODBCExtractCOP"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/ODBCTableExtract::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="project"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Transform" name="Transform"/>
+  <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target" name="Target" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+    <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets" name="DBTargets" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/JDBCLoad" name="JDBCLoad" label="JDBCLoad" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <propertyList name="rdbTable" label="Database Table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="SrcJDBCDriver" label="SrcJDBCDriver" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="SrcDBURL" label="SrcDBURL" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="SrcDBType" label="SrcDBType" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="SrcUserName" label="SrcUserName" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="SrcPassword" label="SrcPassword" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME" encrypt="true"/>
+        </propertyList>
+        <propertyList name="TgtJDBCDriver" label="TgtJDBCDriver" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="TgtDBURL" label="TgtDBURL" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="TgtDBType" label="TgtDBType" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="TgtUserName" label="TgtUserName" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="TgtPassword" label="TgtPassword" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME" encrypt="true"/>
+        </propertyList>
+        <propertyList name="LoadMode" label="LoadMode" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderMode">
+          <paramOption phase="DEPLOYMENT_PREP"/>
+        </propertyList>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/JDBCLoad::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/ODBCTableLoad" name="ODBCTableLoad" description="Insert data rows to a target table using Open Database Connectivity (ODBC)" label="ODBC Target" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <propertyList name="rowsetSize" label="Array Fetch Size" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int" defaultValueLiteral="1">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="srcDSN" label="Source DSN" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="srcDbType" label="Source DB Type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="srcUserName" label="Source User Name" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="srcPassword" label="Source Password" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME" encrypt="true"/>
+        </propertyList>
+        <propertyList name="tgtDSN" label="Target DSN" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="rdbTable" label="Table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="tgtDbType" label="Target DB Type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <propertyList name="tgtUserName" label="Target User Name" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME"/>
+        </propertyList>
+        <propertyList name="tgtPassword" label="Target Password" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="RUNTIME" encrypt="true"/>
+        </propertyList>
+        <propertyList name="condition" label="condition" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+        </propertyList>
+        <propertyList name="loadMode" label="Load mode" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBLoadMode" defaultValueLiteral="Replace">
+          <paramOption phase="DEPLOYMENT_PREP"/>
+        </propertyList>
+        <propertyList name="traceFilePath" label="Trace Path" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="DEPLOYMENT"/>
+        </propertyList>
+        <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.advsrctgt.odbc.ODBCLoaderCOP"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/ODBCTableLoad::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" name="TableLoad" label="TableLoad" composite="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" resolverPropertyName="recoveryOption">
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadMigrationHelper" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="recoveryOption" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <definitionParams value="NO_RECOVERY" usageType="compositionResolution" label="No recovery"/>
+        <definitionParams value="RECOVERY_NOCOPY" usageType="compositionResolution" label="Recovery without a copy ( places recoverable tablespaces in backup pending mode )"/>
+        <definitionParams value="DIRECTORY" usageType="compositionResolution" label="Recovery with a saved copy of the input data to a directory"/>
+        <definitionParams value="TSM_RECOVERY" usageType="compositionResolution" label="Recovery with a saved copy of the input data using TSM"/>
+        <definitionParams value="VENDOR_RECOVERY" usageType="compositionResolution" label="Recovery with a saved copy of the input data using Vendor library"/>
+        <propertyList name="rdbTable" label="Load into database table" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="db2LoaderParam" description="Select INSERT or REPLACE from the list box. Select INSERT if you want to append new rows; select REPLACE if you want to delete any existing rows and replace them with the new rows." label="db2LoaderParam" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderParam"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="additionalLoadOptions" description="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." label="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="StringElement" upperBound="-1">
+          <definitionParams name="onlyUniques" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="codeOptions" label="Statement type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="preLoadStatements" description="Statements to execute through a JDBC connection before the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute before load" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="postLoadStatements" description="Statements to execute through a JDBC connection after the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute after load" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="recoveryOption" label="Recovery option" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="RecoveryOptionSwitcherEnum" defaultValueLiteral="NO_RECOVERY"/>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryNames" label="directoryNames" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryName" label="Directory name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="Directory"/>
+        <propertyList name="numberOfSessions" label="Number of sessions" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int" defaultValueLiteral="1"/>
+        <propertyList name="libLocation" label="Library location" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+        <propertyList name="numberOfSessions" label="Number of sessions" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int" defaultValueLiteral="1"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.TableLoadValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+        <opDefResolverMap key="NO_RECOVERY" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoRecovery"/>
+        <opDefResolverMap key="RECOVERY_NOCOPY" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoCopy"/>
+        <opDefResolverMap key="DIRECTORY" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyDirectory"/>
+        <opDefResolverMap key="TSM_RECOVERY" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyTSM"/>
+        <opDefResolverMap key="VENDOR_RECOVERY" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyVendorLibrary"/>
+        <resolverLabelMap key="NO_RECOVERY" value="No recovery"/>
+        <resolverLabelMap key="RECOVERY_NOCOPY" value="Recovery without a copy ( places recoverable tablespaces in backup pending mode )"/>
+        <resolverLabelMap key="DIRECTORY" value="Recovery with a saved copy of the input data to a directory"/>
+        <resolverLabelMap key="TSM_RECOVERY" value="Recovery with a saved copy of the input data using TSM"/>
+        <resolverLabelMap key="VENDOR_RECOVERY" value="Recovery with a saved copy of the input data using Vendor library"/>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoRecovery" name="TableLoadNoRecovery" label="TableLoadNoRecovery" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <definitionParams value="NO_RECOVERY" usageType="compositionResolution" label="No recovery"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadMigrationHelper" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="recoveryOption" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="rdbTable" label="Load into database table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="db2LoaderParam" description="Select INSERT or REPLACE from the list box. Select INSERT if you want to append new rows; select REPLACE if you want to delete any existing rows and replace them with the new rows." label="db2LoaderParam" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderParam"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="additionalLoadOptions" description="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." label="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="StringElement" upperBound="-1">
+          <definitionParams name="onlyUniques" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="preLoadStatements" description="Statements to execute through a JDBC connection before the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute before load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="postLoadStatements" description="Statements to execute through a JDBC connection after the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute after load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="recoveryOption" label="Recovery option" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="RecoveryOptionSwitcherEnum" defaultValueLiteral="NO_RECOVERY"/>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryNames" label="directoryNames" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.TableLoadValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoRecovery::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoCopy" name="TableLoadNoCopy" label="TableLoadNoCopy" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <definitionParams value="RECOVERY_NOCOPY" usageType="compositionResolution" label="Recovery without a copy ( places recoverable tablespaces in backup pending mode )"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadMigrationHelper" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="recoveryOption" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="rdbTable" label="Load into database table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="db2LoaderParam" description="Select INSERT or REPLACE from the list box. Select INSERT if you want to append new rows; select REPLACE if you want to delete any existing rows and replace them with the new rows." label="db2LoaderParam" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderParam"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="additionalLoadOptions" description="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." label="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="StringElement" upperBound="-1">
+          <definitionParams name="onlyUniques" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="preLoadStatements" description="Statements to execute through a JDBC connection before the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute before load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="postLoadStatements" description="Statements to execute through a JDBC connection after the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute after load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="recoveryOption" label="Recovery option" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="RecoveryOptionSwitcherEnum" defaultValueLiteral="NO_RECOVERY"/>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryNames" label="directoryNames" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.TableLoadValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoCopy::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyDirectory" name="TableLoadSaveCopyDirectory" label="TableLoadSaveCopyDirectory" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <definitionParams value="DIRECTORY" usageType="compositionResolution" label="Recovery with a saved copy of the input data to a directory"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadMigrationHelper" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="recoveryOption" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="directoryName" label="Directory name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="Directory"/>
+        <propertyList name="rdbTable" label="Load into database table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="db2LoaderParam" description="Select INSERT or REPLACE from the list box. Select INSERT if you want to append new rows; select REPLACE if you want to delete any existing rows and replace them with the new rows." label="db2LoaderParam" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderParam"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="additionalLoadOptions" description="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." label="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="StringElement" upperBound="-1">
+          <definitionParams name="onlyUniques" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="preLoadStatements" description="Statements to execute through a JDBC connection before the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute before load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="postLoadStatements" description="Statements to execute through a JDBC connection after the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute after load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="recoveryOption" label="Recovery option" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="RecoveryOptionSwitcherEnum" defaultValueLiteral="NO_RECOVERY"/>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryNames" label="directoryNames" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.TableLoadValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyDirectory::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyTSM" name="TableLoadSaveCopyTSM" label="TableLoadSaveCopyTSM" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <definitionParams value="TSM_RECOVERY" usageType="compositionResolution" label="Recovery with a saved copy of the input data using TSM"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadMigrationHelper" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="recoveryOption" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="numberOfSessions" label="Number of sessions" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int" defaultValueLiteral="1"/>
+        <propertyList name="rdbTable" label="Load into database table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="db2LoaderParam" description="Select INSERT or REPLACE from the list box. Select INSERT if you want to append new rows; select REPLACE if you want to delete any existing rows and replace them with the new rows." label="db2LoaderParam" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderParam"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="additionalLoadOptions" description="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." label="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="StringElement" upperBound="-1">
+          <definitionParams name="onlyUniques" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="preLoadStatements" description="Statements to execute through a JDBC connection before the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute before load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="postLoadStatements" description="Statements to execute through a JDBC connection after the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute after load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="recoveryOption" label="Recovery option" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="RecoveryOptionSwitcherEnum" defaultValueLiteral="NO_RECOVERY"/>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryNames" label="directoryNames" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.TableLoadValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyTSM::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyVendorLibrary" name="TableLoadSaveCopyVendorLibrary" label="TableLoadSaveCopyVendorLibrary" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" compositeDefinitionID="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <definitionParams value="VENDOR_RECOVERY" usageType="compositionResolution" label="Recovery with a saved copy of the input data using Vendor library"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadMigrationHelper" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="recoveryOption" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="libLocation" label="Library location" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+        <propertyList name="numberOfSessions" label="Number of sessions" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int" defaultValueLiteral="1"/>
+        <propertyList name="rdbTable" label="Load into database table" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DBTable"/>
+        <propertyList name="db2LoaderParam" description="Select INSERT or REPLACE from the list box. Select INSERT if you want to append new rows; select REPLACE if you want to delete any existing rows and replace them with the new rows." label="db2LoaderParam" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="DB2LoaderParam"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="additionalLoadOptions" description="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." label="Specify additional syntax options for the DB2 LOAD command, such as whether to collect statistics, data and sort buffer size, level of CPU and disk parallelism, and index building mode. Enter the syntax exactly as defined in the DB2 documentation. Enter one option per row in the table and enter the options in the correct order. For example, two valid options are STATISTICS NO and DISK_PARALLELISM 4, in that order. Do not duplicate any of the options that are already defined in the fields above the Additional Options table." hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="StringElement" upperBound="-1">
+          <definitionParams name="onlyUniques" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="warningCount" label="WARNINGCOUNT" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="tempFilesPath" label="TEMPFILES PATH" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+          <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        </propertyList>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="preLoadStatements" description="Statements to execute through a JDBC connection before the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute before load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="postLoadStatements" description="Statements to execute through a JDBC connection after the load operation. Use a semi-colon to end of each statement and start each statement on a new line. " label="Statements to execute after load" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="recoveryOption" label="Recovery option" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="RecoveryOptionSwitcherEnum" defaultValueLiteral="NO_RECOVERY"/>
+        <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="directoryNames" label="directoryNames" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.TableLoadChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.TableLoadValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyVendorLibrary::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+    </children>
+    <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets" name="FileTargets" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/FileExport" name="FileExport" label="FileExport" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <propertyList name="fileFormat" label="fileFormat" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormat"/>
+        <propertyList name="file" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="fieldDelimiters" value="[,&quot;%&amp;'*()]"/>
+          <definitionParams name="invalidExtensions" value="bin,zip,exe"/>
+          <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+        </propertyList>
+        <propertyList name="XMLFileName" label="XMLFileName" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="XMLPath" label="XMLPath" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="XMLSaveSchema" label="XMLSaveSchema" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="boolean"/>
+        <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/FileExport::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_IN_LINK_REF"/>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/ExternalFileExport" name="ExternalFileExport" label="ExternalFileExport" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true">
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int"/>
+        <propertyList name="file" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+        <propertyList name="fileFormat" label="fileFormat" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormat"/>
+        <propertyList name="exportFileType" label="Define the file format " bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ExportFileFormatFileType" defaultValueLiteral="DELIMITED"/>
+        <propertyList name="fieldDelimiter" label="Field delimiter" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatFieldDelim"/>
+        <propertyList name="stringDelimiter" label="String delimiter" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatStringDelim"/>
+        <propertyList name="codePage" description="Enter the IBM-defined code page ID, as mapped from the operating system code set. For example, the ID for UTF-8 on any operating system is 1208. For a complete list of code page IDs, refer to the DB2 documentation." label="Code page" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+          <definitionParams name="fieldDelimiters" value="[,&quot;%&amp;'*()]"/>
+          <definitionParams name="invalidExtensions" value="bin,zip,exe"/>
+          <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+        </propertyList>
+        <propertyList name="additionalFileTypeModifiers" description="Specify additional file type modifiers that are not available in the other fields on this page. These modifiers must adhere to the DB2 EXPORT syntax that is defined in the DB2 documentation. Do not enter the MODIFIED BY keywords. Type a space between each separate modifier. For example, two valid file type modifiers are NODOUBLEDEL and DATESISO." label="Additional file type modifiers" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="messages" label="MESSAGES" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+        <propertyList name="FileLocationOptions" label="File location" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="FileLocationOption" defaultValueLiteral="OnClientSide"/>
+        <propertyList name="XMLFileName" label="XMLFileName" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+        <propertyList name="XMLPath" label="XMLPath" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+        <propertyList name="XMLSaveSchema" description="Specifies if XML schema information should be saved for all XML columns" label="Save schemas" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="boolean"/>
+        <propertyList name="XMLInSeparateFile" description="When this option is selected, each exported XML document is written to a separate XML file" label="XML in separate files" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="boolean"/>
+        <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+        <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.ExternalFileExportChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" className="com.ibm.datatools.etl.dataflow.advsrctgt.validators.ExternalFileExportValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/ExternalFileExport::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_IN_LINK_REF"/>
+      </definitionList>
+    </children>
+  </children>
+  <children iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect" name="RegionConnect" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint" name="SQLRegStartPoint" label="SQLRegStartPoint" stickShift="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" resolverPropertyName="switch">
+      <definitionParams name="RegionConnect/SQLRegStartPoint" value="NONE" usageType="StickShiftResolution"/>
+      <definitionParams name="http:///com/ibm/datatools/etl/dataflow/core.oplib/Extract/DBSources/TableSelect" value="TABLE" usageType="StickShiftResolution"/>
+      <definitionParams name="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract" value="FILE" usageType="StickShiftResolution"/>
+      <definitionParams name="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract" value="REMOTETABLE" usageType="StickShiftResolution"/>
+      <definitionParams type="property" name="switch" usageType="compositionRule"/>
+      <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+      <definitionParams name="synAndPropagate" value="rdbTable" usageType="synAndPropagate"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.TableExtractUpgradeHandler" usageType="upgradeHandler"/>
+      <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+      <definitionParams name="synAndPropagate" value="rdbTable" usageType="synAndPropagate"/>
+      <propertyList name="switch" label="switch" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="StartPointOperationType" defaultValueLiteral="NONE"/>
+      <propertyList name="partnerOperator" label="partnerOperator" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="Operator" referenceOnly="true"/>
+      <propertyList name="TableSourceSampleData" label="Debug sample type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DebugSampleTypes" defaultValueLiteral="WholeData"/>
+      <propertyList name="TableSourceSampleData_firstdata" label="Sample size (n)" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Integer" defaultValueLiteral="200"/>
+      <propertyList name="SampleData" label="Debug sample type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DebugSampleTypes" defaultValueLiteral="WholeData"/>
+      <propertyList name="SampleData_firstdata" label="Sample size (n)" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer"/>
+      <propertyList name="SampleData_Randomdata" label="Sampling Rate" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Double"/>
+      <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+      <propertyList name="rdbTable" label="Source database table" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+      <propertyList name="filterCondition" description="Specify the condition on the table that is evaluated in the database where the source table resides." label="Filter condition" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Condition">
+        <definitionParams type="property" name="rdbTable" label="InputTable"/>
+      </propertyList>
+      <propertyList name="columnExpressions" description="Specify expressions that are evaluated in the database where the source table resides." label="Source Column Expressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+        <definitionParams type="property" name="rdbTable" label="InputTable"/>
+      </propertyList>
+      <propertyList name="sourceVirtualTable" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DBTable" referenceOnly="true"/>
+      <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+        <definitionParams type="property" name="rdbTable" usageType="concat"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="fileFormat" label="Define the file format " hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormatDescriptor"/>
+      <propertyList name="file" label="File name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+      <propertyList name="saveCount" label="SAVECOUNT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="rowCount" label="ROWCOUNT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="warningCount" label="WARNINGCOUNT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="commitCount" label="COMMITCOUNT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="messages" label="MESSAGES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+      <propertyList name="tempFilesPath" label="TEMPFILES PATH" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+      <propertyList name="columnSelectList" label="columnSelectList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="VirtualTable"/>
+      <propertyList name="subSelect" label="subSelect" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="ColumnMap">
+        <definitionParams type="property" name="fileFormat" usageType="mapFrom" label="InputFile_Fields"/>
+        <definitionParams type="property" name="columnSelectList" usageType="mapTo" label="Subset_of_Fields"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+        <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+        <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+        <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+        <definitionParams name="fieldDelimiters" value="[\t \r,&quot;%&amp;'*()]"/>
+        <definitionParams name="invalidExtensions" value="zip,exe,bin"/>
+        <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+        <definitionParams name="saveCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        <definitionParams name="rowCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+        <definitionParams name="warningCount::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.dataflow.codegen::2020"/>
+      </propertyList>
+      <propertyList name="tablePartitions" description="Details.tablePartitions.desc" label="Details.tablePartitions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="partitioningPartitions" description="Details.partitioningPartitions.desc" label="Details.partitioningPartitions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+      <propertyList name="partitioningKeys" label="Details.partioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+        <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+      <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+        <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="FileLocationOptions" label="File location" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileLocationOption" defaultValueLiteral="OnClientSide"/>
+      <propertyList name="programUsed" label="File import method" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="FileImportProgramOption" defaultValueLiteral="DB2Load"/>
+      <propertyList name="numRowToSkip" label="RESTARTCOUNT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="int">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="XMLPath" label="XMLPath" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+      <propertyList name="XMLValidation" label="XMLValidation" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="XMLValidationType"/>
+      <propertyList name="XMLSchema" label="XMLSchema" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+      <propertyList name="codeOptions" label="Statement type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="CodeOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="sysCode" label="System-generated statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="userCode" label="Customized statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="resetButton" label="Reset" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="ButtonString">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="stagingTableName" description="Details.stagingTableName.desc" label="Details.stagingTableName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="tempTableSpace" description="Details.tableSpace.temp.desc" label="Details.tempTableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+      <propertyList name="partitioningKeys" label="Details.partioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+        <definitionParams type="property" name="rdbTable" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="VirtualTable"/>
+      <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="SubSelect">
+        <definitionParams type="property" name="rdbTable" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="jdbcBatchSize" description="JDBCExtract.jdbcBatchSize.desc" label="JDBCExtract.jdbcBatchSize" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="JDBCDriver" label="JDBCDriver" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="com.driver"/>
+      <propertyList name="DBURL" label="DBURL" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <propertyList name="DBType" label="DBType" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="DB2"/>
+      <propertyList name="UserName" label="UserName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <propertyList name="Password" label="Password" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <propertyList name="SampleData" label="Debug sample type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DebugSampleTypes" defaultValueLiteral="WholeData"/>
+      <propertyList name="SampleData_firstdata" label="Sample size (n)" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer"/>
+      <propertyList name="SampleData_Randomdata" label="Sampling Rate" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Double"/>
+      <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+      <propertyList name="rdbTable" label="Source database table" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+      <propertyList name="filterCondition" description="Specify the condition on the table that is evaluated in the database where the source table resides." label="Filter condition" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Condition">
+        <definitionParams type="property" name="rdbTable" label="InputTable"/>
+      </propertyList>
+      <propertyList name="columnExpressions" description="Specify expressions that are evaluated in the database where the source table resides." label="Source Column Expressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+        <definitionParams type="property" name="rdbTable" label="InputTable"/>
+      </propertyList>
+      <propertyList name="sourceVirtualTable" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DBTable" referenceOnly="true"/>
+      <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+        <definitionParams type="property" name="rdbTable" usageType="concat"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+      </propertyList>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="columnExpressions"/>
+      </outputList>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_PARAMS">
+        <definitionParams type="property" name="subSelect"/>
+      </outputList>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="columnExpressions"/>
+      </outputList>
+      <opDefResolverMap key="NONE" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint"/>
+      <opDefResolverMap key="TABLE" value="http:///com/ibm/datatools/etl/dataflow/core.oplib/Extract/DBSources/TableSelect"/>
+      <opDefResolverMap key="FILE" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract"/>
+      <opDefResolverMap key="REMOTETABLE" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint" name="SQLRegEndPoint" label="SQLRegEndPoint" stickShift="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" resolverPropertyName="switch">
+      <definitionParams name="RegionConnect/SQLRegEndPoint" value="NONE" usageType="StickShiftResolution"/>
+      <definitionParams name="http:///com/ibm/datatools/etl/dataflow/base.ui.oplib/Target/DBTargets/SQLInsert" value="TABLE" usageType="StickShiftResolution"/>
+      <definitionParams name="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/FileExport" value="FILE" usageType="StickShiftResolution"/>
+      <definitionParams type="property" name="switch" usageType="compositionRule"/>
+      <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+      <propertyList name="switch" label="switch" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="EndPointOperationType" defaultValueLiteral="NONE"/>
+      <propertyList name="partnerOperator" label="partnerOperator" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="Operator" referenceOnly="true"/>
+      <propertyList name="preExecTableClean" label="Clean target table before insert " hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib.ui" optional="true" type="tableCleaningOptionsWithDrop">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="commitInterval" description="For the SQL Insert operation, specify the interval in rows at which the operation is committed. When the interval is zero, the insert operation is completed before it is committed." label="Commit interval" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicInteger" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="insertMap" label="Map Source to Target" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+        <definitionParams type="input" name="input" usageType="mapFrom"/>
+        <definitionParams type="property" name="rdbTable" usageType="mapTo" label="Modified Table"/>
+        <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="createTableCodeOptions" label="Statement type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="createTableSysCode" label="System-generated statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="createTableUserCode" label="Customized statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="createTableResetButton" label="Reset" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="runReorg" label="Run REORG when the table modification operation is finished" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+      <propertyList name="reorgCodeOptions" label="Statement type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="reorgSysCode" label="System-generated statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="reorgUserCode" label="Customized statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="reorgResetButton" label="Reset" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="runRunstats" label="Run RUNSTATS when the table modification operation is finished" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+      <propertyList name="runstatsCodeOptions" label="Statement type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="runstatsSysCode" label="System-generated statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="runstatsUserCode" label="Customized statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="runstatsResetButton" label="Reset" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+        <definitionParams type="property" name="tableOperation" usageType="concat"/>
+        <definitionParams type="property" name="rdbTable" usageType="concat"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value=" : " usageType="semantics"/>
+      </propertyList>
+      <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+      <propertyList name="rdbTable" label="Target database table" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+        <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+      <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+        <definitionParams type="property" name="rdbTable"/>
+      </propertyList>
+      <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+      <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib.ui" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+      <propertyList name="NOT_LOG_INITIALLY" description="Select this check box if you do not want changes to the target table to be logged during the current operation. Related changes to the system catalog are still logged. This option is useful for reducing the amount of logging activity when data flows are executed. See the DB2 documentation for details about this feature." label="NOT LOGGED INITIALLY" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib.ui" optional="true" type="boolean" defaultValueLiteral="false"/>
+      <propertyList name="fileFormat" label="fileFormat" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="FileFormat"/>
+      <propertyList name="file" label="File name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="File"/>
+      <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" type="int"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true">
+        <definitionParams name="fieldDelimiters" value="[,&quot;%&amp;'*()]"/>
+        <definitionParams name="invalidExtensions" value="bin,zip,exe"/>
+        <definitionParams name="stringDelimiters" value="[,&quot;%&amp;'*()]"/>
+      </propertyList>
+      <propertyList name="XMLFileName" label="XMLFileName" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true"/>
+      <propertyList name="XMLPath" label="XMLPath" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Directory"/>
+      <propertyList name="XMLSaveSchema" label="XMLSaveSchema" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="boolean"/>
+      <propertyList name="isXML" label="isXML" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="Boolean" defaultValueLiteral="true"/>
+      <propertyList name="messages" label="MESSAGES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" optional="true" type="File"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" rule="BY_IN_LINK_REF"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+        <definitionParams type="property" name="columnExpressions"/>
+        <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+      </outputList>
+      <opDefResolverMap key="NONE" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint"/>
+      <opDefResolverMap key="TABLE" value="http:///com/ibm/datatools/etl/dataflow/base.ui.oplib/Target/DBTargets/SQLInsert"/>
+      <opDefResolverMap key="FILE" value="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/FileTargets/FileExport"/>
+    </definitionList>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract::subSelect">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/ODBCTableExtract::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.1/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/JDBCLoad::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/ODBCTableLoad::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="condition" fIDef="//@children.2/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoad::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.2/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoRecovery::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.2/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadNoCopy::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.2/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyDirectory::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.5"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.2/@children.0/@definitionList.5"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyTSM::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.6"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.2/@children.0/@definitionList.6"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Target/DBTargets/TableLoadSaveCopyVendorLibrary::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.2/@children.0/@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::subSelect">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.3/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract::fileFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract::columnSelectList">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/FileSources/FileExtract::subsetRangeVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.3/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.3/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.3/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.3/@definitionList.1/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.3/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="filterCondition" fIDef="//@children.0/@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.0/@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.0/@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/JDBCExtract::subsetRangeVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/Extract/DBSources/ODBCTableExtract::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.0/@children.1/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="condition" fIDef="//@children.0/@children.1/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="filterCondition" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="filterCondition" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::fileFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::columnSelectList">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegStartPoint::subsetRangeVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.3/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/advsrctgt.oplib/RegionConnect/SQLRegEndPoint::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.3/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="StringElement" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true"/>
+  <propertyTypeList name="StartPointOperationType" registered="true" emfClassName="StartPointOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="EndPointOperationType" registered="true" emfClassName="EndPointOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="FileFormat" registered="true" emfClassName="FileFormat" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true">
+    <definitionParams type="String" name="locale" usageType="dynamicItem" label="Code page:" description="Enter the IBM-defined code page ID, as mapped from the operating system code set. For example, the ID for UTF-8 on any operating system is 1208. For a complete list of code page IDs, refer to the DB2 documentation."/>
+    <definitionParams type="String" name="nullChar" usageType="dynamicItem" label="Null indicator character:"/>
+    <definitionParams type="String" name="additionalOptions" usageType="dynamicItem" label="Additional file type modifiers:" description="Specify additional file type modifiers that are not available in the other fields on this page. These modifiers must adhere to the DB2 LOAD syntax that is defined in the DB2 documentation. Do not enter the MODIFIED BY keywords. Type a space between each separate modifier. For example, two valid file type modifiers are NOROWWARNINGS and ANYORDER. "/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatDescriptor" registered="true" emfClassName="FileFormatDescriptor" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true">
+    <definitionParams type="String" name="locale" usageType="dynamicItem" label="Code page:" description="Enter the IBM-defined code page ID, as mapped from the operating system code set. For example, the ID for UTF-8 on any operating system is 1208. For a complete list of code page IDs, refer to the DB2 documentation."/>
+    <definitionParams type="String" name="nullChar" usageType="dynamicItem" label="Null indicator character:"/>
+    <definitionParams type="String" name="additionalOptions" usageType="dynamicItem" label="Additional file type modifiers:" description="Specify additional file type modifiers that are not available in the other fields on this page. These modifiers must adhere to the DB2 LOAD syntax that is defined in the DB2 documentation. Do not enter the MODIFIED BY keywords. Type a space between each separate modifier. For example, two valid file type modifiers are NOROWWARNINGS and ANYORDER. "/>
+    <definitionParams type="VirtualTable" name="fieldList" usageType="dynamicItem" label="Field list: "/>
+  </propertyTypeList>
+  <propertyTypeList name="DelimitedFieldListDescriptor" registered="true" emfClassName="FileFormatDescriptor" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true">
+    <definitionParams type="String" name="locale" usageType="dynamicItem" label="Code page:" description="Enter the IBM-defined code page ID, as mapped from the operating system code set. For example, the ID for UTF-8 on any operating system is 1208. For a complete list of code page IDs, refer to the DB2 documentation."/>
+    <definitionParams type="String" name="nullChar" usageType="dynamicItem" label="Null indicator character:"/>
+    <definitionParams type="VirtualTable" name="fieldList" usageType="dynamicItem" label="Field list: "/>
+    <definitionParams type="String" name="additionalOptions" usageType="dynamicItem" label="Additional file type modifiers:" description="Specify additional file type modifiers that are not available in the other fields on this page. These modifiers must adhere to the DB2 LOAD syntax that is defined in the DB2 documentation. Do not enter the MODIFIED BY keywords. Type a space between each separate modifier. For example, two valid file type modifiers are NOROWWARNINGS and ANYORDER. "/>
+  </propertyTypeList>
+  <propertyTypeList name="PositionalFieldListDescriptor" registered="true" emfClassName="FileFormatDescriptor" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true">
+    <definitionParams type="String" name="locale" usageType="dynamicItem" label="Code page:" description="Enter the IBM-defined code page ID, as mapped from the operating system code set. For example, the ID for UTF-8 on any operating system is 1208. For a complete list of code page IDs, refer to the DB2 documentation."/>
+    <definitionParams type="String" name="nullChar" usageType="dynamicItem" label="Null indicator character:"/>
+    <definitionParams type="VirtualTable" name="fieldList" usageType="dynamicItem" label="Field list: "/>
+    <definitionParams type="String" name="additionalOptions" usageType="dynamicItem" label="Additional file type modifiers:" description="Specify additional file type modifiers that are not available in the other fields on this page. These modifiers must adhere to the DB2 LOAD syntax that is defined in the DB2 documentation. Do not enter the MODIFIED BY keywords. Type a space between each separate modifier. For example, two valid file type modifiers are NOROWWARNINGS and ANYORDER. "/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatFileTypeSwitcherEnum" registered="true" emfClassName="FileFormatFileTypeSwitcherEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="RecoveryOptionSwitcherEnum" registered="true" emfClassName="RecoveryOptionSwitcherEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="SaveTargetSwitcherEnum" registered="true" emfClassName="SaveTargetSwitcherEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="DB2LoaderParam" registered="true" emfClassName="DB2LoaderParam" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true"/>
+  <propertyTypeList name="DB2ExportParam" registered="true" emfClassName="DB2ExportParam" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true"/>
+  <propertyTypeList name="DB2LoaderMode" registered="true" emfClassName="DB2LoaderMode" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib/srctgt.ecore" wrapped="true"/>
+  <propertyTypeList name="DBLoadMode" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="DBLoadModeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="Append" usageType="enumLiteral" label="Append"/>
+    <definitionParams name="Replace" usageType="enumLiteral" label="Replace"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatFileType" label="File type:" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileFormatFileTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="DELIMITED" usageType="enumLiteral" label="Delimited Format"/>
+    <definitionParams name="NON_DELIMITED" usageType="enumLiteral" label="Fixed Length Format"/>
+    <definitionParams name="PC_IXF" usageType="enumLiteral" label="Integrated Exchange Format (PC/IXF)"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatFieldDelim" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileFormatFieldDelimEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams type="http:///com/ibm/datatools/etl/coretypes.ecore" name="enumClass" value="TransientEnumValue" usageType="emfExtn"/>
+    <definitionParams name="enumProvider" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.GeneratedEEnumProvider" usageType="semantics"/>
+    <definitionParams name="DEFAULT" usageType="enumLiteral" label="DEFAULT"/>
+    <definitionParams name="TAB" usageType="enumLiteral" label="TAB"/>
+    <definitionParams name="," usageType="enumLiteral" label=","/>
+    <definitionParams name="&quot;" usageType="enumLiteral" label="&quot;"/>
+    <definitionParams name="%" usageType="enumLiteral" label="%"/>
+    <definitionParams name="&amp;" usageType="enumLiteral" label="&amp;"/>
+    <definitionParams name="'" usageType="enumLiteral" label="'"/>
+    <definitionParams name="*" usageType="enumLiteral" label="*"/>
+    <definitionParams name="(" usageType="enumLiteral" label="("/>
+    <definitionParams name=")" usageType="enumLiteral" label=")"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatStringDelim" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileFormatStringDelimEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams type="http:///com/ibm/datatools/etl/coretypes.ecore" name="enumClass" value="TransientEnumValue" usageType="emfExtn"/>
+    <definitionParams name="enumProvider" value="com.ibm.datatools.etl.dataflow.advsrctgt.handlers.GeneratedEEnumProvider" usageType="semantics"/>
+    <definitionParams name="DEFAULT" usageType="enumLiteral" label="DEFAULT"/>
+    <definitionParams name="&quot;" usageType="enumLiteral" label="&quot;"/>
+    <definitionParams name="%" usageType="enumLiteral" label="%"/>
+    <definitionParams name="&amp;" usageType="enumLiteral" label="&amp;"/>
+    <definitionParams name="'" usageType="enumLiteral" label="'"/>
+    <definitionParams name="*" usageType="enumLiteral" label="*"/>
+    <definitionParams name="(" usageType="enumLiteral" label="("/>
+    <definitionParams name=")" usageType="enumLiteral" label=")"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatTimeFormat" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileFormatTimeFormatEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams type="http:///com/ibm/datatools/etl/coretypes.ecore" name="enumClass" value="TransientEnumValue" usageType="emfExtn"/>
+    <definitionParams name="NONE" usageType="enumLiteral" label="DEFAULT"/>
+    <definitionParams name="HH:MM:SS" usageType="enumLiteral" label="HH:MM:SS"/>
+    <definitionParams name="H:MM:SS TT" usageType="enumLiteral" label="H:MM:SS TT"/>
+    <definitionParams name="H.MM TT" usageType="enumLiteral" label="H.MM TT"/>
+    <definitionParams name="SSSSS" usageType="enumLiteral" label="SSSSS"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatDateFormat" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileFormatDateFormatEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="NONE" usageType="enumLiteral" label="DEFAULT"/>
+    <definitionParams name="MM/DD/YYYY" usageType="enumLiteral" label="MM/DD/YYYY"/>
+    <definitionParams name="DD/MM/YYYY" usageType="enumLiteral" label="DD/MM/YYYY"/>
+    <definitionParams name="YYYY.MM.DD" usageType="enumLiteral" label="YYYY.MM.DD"/>
+    <definitionParams name="MM.DD.YYYY" usageType="enumLiteral" label="MM.DD.YYYY"/>
+    <definitionParams name="YYYYDDD" usageType="enumLiteral" label="YYYYDDD"/>
+    <definitionParams name="MM-DD" usageType="enumLiteral" label="MM-DD"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileFormatTimeStampFormat" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileFormatTimeStampFormatEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="NONE" usageType="enumLiteral" label="DEFAULT"/>
+    <definitionParams name="YYYY/MM/DD HH:MM:SS.UUUUUU" usageType="enumLiteral" label="YYYY/MM/DD HH:MM:SS.UUUUUU"/>
+    <definitionParams name="YYYY/MM/DD HH" usageType="enumLiteral" label="YYYY/MM/DD HH"/>
+    <definitionParams name="YYYY-MM-DD HH:MM:SS TT" usageType="enumLiteral" label="YYYY-MM-DD HH:MM:SS TT"/>
+  </propertyTypeList>
+  <propertyTypeList name="XMLValidationType" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="XMLValidationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="no" usageType="enumLiteral" label="No"/>
+    <definitionParams name="hints" usageType="enumLiteral" label="Hints"/>
+    <definitionParams name="schema" usageType="enumLiteral" label="Schema"/>
+    <definitionParams name="xds" usageType="enumLiteral" label="XDS"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileLocationOption" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileLocationOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="OnClientSide" usageType="enumLiteral" label="Client"/>
+    <definitionParams name="OnServerSide" usageType="enumLiteral" label="Database Server"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileImportProgramOption" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="FileImportProgramOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="DB2Load" usageType="enumLiteral" label="Use DB2 LOAD to import and load the file"/>
+    <definitionParams name="DB2Import" usageType="enumLiteral" label="Use DB2 IMPORT to import and load the file"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="ExportFileFormatFileType" label="File type:" bundleName="com.ibm.datatools.etl.dataflow.advsrctgt" registered="true" emfClassName="ExportFileFormatFileTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="DELIMITED" usageType="enumLiteral" label="Delimited Format"/>
+    <definitionParams name="PC_IXF" usageType="enumLiteral" label="Integrated Exchange Format (PC/IXF)"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

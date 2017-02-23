@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.variables:VariableGroup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.variables="http:///com/ibm/datatools/etl/variables.ecore" xmlns:dynOpr="dyn:///com/ibm/datatools/etl/core.oplib" xsi:schemaLocation="dyn:///com/ibm/datatools/etl/core.oplib file:/E:/140911090/Test/.metadata/.plugins/com.ibm.datatools.etl.dataflow.core/reg_cache.oplibpkg" itemName="RESERVED" version="9.7" lastAssignedID="26">
+  <Variable key="CURRENT_TIMESTAMP">
+    <value iD="${RESERVED/CURRENT_TIMESTAMP}" itemName="CURRENT_TIMESTAMP" comments="" itemLabel="Current timestamp" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="START_TIMESTAMP">
+    <value iD="${RESERVED/START_TIMESTAMP}" itemName="START_TIMESTAMP" comments="" itemLabel="Timestamp at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="TIME">
+    <value iD="${RESERVED/TIME}" itemName="TIME" comments="" itemLabel="Time at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="DATE">
+    <value iD="${RESERVED/DATE}" itemName="DATE" comments="" itemLabel="Date at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="DAY">
+    <value iD="${RESERVED/DAY}" itemName="DAY" comments="" itemLabel="Day in month at execution start" varType="Integer">
+      <defaultValue xsi:type="dynOpr:EInt" itemType="Integer"/>
+    </value>
+  </Variable>
+  <Variable key="DAYNAME">
+    <value iD="${RESERVED/DAYNAME}" itemName="DAYNAME" comments="" itemLabel="Day name at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="DAYNAME_SHORT">
+    <value iD="${RESERVED/DAYNAME_SHORT}" itemName="DAYNAME_SHORT" comments="" itemLabel="Abbreviated day name at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="MONTH">
+    <value iD="${RESERVED/MONTH}" itemName="MONTH" comments="" itemLabel="Month (1-12) at execution start" varType="Integer">
+      <defaultValue xsi:type="dynOpr:EInt" itemType="Integer"/>
+    </value>
+  </Variable>
+  <Variable key="MONTHNAME">
+    <value iD="${RESERVED/MONTHNAME}" itemName="MONTHNAME" comments="" itemLabel="Month name at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="MONTHNAME_SHORT">
+    <value iD="${RESERVED/MONTHNAME_SHORT}" itemName="MONTHNAME_SHORT" comments="" itemLabel="Abbreviated month name at execution start" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="YEAR">
+    <value iD="${RESERVED/YEAR}" itemName="YEAR" comments="" itemLabel="Year at execution start" varType="Integer">
+      <defaultValue xsi:type="dynOpr:EInt" itemType="Integer"/>
+    </value>
+  </Variable>
+  <Variable key="USER_NAME">
+    <value iD="${RESERVED/USER_NAME}" itemName="USER_NAME" comments="" itemLabel="User account name" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="USER_HOME">
+    <value iD="${RESERVED/USER_HOME}" itemName="USER_HOME" comments="" itemLabel="User home directory" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="USER_DIR">
+    <value iD="${RESERVED/USER_DIR}" itemName="USER_DIR" comments="" itemLabel="User working directory" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="APP_NAME">
+    <value iD="${RESERVED/APP_NAME}" itemName="APP_NAME" comments="" itemLabel="Application name" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="INSTANCE_NAME">
+    <value iD="${RESERVED/INSTANCE_NAME}" itemName="INSTANCE_NAME" comments="" itemLabel="Current internal instance name" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="PROC_NAME">
+    <value iD="${RESERVED/PROC_NAME}" itemName="PROC_NAME" comments="" itemLabel="Current internal process name" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="MISC_DIR">
+    <value iD="${RESERVED/MISC_DIR}" itemName="MISC_DIR" comments="" itemLabel="The directory of miscellaneous files" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="RUN_ID">
+    <value iD="${RESERVED/RUN_ID}" itemName="RUN_ID" comments="" itemLabel="Unique ID for each execution" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="SYS_DB_RESOURCE(database_name,property)">
+    <value iD="${RESERVED/SYS_DB_RESOURCE(database_name,property)}" itemName="SYS_DB_RESOURCE(database_name,property)" comments="" itemLabel="Function to access database resource properties" varType="String">
+      <defaultValue xsi:type="dynOpr:EString"/>
+    </value>
+  </Variable>
+  <Variable key="SYS_DB_RESOURCE(database_name,PASSWORD)">
+    <value iD="${RESERVED/SYS_DB_RESOURCE(database_name,PASSWORD)}" itemName="SYS_DB_RESOURCE(database_name,PASSWORD)" comments="" itemLabel="Function to retrieve the database resource password" varType="EncryptedString">
+      <defaultValue xsi:type="dynOpr:EByteArray"/>
+    </value>
+  </Variable>
+</com.ibm.datatools.etl.variables:VariableGroup>

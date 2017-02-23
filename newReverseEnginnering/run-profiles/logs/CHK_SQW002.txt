@@ -1,0 +1,34 @@
+ Data-Flows  Feb 17, 2017 9:04:47 AM   SQW03415I: Flow execution started for SQW002 (/newReverseEnginnering/data-flows/CHK)
+ Data-Flows  Feb 17, 2017 9:04:47 AM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/CHK_SQW002.txt
+ Data-Flows  Feb 17, 2017 9:04:47 AM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\CHK_SQW002
+ Data-Flows  Feb 17, 2017 9:04:50 AM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA22F761_8"" through JDBC connection finished successfully
+ Data-Flows  Feb 17, 2017 9:04:50 AM   SQW03275I: Execution of SQL statement "DELETE FROM UNIVERS.R1" through JDBC connection finished successfully
+ Data-Flows  Feb 17, 2017 9:04:50 AM   SQW03275I: Execution of SQL statement "INSERT INTO UNIVERS.R1 (SNAME)
+  SELECT Q153.SNAME AS SNAME
+    FROM UNIVERS.STUDENT Q153
+    WHERE (Q153.SNAME LIKE '%AB%')" through JDBC connection finished successfully
+ Data-Flows  Feb 17, 2017 9:04:50 AM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 22F761
+     ${RESERVED/APP_NAME} = CHK
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp22ea31/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-17 09:04:50
+     ${RESERVED/DATE} = 2017-02-17
+     ${RESERVED/DAYNAME_SHORT} = Fri
+     ${RESERVED/DAYNAME} = Friday
+     ${RESERVED/DAY} = 17
+     ${RESERVED/INSTANCE_NAME} = SQW002
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = CHK
+     ${RESERVED/RUN_ID} = 22F761
+     ${RESERVED/START_TIMESTAMP} = 2017-02-17 09:04:49
+     ${RESERVED/TIME} = 09:04:49
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\CHK_SQW002
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 17, 2017 9:04:50 AM   SQW03408I: Flow execution finished for SQW002 (/newReverseEnginnering/data-flows/CHK)
+ Data-Flows  Feb 17, 2017 9:04:50 AM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/CHK_SQW002.txt.

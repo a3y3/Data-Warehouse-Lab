@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="textanalytics.oplib" description="UIMA Annotator Library" label="textanalytics.oplib" bundleName="com.ibm.datatools.textanalytics.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib" fileName="textanalytics.oplib">
+  <children iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform" name="Transform" bundleName="com.ibm.datatools.textanalytics.oplib">
+    <children iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA" name="UIMA" bundleName="com.ibm.datatools.textanalytics.oplib">
+      <definitionList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RunAnnotator" name="RunAnnotator" label="RunAnnotator" bundleName="com.ibm.datatools.textanalytics.oplib" registered="true">
+        <definitionParams name="incBld" value="disabled" usageType="dynamicGenOp"/>
+        <propertyList name="ANALYSISENGINE_REFERENCE" label="ANALYSISENGINE_REFERENCE" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="ANALYSISENGINE_DISPLAYNAME" label="ANALYSISENGINE_DISPLAYNAME" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="copyTimeStamp" label="copyTimeStamp" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="selectedLanguage" label="selectedLanguage" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" optional="true"/>
+        <propertyList name="NUMBER_THREADS" label="NUMBER_THREADS" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Integer" defaultValueLiteral="1">
+          <definitionParams name="min" value="1" usageType="semantics"/>
+          <definitionParams name="max" value="32" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="MAXBYTES" label="MAXBYTES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Double">
+          <definitionParams name="min" value="0.0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="PERCENTFAILURES" label="PERCENTFAILURES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Double">
+          <definitionParams name="min" value="0.0" usageType="semantics"/>
+          <definitionParams name="max" value="100.0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="inputSourceColumn" label="inputSourceColumn" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="availableColumns" label="availableColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <propertyList name="carriedOverColumns" label="carriedOverColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <propertyList name="outputCarriedOverColumns" label="outputCarriedOverColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.textanalytics.oplib.handlers.RunAnnotatorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.textanalytics.oplib.codegen.RunAnnotatorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.textanalytics.oplib" className="com.ibm.datatools.textanalytics.oplib.validators.RunAnnotatorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RunAnnotator::input::input" name="input" label="Input" bundleName="com.ibm.datatools.textanalytics.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RunAnnotator::output::output" name="output" label="Output" bundleName="com.ibm.datatools.textanalytics.oplib" upperBound="-1" rule="BY_PARAMS">
+          <definitionParams type="property" name="outputCarriedOverColumns"/>
+          <definitionParams type="property" name="output::output::featureMapping"/>
+          <propertyList name="selectedAnnotationType" label="Annotation type" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="availableFeatures" label="availableFeatures" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+          <propertyList name="usedFeatures" label="usedFeatures" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+          <propertyList name="featureMapping" label="Feature Mapping " hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="ProjectExpression">
+            <definitionParams type="property" name="output::output::availableFeatures" label="Available annotation features"/>
+          </propertyList>
+          <stagingInfoList type="PERSISTENT_TABLE" mode="UPDATEABLE"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/DictLookup" name="DictLookup" label="DictLookup" bundleName="com.ibm.datatools.textanalytics.oplib" registered="true">
+        <definitionParams name="incBld" value="disabled" usageType="dynamicGenOp"/>
+        <propertyList name="inputSourceColumn" label="inputSourceColumn" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="selectedLanguage" label="selectedLanguage" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="copyTimeStamp" label="copyTimeStamp" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="notused" label="notused" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="NUMBER_THREADS" label="NUMBER_THREADS" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Integer" defaultValueLiteral="1">
+          <definitionParams name="min" value="1" usageType="semantics"/>
+          <definitionParams name="max" value="32" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="MAXBYTES" label="MAXBYTES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Double">
+          <definitionParams name="min" value="0.0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="PERCENTFAILURES" label="PERCENTFAILURES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Double">
+          <definitionParams name="min" value="0.0" usageType="semantics"/>
+          <definitionParams name="max" value="100.0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="availableColumns" label="availableColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <propertyList name="carriedOverColumns" label="carriedOverColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <propertyList name="outputCarriedOverColumns" label="outputCarriedOverColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.textanalytics.oplib.handlers.DictLookupChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.textanalytics.oplib.codegen.DictLookupCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.textanalytics.oplib" className="com.ibm.datatools.textanalytics.oplib.validators.DictLookupValidator"/>
+        <inputList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/DictLookup::input::input" name="input" label="Input" bundleName="com.ibm.datatools.textanalytics.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/DictLookup::output::output" name="output" label="Output" bundleName="com.ibm.datatools.textanalytics.oplib" upperBound="-1" rule="BY_PARAMS">
+          <definitionParams type="property" name="outputCarriedOverColumns"/>
+          <definitionParams type="property" name="output::output::featureMapping"/>
+          <propertyList name="selectedDictionary" label="selectedDictionary" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedDictionary_ProjectPearIDName" label="selectedDictionary_ProjectPearIDName" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedDictionaryTypeSystem_ProjectPearIDName" label="selectedDictionaryTypeSystem_ProjectPearIDName" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedAnnotationType" label="selectedAnnotationType" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedAnnotationTypeDesc" label="selectedAnnotationTypeDesc" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="availableFeatures" label="availableFeatures" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+          <propertyList name="usedFeatures" label="usedFeatures" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+          <propertyList name="featureMapping" label="Feature Mapping " hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="ProjectExpression">
+            <definitionParams type="property" name="output::output::availableFeatures" label="Available annotation features"/>
+          </propertyList>
+          <stagingInfoList type="PERSISTENT_TABLE" mode="UPDATEABLE"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RegExLookup" name="RegExLookup" label="RegExLookup" bundleName="com.ibm.datatools.textanalytics.oplib" registered="true">
+        <definitionParams name="incBld" value="disabled" usageType="dynamicGenOp"/>
+        <propertyList name="inputSourceColumn" label="inputSourceColumn" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="copyTimeStamp" label="copyTimeStamp" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="notused" label="notused" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+        <propertyList name="NUMBER_THREADS" label="NUMBER_THREADS" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Integer" defaultValueLiteral="1">
+          <definitionParams name="min" value="1" usageType="semantics"/>
+          <definitionParams name="max" value="32" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="MAXBYTES" label="MAXBYTES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Double">
+          <definitionParams name="min" value="0.0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="PERCENTFAILURES" label="PERCENTFAILURES" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="Double">
+          <definitionParams name="min" value="0.0" usageType="semantics"/>
+          <definitionParams name="max" value="100.0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="availableColumns" label="availableColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <propertyList name="carriedOverColumns" label="carriedOverColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <propertyList name="outputCarriedOverColumns" label="outputCarriedOverColumns" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.textanalytics.oplib.handlers.RegExLookupChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.textanalytics.oplib.codegen.RegExLookupCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.textanalytics.oplib" className="com.ibm.datatools.textanalytics.oplib.validators.RegExLookupValidator"/>
+        <inputList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RegExLookup::input::input" name="input" label="Input" bundleName="com.ibm.datatools.textanalytics.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RegExLookup::output::output" name="output" label="Output" bundleName="com.ibm.datatools.textanalytics.oplib" upperBound="-1" rule="BY_PARAMS">
+          <definitionParams type="property" name="outputCarriedOverColumns"/>
+          <definitionParams type="property" name="output::output::featureMapping"/>
+          <propertyList name="selectedRulesFile" label="selectedRulesFile" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedRulesFile_ProjectPearIDName" label="selectedRulesFile_ProjectPearIDName" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedRulesFileTypeSystem_ProjectPearIDName" label="selectedRulesFileTypeSystem_ProjectPearIDName" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedAnnotationType" label="selectedAnnotationType" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="selectedAnnotationTypeDesc" label="selectedAnnotationTypeDesc" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib"/>
+          <propertyList name="availableFeatures" label="availableFeatures" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+          <propertyList name="usedFeatures" label="usedFeatures" hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="VirtualTable"/>
+          <propertyList name="featureMapping" label="Feature Mapping " hidden="true" bundleName="com.ibm.datatools.textanalytics.oplib" type="ProjectExpression">
+            <definitionParams type="property" name="output::output::availableFeatures" label="Available annotation features"/>
+          </propertyList>
+          <stagingInfoList type="PERSISTENT_TABLE" mode="UPDATEABLE"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RunAnnotator::outputCarriedOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RunAnnotator::output::output::featureMapping">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/DictLookup::outputCarriedOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/DictLookup::output::output::featureMapping">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RegExLookup::outputCarriedOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RegExLookup::output::output::featureMapping">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RegExLookup::output::output::availableFeatures">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="featureMapping" fIDef="//@children.0/@children.0/@definitionList.2/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/DictLookup::output::output::availableFeatures">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="featureMapping" fIDef="//@children.0/@children.0/@definitionList.1/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/textanalytics/oplib/textanalytics.oplib/Transform/UIMA/RunAnnotator::output::output::availableFeatures">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="featureMapping" fIDef="//@children.0/@children.0/@definitionList.0/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <propertyTypeList name="float" emfClassName="EFloat" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0.0"/>
+  <propertyTypeList name="int" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0"/>
+  <propertyTypeList name="String" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral=""/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

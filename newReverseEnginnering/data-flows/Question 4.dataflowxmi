@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.dataflow.view:ETLFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.dataflow.view="http:///com/ibm/datatools/etl/dataflow/view.ecore">
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="84" y="79" height="-1" width="-1" type="http:///com/ibm/datatools/etl/dataflow/core.oplib/Extract/DBSources/TableSelect">
+    <outputs type="OutputPort" outgoingConnections="//@elements.1">
+      <fields name="EMPLOYEE_NAME">
+        <input/>
+        <output type="OutputPort" outgoingConnections="//@elements.1/@elements.0"/>
+      </fields>
+      <fields name="COMPANY_NAME">
+        <input/>
+        <output type="OutputPort" outgoingConnections="//@elements.1/@elements.1"/>
+      </fields>
+      <operatorPort href="Question 4.etlmetadataxmi#//@operatorMap.0/@value/@outputPortMap.0/@value"/>
+    </outputs>
+    <operator href="Question 4.etlmetadataxmi#//@operatorMap.0/@value"/>
+  </elements>
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperatorConnection" source="//@elements.0/@outputs.0" target="//@elements.4/@inputs.0">
+    <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLConnection" source="//@elements.0/@outputs.0/@fields.0/@output" target="//@elements.4/@inputs.0/@fields.0/@input"/>
+    <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLConnection" source="//@elements.0/@outputs.0/@fields.1/@output" target="//@elements.4/@inputs.0/@fields.1/@input"/>
+    <operatorLink href="Question 4.etlmetadataxmi#//@linkList.0"/>
+  </elements>
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperatorConnection" source="//@elements.4/@outputs.0" target="//@elements.3/@inputs.0">
+    <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLConnection" source="//@elements.4/@outputs.0/@fields.0/@output" target="//@elements.3/@inputs.0/@fields.0/@input"/>
+    <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLConnection" source="//@elements.4/@outputs.0/@fields.1/@output" target="//@elements.3/@inputs.0/@fields.1/@input"/>
+    <operatorLink href="Question 4.etlmetadataxmi#//@linkList.1"/>
+  </elements>
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="513" y="78" height="-1" width="-1" type="http:///com/ibm/datatools/etl/dataflow/base.ui.oplib/Target/DBTargets/SQLInsert">
+    <inputs incomingConnection="//@elements.2">
+      <fields name="EMPLOYEE_NAME">
+        <input incomingConnection="//@elements.2/@elements.0"/>
+        <output type="OutputPort"/>
+      </fields>
+      <fields name="COMPANY_NAME">
+        <input incomingConnection="//@elements.2/@elements.1"/>
+        <output type="OutputPort"/>
+      </fields>
+      <operatorPort href="Question 4.etlmetadataxmi#//@operatorMap.2/@value/@inputPortMap.0/@value"/>
+    </inputs>
+    <outputs type="OutputPort">
+      <fields name="NAME">
+        <input/>
+        <output type="OutputPort"/>
+      </fields>
+      <operatorPort href="Question 4.etlmetadataxmi#//@operatorMap.2/@value/@outputPortMap.0/@value"/>
+    </outputs>
+    <operator href="Question 4.etlmetadataxmi#//@operatorMap.2/@value"/>
+  </elements>
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="312" y="79" height="-1" width="-1" type="http:///com/ibm/datatools/etl/dataflow/core.oplib/Transform/Filter">
+    <inputs incomingConnection="//@elements.1">
+      <fields name="EMPLOYEE_NAME">
+        <input incomingConnection="//@elements.1/@elements.0"/>
+        <output type="OutputPort"/>
+      </fields>
+      <fields name="COMPANY_NAME">
+        <input incomingConnection="//@elements.1/@elements.1"/>
+        <output type="OutputPort"/>
+      </fields>
+      <operatorPort href="Question 4.etlmetadataxmi#//@operatorMap.1/@value/@inputPortMap.0/@value"/>
+    </inputs>
+    <outputs type="OutputPort" outgoingConnections="//@elements.2">
+      <fields name="EMPLOYEE_NAME">
+        <input/>
+        <output type="OutputPort" outgoingConnections="//@elements.2/@elements.0"/>
+      </fields>
+      <fields name="COMPANY_NAME">
+        <input/>
+        <output type="OutputPort" outgoingConnections="//@elements.2/@elements.1"/>
+      </fields>
+      <operatorPort href="Question 4.etlmetadataxmi#//@operatorMap.1/@value/@outputPortMap.0/@value"/>
+    </outputs>
+    <operator href="Question 4.etlmetadataxmi#//@operatorMap.1/@value"/>
+  </elements>
+  <dataflow href="Question 4.etlmetadataxmi#/"/>
+</com.ibm.datatools.etl.dataflow.view:ETLFlow>

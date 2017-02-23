@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="Macro Library" description="Macro Operator Library" label="Macro Library" bundleName="com.ibm.datatools.etl.dataflow.macro.ui" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/macro_ui.oplib" fileName="macro_ui.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/macro_ui.oplib/MacroCreator" name="MacroCreator" bundleName="com.ibm.datatools.etl.dataflow.macro.ui">
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/macro_ui.oplib/MacroCreator/MacroChooser" name="MacroChooser" label="Subflow" bundleName="com.ibm.datatools.etl.dataflow.macro.ui" registered="true">
+      <propertyList name="chosenMacro" label="chosenMacro" bundleName="com.ibm.datatools.etl.dataflow.macro.ui"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.macro.handlers.MacroChooserChangeHandler"/>
+    </definitionList>
+  </children>
+</com.ibm.datatools.etl.operatorlibrary:Library>

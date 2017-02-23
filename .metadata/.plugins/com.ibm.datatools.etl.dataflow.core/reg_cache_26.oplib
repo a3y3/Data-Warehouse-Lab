@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="replLib.opLib" description="Replication Operator Library" label="replLib.opLib" bundleName="com.ibm.datatools.etl.replication.codegen" lastModified="0" nsURI="http://com/ibm/datatools/etl/replication/replLib.oplib" fileName="replLib.oplib">
+  <children iD="http://com/ibm/datatools/etl/replication/replLib.oplib/Source" name="Source" bundleName="com.ibm.datatools.etl.replication.codegen">
+    <definitionList iD="http://com/ibm/datatools/etl/replication/replLib.oplib/Source/ReplicationSource" name="ReplicationSource" label="ReplicationSource" bundleName="com.ibm.datatools.etl.replication.codegen" registered="true">
+      <propertyList name="OperatorType" label="OperatorType" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="boolean"/>
+      <propertyList name="RegistrationInfo" label="RegistrationInfo" bundleName="com.ibm.datatools.etl.replication.codegen" type="RegistrationInfo"/>
+      <propertyList name="sourceTable" label="sourceTable" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBTable">
+        <definitionParams name="allowRemoteDb" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="targetTable" label="targetTable" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBTable"/>
+      <propertyList name="generatedTargetTable" label="generatedTargetTable" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="VirtualTable"/>
+      <propertyList name="newTarget" label="newTarget" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="boolean"/>
+      <propertyList name="SubscriptionSetInfo" label="SubscriptionSetInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="SubscriptionSetInfo"/>
+      <propertyList name="sourceDBInfo" label="sourceDBInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBServerInfo"/>
+      <propertyList name="targetDataBase" label="targetDataBase" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen"/>
+      <propertyList name="targetDBInfo" label="targetDBInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBServerInfo"/>
+      <propertyList name="applyDBInfo" label="applyDBInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBServerInfo"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.replication.codegen.admin.ReplicationSourceOpChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.replication.codegen.Replication"/>
+      <validatorClass className="com.ibm.datatools.etl.replication.codegen.admin.ReplicationSourceValidator"/>
+      <outputList iD="http://com/ibm/datatools/etl/replication/replLib.oplib/Source/ReplicationSource::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.replication.codegen" rule="BY_PARAMS" numMinLinks="0" numMaxOutLinks="1">
+        <definitionParams type="property" name="generatedTargetTable"/>
+        <stagingInfoList type="PERSISTENT_TABLE"/>
+      </outputList>
+    </definitionList>
+  </children>
+  <children iD="http://com/ibm/datatools/etl/replication/replLib.oplib/Target" name="Target" bundleName="com.ibm.datatools.etl.replication.codegen">
+    <definitionList iD="http://com/ibm/datatools/etl/replication/replLib.oplib/Target/ReplicationTarget" name="ReplicationTarget" label="ReplicationTarget" bundleName="com.ibm.datatools.etl.replication.codegen" registered="true">
+      <propertyList name="OperatorType" label="OperatorType" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="boolean"/>
+      <propertyList name="RegistrationInfo" label="RegistrationInfo" bundleName="com.ibm.datatools.etl.replication.codegen" type="RegistrationInfo"/>
+      <propertyList name="sourceTable" label="sourceTable" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBTable"/>
+      <propertyList name="targetTable" label="targetTable" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBTable"/>
+      <propertyList name="newTarget" label="newTarget" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="boolean"/>
+      <propertyList name="SubscriptionSetInfo" label="SubscriptionSetInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="SubscriptionSetInfo"/>
+      <propertyList name="sourceDBInfo" label="sourceDBInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBServerInfo"/>
+      <propertyList name="targetDBInfo" label="targetDBInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBServerInfo"/>
+      <propertyList name="applyDBInfo" label="applyDBInfo" hidden="true" bundleName="com.ibm.datatools.etl.replication.codegen" type="DBServerInfo"/>
+      <propertyList name="targetDataBase" label="targetDataBase" bundleName="com.ibm.datatools.etl.replication.codegen"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.replication.codegen.admin.ReplicationTargetOpChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.replication.codegen.Replication"/>
+      <inputList iD="http://com/ibm/datatools/etl/replication/replLib.oplib/Target/ReplicationTarget::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.replication.codegen" rule="BY_PARAMS">
+        <definitionParams type="property" name="sourceTable"/>
+      </inputList>
+    </definitionList>
+  </children>
+  <dependenciesOnPropMap key="http://com/ibm/datatools/etl/replication/replLib.oplib/Source/ReplicationSource::generatedTargetTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http://com/ibm/datatools/etl/replication/replLib.oplib/Target/ReplicationTarget::sourceTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <propertyTypeList name="RegistrationInfo" registered="true" emfClassName="RegistrationInfo" emfPkgUri="http:///com/ibm/datatools/etl/replication/metadata/reg.ecore" wrapped="true"/>
+  <propertyTypeList name="SubscriptionSetInfo" registered="true" emfClassName="SubscriptionSetInfo" emfPkgUri="http:///com/ibm/datatools/etl/replication/metadata/sub.ecore" wrapped="true"/>
+  <propertyTypeList name="DBServerInfo" registered="true" emfClassName="DBServerInfo" emfPkgUri="http:///com/ibm/datatools/etl/replication/metadata/common.ecore" wrapped="true"/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

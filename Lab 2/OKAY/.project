@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>OKAY</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.datatools.dwh.project.ui.DWHProjectNature</nature>
+		<nature>com.ibm.datatools.datamining.miningblox.prep.MiningbloxWizProjectNature</nature>
+		<nature>com.ibm.datatools.datamining.miningeditor.miningProjectNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>com.ibm.datatools.etl.ui.etlNature</nature>
+		<nature>com.ibm.datatools.sqw.dataprep.ui.common.DataPrepNature</nature>
+		<nature>com.ibm.datatools.sqw.solution.solutionProjectNature</nature>
+		<nature>com.ibm.datatools.textanalytics.oplib.ui.textMiningProjectNature</nature>
+	</natures>
+</projectDescription>

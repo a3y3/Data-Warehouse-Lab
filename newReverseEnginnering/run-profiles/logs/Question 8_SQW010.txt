@@ -1,0 +1,49 @@
+ Data-Flows  Feb 16, 2017 4:32:07 PM   SQW03415I: Flow execution started for SQW010 (/newReverseEnginnering/data-flows/Question 8)
+ Data-Flows  Feb 16, 2017 4:32:07 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Question 8_SQW010.txt
+ Data-Flows  Feb 16, 2017 4:32:07 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 8_SQW010
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA9622D6_2e"" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03275I: Execution of SQL statement "CREATE VIEW IN_013_0(
+  COMPANY_NAME, 
+  SALARY
+) AS 
+SELECT Q222.COMPANY_NAME AS COMPANY_NAME, Q222.SALARY AS SALARY
+  FROM (SELECT Q106.COMPANY_NAME AS COMPANY_NAME, AVG(Q106.SALARY) AS SALARY
+          FROM (SELECT Q97.COMPANY_NAME AS COMPANY_NAME, Q97.SALARY AS SALARY
+                  FROM EMPLOYEE090.WORKS Q97) Q106
+          GROUP BY Q106.COMPANY_NAME) Q222" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03275I: Execution of SQL statement "CREATE VIEW IN1_013_1(
+  EMPLOYEE_NAME, 
+  COMPANY_NAME, 
+  SALARY
+) AS 
+SELECT Q231.EMPLOYEE_NAME AS EMPLOYEE_NAME, Q231.COMPANY_NAME AS COMPANY_NAME,
+       Q231.SALARY AS SALARY
+  FROM EMPLOYEE090.WORKS Q231" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03276E: Execution of SQL statement "INSERT INTO EMPLOYEE090.RESULT8(NAME, SALARY) SELECT  cast (null  as CHAR(20))  AS EMPLOYEE_NAME,  cast (null  as DECIMAL(7,0))  AS SALARY_1 FROM  ( SELECT "IN1_013_1"."EMPLOYEE_NAME"  AS "EMPLOYEE_NAME", "IN1_013_1"."SALARY"  AS "SALARY"  FROM  "IN_013_0" JOIN "IN1_013_1" ON ("IN1_013_1"."COMPANY_NAME" "IN_013_0"."COMPANY_NAME" AND "IN1_013_1"."SALARY" > "IN_013_0"."SALARY"))  Q263" through JDBC connection failed. Exception: SQL Exception. SQL state = 42601; error code = -104; error Message = An unexpected token ""IN_013_0"" was found following "13_1"."COMPANY_NAME"".  Expected tokens may include:  "LIKE".. SQLCODE=-104, SQLSTATE=42601, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-104", SQLSTATE "42601" and message tokens ""IN_013_0"|13_1"."COMPANY_NAME"|LIKE".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-104", SQLSTATE "42601" and message tokens ""IN_013_0"|13_1"."COMPANY_NAME"|LIKE".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03275I: Execution of SQL statement "DROP VIEW IN1_013_1" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03275I: Execution of SQL statement "DROP VIEW IN_013_0" through JDBC connection finished successfully
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 9622D6
+     ${RESERVED/APP_NAME} = Question 8
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp96081a/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-16 16:32:09
+     ${RESERVED/DATE} = 2017-02-16
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 16
+     ${RESERVED/INSTANCE_NAME} = SQW010
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question 8
+     ${RESERVED/RUN_ID} = 9622D6
+     ${RESERVED/START_TIMESTAMP} = 2017-02-16 16:32:08
+     ${RESERVED/TIME} = 16:32:08
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\Question 8_SQW010
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW03408I: Flow execution finished for SQW010 (/newReverseEnginnering/data-flows/Question 8)
+ Data-Flows  Feb 16, 2017 4:32:09 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Question 8_SQW010.txt.

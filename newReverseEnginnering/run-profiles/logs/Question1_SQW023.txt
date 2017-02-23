@@ -1,0 +1,33 @@
+ Data-Flows  Feb 9, 2017 4:31:46 PM   SQW03415I: Flow execution started for SQW023 (/newReverseEnginnering/data-flows/Question1)
+ Data-Flows  Feb 9, 2017 4:31:46 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Question1_SQW023.txt
+ Data-Flows  Feb 9, 2017 4:31:46 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Question1_SQW023
+ Data-Flows  Feb 9, 2017 4:31:48 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA894E88_31"" through JDBC connection finished successfully
+ Data-Flows  Feb 9, 2017 4:31:48 PM   SQW03276E: Execution of SQL statement "INSERT INTO EMPLOYEE090."Result1" ("Name", "City")
+  SELECT Q547.EMPLOYEE_NAME AS EMPLOYEE_NAME, Q551.CITY AS CITY
+    FROM EMPLOYEE090.WORKS Q547, EMPLOYEE090.EMPLOYEE Q551
+    WHERE (Q547.COMPANY_NAME = 'Nike') AND (Q547.EMPLOYEE_NAME = Q551.EMPLOYEE_NAME)" through JDBC connection failed. Exception: SQL Exception. SQL state = 42704; error code = -204; error Message = "EMPLOYEE090.Result1" is an undefined name.. SQLCODE=-204, SQLSTATE=42704, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-204", SQLSTATE "42704" and message tokens "EMPLOYEE090.Result1".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-204", SQLSTATE "42704" and message tokens "EMPLOYEE090.Result1".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89
+ Data-Flows  Feb 9, 2017 4:31:48 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 894E88
+     ${RESERVED/APP_NAME} = Question1
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp8933fd/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-09 16:31:48
+     ${RESERVED/DATE} = 2017-02-09
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 09
+     ${RESERVED/INSTANCE_NAME} = SQW023
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Question1
+     ${RESERVED/RUN_ID} = 894E88
+     ${RESERVED/START_TIMESTAMP} = 2017-02-09 16:31:48
+     ${RESERVED/TIME} = 16:31:48
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\Question1_SQW023
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 9, 2017 4:31:48 PM   SQW03408I: Flow execution finished for SQW023 (/newReverseEnginnering/data-flows/Question1)
+ Data-Flows  Feb 9, 2017 4:31:48 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Question1_SQW023.txt.

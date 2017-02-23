@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" bundleName="com.ibm.datatools.etl.dataflow.core" lastModified="0" nsURI="com.ibm.datatools.etl.dataflow.core.exttypes.oplib" fileName="etc/exttypes.oplib">
+  <complexTypeList iD="com.ibm.datatools.etl.dataflow.core.exttypes.oplib.ComplexDate" name="ComplexDate" label="Date" extendsDefinitionID="Item" bundleName="com.ibm.datatools.etl.dataflow.core">
+    <definitionParams name="ComplexTypeAdapter" value="com.ibm.datatools.etl.helpers.DateTimeComplexTypeHelper" usageType="complexTypeExtension"/>
+    <propertyList name="ComplexDate.Day" label="Day" bundleName="com.ibm.datatools.etl.dataflow.core" type="Date.Day"/>
+    <propertyList name="ComplexDate.Month" label="Month" bundleName="com.ibm.datatools.etl.dataflow.core" type="Date.Month"/>
+    <propertyList name="ComplexDate.Year" label="Year" bundleName="com.ibm.datatools.etl.dataflow.core" type="Date.Year"/>
+  </complexTypeList>
+  <complexTypeList iD="com.ibm.datatools.etl.dataflow.core.exttypes.oplib.ComplexTime" name="ComplexTime" label="Time" extendsDefinitionID="Item" bundleName="com.ibm.datatools.etl.dataflow.core">
+    <definitionParams name="ComplexTypeAdapter" value="com.ibm.datatools.etl.helpers.DateTimeComplexTypeHelper" usageType="complexTypeExtension"/>
+    <propertyList name="ComplexTime.Hour" label="Hour" bundleName="com.ibm.datatools.etl.dataflow.core" type="Time.Hours"/>
+    <propertyList name="ComplexTime.Minute" label="Minute" bundleName="com.ibm.datatools.etl.dataflow.core" type="Time.Minutes"/>
+    <propertyList name="ComplexTime.Second" label="Second" bundleName="com.ibm.datatools.etl.dataflow.core" type="Time.Seconds"/>
+  </complexTypeList>
+  <complexTypeList iD="com.ibm.datatools.etl.dataflow.core.exttypes.oplib.ComplexDateTime" name="ComplexDateTime" label="Timestamp" extendsDefinitionID="Item" bundleName="com.ibm.datatools.etl.dataflow.core">
+    <definitionParams name="ComplexTypeAdapter" value="com.ibm.datatools.etl.helpers.DateTimeComplexTypeHelper" usageType="complexTypeExtension"/>
+    <propertyList name="ComplexDateTime.Date" label="Date" bundleName="com.ibm.datatools.etl.dataflow.core" type="ComplexDate"/>
+    <propertyList name="ComplexDateTime.Time" label="Time" bundleName="com.ibm.datatools.etl.dataflow.core" type="ComplexTime"/>
+  </complexTypeList>
+  <propertyTypeList name="Date.Day" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Date.DayEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" defaultValueLiteral="01">
+    <definitionParams name="01" usageType="enumLiteral" label="01"/>
+    <definitionParams name="02" usageType="enumLiteral" label="02"/>
+    <definitionParams name="03" usageType="enumLiteral" label="03"/>
+    <definitionParams name="04" usageType="enumLiteral" label="04"/>
+    <definitionParams name="05" usageType="enumLiteral" label="05"/>
+    <definitionParams name="06" usageType="enumLiteral" label="06"/>
+    <definitionParams name="07" usageType="enumLiteral" label="07"/>
+    <definitionParams name="08" usageType="enumLiteral" label="08"/>
+    <definitionParams name="09" usageType="enumLiteral" label="09"/>
+    <definitionParams name="10" usageType="enumLiteral" label="10"/>
+    <definitionParams name="11" usageType="enumLiteral" label="11"/>
+    <definitionParams name="12" usageType="enumLiteral" label="12"/>
+    <definitionParams name="13" usageType="enumLiteral" label="13"/>
+    <definitionParams name="14" usageType="enumLiteral" label="14"/>
+    <definitionParams name="15" usageType="enumLiteral" label="15"/>
+    <definitionParams name="16" usageType="enumLiteral" label="16"/>
+    <definitionParams name="17" usageType="enumLiteral" label="17"/>
+    <definitionParams name="18" usageType="enumLiteral" label="18"/>
+    <definitionParams name="19" usageType="enumLiteral" label="19"/>
+    <definitionParams name="20" usageType="enumLiteral" label="20"/>
+    <definitionParams name="21" usageType="enumLiteral" label="21"/>
+    <definitionParams name="22" usageType="enumLiteral" label="22"/>
+    <definitionParams name="23" usageType="enumLiteral" label="23"/>
+    <definitionParams name="24" usageType="enumLiteral" label="24"/>
+    <definitionParams name="25" usageType="enumLiteral" label="25"/>
+    <definitionParams name="26" usageType="enumLiteral" label="26"/>
+    <definitionParams name="27" usageType="enumLiteral" label="27"/>
+    <definitionParams name="28" usageType="enumLiteral" label="28"/>
+    <definitionParams name="29" usageType="enumLiteral" label="29"/>
+    <definitionParams name="30" usageType="enumLiteral" label="30"/>
+    <definitionParams name="31" usageType="enumLiteral" label="31"/>
+  </propertyTypeList>
+  <propertyTypeList name="Date.Month" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Date.MonthEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" defaultValueLiteral="01">
+    <definitionParams name="01" usageType="enumLiteral" label="January"/>
+    <definitionParams name="02" usageType="enumLiteral" label="February"/>
+    <definitionParams name="03" usageType="enumLiteral" label="March"/>
+    <definitionParams name="04" usageType="enumLiteral" label="April"/>
+    <definitionParams name="05" usageType="enumLiteral" label="May"/>
+    <definitionParams name="06" usageType="enumLiteral" label="June"/>
+    <definitionParams name="07" usageType="enumLiteral" label="July"/>
+    <definitionParams name="08" usageType="enumLiteral" label="August"/>
+    <definitionParams name="09" usageType="enumLiteral" label="September"/>
+    <definitionParams name="10" usageType="enumLiteral" label="October"/>
+    <definitionParams name="11" usageType="enumLiteral" label="November"/>
+    <definitionParams name="12" usageType="enumLiteral" label="December"/>
+  </propertyTypeList>
+  <propertyTypeList name="Date.Year" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Date.YearEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" defaultValueLiteral="2001">
+    <definitionParams type="http:///com/ibm/datatools/etl/coretypes.ecore" name="enumClass" value="TransientEnumValue" usageType="emfExtn"/>
+    <definitionParams name="1999" usageType="enumLiteral" label="1999"/>
+    <definitionParams name="2000" usageType="enumLiteral" label="2000"/>
+    <definitionParams name="2001" usageType="enumLiteral" label="2001"/>
+    <definitionParams name="2002" usageType="enumLiteral" label="2002"/>
+    <definitionParams name="2003" usageType="enumLiteral" label="2003"/>
+    <definitionParams name="2004" usageType="enumLiteral" label="2004"/>
+    <definitionParams name="2005" usageType="enumLiteral" label="2005"/>
+    <definitionParams name="2006" usageType="enumLiteral" label="2006"/>
+    <definitionParams name="2007" usageType="enumLiteral" label="2007"/>
+    <definitionParams name="2008" usageType="enumLiteral" label="2008"/>
+    <definitionParams name="2009" usageType="enumLiteral" label="2009"/>
+    <definitionParams name="2010" usageType="enumLiteral" label="2010"/>
+  </propertyTypeList>
+  <propertyTypeList name="Time.Hours" label="Time.Hours.label" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Time.HoursEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" defaultValueLiteral="00">
+    <definitionParams name="00" usageType="enumLiteral" label="00"/>
+    <definitionParams name="01" usageType="enumLiteral" label="01"/>
+    <definitionParams name="02" usageType="enumLiteral" label="02"/>
+    <definitionParams name="03" usageType="enumLiteral" label="03"/>
+    <definitionParams name="04" usageType="enumLiteral" label="04"/>
+    <definitionParams name="05" usageType="enumLiteral" label="05"/>
+    <definitionParams name="06" usageType="enumLiteral" label="06"/>
+    <definitionParams name="07" usageType="enumLiteral" label="07"/>
+    <definitionParams name="08" usageType="enumLiteral" label="08"/>
+    <definitionParams name="09" usageType="enumLiteral" label="09"/>
+    <definitionParams name="10" usageType="enumLiteral" label="10"/>
+    <definitionParams name="11" usageType="enumLiteral" label="11"/>
+    <definitionParams name="12" usageType="enumLiteral" label="12"/>
+    <definitionParams name="13" usageType="enumLiteral" label="13"/>
+    <definitionParams name="14" usageType="enumLiteral" label="14"/>
+    <definitionParams name="15" usageType="enumLiteral" label="15"/>
+    <definitionParams name="16" usageType="enumLiteral" label="16"/>
+    <definitionParams name="17" usageType="enumLiteral" label="17"/>
+    <definitionParams name="18" usageType="enumLiteral" label="18"/>
+    <definitionParams name="19" usageType="enumLiteral" label="19"/>
+    <definitionParams name="20" usageType="enumLiteral" label="20"/>
+    <definitionParams name="21" usageType="enumLiteral" label="21"/>
+    <definitionParams name="22" usageType="enumLiteral" label="22"/>
+    <definitionParams name="23" usageType="enumLiteral" label="23"/>
+  </propertyTypeList>
+  <propertyTypeList name="Time.Minutes" label="Minutes" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Time.MinutesEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" defaultValueLiteral="00">
+    <definitionParams type="http:///com/ibm/datatools/etl/coretypes.ecore" name="enumClass" value="TransientEnumValue" usageType="emfExtn"/>
+    <definitionParams name="00" usageType="enumLiteral" label="00"/>
+    <definitionParams name="01" usageType="enumLiteral" label="01"/>
+    <definitionParams name="02" usageType="enumLiteral" label="02"/>
+    <definitionParams name="03" usageType="enumLiteral" label="03"/>
+    <definitionParams name="04" usageType="enumLiteral" label="04"/>
+    <definitionParams name="05" usageType="enumLiteral" label="05"/>
+    <definitionParams name="06" usageType="enumLiteral" label="06"/>
+    <definitionParams name="07" usageType="enumLiteral" label="07"/>
+    <definitionParams name="08" usageType="enumLiteral" label="08"/>
+    <definitionParams name="09" usageType="enumLiteral" label="09"/>
+    <definitionParams name="10" usageType="enumLiteral" label="10"/>
+    <definitionParams name="11" usageType="enumLiteral" label="11"/>
+    <definitionParams name="12" usageType="enumLiteral" label="12"/>
+    <definitionParams name="13" usageType="enumLiteral" label="13"/>
+    <definitionParams name="14" usageType="enumLiteral" label="14"/>
+    <definitionParams name="15" usageType="enumLiteral" label="15"/>
+    <definitionParams name="16" usageType="enumLiteral" label="16"/>
+    <definitionParams name="17" usageType="enumLiteral" label="17"/>
+    <definitionParams name="18" usageType="enumLiteral" label="18"/>
+    <definitionParams name="19" usageType="enumLiteral" label="19"/>
+    <definitionParams name="20" usageType="enumLiteral" label="20"/>
+    <definitionParams name="21" usageType="enumLiteral" label="21"/>
+    <definitionParams name="22" usageType="enumLiteral" label="22"/>
+    <definitionParams name="23" usageType="enumLiteral" label="23"/>
+    <definitionParams name="24" usageType="enumLiteral" label="24"/>
+    <definitionParams name="25" usageType="enumLiteral" label="25"/>
+    <definitionParams name="26" usageType="enumLiteral" label="26"/>
+    <definitionParams name="27" usageType="enumLiteral" label="27"/>
+    <definitionParams name="28" usageType="enumLiteral" label="28"/>
+    <definitionParams name="29" usageType="enumLiteral" label="29"/>
+    <definitionParams name="30" usageType="enumLiteral" label="30"/>
+    <definitionParams name="31" usageType="enumLiteral" label="31"/>
+    <definitionParams name="32" usageType="enumLiteral" label="32"/>
+    <definitionParams name="33" usageType="enumLiteral" label="33"/>
+    <definitionParams name="34" usageType="enumLiteral" label="34"/>
+    <definitionParams name="35" usageType="enumLiteral" label="35"/>
+    <definitionParams name="36" usageType="enumLiteral" label="36"/>
+    <definitionParams name="37" usageType="enumLiteral" label="37"/>
+    <definitionParams name="38" usageType="enumLiteral" label="38"/>
+    <definitionParams name="39" usageType="enumLiteral" label="39"/>
+    <definitionParams name="40" usageType="enumLiteral" label="40"/>
+    <definitionParams name="41" usageType="enumLiteral" label="41"/>
+    <definitionParams name="42" usageType="enumLiteral" label="42"/>
+    <definitionParams name="43" usageType="enumLiteral" label="43"/>
+    <definitionParams name="44" usageType="enumLiteral" label="44"/>
+    <definitionParams name="45" usageType="enumLiteral" label="45"/>
+    <definitionParams name="46" usageType="enumLiteral" label="46"/>
+    <definitionParams name="47" usageType="enumLiteral" label="47"/>
+    <definitionParams name="48" usageType="enumLiteral" label="48"/>
+    <definitionParams name="49" usageType="enumLiteral" label="49"/>
+    <definitionParams name="50" usageType="enumLiteral" label="50"/>
+    <definitionParams name="51" usageType="enumLiteral" label="51"/>
+    <definitionParams name="52" usageType="enumLiteral" label="52"/>
+    <definitionParams name="53" usageType="enumLiteral" label="53"/>
+    <definitionParams name="54" usageType="enumLiteral" label="54"/>
+    <definitionParams name="55" usageType="enumLiteral" label="55"/>
+    <definitionParams name="56" usageType="enumLiteral" label="56"/>
+    <definitionParams name="57" usageType="enumLiteral" label="57"/>
+    <definitionParams name="58" usageType="enumLiteral" label="58"/>
+    <definitionParams name="59" usageType="enumLiteral" label="59"/>
+  </propertyTypeList>
+  <propertyTypeList name="Time.Seconds" label="Seconds" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Time.SecondsEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" defaultValueLiteral="00">
+    <definitionParams type="http:///com/ibm/datatools/etl/coretypes.ecore" name="enumClass" value="TransientEnumValue" usageType="emfExtn"/>
+    <definitionParams name="00" usageType="enumLiteral" label="00"/>
+    <definitionParams name="01" usageType="enumLiteral" label="01"/>
+    <definitionParams name="02" usageType="enumLiteral" label="02"/>
+    <definitionParams name="03" usageType="enumLiteral" label="03"/>
+    <definitionParams name="04" usageType="enumLiteral" label="04"/>
+    <definitionParams name="05" usageType="enumLiteral" label="05"/>
+    <definitionParams name="06" usageType="enumLiteral" label="06"/>
+    <definitionParams name="07" usageType="enumLiteral" label="07"/>
+    <definitionParams name="08" usageType="enumLiteral" label="08"/>
+    <definitionParams name="09" usageType="enumLiteral" label="09"/>
+    <definitionParams name="10" usageType="enumLiteral" label="10"/>
+    <definitionParams name="11" usageType="enumLiteral" label="11"/>
+    <definitionParams name="12" usageType="enumLiteral" label="12"/>
+    <definitionParams name="13" usageType="enumLiteral" label="13"/>
+    <definitionParams name="14" usageType="enumLiteral" label="14"/>
+    <definitionParams name="15" usageType="enumLiteral" label="15"/>
+    <definitionParams name="16" usageType="enumLiteral" label="16"/>
+    <definitionParams name="17" usageType="enumLiteral" label="17"/>
+    <definitionParams name="18" usageType="enumLiteral" label="18"/>
+    <definitionParams name="19" usageType="enumLiteral" label="19"/>
+    <definitionParams name="20" usageType="enumLiteral" label="20"/>
+    <definitionParams name="21" usageType="enumLiteral" label="21"/>
+    <definitionParams name="22" usageType="enumLiteral" label="22"/>
+    <definitionParams name="23" usageType="enumLiteral" label="23"/>
+    <definitionParams name="24" usageType="enumLiteral" label="24"/>
+    <definitionParams name="25" usageType="enumLiteral" label="25"/>
+    <definitionParams name="26" usageType="enumLiteral" label="26"/>
+    <definitionParams name="27" usageType="enumLiteral" label="27"/>
+    <definitionParams name="28" usageType="enumLiteral" label="28"/>
+    <definitionParams name="29" usageType="enumLiteral" label="29"/>
+    <definitionParams name="30" usageType="enumLiteral" label="30"/>
+    <definitionParams name="31" usageType="enumLiteral" label="31"/>
+    <definitionParams name="32" usageType="enumLiteral" label="32"/>
+    <definitionParams name="33" usageType="enumLiteral" label="33"/>
+    <definitionParams name="34" usageType="enumLiteral" label="34"/>
+    <definitionParams name="35" usageType="enumLiteral" label="35"/>
+    <definitionParams name="36" usageType="enumLiteral" label="36"/>
+    <definitionParams name="37" usageType="enumLiteral" label="37"/>
+    <definitionParams name="38" usageType="enumLiteral" label="38"/>
+    <definitionParams name="39" usageType="enumLiteral" label="39"/>
+    <definitionParams name="40" usageType="enumLiteral" label="40"/>
+    <definitionParams name="41" usageType="enumLiteral" label="41"/>
+    <definitionParams name="42" usageType="enumLiteral" label="42"/>
+    <definitionParams name="43" usageType="enumLiteral" label="43"/>
+    <definitionParams name="44" usageType="enumLiteral" label="44"/>
+    <definitionParams name="45" usageType="enumLiteral" label="45"/>
+    <definitionParams name="46" usageType="enumLiteral" label="46"/>
+    <definitionParams name="47" usageType="enumLiteral" label="47"/>
+    <definitionParams name="48" usageType="enumLiteral" label="48"/>
+    <definitionParams name="49" usageType="enumLiteral" label="49"/>
+    <definitionParams name="50" usageType="enumLiteral" label="50"/>
+    <definitionParams name="51" usageType="enumLiteral" label="51"/>
+    <definitionParams name="52" usageType="enumLiteral" label="52"/>
+    <definitionParams name="53" usageType="enumLiteral" label="53"/>
+    <definitionParams name="54" usageType="enumLiteral" label="54"/>
+    <definitionParams name="55" usageType="enumLiteral" label="55"/>
+    <definitionParams name="56" usageType="enumLiteral" label="56"/>
+    <definitionParams name="57" usageType="enumLiteral" label="57"/>
+    <definitionParams name="58" usageType="enumLiteral" label="58"/>
+    <definitionParams name="59" usageType="enumLiteral" label="59"/>
+  </propertyTypeList>
+  <propertyTypeList name="ComplexDate" label="Date" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="com.ibm.datatools.etl.dataflow.core.exttypes.oplib.ComplexDate" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="DATE" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="DateDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlFormatQuote" value="DATE" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="ComplexTime" label="Time" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="com.ibm.datatools.etl.dataflow.core.exttypes.oplib.ComplexTime" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="TIME" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="TimeDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlFormatQuote" value="TIME" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="ComplexDateTime" label="Timestamp" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="com.ibm.datatools.etl.dataflow.core.exttypes.oplib.ComplexDateTime" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="TIMESTAMP" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="TimeDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlFormatQuote" value="TIMESTAMP" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="DynamicBoolean" registered="true" emfClassName="EBoolean" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="DynamicInteger" label="Integer" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

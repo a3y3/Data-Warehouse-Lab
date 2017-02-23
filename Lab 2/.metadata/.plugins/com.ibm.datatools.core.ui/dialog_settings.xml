@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Database" key="NewModelWizard_RESourceSelection"/>
+	<item value="V9.7" key="NewModelWizard_SelectedDatabaseVersion"/>
+	<item value="DB2 UDB" key="NewModelWizard_SelectedDatabaseType"/>
+</section>

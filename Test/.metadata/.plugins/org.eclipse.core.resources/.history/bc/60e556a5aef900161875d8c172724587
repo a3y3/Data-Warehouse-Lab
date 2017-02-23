@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.errmsgs:Message xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.errmsgs="http:///com/ibm/datatools/etl/errmsgs.ecore" msgNum="12206" timestamp="1487843014322" msgTxt="The flow 'Question2B' is empty." msgSeverity="FATAL" component="dataflow.validation" msgDescTxt="Empty flow. No further processing is possible." msgCause="" msgResponse="" entityType="DataFlow"/>

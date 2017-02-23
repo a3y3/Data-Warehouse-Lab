@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srcmgt:SourceElement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:srcmgt="com.ibm.datatools.dwe.srcmgt.nsuri" saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr_se_3" genId="3" location="/newReverseEnginnering/data-flows/Question1.etlmetadataxmi" syncTimeStamp="1487233217853">
+  <actionMap key="val">
+    <value actionType="val" syncTimeStamp="1487233217853" lastStatus="SUCCESS">
+      <sourceActionInfo>
+        <resultEObjectsMap key="valMsg">
+          <value saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr_se_3_sa_val_valMsg"/>
+        </resultEObjectsMap>
+      </sourceActionInfo>
+    </value>
+  </actionMap>
+</srcmgt:SourceElement>

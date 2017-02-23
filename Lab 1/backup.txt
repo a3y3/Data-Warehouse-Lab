@@ -1,0 +1,69 @@
+Create table person(
+driver_id varchar(10) primary key,
+name varchar(30),
+address varchar(30)
+);
+
+create table car(
+liscense varchar(30) primary key,
+model varchar(30),
+year varchar(30)
+);
+
+create table accident(
+report_number integer primary key,
+date integer primary key,
+location varchar(30)
+);
+
+create table owns(
+driver_id varchar(10),
+liscense varchar(30),
+primary key(driver_id, liscense),
+foreign key(driver_id) references person(driver_id), 
+foreign key(liscense) references car(liscense)
+);
+
+create table participated(
+driver_id varchar(10),
+car varchar(30),
+report_number integer,
+damage_amount integer,
+primary key(driver_id,car,report_number),
+foreign key(driver_id) references person(driver_id),
+foreign key(report_number) references accident(report_number)
+);
+
+insert into person values(1,"Soham","Nashik");
+insert into person values(2,"Vanesiha","Lucknow");
+insert into person values(3,"Ishita","Gurgaon");
+
+insert into car values(123,"PorscheCayenne",2017);
+insert into car values(567,"ThunderBird11",1995);
+insert into car values(190,"KugattiMeryon",1999);
+
+insert into accident values(1,2018,"Ranchi");
+insert into accident values(2,2020,"Kurx");
+insert into accident values(3,2024,"Jxarchat");
+insert into accident values(4,2030,"Hati");
+insert into accident values(5,3034,"Fanzikip");
+
+insert into participated values(2,"ThunderBird11",1,1112234);
+insert into participated values(2,"ThunderBird11",3,1992342);
+insert into participated values(2,"ThunderBird11",4,7758190);
+insert into participated values(3,"KugattiMeryon",2,540);
+insert into participated values(3,"KugattiMeryon",5,940);
+
+
+
+select count(*)
+from participated,accident
+where accident.report_number=participated.report_number and date=2020;
+
+select count(*)
+from participated,person
+where person.driver_id=participated.driver_id and name like "Vanesiha";
+
+insert into accident values(6,2040,"Ruzgekat");
+
+ update participated set damage_amount=30000 where report_number=5;

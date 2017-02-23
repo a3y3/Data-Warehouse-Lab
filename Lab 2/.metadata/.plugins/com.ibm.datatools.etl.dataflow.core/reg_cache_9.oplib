@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:com.ibm.datatools.etl.coretypes="http:///com/ibm/datatools/etl/coretypes.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="dataflow.common.operator" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lastModified="0" nsURI="http:///com.ibm.datatools.sqw/dataflow.common.oplib" fileName="dataflow.common.oplib">
+  <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources" name="Sources" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+    <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources" name="DBSources" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+      <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/TableExtract" name="TableExtract" label="TableExtract" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+        <definitionParams type="property" name="accessMethod" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <definitionParams name="synAndPropagate" value="rdbTable" usageType="synAndPropagate"/>
+        <propertyList name="SampleData" label="Debug sample type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DebugSampleTypes" defaultValueLiteral="WholeData"/>
+        <propertyList name="SampleData_firstdata" label="Sample size (n)" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer"/>
+        <propertyList name="SampleData_Randomdata" label="Sampling Rate" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Double"/>
+        <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+        <propertyList name="rdbTable" label="Source database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+        <propertyList name="filterCondition" description="Specify the condition on the table that is evaluated in the database where the source table resides." label="Filter condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Condition">
+          <definitionParams type="property" name="rdbTable" label="InputTable"/>
+        </propertyList>
+        <propertyList name="columnExpressions" description="Specify expressions that are evaluated in the database where the source table resides." label="Source Column Expressions" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+          <definitionParams type="property" name="rdbTable" label="InputTable"/>
+        </propertyList>
+        <propertyList name="sourceVirtualTable" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DBTable" referenceOnly="true"/>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.TableExtractChangeHandler"/>
+        <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/TableExtract::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="columnExpressions"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/JDBCSource" name="JDBCSource" description="jdbc_generic_source_desc" label="jdbc_generic_source" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/TableExtract" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+        <definitionParams value="JDBC" usageType="compositionResolution" label="AccessMethod.JDBC"/>
+        <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.TableExtractUpgradeHandler" usageType="upgradeHandler"/>
+        <definitionParams type="property" name="accessMethod" usageType="compositionRule"/>
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <definitionParams name="synAndPropagate" value="rdbTable" usageType="synAndPropagate"/>
+        <propertyList name="jdbcBatchSize" description="JDBCExtract.jdbcBatchSize.desc" label="JDBCExtract.jdbcBatchSize" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+          <definitionParams name="min" value="0" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="JDBCDriver" label="JDBCDriver" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="com.driver"/>
+        <propertyList name="DBURL" label="DBURL" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="DBType" label="DBType" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="DB2"/>
+        <propertyList name="UserName" label="UserName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="Password" label="Password" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="SampleData" label="Debug sample type" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DebugSampleTypes" defaultValueLiteral="WholeData"/>
+        <propertyList name="SampleData_firstdata" label="Sample size (n)" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer"/>
+        <propertyList name="SampleData_Randomdata" label="Sampling Rate" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Double"/>
+        <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+        <propertyList name="rdbTable" label="Source database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+        <propertyList name="filterCondition" description="Specify the condition on the table that is evaluated in the database where the source table resides." label="Filter condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Condition">
+          <definitionParams type="property" name="rdbTable" label="InputTable"/>
+        </propertyList>
+        <propertyList name="columnExpressions" description="Specify expressions that are evaluated in the database where the source table resides." label="Source Column Expressions" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+          <definitionParams type="property" name="rdbTable" label="InputTable"/>
+        </propertyList>
+        <propertyList name="sourceVirtualTable" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DBTable" referenceOnly="true"/>
+        <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.TableExtractChangeHandler"/>
+        <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/JDBCSource::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="columnExpressions"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform" name="Transform" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join" name="Join" label="Join" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="predicate" label="predicate" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+        <definitionParams type="input" name="left" label="LeftInputTable"/>
+        <definitionParams type="input" name="right" label="RightInputTable"/>
+      </propertyList>
+      <propertyList name="project" label="project" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="left" label="LeftInputTable"/>
+        <definitionParams type="input" name="right" label="RightInputTable"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_USAGE_RULE" value="leftOuter|rightOuter|fullOuter|inner"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::input::left" name="left" label="left" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::input::right" name="right" label="right" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::output::inner" name="inner" label="Inner" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::output::leftOuter" name="leftOuter" label="Left Outer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::output::rightOuter" name="rightOuter" label="Right Outer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::output::fullOuter" name="fullOuter" label="Full Outer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/InnerJoin" name="InnerJoin" label="InnerJoin" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="predicate" label="predicate" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+        <definitionParams type="input" name="in"/>
+      </propertyList>
+      <propertyList name="project" label="project" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="in" label="ChooseFromInputTables"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/InnerJoin::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="2" upperBound="-1"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/InnerJoin::output::inner" name="inner" label="Inner" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Project" name="Project" label="Project" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="project" label="Column expressions " bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="input" label="InputTable"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Project::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Project::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Filter" name="Filter" label="Filter" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="filterExpression" description="Type a filter condition or click the ellipsis button to open the Expression Builder. You can use the Expression Builder to create a condition that is based on one or more column expressions. The filter condition works on rows of data before the data is grouped. Conditions cannot be expressed with set functions (for example, SUM or AVG), but column aliases for non-aggregate expressions can be used." label="Filter condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+        <definitionParams type="input" name="input" label="InputTable"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Filter::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Filter::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Sort" name="Sort" label="Sort" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="sortSchemaList" label="Select columns for ordering" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SortSchema" upperBound="-1"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="invalidSortTypes" value="BINARY_LARGE_OBJECT|CHARACTER_LARGE_OBJECT"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.SortChangeHandler"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.base.oplib" className="com.ibm.datatools.etl.dataflow.baselib.validation.SortSchemaValidator"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Sort::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Sort::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Set" name="Set" label="Set" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="setOpType" description="Select the type of operation: UNION: Unconditionally merges two sets of input rows into a single output data set. INTERSECTION: Merges two sets of input rows into a single output data set and retains only those rows that are common to both inputs (equivalent to a SQL INTERSECT operation). DIFFERENCE: Merges two sets of input rows into a single output data set and retains only those rows that exist in the first data set but not the second data set (equivalent to a SQL EXCEPT operation). UNION_ALL, INTERSECTION_ALL, DIFFERENCE_ALL: When you select a set operation that ends with ALL and duplicate rows occur in the input data set, the duplicates are retained in the output data set. If the ALL option is not used, the duplicate rows are discarded." label="Select set operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SetOpType"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.base.oplib" className="com.ibm.datatools.etl.dataflow.baselib.validation.SetCompatableValidator"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Set::input::input1" name="input1" label="input1" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Set::input::input2" name="input2" label="input2" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Set::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input1"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/BasicDeduplicate" name="BasicDeduplicate" label="BasicDeduplicate" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="VirtualTable"/>
+      <propertyList name="columnSelectList" label="Select a subset of the columns" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SubSelect">
+        <definitionParams type="input" name="input" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Columns"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="columnSelectList::TEST_ENABLE" value="true"/>
+        <definitionParams name="columnSelectList::TEST_MSGNUM" value="778"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_USAGE_RULE" value="result"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/BasicDeduplicate::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/BasicDeduplicate::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Deduplicate" name="Deduplicate" label="Deduplicate" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/BasicDeduplicate" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="VirtualTable"/>
+      <propertyList name="columnSelectList" label="Select a subset of the columns" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SubSelect">
+        <definitionParams type="input" name="input" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Columns"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="columnSelectList::TEST_ENABLE" value="true"/>
+        <definitionParams name="columnSelectList::TEST_MSGNUM" value="778"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_USAGE_RULE" value="result"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Deduplicate::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Deduplicate::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Deduplicate::output::discard" name="discard" label="discard" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" numMinLinks="0">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Aggregate" name="Aggregate" label="Aggregate" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="project" label="Select columns for aggregation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="input" label="Choose From Input Table"/>
+        <definitionParams name="builderType" value="SQL_AGGREGATE_EXPRESSION" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="groupby" label="Aggregation Group By" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="input" label="Choose From Input Table"/>
+      </propertyList>
+      <propertyList name="having" description="Type a SQL HAVING clause condition or click the ellipsis button to open the Expression Builder. You can use the Expression Builder to create a condition based on one or more column expressions. The HAVING clause works on the result set after the grouping and aggregation functions have been applied. Conditions can be expressed with any set function or column alias." label="Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+        <definitionParams type="input" name="input" label="Choose From Input Table"/>
+        <definitionParams name="builderType" value="SQL_AGGREGATE_CONDITION" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="having::TEST_ENABLE" value="false"/>
+      </propertyList>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Aggregate::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Aggregate::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/DB2TableFunction" name="DB2TableFunction" label="DB2TableFunction" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="rdbFunction" label="Function" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBRoutine"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/DB2TableFunction::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="rdbFunction" usageType="inputArgs"/>
+        <definitionParams name="disableIfVTEmpty" value="true" usageType="semantics"/>
+      </inputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/DB2TableFunction::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="rdbFunction" usageType="outputArgs"/>
+        <definitionParams name="disableIfVTEmpty" value="true" usageType="semantics"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/EmbeddedSQL" name="EmbeddedSQL" label="EmbeddedSQL" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="SQLStatement" label="SQL statements" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SQLCode">
+        <definitionParams type="input" name="input"/>
+      </propertyList>
+      <propertyList name="StmtTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate multiple SQL statements. If your code contains only one SQL statement, no termination character is required. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="SQLStatement::expressionRole" value="SQL expression" description="modify the error message"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.EmbeddedSQLChangeHandler"/>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.EmbeddedSQLChangeHandler"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/EmbeddedSQL::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" upperBound="-1">
+        <propertyList name="StagingType" label="Staging type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="StagingOptions" defaultValueLiteral="RegularTable"/>
+        <stagingInfoList type="PERSISTENT_TABLE"/>
+        <stagingInfoList type="VIEW"/>
+      </inputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/DB2Sequencer" name="DB2Sequencer" label="DB2Sequencer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="sequence" description="Type a database sequence object name or click the ellipsis button to open the Sequence Selection window. In the Sequence Selection window, you can select an available sequence object from the physical data model (DBM) in your workspace.  A DB2 sequence object is a DB2 artifact created with the CREATE SEQUENCE command. You cannot use a sequence operator in conjunction with a SQL merge target operator." label="Database sequence object" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SequenceType"/>
+      <propertyList name="seqSchema" description="The sequence object must exist in the SQL execution database with this schema. " label="Sequence schema" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="SchemaName"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.SequencerChangeHandler"/>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.SequencerChangeHandler"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.SequencerRewriter"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/DB2Sequencer::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="STATIC" columnLevel="true">
+        <schema name="sequencer_schema">
+          <columns xsi:type="com.ibm.datatools.etl.coretypes:Expression" name="NEXTVAL" virtualType="INTEGER">
+            <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+          </columns>
+        </schema>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin" name="AdvancedJoin" label="Join " bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <propertyList name="predicate" description="Type a filter condition or click the ellipsis button to open the Expression Builder. You can use the Expression Builder to define a condition on keys that will match rows from each of the input tables. For example: IN_03.TIME_ID = IN1_03.TIME_ID" label="Join condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+        <definitionParams type="input" name="in" value="in" label="ConditionInputTables"/>
+      </propertyList>
+      <propertyList name="project" label="Project Expressions Output" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="in" label="Build Project from Input Table(s) "/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_USAGE_RULE" value="leftOuter|rightOuter|fullOuter|inner"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.AdvancedJoinOperatorChangeHandler"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.AdvancedJoinOperatorRewriter"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="2" upperBound="-1"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::output::inner" name="inner" label="Inner" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::output::leftOuter" name="leftOuter" label="Left Outer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::output::rightOuter" name="rightOuter" label="Right Outer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::output::fullOuter" name="fullOuter" label="Full Outer" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS" numMinLinks="0">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase" name="ExternalDataStationBase" label="ExternalDataStationBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.handlers.DataStationMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="stationType" description="Select one of the following staging objects in the list to determine the staging type:&#xA;File - a staging option that stores data in a flat text-based ASCII file located on your local machine. Flat files are frequently chosen to speed up the loading process.&#xA;Regular table - a staging option that stores data permanently in a relational table. Table name can either be a fixed value provided during design time or a variable decided later in the life cycle of the data flow.&#xA;View -  a staging option that stores data temporarily in a relational table to provide good data flow performance because there is no physical storage of the staged data.&#xA;Global temporary table - a staging option that is used when the intermediate processed results in the data flow need not be stored permanently and you are primarily interested in improving the data flow performance. The Design Studio assigns a default table name (TEMP1) to the temporary table. If you insert more than one data station of type temporary table, you must provide a unique name to each temporary table." label="Station type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ExternalDataStationType" defaultValueLiteral="PERSISTENT_TABLE"/>
+      <propertyList name="passThrough" label="Pass through (ignore the data station; do not stage the results of the data flow)" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="boolean"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_PROPERTY_IS" value="passThrough"/>
+      </propertyList>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.validators.ExternalDataStationOperatorValidation"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.ExternalDataStationOperatorRewriter"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/TempTableDataStation" name="TempTableDataStation" label="TempTableDataStation" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.handlers.DataStationMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="rdbTable" description="The name of the persistent table where the data is staged and the schema to which the table belongs to. The table name can either be a fixed value (actual table name) or a variable. By defining the table name as a variable you can defer the definition of the table and schema names until a later phase in the life cycle of the application. If you select a temporary table or a view for staging, the Design Studio assigns a default table/view name. You can edit the default name." label="Staged database table" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DBTable"/>
+      <propertyList name="tableName" label="Table name" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="TEMP1"/>
+      <propertyList name="stationType" description="Select one of the following staging objects in the list to determine the staging type:&#xA;File - a staging option that stores data in a flat text-based ASCII file located on your local machine. Flat files are frequently chosen to speed up the loading process.&#xA;Regular table - a staging option that stores data permanently in a relational table. Table name can either be a fixed value provided during design time or a variable decided later in the life cycle of the data flow.&#xA;View -  a staging option that stores data temporarily in a relational table to provide good data flow performance because there is no physical storage of the staged data.&#xA;Global temporary table - a staging option that is used when the intermediate processed results in the data flow need not be stored permanently and you are primarily interested in improving the data flow performance. The Design Studio assigns a default table name (TEMP1) to the temporary table. If you insert more than one data station of type temporary table, you must provide a unique name to each temporary table." label="Station type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ExternalDataStationType" defaultValueLiteral="PERSISTENT_TABLE"/>
+      <propertyList name="passThrough" label="Pass through (ignore the data station; do not stage the results of the data flow)" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="boolean"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_PROPERTY_IS" value="passThrough"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.ExternalDataStationTempTableChangeHandler"/>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.validators.ExternalDataStationOperatorValidation"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.ExternalDataStationOperatorRewriter"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/TempTableDataStation::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/TempTableDataStation::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/PermTableDataStation" name="PermTableDataStation" label="PermTableDataStation" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <definitionParams value="PERSISTENT_TABLE" usageType="compositionResolution" label="REGULAR TABLE"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.handlers.DataStationMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="rdbTable" description="The name of the persistent table where the data is staged and the schema to which the table belongs to. The table name can either be a fixed value (actual table name) or a variable. By defining the table name as a variable you can defer the definition of the table and schema names until a later phase in the life cycle of the application. If you select a temporary table or a view for staging, the Design Studio assigns a default table/view name. You can edit the default name." label="Staged database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+      <propertyList name="insertMap" label="Build Expressions for insert" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+        <definitionParams type="input" name="input" usageType="mapFrom"/>
+        <definitionParams type="property" name="rdbTable" usageType="mapTo" label="rdbTable"/>
+        <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true"/>
+      <propertyList name="createTable" label="Automatically create staging table (existing table will be dropped)" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DynamicBoolean"/>
+      <propertyList name="stationType" description="Select one of the following staging objects in the list to determine the staging type:&#xA;File - a staging option that stores data in a flat text-based ASCII file located on your local machine. Flat files are frequently chosen to speed up the loading process.&#xA;Regular table - a staging option that stores data permanently in a relational table. Table name can either be a fixed value provided during design time or a variable decided later in the life cycle of the data flow.&#xA;View -  a staging option that stores data temporarily in a relational table to provide good data flow performance because there is no physical storage of the staged data.&#xA;Global temporary table - a staging option that is used when the intermediate processed results in the data flow need not be stored permanently and you are primarily interested in improving the data flow performance. The Design Studio assigns a default table name (TEMP1) to the temporary table. If you insert more than one data station of type temporary table, you must provide a unique name to each temporary table." label="Station type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ExternalDataStationType" defaultValueLiteral="PERSISTENT_TABLE"/>
+      <propertyList name="passThrough" label="Pass through (ignore the data station; do not stage the results of the data flow)" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="boolean"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_PROPERTY_IS" value="passThrough"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.ExternalDataStationPermTableChangeHandler"/>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.validators.ExternalDataStationOperatorValidation"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.ExternalDataStationOperatorRewriter"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/PermTableDataStation::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/PermTableDataStation::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/FileDataStation" name="FileDataStation" label="FileDataStation" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <definitionParams value="FILE" usageType="compositionResolution" label="FILE"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.handlers.DataStationMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="file" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="File"/>
+      <propertyList name="stationType" description="Select one of the following staging objects in the list to determine the staging type:&#xA;File - a staging option that stores data in a flat text-based ASCII file located on your local machine. Flat files are frequently chosen to speed up the loading process.&#xA;Regular table - a staging option that stores data permanently in a relational table. Table name can either be a fixed value provided during design time or a variable decided later in the life cycle of the data flow.&#xA;View -  a staging option that stores data temporarily in a relational table to provide good data flow performance because there is no physical storage of the staged data.&#xA;Global temporary table - a staging option that is used when the intermediate processed results in the data flow need not be stored permanently and you are primarily interested in improving the data flow performance. The Design Studio assigns a default table name (TEMP1) to the temporary table. If you insert more than one data station of type temporary table, you must provide a unique name to each temporary table." label="Station type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ExternalDataStationType" defaultValueLiteral="PERSISTENT_TABLE"/>
+      <propertyList name="passThrough" label="Pass through (ignore the data station; do not stage the results of the data flow)" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="boolean"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_PROPERTY_IS" value="passThrough"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.ExternalDataStationFileChangeHandler"/>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.validators.ExternalDataStationOperatorValidation"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.ExternalDataStationOperatorRewriter"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/FileDataStation::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/FileDataStation::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ViewDataStation" name="ViewDataStation" label="ViewDataStation" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.baselib.handlers.DataStationMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="tableName" label="View name" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" defaultValueLiteral="TEMP1"/>
+      <propertyList name="stationType" description="Select one of the following staging objects in the list to determine the staging type:&#xA;File - a staging option that stores data in a flat text-based ASCII file located on your local machine. Flat files are frequently chosen to speed up the loading process.&#xA;Regular table - a staging option that stores data permanently in a relational table. Table name can either be a fixed value provided during design time or a variable decided later in the life cycle of the data flow.&#xA;View -  a staging option that stores data temporarily in a relational table to provide good data flow performance because there is no physical storage of the staged data.&#xA;Global temporary table - a staging option that is used when the intermediate processed results in the data flow need not be stored permanently and you are primarily interested in improving the data flow performance. The Design Studio assigns a default table name (TEMP1) to the temporary table. If you insert more than one data station of type temporary table, you must provide a unique name to each temporary table." label="Station type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ExternalDataStationType" defaultValueLiteral="PERSISTENT_TABLE"/>
+      <propertyList name="passThrough" label="Pass through (ignore the data station; do not stage the results of the data flow)" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="boolean"/>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+        <definitionParams name="OutputPort_PROPERTY_IS" value="passThrough"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.ExternalDataStationViewChangeHandler"/>
+      <validatorClass className="com.ibm.datatools.etl.dataflow.baselib.validators.ExternalDataStationOperatorValidation"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.ExternalDataStationOperatorRewriter"/>
+      <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ViewDataStation::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+      <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ViewDataStation::output::result" name="result" label="result" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <definitionParams type="input" name="input"/>
+      </outputList>
+    </definitionList>
+  </children>
+  <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target" name="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+    <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets" name="DBTargets" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+      <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI" name="UI" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+        <children iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2" name="DB2" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+          <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase" name="TableTargetBase" label="TableTargetBase" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+            <propertyList name="runReorg" label="Run REORG when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="reorgCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runRunstats" label="Run RUNSTATS when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="runstatsCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+            <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="tableOperation" usageType="concat"/>
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              <definitionParams name="separator" value=" : " usageType="semantics"/>
+            </propertyList>
+            <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+              <definitionParams name="min" value="0" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+            <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+              <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+            <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+              <definitionParams type="property" name="rdbTable"/>
+            </propertyList>
+            <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+            <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.DB2TableTargetChangeHandler"/>
+            <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+              <definitionParams type="property" name="columnExpressions"/>
+              <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+                <definitionParams type="property" name="rdbTable" usageType="concat"/>
+                <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              </propertyList>
+            </outputList>
+          </definitionList>
+          <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert" name="SQLInsert" label="SQLInsert" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+            <definitionParams value="Insert" usageType="compositionResolution"/>
+            <propertyList name="commitInterval" description="For the SQL Insert operation, specify the interval in rows at which the operation is committed. When the interval is zero, the insert operation is completed before it is committed." label="Commit interval" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicInteger" defaultValueLiteral="0">
+              <definitionParams name="min" value="0" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="insertMap" label="Map Source to Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+              <definitionParams type="input" name="input" usageType="mapFrom"/>
+              <definitionParams type="property" name="rdbTable" usageType="mapTo" label="Modified Table"/>
+              <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="createTableCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="createTableSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="createTableUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="createTableResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runReorg" label="Run REORG when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="reorgCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runRunstats" label="Run RUNSTATS when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="runstatsCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+            <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="tableOperation" usageType="concat"/>
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              <definitionParams name="separator" value=" : " usageType="semantics"/>
+            </propertyList>
+            <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+              <definitionParams name="min" value="0" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+            <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+              <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+            <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+              <definitionParams type="property" name="rdbTable"/>
+            </propertyList>
+            <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+            <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.DB2TableTargetChangeHandler"/>
+            <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+            <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+              <definitionParams type="property" name="columnExpressions"/>
+              <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+                <definitionParams type="property" name="rdbTable" usageType="concat"/>
+                <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              </propertyList>
+            </outputList>
+          </definitionList>
+          <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate" name="SQLUpdate" label="SQLUpdate" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+            <definitionParams value="Update" usageType="compositionResolution"/>
+            <propertyList name="inputMatch" description="For the Update SQL operation, specify the condition that must be met to match the key of an input row key with the key of a row in the target table." label="Match Input Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+              <definitionParams type="property" name="rdbTable"/>
+              <definitionParams type="input" name="input"/>
+            </propertyList>
+            <propertyList name="targetPredicate" description="For the Update SQL operation, specify the condition that must be met for a matched row in the target table to be updated." label="Update Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+              <definitionParams type="property" name="rdbTable"/>
+            </propertyList>
+            <propertyList name="map" label="Map Source to Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+              <definitionParams type="input" name="input" usageType="mapFrom" label="Updates"/>
+              <definitionParams type="property" name="rdbTable" usageType="mapFrom" label="Current Table"/>
+              <definitionParams type="property" name="rdbTable" usageType="mapTo" label="Updated Table"/>
+            </propertyList>
+            <propertyList name="runReorg" label="Run REORG when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="reorgCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runRunstats" label="Run RUNSTATS when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="runstatsCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+            <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="tableOperation" usageType="concat"/>
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              <definitionParams name="separator" value=" : " usageType="semantics"/>
+            </propertyList>
+            <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+              <definitionParams name="min" value="0" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+            <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+              <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+            <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+              <definitionParams type="property" name="rdbTable"/>
+            </propertyList>
+            <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+            <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.DB2TableTargetChangeHandler"/>
+            <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" numMinLinks="0"/>
+            <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+              <definitionParams type="property" name="columnExpressions"/>
+              <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+                <definitionParams type="property" name="rdbTable" usageType="concat"/>
+                <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              </propertyList>
+            </outputList>
+          </definitionList>
+          <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete" name="SQLDelete" label="SQLDelete" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+            <definitionParams value="Delete" usageType="compositionResolution"/>
+            <propertyList name="predicate" description="For the SQL Delete operation, specify a condition that matches rows from the input data set with rows in the target table." label="Input match condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+              <definitionParams type="property" name="rdbTable"/>
+              <definitionParams type="input" name="input"/>
+            </propertyList>
+            <propertyList name="targetPredicate" description="For the SQL Delete operation, specify a condition that will be applied to the target table. Only the rows that meet both this condition and the input match condition will be deleted." label="Delete condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+              <definitionParams type="property" name="rdbTable"/>
+            </propertyList>
+            <propertyList name="runReorg" label="Run REORG when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="reorgCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="reorgResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runRunstats" label="Run RUNSTATS when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+            <propertyList name="runstatsCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="runstatsResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+              <paramOption phase="OTHER" paramName="@IGNORE"/>
+            </propertyList>
+            <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+            <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="tableOperation" usageType="concat"/>
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              <definitionParams name="separator" value=" : " usageType="semantics"/>
+            </propertyList>
+            <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+              <definitionParams name="min" value="0" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+            <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+              <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+            </propertyList>
+            <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+            <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+              <definitionParams type="property" name="rdbTable"/>
+            </propertyList>
+            <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+            <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.DB2TableTargetChangeHandler"/>
+            <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" numMinLinks="0"/>
+            <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+              <definitionParams type="property" name="columnExpressions"/>
+              <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+                <definitionParams type="property" name="rdbTable" usageType="concat"/>
+                <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+              </propertyList>
+            </outputList>
+          </definitionList>
+        </children>
+        <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon" name="TableTargetBaseCommon" label="TableTargetBaseCommon" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+          <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+          <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+            <definitionParams type="property" name="tableOperation" usageType="concat"/>
+            <definitionParams type="property" name="rdbTable" usageType="concat"/>
+            <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            <definitionParams name="separator" value=" : " usageType="semantics"/>
+          </propertyList>
+          <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+            <definitionParams name="min" value="0" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+          <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+            <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+          <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+          <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+            <definitionParams type="property" name="columnExpressions"/>
+            <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            </propertyList>
+          </outputList>
+        </definitionList>
+        <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase" name="TableTargetBase" label="TableTargetBase" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+          <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+          <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+            <definitionParams type="property" name="tableOperation" usageType="concat"/>
+            <definitionParams type="property" name="rdbTable" usageType="concat"/>
+            <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            <definitionParams name="separator" value=" : " usageType="semantics"/>
+          </propertyList>
+          <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+            <definitionParams name="min" value="0" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+          <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+            <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+          <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+          <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.TableTargetChangeHandler"/>
+          <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.TableTargetRewriter"/>
+          <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+            <definitionParams type="property" name="columnExpressions"/>
+            <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            </propertyList>
+          </outputList>
+        </definitionList>
+        <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate" name="SQLUpdate" label="SQLUpdate" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+          <definitionParams value="Update" usageType="compositionResolution"/>
+          <propertyList name="inputMatch" description="For the Update SQL operation, specify the condition that must be met to match the key of an input row key with the key of a row in the target table." label="Match Input Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+            <definitionParams type="property" name="rdbTable"/>
+            <definitionParams type="input" name="input"/>
+          </propertyList>
+          <propertyList name="targetPredicate" description="For the Update SQL operation, specify the condition that must be met for a matched row in the target table to be updated." label="Update Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="map" label="Map Source to Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+            <definitionParams type="input" name="input" usageType="mapFrom" label="Updates"/>
+            <definitionParams type="property" name="rdbTable" usageType="mapFrom" label="Current Table"/>
+            <definitionParams type="property" name="rdbTable" usageType="mapTo" label="Updated Table"/>
+          </propertyList>
+          <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+          <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+            <definitionParams type="property" name="tableOperation" usageType="concat"/>
+            <definitionParams type="property" name="rdbTable" usageType="concat"/>
+            <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            <definitionParams name="separator" value=" : " usageType="semantics"/>
+          </propertyList>
+          <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+            <definitionParams name="min" value="0" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+          <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+            <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+          <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+          <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.TableTargetChangeHandler"/>
+          <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.TableTargetRewriter"/>
+          <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" numMinLinks="0"/>
+          <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+            <definitionParams type="property" name="columnExpressions"/>
+            <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            </propertyList>
+          </outputList>
+        </definitionList>
+        <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete" name="SQLDelete" label="SQLDelete" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+          <definitionParams value="Delete" usageType="compositionResolution"/>
+          <propertyList name="predicate" description="For the SQL Delete operation, specify a condition that matches rows from the input data set with rows in the target table." label="Input match condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+            <definitionParams type="property" name="rdbTable"/>
+            <definitionParams type="input" name="input"/>
+          </propertyList>
+          <propertyList name="targetPredicate" description="For the SQL Delete operation, specify a condition that will be applied to the target table. Only the rows that meet both this condition and the input match condition will be deleted." label="Delete condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+          <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+            <definitionParams type="property" name="tableOperation" usageType="concat"/>
+            <definitionParams type="property" name="rdbTable" usageType="concat"/>
+            <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            <definitionParams name="separator" value=" : " usageType="semantics"/>
+          </propertyList>
+          <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+            <definitionParams name="min" value="0" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+          <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+            <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+          <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+          <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.TableTargetChangeHandler"/>
+          <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.TableTargetRewriter"/>
+          <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" numMinLinks="0"/>
+          <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+            <definitionParams type="property" name="columnExpressions"/>
+            <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            </propertyList>
+          </outputList>
+        </definitionList>
+        <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert" name="SQLInsert" label="SQLInsert" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+          <definitionParams value="Insert" usageType="compositionResolution"/>
+          <propertyList name="commitInterval" description="For the SQL Insert operation, specify the interval in rows at which the operation is committed. When the interval is zero, the insert operation is completed before it is committed." label="Commit interval" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicInteger" defaultValueLiteral="0">
+            <definitionParams name="min" value="0" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="insertMap" label="Map Source to Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+            <definitionParams type="input" name="input" usageType="mapFrom"/>
+            <definitionParams type="property" name="rdbTable" usageType="mapTo" label="Modified Table"/>
+            <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="tableOperation" description="Select Insert, Delete, or Update from the list box. If you select Insert, the rows that flow into the operator from the preceding operator will be inserted into the table. Existing rows in the table are not affected. If you select Delete or Update, you need to enter an expression in the Condition page that defines the rows that you want to delete or modify." label="SQL operation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="TargetTableOperationType" defaultValueLiteral="Insert"/>
+          <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+            <definitionParams type="property" name="tableOperation" usageType="concat"/>
+            <definitionParams type="property" name="rdbTable" usageType="concat"/>
+            <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            <definitionParams name="separator" value=" : " usageType="semantics"/>
+          </propertyList>
+          <propertyList name="jdbcBatchSize" description="For JDBC operations, specify the JDBC batch update size. " label="JDBC batch size" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="Integer" defaultValueLiteral="1000">
+            <definitionParams name="min" value="0" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="accessMethod" description="Select either SQL execution database or Remote database. The SQL execution database is defined in the General properties page for the data flow. This database is the DB2 database where the data flow will run. Selecting this option means that the target table is local to that database. A remote database is either another DB2 database or a non-DB2 database that is accessible through JDBC. All JDBC-compliant relational databases are supported, not just IBM databases." label="Location" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+          <propertyList name="rdbTable" label="Target database table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable">
+            <definitionParams name="dbTypeRetain" value="true" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+          <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+            <definitionParams type="property" name="rdbTable"/>
+          </propertyList>
+          <propertyList name="reportErrorWhenNoRowsProcessed" description="This option allows the user to force a dataflow to fail if no rows are processed by the table target operator. " label="Report Failure when no rows are processed" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+          <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.TableTargetChangeHandler"/>
+          <rewriterClass className="com.ibm.datatools.etl.dataflow.baselib.rewriters.TableTargetRewriter"/>
+          <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+          <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+            <definitionParams type="property" name="columnExpressions"/>
+            <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+              <definitionParams type="property" name="rdbTable" usageType="concat"/>
+              <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+            </propertyList>
+          </outputList>
+        </definitionList>
+      </children>
+      <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/SQLTarget" name="SQLTarget" label="SQLTarget" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+        <propertyList name="SQLOperation" label="SQLOperation" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <propertyList name="rdbTable" label="rdbTable" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+        <propertyList name="predicate" label="Delete condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+          <definitionParams type="input" name="input"/>
+        </propertyList>
+        <propertyList name="inputMatch" label="Match Input Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+          <definitionParams type="input" name="input"/>
+        </propertyList>
+        <propertyList name="targetPredicate" label="Update Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+        </propertyList>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+        <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/SQLTarget::input::input" name="input" label="Insert Into" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/DB2TableMerge" name="DB2TableMerge" label="DB2TableMerge" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true">
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="rdbTable" label="Merge into table" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="DBTable"/>
+        <propertyList name="updateMap" label="Update Map" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+          <definitionParams type="input" name="input" usageType="mapFrom"/>
+          <definitionParams type="property" name="rdbTable" usageType="mapFrom" label="existingTable"/>
+          <definitionParams type="property" name="rdbTable" usageType="mapTo" label="mergedTable"/>
+        </propertyList>
+        <propertyList name="insertMap" label="Build Expressions for insert" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="MapExpression">
+          <definitionParams type="input" name="input" usageType="mapFrom"/>
+          <definitionParams type="property" name="rdbTable" usageType="mapTo" label="updatedTable"/>
+          <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="inputMatch" description="The input match condition determines whether a row is appended or updated. When the condition is met, existing rows are updated; when the condition is not met, new rows are appended (inserted). Generally, this condition is an equality statement that compares a key or some other value from the input data set with a value in the target table." label="Match Input Condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+          <definitionParams type="input" name="input"/>
+        </propertyList>
+        <propertyList name="targetPredicate" description="This condition applies an optional, additional constraint to the input match. When the input match condition and the target table match condition are both met, the appropriate updates and inserts take place." label="Target table match condition" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="Condition">
+          <definitionParams type="property" name="rdbTable"/>
+          <definitionParams type="input" name="input"/>
+        </propertyList>
+        <propertyList name="runReorg" label="Run REORG when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+        <propertyList name="reorgCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="reorgSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="reorgUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="reorgResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="runRunstats" label="Run RUNSTATS when the table modification operation is finished" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="DynamicBoolean" defaultValueLiteral="false"/>
+        <propertyList name="runstatsCodeOptions" label="Statement type" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="CodeOptions">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="runstatsSysCode" label="System-generated statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="runstatsUserCode" label="Customized statement" bundleName="com.ibm.datatools.etl.dataflow.base.oplib">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="runstatsResetButton" label="Reset" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ButtonString">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="useMergeStatement" label="Use Merge Statement" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="boolean" defaultValueLiteral="true"/>
+        <propertyList name="executionOrderHint" label="executionOrderHint" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="int"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true">
+          <definitionParams name="updateMap::TEST_ENABLE" value="true"/>
+          <definitionParams name="updateMap::TEST_MSGNUM" value="774"/>
+          <definitionParams name="updateMap::VALIDMAP_ENABLE" value="true"/>
+          <definitionParams name="insertMap::TEST_ENABLE" value="true"/>
+          <definitionParams name="insertMap::TEST_MSGNUM" value="774"/>
+          <definitionParams name="insertMap::VALIDMAP_ENABLE" value="true"/>
+          <definitionParams name="inputMatch::TEST_ENABLE" value="true"/>
+          <definitionParams name="inputMatch::TEST_MSGNUM" value="254"/>
+          <definitionParams name="inputMatch::PARSE_ENABLE" value="true"/>
+          <definitionParams name="targetPredicate::TEST_ENABLE" value="false"/>
+          <definitionParams name="targetPredicate::PARSE_ENABLE" value="true"/>
+        </propertyList>
+        <propertyList name="columnExpressions" label="columnExpressions" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" optional="true" type="ProjectExpression">
+          <definitionParams type="property" name="rdbTable"/>
+        </propertyList>
+        <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+          <definitionParams type="property" name="rdbTable" usageType="concat"/>
+          <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.baselib.handlers.DB2TableMergeChangeHandler"/>
+        <inputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/DB2TableMerge::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+        <outputList iD="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/DB2TableMerge::output::target" name="target" label="Target" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" lowerBound="0" rule="BY_PARAMS">
+          <definitionParams type="property" name="columnExpressions"/>
+          <propertyList name="targetOutPutLabel" label="targetOutPutLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" type="ConcatString">
+            <definitionParams type="property" name="rdbTable" usageType="concat"/>
+            <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+          </propertyList>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/TableExtract::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/JDBCSource::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="inner" fIDef="//@children.1/@definitionList.12"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="leftOuter" fIDef="//@children.1/@definitionList.12"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="rightOuter" fIDef="//@children.1/@definitionList.12"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="fullOuter" fIDef="//@children.1/@definitionList.12"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="inner" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="leftOuter" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="rightOuter" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="fullOuter" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/InnerJoin::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="inner" fIDef="//@children.1/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Project::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Aggregate::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@definitionList.8"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/DB2TableFunction::rdbFunction">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.1/@definitionList.9"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/DB2TableMerge::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/SQLTarget::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.2/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert::columnExpressions">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="target" fIDef="//@children.2/@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBase::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.1/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/TableTargetBaseCommon::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.0/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/TableTargetBase::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.0/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.3/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="map" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="map" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/JDBCSource::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="filterCondition" fIDef="//@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Sources/DBSources/TableExtract::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="filterCondition" fIDef="//@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Deduplicate::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelectList" fIDef="//@children.1/@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/PermTableDataStation::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.1/@definitionList.15"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/BasicDeduplicate::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelectList" fIDef="//@children.1/@definitionList.6"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="map" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="map" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.2/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.2/@children.0/@children.0/@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.4/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert::tableOperation">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/DB2TableMerge::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="updateMap" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="updateMap" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnExpressions" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOutPutLabel" fIDef="//@children.2/@children.0/@definitionList.1/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ExternalDataStationBase::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.13"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/TempTableDataStation::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.14"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/PermTableDataStation::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.15"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.1/@definitionList.15"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/FileDataStation::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.16"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/ViewDataStation::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.17"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Filter::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="filterExpression" fIDef="//@children.1/@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Sort::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.4"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Set::input1">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.5"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/BasicDeduplicate::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.6"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelectList" fIDef="//@children.1/@definitionList.6"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Deduplicate::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="result" fIDef="//@children.1/@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="discard" fIDef="//@children.1/@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnSelectList" fIDef="//@children.1/@definitionList.7"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/EmbeddedSQL::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="SQLStatement" fIDef="//@children.1/@definitionList.10"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/AdvancedJoin::in">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.1/@definitionList.12"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.1/@definitionList.12"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Aggregate::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.1/@definitionList.8"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="groupby" fIDef="//@children.1/@definitionList.8"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="having" fIDef="//@children.1/@definitionList.8"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/InnerJoin::in">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.1/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.1/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/SQLTarget::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.2/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLDelete::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.2/@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLDelete::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLUpdate::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="map" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Project::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.1/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLUpdate::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="map" fIDef="//@children.2/@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/SQLInsert::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.2/@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/UI/DB2/SQLInsert::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.2/@children.0/@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Target/DBTargets/DB2TableMerge::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="updateMap" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMap" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputMatch" fIDef="//@children.2/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetPredicate" fIDef="//@children.2/@children.0/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::left">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com.ibm.datatools.sqw/dataflow.common.oplib/Transform/Join::right">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="predicate" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="TargetTableOperationType" registered="true" emfClassName="TargetTableOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="ExternalDataStationType" registered="true" emfClassName="ExternalDataStationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="AccessMethod" emfClassName="enum">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+    <definitionParams name="defaultValueLiteral" value="LOCAL" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="DBTable" emfClassName="DBTable" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="Short" emfClassName="EShort" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0"/>
+  <propertyTypeList name="VirtualColumn" emfClassName="VirtualColumn" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="SubSelect" emfClassName="SubSelect" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="Expression" emfClassName="Expression" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="SortSchema" emfClassName="SortSchema" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib.ecore"/>
+  <propertyTypeList name="SetOpType" emfClassName="SetOpType" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib.ecore"/>
+  <propertyTypeList name="PivotRow" emfClassName="PivotRow" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib.ecore"/>
+  <propertyTypeList name="UnPivotRow" emfClassName="UnPivotRow" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/baselib.ecore"/>
+  <propertyTypeList name="SequenceType" emfClassName="Sequence" emfPkgUri="http:///org/eclipse/datatools/modelbase/sql/schema.ecore"/>
+  <propertyTypeList name="SQLCode" label="PropertyType.SQLCode" extendsDefinitionID="Expression" bundleName="com.ibm.datatools.etl.dataflow.base.oplib"/>
+  <propertyTypeList name="SQLText" label="PropertyType.SQLCode" extendsDefinitionID="SQLCode" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true" emfClassName="SQLText" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="TypeSizeEnum" emfClassName="enum">
+    <definitionParams name="SMALL" usageType="enumLiteral" label="SMALL"/>
+    <definitionParams name="LARGE" usageType="enumLiteral" label="LARGE"/>
+  </propertyTypeList>
+  <propertyTypeList name="RegionTypes" emfClassName="enum">
+    <definitionParams name="SQLRegion" usageType="enumLiteral"/>
+    <definitionParams name="DataStageRegion" usageType="enumLiteral"/>
+    <definitionParams name="CustomRegion" usageType="enumLiteral"/>
+  </propertyTypeList>
+  <propertyTypeList name="DebugSampleTypes" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true" emfClassName="DebugSampleTypesEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="WholeData" usageType="enumLiteral" label="None (use all data)"/>
+    <definitionParams name="FirstData" usageType="enumLiteral" label="First n rows"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="SampleDataTypes" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true" emfClassName="SampleDataTypesEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="WholeData" usageType="enumLiteral" label="None (use all data)"/>
+    <definitionParams name="FirstData" usageType="enumLiteral" label="First n rows"/>
+    <definitionParams name="RandomData" usageType="enumLiteral" label="Random Data"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="StagingOptions" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true" emfClassName="StagingOptionsEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="RegularTable" usageType="enumLiteral" label="Regular table"/>
+    <definitionParams name="TemporaryTable" usageType="enumLiteral" label="Temporary table"/>
+    <definitionParams name="View" usageType="enumLiteral" label="View"/>
+    <definitionParams name="None" usageType="enumLiteral" label="None"/>
+  </propertyTypeList>
+  <propertyTypeList name="tableCleaningOptions" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true" emfClassName="tableCleaningOptionsEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="NONE" usageType="enumLiteral" label="None"/>
+    <definitionParams name="DELETE" usageType="enumLiteral" label="Delete all rows"/>
+    <definitionParams name="TRUNCATE" usageType="enumLiteral" label="Truncate table"/>
+  </propertyTypeList>
+  <propertyTypeList name="tableCleaningOptionsWithDrop" bundleName="com.ibm.datatools.etl.dataflow.base.oplib" registered="true" emfClassName="tableCleaningOptionsWithDropEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="NONE" usageType="enumLiteral" label="None"/>
+    <definitionParams name="DELETE" usageType="enumLiteral" label="Delete all rows"/>
+    <definitionParams name="TRUNCATE" usageType="enumLiteral" label="Truncate table"/>
+    <definitionParams name="DROP" usageType="enumLiteral" label="Drop table"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

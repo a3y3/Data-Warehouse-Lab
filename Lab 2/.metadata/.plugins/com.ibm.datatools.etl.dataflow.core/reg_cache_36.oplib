@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" lastModified="0" nsURI="subflow://Lab 2_1486025299760_macro.oplib" fileName="Lab 2/Subflows/macro.oplib" provider="Lab 2"/>

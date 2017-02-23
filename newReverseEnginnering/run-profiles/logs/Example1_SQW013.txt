@@ -1,0 +1,30 @@
+ Data-Flows  Feb 9, 2017 3:09:55 PM   SQW03415I: Flow execution started for SQW013 (/newReverseEnginnering/data-flows/Example1)
+ Data-Flows  Feb 9, 2017 3:09:55 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Example1_SQW013.txt
+ Data-Flows  Feb 9, 2017 3:09:55 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Example1_SQW013
+ Data-Flows  Feb 9, 2017 3:09:57 PM   SQW03275I: Execution of SQL statement "SET CURRENT SCHEMA "IWSCHEMA3E5DB2_19"" through JDBC connection finished successfully
+ Data-Flows  Feb 9, 2017 3:09:57 PM   SQW03276E: Execution of SQL statement "INSERT INTO UNIVERS090.R4(REGNO, SNAME, DEPT, MAJOR) SELECT Q87.REGNO AS REGNO, Q87.SNAME AS SNAME, Q87.DEPT AS DEPT, Q87.MAJOR AS MAJOR FROM  ( SELECT "UNIVERS090"."STUDENT"."REGNO"  AS "REGNO", "UNIVERS090"."STUDENT"."SNAME"  AS "SNAME", "UNIVERS090"."STUDENT"."DEPT"  AS "DEPT", "UNIVERS090"."STUDENT"."MAJOR"  AS "MAJOR", "UNIVERS090"."STUDENT"."DEPT"  AS "COL_1", "SOHAM140911090"."STUDENT"."DEPARTMENT"  AS "DEPARTMENT", "SOHAM140911090"."STUDENT"."DEPARTMENT"  AS "DEPARTMENT_1", "SOHAM140911090"."STUDENT"."NAME"  AS "NAME", "SOHAM140911090"."STUDENT"."REGNO"  AS "REGNO_1"  FROM "SOHAM140911090"."STUDENT"  WHERE "SOHAM140911090"."STUDENT"."DEPARTMENT" = 'IT')  Q87" through JDBC connection failed. Exception: SQL Exception. SQL state = 42703; error code = -206; error Message = "UNIVERS090.STUDENT.REGNO" is not valid in the context where it is used.. SQLCODE=-206, SQLSTATE=42703, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-206", SQLSTATE "42703" and message tokens "UNIVERS090.STUDENT.REGNO".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89SQL Exception. SQL state = 56098; error code = -727; error Message = An error occurred during implicit system action type "2". Information returned for the error includes SQLCODE "-206", SQLSTATE "42703" and message tokens "UNIVERS090.STUDENT.REGNO".. SQLCODE=-727, SQLSTATE=56098, DRIVER=4.7.89
+ Data-Flows  Feb 9, 2017 3:09:57 PM   SQW03368I: Dumping variable values : 
+     ${INT-RES/RUN-ID} = 3E5DB2
+     ${RESERVED/APP_NAME} = Example1
+     ${RESERVED/APP_PATH} = E:/140911090/newReverseEnginnering/run-profiles/rp3e2eb2/
+     ${RESERVED/CURRENT_TIMESTAMP} = 2017-02-09 15:09:57
+     ${RESERVED/DATE} = 2017-02-09
+     ${RESERVED/DAYNAME_SHORT} = Thu
+     ${RESERVED/DAYNAME} = Thursday
+     ${RESERVED/DAY} = 09
+     ${RESERVED/INSTANCE_NAME} = SQW013
+     ${RESERVED/MISC_DIR} = E:/140911090\newReverseEnginnering\package-misc\
+     ${RESERVED/MONTHNAME_SHORT} = Feb
+     ${RESERVED/MONTHNAME} = February
+     ${RESERVED/MONTH} = 02
+     ${RESERVED/PROC_NAME} = Example1
+     ${RESERVED/RUN_ID} = 3E5DB2
+     ${RESERVED/START_TIMESTAMP} = 2017-02-09 15:09:56
+     ${RESERVED/TIME} = 15:09:56
+     ${RESERVED/TMP_DIR} = E:/140911090/newReverseEnginnering/run-profiles/tmp\Example1_SQW013
+     ${RESERVED/USER_DIR} = C:\Program Files\IBM\ISWarehouse\ds
+     ${RESERVED/USER_HOME} = C:\Users\student
+     ${RESERVED/USER_NAME} = student
+     ${RESERVED/YEAR} = 2017
+ Data-Flows  Feb 9, 2017 3:09:57 PM   SQW03408I: Flow execution finished for SQW013 (/newReverseEnginnering/data-flows/Example1)
+ Data-Flows  Feb 9, 2017 3:09:57 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Example1_SQW013.txt.

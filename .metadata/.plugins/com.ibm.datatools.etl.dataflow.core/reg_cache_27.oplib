@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="SelectIntoOpLib" description="Select Into operator" label="SelectIntoOpLib" bundleName="com.ibm.datatools.etl.selectinto.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib" fileName="selectinto.oplib">
+  <children iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.etl.selectinto.oplib">
+    <children iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform" name="Transform" bundleName="com.ibm.datatools.etl.selectinto.oplib">
+      <definitionList iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform/SelectIntoOperator" name="SelectIntoOperator" label="SelectInto.label" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.selectinto.oplib" registered="true">
+        <definitionParams name="epgBlockType" value="TXN" usageType="semantics"/>
+        <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+        <definitionParams name="runCodeType" value="JAVA" usageType="semantics"/>
+        <definitionParams name="runtimeUnitClass" value="com.ibm.datatools.etl.selectinto.runtime.SelectIntoRuntime" usageType="semantics"/>
+        <definitionParams name="runtimeUnitBundle" value="com.ibm.datatools.etl.selectinto.runtime" usageType="semantics"/>
+        <propertyList name="SQLText" label="SQL Statement" variableAllowed="true" bundleName="com.ibm.datatools.etl.selectinto.oplib" type="SQLCode">
+          <paramOption paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="dbConn" description="Specify the database connection to use for running the SELECT INTO statement inside the database. Specify either a fixed value (actual database connection name) or a variable. If you define the connection as a variable, you can defer specifying the database connection until a later phase in the life cycle of the application. " label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.selectinto.oplib" type="DBServer">
+          <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+        </propertyList>
+        <propertyList name="outputArgs" description="The values that are retrieved by the single row SELECT statement." label="Output Values" bundleName="com.ibm.datatools.etl.selectinto.oplib" type="SQLTypesToItemTypeList">
+          <definitionParams type="property" name="selectInto" usageType="outputArgs"/>
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+        <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+        <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+          <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.selectinto.oplib.handlers.SelectIntoChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.etl.selectinto.oplib.codegenerator.SelectIntoCodeGen"/>
+        <validatorClass className="com.ibm.datatools.etl.selectinto.oplib.validators.SelectIntoValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform/SelectIntoOperator::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+        <outputList iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform/SelectIntoOperator::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+        <outputList iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform/SelectIntoOperator::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+        <outputList iD="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform/SelectIntoOperator::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/selectinto/oplib/selectinto.oplib/Flow/Transform/SelectIntoOperator::selectInto">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="outputArgs" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+</com.ibm.datatools.etl.operatorlibrary:Library>

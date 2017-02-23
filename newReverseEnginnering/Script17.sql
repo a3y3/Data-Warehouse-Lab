@@ -1,0 +1,8 @@
+--<ScriptOptions statementTerminator="!"/>
+
+CREATE TABLE EMPLOYEE090.RESULT8 (
+		NAME VARCHAR(50),
+		SALARY NUMERIC(7 , 0)
+	)
+	DATA CAPTURE NONE!
+

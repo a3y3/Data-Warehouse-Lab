@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatordefinition="http:///com/ibm/datatools/etl/operatordefinition.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="cflowdb2luwops" description="Utility Operators for the Cflow DB2 LUW Operators Library" label="cflowdb2luwops" bundleName="com.ibm.datatools.etl.cflow.db2.luw" lastModified="0" nsURI="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib" fileName="etc/cflowdb2luw.oplib">
+  <children iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.etl.cflow.db2.luw">
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity" name="DB2CommandActivity" label="DB2 Command" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" composite="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" registered="true" resolverPropertyName="commandType">
+      <definitionParams name="DB2_LUW" value="DB2 UDB" usageType="dbVendor"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams value="DB2SQLScript" usageType="compositionResolution" label="DB2 SQL Script"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <definitionParams value="DB2Shell" usageType="compositionResolution" label="DB2 Shell"/>
+      <definitionParams name="runCodeType" value="SHELL" usageType="semantics"/>
+      <propertyList name="commandType" description="Details.DB2CommandActivity.commandType.desc" label="Command type" hidden="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="DB2OnlyCommandOperationType" defaultValueLiteral="DB2SQLScript"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <propertyList name="sqlScriptLocation" label="SQL script location" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="Details.Command.StatementTerminationCharacter.desc" label="Statement termination character" hidden="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" hidden="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" optional="true" type="VariableAssignOnly"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <opDefResolverMap key="DB2SQLScript" value="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript"/>
+      <opDefResolverMap key="DB2Shell" value="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell"/>
+      <resolverLabelMap key="DB2SQLScript" value="DB2 SQL Script"/>
+      <resolverLabelMap key="DB2Shell" value="DB2 Shell"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript" name="DB2SQLScript" label="DB2 SQL Script" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity" bundleName="com.ibm.datatools.etl.cflow.db2.luw" registered="true">
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams value="DB2SQLScript" usageType="compositionResolution" label="DB2 SQL Script"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <definitionParams name="DB2_LUW" value="DB2 UDB" usageType="dbVendor"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="Details.Command.StatementTerminationCharacter.desc" label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.db2.luw" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="commandType" description="Details.DB2CommandActivity.commandType.desc" label="Command type" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="DB2OnlyCommandOperationType" defaultValueLiteral="DB2SQLScript"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell" name="DB2Shell" label="DB2 Shell" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity" bundleName="com.ibm.datatools.etl.cflow.db2.luw" registered="true">
+      <definitionParams value="DB2Shell" usageType="compositionResolution" label="DB2 Shell"/>
+      <definitionParams name="runCodeType" value="SHELL" usageType="semantics"/>
+      <definitionParams name="DB2_LUW" value="DB2 UDB" usageType="dbVendor"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.db2.luw" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="commandType" description="Details.DB2CommandActivity.commandType.desc" label="Command type" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="DB2OnlyCommandOperationType" defaultValueLiteral="DB2SQLScript"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.db2.luw" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2CommandActivity::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2SQLScript::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/db2/luw/cflowdb2luw.oplib/Flow/DB2Shell::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <propertyTypeList name="DB2OnlyCommandOperationType" registered="true" emfClassName="DB2OnlyCommandOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

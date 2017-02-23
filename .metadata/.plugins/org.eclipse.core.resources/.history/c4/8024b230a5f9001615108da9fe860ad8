@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commontypes:SEObjectContainmentMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commontypes="com.ibm.datatools.dwe.emf.commontypes.nsuri">
+  <contentMap key="02_4">
+    <value xsi:type="commontypes:StringEObjectList">
+      <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_14_cgen/epgs/02_4_0.epg</contents>
+      <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_14_cgen/epgs/02_4_1.epg</contents>
+      <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_14_cgen/epgs/02_4_2.epg</contents>
+    </value>
+  </contentMap>
+  <contentMap key="02">
+    <value xsi:type="commontypes:StringEObjectList">
+      <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_14_cgen/epgs/02_0.epg</contents>
+    </value>
+  </contentMap>
+  <contentMap key="0">
+    <value xsi:type="commontypes:StringEObjectList">
+      <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_14_cgen/epgs/0_0.epg</contents>
+    </value>
+  </contentMap>
+</commontypes:SEObjectContainmentMap>

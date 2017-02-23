@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" bundleName="com.ibm.datatools.etl.dataflow.core" nsURI="http:///com/ibm/datatools/etl/dataflow/coretypes.oplib">
+  <definitionParams name="propagationSupport" value="yes" usageType="actionEnable"/>
+  <dataFlowDefinitionList iD="CoreDataFlow" name="CoreDataFlow">
+    <operatorBean className="DataFlow" pkgNsURI="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  </dataFlowDefinitionList>
+  <propertyTypeList name="CoreDataFlowDefinition" registered="true" emfClassName="FlowItemDefinition" emfPkgUri="http:///com/ibm/datatools/etl/operatordefinition.ecore" wrapped="true"/>
+  <propertyTypeList name="CoreOperatorDefinition" registered="true" emfClassName="OperatorDefinition" emfPkgUri="http:///com/ibm/datatools/etl/operatordefinition.ecore" wrapped="true"/>
+  <propertyTypeList name="CorePortDefinition" registered="true" emfClassName="PortDefinition" emfPkgUri="http:///com/ibm/datatools/etl/operatordefinition.ecore" wrapped="true"/>
+  <propertyTypeList name="DefaultDataFlowDefinition" extendsDefinitionID="CoreDataFlowDefinition" registered="true" emfClassName="DefaultDataFlowDefinition" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" wrapped="true"/>
+  <propertyTypeList name="DefaultOperatorDefinition" extendsDefinitionID="CoreOperatorDefinition" registered="true" emfClassName="DefaultOperatorDefinition" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" wrapped="true"/>
+  <propertyTypeList name="DefaultPortDefinition" extendsDefinitionID="CorePortDefinition" registered="true" emfClassName="DefaultPortDefinition" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" wrapped="true"/>
+  <propertyTypeList name="CoreOperatorPort" registered="true" emfClassName="OperatorPort" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreInputPort" registered="true" emfClassName="InputPort" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreOutputPort" registered="true" emfClassName="OutputPort" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreLink" registered="true" emfClassName="Link" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreDataFlow" registered="true" emfClassName="DataFlow" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreOperator" registered="true" emfClassName="Operator" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreMacroOperator" registered="true" emfClassName="MacroOperator" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreCompositeOperator" registered="true" emfClassName="CompositeOperator" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreRegion" registered="true" emfClassName="Region" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreSubFlowOperator" registered="true" emfClassName="SubFlowOperator" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  <propertyTypeList name="CoreColLink" registered="true" emfClassName="ColumnLink" emfPkgUri="http:///com/ibm/datatools/etl/dataflow.ecore" wrapped="true"/>
+  <propertyTypeList name="CoreETLOperator" registered="true" emfClassName="ETLOperator" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/view.ecore" wrapped="true"/>
+  <propertyTypeList name="Region" extendsDefinitionID="CoreRegion" registered="true" emfClassName="Region" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="Operator" extendsDefinitionID="CoreOperator" registered="true" emfClassName="Operator" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="ETLOperator" extendsDefinitionID="CoreETLOperator" registered="true" emfClassName="ETLOperator" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="OperatorPort" extendsDefinitionID="CoreOperatorPort" registered="true" emfClassName="OperatorPort" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="InputPort" extendsDefinitionID="CoreInputPort" registered="true" emfClassName="InputPort" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="OutputPort" extendsDefinitionID="CoreOutputPort" registered="true" emfClassName="OutputPort" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="SubFlowOperator" extendsDefinitionID="CoreSubFlowOperator" registered="true" emfClassName="SubFlowOperator" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="Link" extendsDefinitionID="CoreLink" registered="true" emfClassName="Link" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="ColLink" extendsDefinitionID="CoreColLink" registered="true" emfClassName="ColLink" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib" wrapped="true"/>
+  <propertyTypeList name="ItemIDRelationshipTable" registered="true" emfClassName="ItemIDRelationshipTable" emfPkgUri="http:///com/ibm/datatools/etl/coretypes/relations.ecore" wrapped="true"/>
+  <propertyTypeList name="Variable" registered="true" emfClassName="Variable" emfPkgUri="http:///com/ibm/datatools/etl/variables.ecore"/>
+  <propertyTypeList name="VariableGroup" registered="true" emfClassName="VariableGroup" emfPkgUri="http:///com/ibm/datatools/etl/variables.ecore"/>
+  <propertyTypeList name="PropVariableValue" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="PropVariableValueEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="Value" usageType="enumLiteral" label="Use Fixed Value"/>
+    <definitionParams name="Variable" usageType="enumLiteral" label="Use Variable"/>
+  </propertyTypeList>
+  <propertyTypeList name="NullNotNullValue" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="NullNotNullValueEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="Value" usageType="enumLiteral" label="Not Null"/>
+    <definitionParams name="NullValue" usageType="enumLiteral" label="Null Value"/>
+  </propertyTypeList>
+  <propertyTypeList name="dummyLabel" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral=""/>
+  <propertyTypeList name="ButtonString" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral=""/>
+  <propertyTypeList name="String" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="254" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="String2StringMapEntry" registered="true" emfClassName="EStringToStringMapEntry" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral=""/>
+  <propertyTypeList name="EncryptedString" registered="true" emfClassName="EByteArray" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="Integer" registered="true" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="INTEGER" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="IntegerDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlFormatQuote" value="NONE" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="Int" registered="true" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0"/>
+  <propertyTypeList name="int" registered="true" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0"/>
+  <propertyTypeList name="boolean" label="Boolean" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="EBoolean" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="false">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="5" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="float" registered="true" emfClassName="EFloat" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0.0"/>
+  <propertyTypeList name="Decimal" registered="true" emfClassName="EBigDecimal" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="DECIMAL" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="FixedPrecisionDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="11" usageType="sqlModelLengthDefault"/>
+    <definitionParams name="sqlScale" value="4" usageType="sqlModelScaleDefault"/>
+    <definitionParams name="sqlFormatQuote" value="NONE" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="Double" registered="true" emfClassName="EDouble" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="DOUBLE_PRECISION" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="ApproximateNumericDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="11" usageType="sqlModelLengthDefault"/>
+    <definitionParams name="sqlScale" value="4" usageType="sqlModelScaleDefault"/>
+    <definitionParams name="sqlFormatQuote" value="NONE" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="ByteArray" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="BINARY_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="BinaryStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="254" usageType="sqlModelLengthDefault"/>
+    <definitionParams name="sqlFormatQuote" value="HEX" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="BigInt" registered="true" emfClassName="EBigInteger" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="BIGINT" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="IntegerDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlFormatQuote" value="NONE" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="SmallInt" registered="true" emfClassName="EShort" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="0">
+    <definitionParams name="allowVariableUse" value="false" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="SMALLINT" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="IntegerDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlFormatQuote" value="NONE" usageType="sqlFormatStyle"/>
+  </propertyTypeList>
+  <propertyTypeList name="VariableOnly" extendsDefinitionID="Variable" registered="true" emfClassName="VariableOnly" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="VariableAssignOnly" extendsDefinitionID="VariableOnly" registered="true" emfClassName="VariableAssignOnly" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+  <propertyTypeList name="VariableAssignment" registered="true" emfClassName="Variable" emfPkgUri="http:///com/ibm/datatools/etl/variables.ecore"/>
+  <propertyTypeList name="AnyString" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral=""/>
+  <propertyTypeList name="GenericChangeHandler" registered="true" emfClassName="GenericChangeHandlingType" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="File" registered="true" emfClassName="File" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="254" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="Directory" registered="true" emfClassName="File" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="254" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="DBTable" registered="true" emfClassName="DBTable" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore">
+    <definitionParams type="TableName" name="tableName" usageType="parameterizerItem" label="Table name:" description="This field accepts either a fixed table name or a variable. To use a variable, click the variable icon, select Use Variable, click the ellipsis button (...), and create or select the variable in the Variable Selection window. "/>
+    <definitionParams type="SchemaName" name="schemaName" usageType="parameterizerItem" label="Schema name:" description="This field accepts either a fixed database schema name or a variable. To use a variable, click the variable icon, select Use Variable, click the ellipsis button (...), and create or select the variable in the Variable Selection window."/>
+    <definitionParams type="DBServer" name="connection" usageType="parameterizerItem" label="Connection:"/>
+  </propertyTypeList>
+  <propertyTypeList name="DBRoutine" registered="true" emfClassName="DBRoutine" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore">
+    <definitionParams type="SchemaName" name="schemaName" usageType="parameterizerItem" label="Schema name:"/>
+  </propertyTypeList>
+  <propertyTypeList name="DBProcedure" extendsDefinitionID="DBRoutine" registered="true" emfClassName="DBProcedure" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams type="SchemaName" name="schemaName" usageType="parameterizerItem" label="Schema name:"/>
+  </propertyTypeList>
+  <propertyTypeList name="CoreItemMap" registered="true" emfClassName="ItemMap" emfPkgUri="http:///com/ibm/datatools/etl/coretypes.ecore"/>
+  <propertyTypeList name="SQLTypesToItemTypeList" extendsDefinitionID="CoreItemMap" registered="true" emfClassName="SQLTypesToItemTypeList" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="handler" value="com.ibm.datatools.etl.helpers.SQLTypesToItemTypeList" usageType="changeHandler"/>
+  </propertyTypeList>
+  <propertyTypeList name="SchemaName" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="maxPhase" value="DEPLOYMENT" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="40" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="TableName" registered="true" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" wrapped="true" primitive="true" defaultValueLiteral="">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="maxPhase" value="DEPLOYMENT_PREP" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="128" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="DBServer" label="DBConnection" extendsDefinitionID="TransientEnumValue" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="DBServer" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="enumProvider" value="com.ibm.datatools.etl.helpers.DBServerEnumProvider" usageType="semantics"/>
+    <definitionParams type="DataSource" name="resourceProfileProvider" value="com.ibm.datatools.etl.helpers.DBServerResourceProfileProvider" usageType="semantics"/>
+    <definitionParams name="maxPhase" value="DEPLOYMENT" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="128" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="Machine" label="MachineResource" extendsDefinitionID="TransientEnumValue" bundleName="com.ibm.datatools.etl.dataflow.core" registered="true" emfClassName="Machine" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="enumProvider" value="com.ibm.datatools.etl.helpers.MachineEnumProvider" usageType="semantics"/>
+    <definitionParams type="MachineResource" name="resourceProfileProvider" value="com.ibm.datatools.etl.helpers.MachineResourceProfileProvider" usageType="semantics"/>
+    <definitionParams name="maxPhase" value="DEPLOYMENT" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="254" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <resourceTypeList iD="DataSource" name="DataSource" label="ResourceType.DataSource" bundleName="com.ibm.datatools.etl.dataflow.core">
+    <propertyList name="dbName" label="ResourceType.DataSource.dbName" bundleName="com.ibm.datatools.etl.dataflow.core"/>
+    <operatorBean className="ResourceProfile" pkgNsURI="http:///com/ibm/datatools/etl/coretypes/resources.ecore"/>
+  </resourceTypeList>
+  <resourceTypeList iD="MachineResource" name="MachineResource" label="ResourceType.MachineResource" bundleName="com.ibm.datatools.etl.dataflow.core">
+    <operatorBean className="MachineProfile" pkgNsURI="http:///com/ibm/datatools/etl/coretypes/resources.ecore"/>
+  </resourceTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="miningeditor.oplib" description="Mining Editor Operator Library" label="miningeditor.oplib" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib" fileName="miningeditor.oplib">
+  <children iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract" name="Extract" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+    <children iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining" name="Mining" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/ModelSource" name="ModelSource" label="ModelSource" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="miningModel" label="miningModel" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="MiningModel"/>
+        <propertyList name="miningValues" label="miningValues" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="isTestResult" label="isTestResult" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean" defaultValueLiteral="false"/>
+        <propertyList name="modelItemFormat" label="modelItemFormat" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.ModelSourceChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.ModelSourceCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.ModelSourceValidator"/>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/ModelSource::output::$modelport$modelsource" name="$modelport$modelsource" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <definitionParams type="property" name="modelItemFormat"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/TableExtract" name="TableExtract" label="TableExtract" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="samplingRate" label="samplingRate" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="double" defaultValueLiteral="100"/>
+        <propertyList name="rdbTable" label="rdbTable" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="DBTable"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.TableExtractChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TableExtractCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TableSourceValidator"/>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/TableExtract::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <children iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform" name="Transform" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+    <children iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining" name="Mining" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer" name="Clusterer" label="Clusterer" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="clusterAlgorithm" label="clusterAlgorithm" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="int" defaultValueLiteral="0"/>
+        <propertyList name="maxNumberOfClusters" label="maxNumberOfClusters" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int"/>
+        <propertyList name="similarityThreshold" label="similarityThreshold" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float" defaultValueLiteral="0.5"/>
+        <propertyList name="numPasses" label="numPasses" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="int" defaultValueLiteral="10"/>
+        <propertyList name="execTime" label="execTime" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="0"/>
+        <propertyList name="powerOptions" label="powerOptions" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="optionalParameters" label="optionalParameters" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="columnFieldTypes" label="columnFieldTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnFieldUsageTypes" label="columnFieldUsageTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnPropertySelection" label="columnPropertySelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+          <definitionParams type="property" name="columnFieldTypes" usageType="mapTo" label="Field_Type_Fields"/>
+          <definitionParams type="property" name="columnFieldUsageTypes" usageType="mapTo" label="Field_Usage_Type_Fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.ClustererChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.ClustererCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.ClustererValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::output::$modelport$clustering" name="$modelport$clustering" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/ClusterExtractor" name="ClusterExtractor" label="ClusterExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.ClusterExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.ClusterExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.ClusterExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/ClusterExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/ClusterExtractor::output::clusters" name="clusters" label="clusters" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="clusters">
+            <columns name="ID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="NAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="SIZE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="BIGINT" primitiveType="BIGINT"/>
+            </columns>
+            <columns name="HOMOGENEITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="DESCRIPTION" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations" name="Associations" label="Associations" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="nameMapPortList" label="nameMapPortList" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" upperBound="-1"/>
+        <propertyList name="catMapPortList" label="catMapPortList" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" upperBound="-1"/>
+        <propertyList name="groupColumn" label="groupColumn" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+        <propertyList name="singleColumnSelection" label="singleColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+          <definitionParams type="property" name="groupColumn" usageType="mapTo" label="Output_Group_Field"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="columnNameMapping" label="columnNameMapping" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnTaxonomy" label="columnTaxonomy" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnFieldTypes" label="columnFieldTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnFieldUsageTypes" label="columnFieldUsageTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnWeightColumn" label="columnWeightColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="VirtualTable"/>
+        <propertyList name="columnPropertySelection" label="columnPropertySelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+          <definitionParams type="property" name="columnNameMapping" usageType="mapTo" label="Name_Map_Fields"/>
+          <definitionParams type="property" name="columnTaxonomy" usageType="mapTo" label="Taxonomy_Fields"/>
+          <definitionParams type="property" name="columnFieldTypes" usageType="mapTo" label="Field_Type_Fields"/>
+          <definitionParams type="property" name="columnFieldUsageTypes" usageType="mapTo" label="Field_Usage_Type_Fields"/>
+          <definitionParams type="property" name="columnWeightColumn" usageType="mapTo" label="Weight_Fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="maxRuleLength" label="maxRuleLength" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="2"/>
+        <propertyList name="maxNumRules" label="maxNumRules" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="10000"/>
+        <propertyList name="minSupport" label="minSupport" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float" defaultValueLiteral="2"/>
+        <propertyList name="minConfidence" label="minConfidence" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float" defaultValueLiteral="25"/>
+        <propertyList name="numBins" label="numBins" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="int" defaultValueLiteral="5"/>
+        <propertyList name="powerOptions" label="powerOptions" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="optionalParameters" label="optionalParameters" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="itemFormat" label="itemFormat" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="-1"/>
+        <propertyList name="rangeRules" label="rangeRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="countRules" label="countRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="itemRules" label="itemRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="modelItemFormat" label="modelItemFormat" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="VirtualTable"/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.AssociationSequenceChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.AssociationSequenceCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.AssociationSequenceValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::nameMap" name="nameMap" label="Names" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+          <propertyList name="idColumn" label="idColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="idColumnSelection" label="idColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+            <definitionParams type="input" name="nameMap" usageType="mapFrom" label="Input_Id_Fields"/>
+            <definitionParams type="property" name="input::nameMap::idColumn" usageType="mapTo" label="Output_Id_Field"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="nameColumn" label="nameColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="nameColumnSelection" label="nameColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+            <definitionParams type="input" name="nameMap" usageType="mapFrom" label="Input_Name_Fields"/>
+            <definitionParams type="property" name="input::nameMap::nameColumn" usageType="mapTo" label="Output_Name_Field"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::catMap" name="catMap" label="Category" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+          <propertyList name="childColumn" label="childColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="parentColumn" label="parentColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="pcColumnSelection" label="pcColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+            <definitionParams type="input" name="catMap" usageType="mapFrom" label="Input_Fields"/>
+            <definitionParams type="property" name="input::catMap::childColumn" usageType="mapTo" label="Output_Child_Field"/>
+            <definitionParams type="property" name="input::catMap::parentColumn" usageType="mapTo" label="Output_Parent_Field"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="false" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="catIsRecursive" label="catIsRecursive" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean"/>
+          <propertyList name="catNameMapping" label="catNameMapping" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+          <propertyList name="catDescription" label="catDescription" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::output::$modelport$assocSeq" name="$modelport$assocSeq" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <definitionParams type="property" name="modelItemFormat"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences" name="Sequences" label="Sequences" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="nameMapPortList" label="nameMapPortList" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" upperBound="-1"/>
+        <propertyList name="catMapPortList" label="catMapPortList" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" upperBound="-1"/>
+        <propertyList name="groupColumn" label="groupColumn" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+        <propertyList name="sequenceColumn" label="sequenceColumn" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+        <propertyList name="singleColumnSelection" label="singleColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+          <definitionParams type="property" name="groupColumn" usageType="mapTo" label="Output_Group_Field"/>
+          <definitionParams type="property" name="sequenceColumn" usageType="mapTo" label="Output_Seq_Field"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="columnNameMapping" label="columnNameMapping" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnTaxonomy" label="columnTaxonomy" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnFieldTypes" label="columnFieldTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnFieldUsageTypes" label="columnFieldUsageTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnWeightColumn" label="columnWeightColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="VirtualTable"/>
+        <propertyList name="columnPropertySelection" label="columnPropertySelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+          <definitionParams type="property" name="columnNameMapping" usageType="mapTo" label="Name_Map_Fields"/>
+          <definitionParams type="property" name="columnTaxonomy" usageType="mapTo" label="Taxonomy_Fields"/>
+          <definitionParams type="property" name="columnFieldTypes" usageType="mapTo" label="Field_Type_Fields"/>
+          <definitionParams type="property" name="columnFieldUsageTypes" usageType="mapTo" label="Field_Usage_Type_Fields"/>
+          <definitionParams type="property" name="columnWeightColumn" usageType="mapTo" label="Weight_Fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="maxRuleLength" label="maxRuleLength" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="2"/>
+        <propertyList name="maxNumRules" label="maxNumRules" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="10000"/>
+        <propertyList name="minSupport" label="minSupport" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float" defaultValueLiteral="2"/>
+        <propertyList name="minConfidence" label="minConfidence" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float" defaultValueLiteral="25"/>
+        <propertyList name="numBins" label="numBins" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="int" defaultValueLiteral="5"/>
+        <propertyList name="powerOptions" label="powerOptions" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="optionalParameters" label="optionalParameters" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="itemFormat" label="itemFormat" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="-1"/>
+        <propertyList name="rangeRules" label="rangeRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="countRules" label="countRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="itemRules" label="itemRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="modelItemFormat" label="modelItemFormat" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="VirtualTable"/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.AssociationSequenceChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.AssociationSequenceCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.AssociationSequenceValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::nameMap" name="nameMap" label="Names" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+          <propertyList name="idColumn" label="idColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="idColumnSelection" label="idColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+            <definitionParams type="input" name="nameMap" usageType="mapFrom" label="Input_Id_Fields"/>
+            <definitionParams type="property" name="input::nameMap::idColumn" usageType="mapTo" label="Output_Id_Field"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="nameColumn" label="nameColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="nameColumnSelection" label="nameColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+            <definitionParams type="input" name="nameMap" usageType="mapFrom" label="Input_Name_Fields"/>
+            <definitionParams type="property" name="input::nameMap::nameColumn" usageType="mapTo" label="Output_Name_Field"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::catMap" name="catMap" label="Category" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" lowerBound="0" upperBound="-1" numMinLinks="0">
+          <propertyList name="childColumn" label="childColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="parentColumn" label="parentColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualColumn"/>
+          <propertyList name="pcColumnSelection" label="pcColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+            <definitionParams type="input" name="catMap" usageType="mapFrom" label="Input_Fields"/>
+            <definitionParams type="property" name="input::catMap::childColumn" usageType="mapTo" label="Output_Child_Field"/>
+            <definitionParams type="property" name="input::catMap::parentColumn" usageType="mapTo" label="Output_Parent_Field"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="false" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+          <propertyList name="catIsRecursive" label="catIsRecursive" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean"/>
+          <propertyList name="catNameMapping" label="catNameMapping" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+          <propertyList name="catDescription" label="catDescription" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::output::$modelport$assocSeq" name="$modelport$assocSeq" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <definitionParams type="property" name="modelItemFormat"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeSeries" name="TimeSeries" label="TimeSeries" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="execTime" label="execTime" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="0"/>
+        <propertyList name="powerOptions" label="powerOptions" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="optionalParameters" label="optionalParameters" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="timeSeriesAvailableColumns" label="timeSeriesAvailableColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="timeSeriesDataColumns" label="timeSeriesDataColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="timeSeriesTimeColumn" label="timeSeriesTimeColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="arimaAlgorithm" label="arimaAlgorithm" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+        <propertyList name="esAlgorithm" label="esAlgorithm" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+        <propertyList name="stdAlgorithm" label="stdAlgorithm" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+        <propertyList name="horizonAutomatic" label="horizonAutomatic" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+        <propertyList name="horizonString" label="horizonString" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.TimeSeriesChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TimeSeriesCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TimeSeriesValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeSeries::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeSeries::output::$modelport$timeseries" name="$modelport$timeseries" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/AssociationsExtractor" name="AssociationsExtractor" label="AssociationsExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.AssociationsExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.AssociationsExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.AssociationsExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/AssociationsExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/AssociationsExtractor::output::rule" name="rule" label="rule" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="rule">
+            <columns name="ID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="BODYID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="HEAD" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="HEADNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="LENGTH" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="SMALLINT" primitiveType="SMALLINT"/>
+            </columns>
+            <columns name="BODYTEXT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="SUPPORT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="CONFIDENCE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="LIFT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/AssociationsExtractor::output::rulebody" name="rulebody" label="rulebody" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="rulebody">
+            <columns name="BODYID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="ITEMNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="ITEM" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/AssociationsExtractor::output::itemset" name="itemset" label="itemset" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="itemset">
+            <columns name="ITEMSETID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="ITEMNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="ITEM" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="SUPPORT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SequencesExtractor" name="SequencesExtractor" label="SequencesExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.SequencesExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.SequencesExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.SequencesExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SequencesExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SequencesExtractor::output::seqrules" name="seqrules" label="seqrules" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="seqrules">
+            <columns name="RULEID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="BODYSEQID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="HEADSETID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="BODYSEQTEXT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="HEADSETTEXT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="LENGTH" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="NBOFITEMS" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="SUPPORT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="CONFIDENCE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="LIFT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="MEANTIMEDIFF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="STDDEVTIMEDIFF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SequencesExtractor::output::sequences" name="sequences" label="sequences" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="sequences">
+            <columns name="SEQUENCEID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="LENGTH" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="NBOFITEMS" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="SUPPORT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="MEANTIMEDIFF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="STDDEVTIMEDIFF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="SEQTEXT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="2048"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SequencesExtractor::output::seqdetails" name="seqdetails" label="seqdetails" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="seqdetails">
+            <columns name="SEQUENCEID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="POSI" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="SETID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="SETTEXT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="2048"/>
+            </columns>
+            <columns name="MEANTIMEDIFF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="STDDEVTIMEDIFF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SequencesExtractor::output::itemset" name="itemset" label="itemset" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="itemset">
+            <columns name="ITEMSETID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="ITEMNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="ITEM" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="SUPPORT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer" name="Scorer" label="Scorer" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="scorer" label="scorer" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="Scorer"/>
+        <propertyList name="resultSpecItems" label="resultSpecItems" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="miningValues" label="miningValues" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelSigMapping" label="modelSigMapping" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="ColumnMap">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="AvailableInputColumns"/>
+          <definitionParams type="property" name="modelSignature" usageType="mapTo" label="ModelSignature"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true">
+          <definitionParams name="modelSigMapping::VALIDMAP_ENABLE" value="false"/>
+        </propertyList>
+        <propertyList name="usedColumns" label="usedColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="usedSelection" label="usedSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="usedColumns" usageType="mapTo" label="Output_fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.ScorerChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.ScorerCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.ScorerValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="usedSelection"/>
+          <definitionParams type="property" name="resultSpecItems"/>
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester" name="Tester" label="Tester" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="testResultName" label="testResultName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="model" label="model" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="MiningModel"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelSigMapping" label="modelSigMapping" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="ColumnMap">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="AvailableInputColumns"/>
+          <definitionParams type="property" name="modelSignature" usageType="mapTo" label="ModelSignature"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true">
+          <definitionParams name="modelSigMapping::VALIDMAP_ENABLE" value="false"/>
+        </propertyList>
+        <propertyList name="targetFieldValues" label="targetFieldValues" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="signatureColumns" label="signatureColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.TesterChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TesterCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TesterValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::output::$modelport$tester" name="$modelport$tester" label="Test Result" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="signatureColumns"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor" name="Predictor" label="Predictor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="predictionType" label="predictionType" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="targetField" label="targetField" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="maxPurity" label="maxPurity" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float"/>
+        <propertyList name="maxDepth" label="maxDepth" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int"/>
+        <propertyList name="minRecords" label="minRecords" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int"/>
+        <propertyList name="zeroProba" label="zeroProba" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="double" defaultValueLiteral="0.001"/>
+        <propertyList name="execTime" label="execTime" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="0"/>
+        <propertyList name="algorithm" label="algorithm" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="0"/>
+        <propertyList name="algorithmSettings" label="algorithmSettings" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="powerOptions" label="powerOptions" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="optionalParameters" label="optionalParameters" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" defaultValueLiteral=""/>
+        <propertyList name="costMatrix" label="costMatrix" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="columnFieldTypes" label="columnFieldTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnFieldUsageTypes" label="columnFieldUsageTypes" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnPropertySelection" label="columnPropertySelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_Fields"/>
+          <definitionParams type="property" name="columnFieldTypes" usageType="mapTo" label="Field_Type_Fields"/>
+          <definitionParams type="property" name="columnFieldUsageTypes" usageType="mapTo" label="Field_Usage_Type_Fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.PredictorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.PredictorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.PredictorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::output::$modelport$predictor" name="$modelport$predictor" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Splitter" name="Splitter" label="Splitter" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="pctTest" label="pctTest" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="float" defaultValueLiteral="50"/>
+        <propertyList name="stratSampleColumn" label="stratSampleColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DefaultChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.SplitterCodeGen"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Splitter::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Splitter::output::trainingOutput" name="trainingOutput" label="Training Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" numMinLinks="0">
+          <definitionParams type="input" name="input"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Splitter::output::testOutput" name="testOutput" label="Test Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" numMinLinks="0">
+          <definitionParams type="input" name="input"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/QualityExtractor" name="QualityExtractor" label="QualityExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="targetFieldValue" label="targetFieldValue" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DefaultChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.QualityExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.QualityExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/QualityExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/QualityExtractor::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="OUTPUT">
+            <columns name="MODELQUALITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="RELIABILITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="PREDICTIONACCURACY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="RANKQUALITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Discretization" name="Discretization" label="Discretization" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="inputColumnName" label="inputColumnName" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="discretizedColumnName" label="discretizedColumnName" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="discretizedColumnType" label="discretizedColumnType" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="ranges" label="ranges" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="usedColumns" label="usedColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="usedSelection" label="usedSelection" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="usedColumns" usageType="mapTo" label="Output_fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="addIntervalBoundary" label="addIntervalBoundary" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean" defaultValueLiteral="false"/>
+        <propertyList name="addFlag" label="addFlag" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean" defaultValueLiteral="false"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DiscretizationChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.DiscretizationCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.DiscretizationValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Discretization::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Discretization::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="IMPLEMENTATION">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sampler" name="Sampler" label="Sampler" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="pctRandSample" label="pctRandSample" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="double" defaultValueLiteral="10"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DefaultChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.SamplerCodeGen"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sampler::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sampler::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" numMinLinks="0">
+          <definitionParams type="input" name="input"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/FieldsExtractor" name="FieldsExtractor" label="FieldsExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.FieldsExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.FieldsExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.FieldsExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/FieldsExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/FieldsExtractor::output::fields" name="fields" label="fields" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="fields">
+            <columns name="COLNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="FIELDNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="MININGTYPE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="SMALLINT" primitiveType="SMALLINT"/>
+            </columns>
+            <columns name="IMPORTANCE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/CorrelationsExtractor" name="CorrelationsExtractor" label="CorrelationsExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.CorrelationsExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.CorrelationsExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.CorrelationsExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/CorrelationsExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/CorrelationsExtractor::output::correlations" name="correlations" label="correlations" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="correlations">
+            <columns name="FIELDNAME1" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="FIELDNAME2" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="CORRELATION" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/GainsExtractor" name="GainsExtractor" label="GainsExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="targetValue" label="targetValue" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="connectedModelType" label="connectedModelType" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.GainsExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.GainsExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.GainsExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/GainsExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/GainsExtractor::output::gains" name="gains" label="gains" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="gains">
+            <columns name="ROWCOUNT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="BIGINT" primitiveType="BIGINT"/>
+            </columns>
+            <columns name="SUMACTUAL" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="THRESHOLD" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TreerulesExtractor" name="TreerulesExtractor" label="TreerulesExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DefaultChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TreerulesExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TreerulesExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TreerulesExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TreerulesExtractor::output::tree_rules" name="tree_rules" label="treerules" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="tree_rules">
+            <columns name="NODEID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="ISLEAF" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="SMALLINT" primitiveType="SMALLINT"/>
+            </columns>
+            <columns name="CLASS" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="256"/>
+            </columns>
+            <columns name="CONFIDENCE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="SIZE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="BIGINT" primitiveType="BIGINT"/>
+            </columns>
+            <columns name="DEPTH" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="SMALLINT" primitiveType="SMALLINT"/>
+            </columns>
+            <columns name="CONDITION" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="2048"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeseriesExtractor" name="TimeseriesExtractor" label="TimeseriesExtractor" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="outputTable" label="outputTable" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="timeColumnType" label="timeColumnType" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="0"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.TimeseriesExtractorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TimeseriesExtractorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TimeseriesExtractorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeseriesExtractor::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeseriesExtractor::output::timeseriesExtractorOutput" name="timeseriesExtractorOutput" label="forecasts" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="outputTable"/>
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/PostFilter" name="PostFilter" label="PostFilter" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="maxNumRules" label="maxNumRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="int" defaultValueLiteral="10000"/>
+        <propertyList name="rangeRules" label="rangeRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="countRules" label="countRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="itemRules" label="itemRules" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" defaultValueLiteral=""/>
+        <propertyList name="modelLocator" label="modelLocator" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="modelItemFormat" label="modelItemFormat" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="VirtualTable"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.PostFilterChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.PostFilterCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.PostFilterValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/PostFilter::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/PostFilter::output::$modelport$output" name="$modelport$output" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="modelLocator"/>
+          <definitionParams type="property" name="modelSignature"/>
+          <definitionParams type="property" name="modelItemFormat"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SetMaker" name="SetMaker" label="SetMaker" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="availableColumns" label="availableColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="keyColumns" label="keyColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="outputKeyColumns" label="outputKeyColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="setColumn" label="setColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="outputSetColumns" label="outputSetColumns" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="confidenceColumn" label="confidenceColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="outputConfidenceColumn" label="outputConfidenceColumn" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="VirtualTable"/>
+        <propertyList name="columnproperties" label="columnproperties" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.ItemAggregatorChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.ItemAggregatorCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.ItemAggregatorValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SetMaker::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SetMaker::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="outputKeyColumns"/>
+          <definitionParams type="property" name="outputSetColumns"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <children iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target" name="Target" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+    <children iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining" name="Mining" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/SampleContent" name="SampleContent" label="SampleContent" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="provideSample" label="provideSample" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean"/>
+        <propertyList name="useVisualizer" label="useVisualizer" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DefaultChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.SampleContentCodeGen"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/SampleContent::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/SampleContent::output::output" name="output" label="output" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="input" name="input"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/Visualizer" name="Visualizer" label="Visualizer" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <propertyList name="lastOpenedModelName" label="lastOpenedModelName" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <propertyList name="lastOpenedModelTable" label="lastOpenedModelTable" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.DefaultChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.VisualizerCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.VisualizerValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/Visualizer::input::$modelport$input" name="$modelport$input" label="Model" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_IN_LINK_REF" numMinLinks="0">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget" name="TableTarget" label="TableTarget" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="rdbTable" label="rdbTable" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="DBTable"/>
+        <propertyList name="insertMapping" label="insertMapping" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="MapExpression">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="IncomingColumns"/>
+          <definitionParams type="property" name="rdbTable" usageType="mapTo" label="TargetTableColumns"/>
+          <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.TableTargetChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TableTargetCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.miningeditor.oplib" className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TableTargetValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib">
+          <stagingInfoList type="VIEW"/>
+          <stagingInfoList type="PERSISTENT_TABLE"/>
+        </inputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget1" name="TableTarget1" label="TableTarget1" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" registered="true">
+        <definitionParams name="samplingDBTableRef" value="rdbTable" usageType="sampling"/>
+        <propertyList name="rdbTable" label="rdbTable" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="DBTable"/>
+        <propertyList name="deletePreviousContent" description="Delete the content of the table before new data is inserted." label="deletePreviousContent" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean" defaultValueLiteral="false"/>
+        <propertyList name="generateSampleContent" label="generateSampleContent" hidden="true" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" type="boolean" defaultValueLiteral="false"/>
+        <propertyList name="notLoggedInitially" description="If you insert a large number of records into the table, the INSERT statement could fail because the transaction log is full. With this option, you can deactivate transaction logging for the table. For more details, see ALTER TABLE ACTIVATE NOT LOGGED INITIALLY in the DB2 documentation." label="notLoggedInitially" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" optional="true" type="boolean" defaultValueLiteral="false"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.miningeditor.oplib.handlers.TableTargetChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.miningeditor.oplib.codegen.TableTarget1CodeGen"/>
+        <validatorClass className="com.ibm.datatools.datamining.miningeditor.oplib.validators.TableTarget1Validator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget1::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.miningeditor.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="rdbTable"/>
+          <stagingInfoList type="VIEW"/>
+          <stagingInfoList type="PERSISTENT_TABLE"/>
+        </inputList>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/ModelSource::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$modelsource" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/ModelSource::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$modelsource" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/ModelSource::modelItemFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$modelsource" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Extract/Mining/TableExtract::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$clustering" fIDef="//@children.1/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$clustering" fIDef="//@children.1/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$assocSeq" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$assocSeq" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::modelItemFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$assocSeq" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$assocSeq" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$assocSeq" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::modelItemFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$assocSeq" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeSeries::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$timeseries" fIDef="//@children.1/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeSeries::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$timeseries" fIDef="//@children.1/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::usedSelection">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@children.0/@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::resultSpecItems">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@children.0/@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$tester" fIDef="//@children.1/@children.0/@definitionList.8"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::signatureColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$tester" fIDef="//@children.1/@children.0/@definitionList.8"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$predictor" fIDef="//@children.1/@children.0/@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$predictor" fIDef="//@children.1/@children.0/@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/TimeseriesExtractor::outputTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="timeseriesExtractorOutput" fIDef="//@children.1/@children.0/@definitionList.18"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/PostFilter::modelLocator">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$output" fIDef="//@children.1/@children.0/@definitionList.19"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/PostFilter::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$output" fIDef="//@children.1/@children.0/@definitionList.19"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/PostFilter::modelItemFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="$modelport$output" fIDef="//@children.1/@children.0/@definitionList.19"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SetMaker::outputKeyColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@children.0/@definitionList.20"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/SetMaker::outputSetColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@children.0/@definitionList.20"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget1::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:InputDefnItem" name="input" fIDef="//@children.2/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::columnFieldTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::columnFieldUsageTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.9"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.1/@children.0/@definitionList.8"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.1/@children.0/@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::usedColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="usedSelection" fIDef="//@children.1/@children.0/@definitionList.7"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::columnFieldTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::columnFieldUsageTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget::rdbTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMapping" fIDef="//@children.2/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::groupColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::columnNameMapping">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::columnTaxonomy">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::columnFieldTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::columnFieldUsageTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::columnWeightColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::nameMap::idColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="idColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::nameMap::nameColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="nameColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::catMap::childColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="pcColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input::catMap::parentColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="pcColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Discretization::usedColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="usedSelection" fIDef="//@children.1/@children.0/@definitionList.12"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::groupColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::sequenceColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::columnNameMapping">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::columnTaxonomy">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::columnFieldTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::columnFieldUsageTypes">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::columnWeightColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::nameMap::idColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="idColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::nameMap::nameColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="nameColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::catMap::childColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="pcColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input::catMap::parentColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="pcColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Splitter::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="trainingOutput" fIDef="//@children.1/@children.0/@definitionList.10"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="testOutput" fIDef="//@children.1/@children.0/@definitionList.10"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sampler::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.1/@children.0/@definitionList.13"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/SampleContent::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.2/@children.0/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Predictor::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.9"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Tester::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.1/@children.0/@definitionList.8"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Scorer::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.1/@children.0/@definitionList.7"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="usedSelection" fIDef="//@children.1/@children.0/@definitionList.7"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Clusterer::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Target/Mining/TableTarget::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="insertMapping" fIDef="//@children.2/@children.0/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::nameMap">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="idColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="nameColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Associations::catMap">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="pcColumnSelection" fIDef="//@children.1/@children.0/@definitionList.2/@inputList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Discretization::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="usedSelection" fIDef="//@children.1/@children.0/@definitionList.12"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="singleColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="columnPropertySelection" fIDef="//@children.1/@children.0/@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::nameMap">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="idColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="nameColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/miningeditor/oplib/miningeditor.oplib/Transform/Mining/Sequences::catMap">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="pcColumnSelection" fIDef="//@children.1/@children.0/@definitionList.3/@inputList.2"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="float" emfClassName="EFloat" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0.0"/>
+  <propertyTypeList name="int" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0"/>
+  <propertyTypeList name="String" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral=""/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

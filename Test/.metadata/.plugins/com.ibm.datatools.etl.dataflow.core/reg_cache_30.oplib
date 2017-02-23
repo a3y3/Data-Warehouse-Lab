@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="DB2OpsOplibs" description="Utility Operators for the Cflow Operators Library" label="DB2OpsOplibs" bundleName="com.ibm.datatools.sqw.db2ops.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib" fileName="etc/db2ops.oplib">
+  <children iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+    <definitionList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RolloutActivity" name="RolloutActivity" label="Roll-Out" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.sqw.db2ops.oplib" registered="true">
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="rolloutTable" label="Table name" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBTable">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="dbConn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="partitionName" label="Partition name" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="targetTableName" label="Target table name" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="targetTableSchema" label="Target schema name" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib" optional="true">
+        <definitionParams name="partitionName::String_EMPTY"/>
+        <definitionParams name="targetTableName::String_EMPTY"/>
+        <definitionParams name="targetTableSchema::String_EMPTY"/>
+      </propertyList>
+      <propertyList name="SQLCode" label="System-generated statement" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.sqw.db2ops.oplib.handlers.RolloutActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.sqw.db2ops.oplib.codegen.RolloutActivityCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RolloutActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RolloutActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RolloutActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RolloutActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RollinActivity" name="RollinActivity" label="Roll-In" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.sqw.db2ops.oplib" registered="true">
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="rollinTable" label="Table name" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBTable">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="dbConn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="partitionName" label="Partition name" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib" optional="true">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="sourceTable" label="Source table name" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBTable">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="startRangeOption" description="You can specify a range with starting and ending values, a starting value only, or an ending value only." label="Starting from" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DynamicBoolean">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="startRange" label="Starting value" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="startingOptions" label="Inclusive/Exclusive" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="InclOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="endRangeOption" description="You can specify a range with starting and ending values, a starting value only, or an ending value only." label="Ending at" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DynamicBoolean">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="endRange" label="Ending value" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="endingOptions" label="Inclusive/Exclusive" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="InclOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="SQLCode" label="System-generated statement" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="codeOptions" label="Statement type" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="CodeOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="SQLCode2" label="System-generated statement" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="userCode" label="Customized statement" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="resetButton" label="Reset" bundleName="com.ibm.datatools.sqw.db2ops.oplib" optional="true" type="ButtonString">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.sqw.db2ops.oplib.handlers.RollinActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.sqw.db2ops.oplib.codegen.RollinActivityCodeGen"/>
+      <validatorClass className="com.ibm.datatools.sqw.db2ops.oplib.validators.RollinActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RollinActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RollinActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RollinActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RollinActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RowCompression" name="RowCompression" label="Row Compression" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.sqw.db2ops.oplib" registered="true">
+      <definitionParams name="epgBlockType" value="TXN" usageType="semantics"/>
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams name="runCodeType" value="JDBC" usageType="semantics"/>
+      <propertyList name="rowCompressionTable" label="Table" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBTable">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="dbConn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="compressAction" label="Row compression" bundleName="com.ibm.datatools.sqw.db2ops.oplib" type="CompressAction" defaultValueLiteral="enableOption">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="SQLCode" label="System-generated statement" bundleName="com.ibm.datatools.sqw.db2ops.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.sqw.db2ops.oplib.handlers.RowCompressionActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.sqw.db2ops.oplib.codegen.RowCompressionActivityCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RowCompression::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RowCompression::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RowCompression::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/db2ops/oplib/db2ops.oplib/Flow/RowCompression::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <propertyTypeList name="InclOptions" bundleName="com.ibm.datatools.sqw.db2ops.oplib" registered="true" emfClassName="InclOptionsEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="none" usageType="enumLiteral" label="Default"/>
+    <definitionParams name="inclusive" usageType="enumLiteral" label="Inclusive"/>
+    <definitionParams name="exclusive" usageType="enumLiteral" label="Exclusive"/>
+  </propertyTypeList>
+  <propertyTypeList name="CompressAction" bundleName="com.ibm.datatools.sqw.db2ops.oplib" registered="true" emfClassName="CompressActionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="enableOption" usageType="enumLiteral" label="Enable row compression for this table"/>
+    <definitionParams name="disableOption" usageType="enumLiteral" label="Disable row compression for this table"/>
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

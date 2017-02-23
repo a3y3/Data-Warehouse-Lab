@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commontypes:StringEObjectList xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:commontypes="com.ibm.datatools.dwe.emf.commontypes.nsuri">
+  <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_7_cgen/epgs/_0.epg</contents>
+  <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_7_cgen/epgs/_1.epg</contents>
+  <contents>newReverseEnginnering/generated-code/.inc.bld/mgr_se_7_cgen/epgs/_2.epg</contents>
+</commontypes:StringEObjectList>

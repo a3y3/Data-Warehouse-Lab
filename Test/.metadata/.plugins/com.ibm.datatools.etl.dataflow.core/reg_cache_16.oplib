@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="copseqtran.oplib" bundleName="com.ibm.datatools.etl.dataflow.datastage" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib" fileName="copseqtran.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage" name="DataStage" bundleName="com.ibm.datatools.etl.dataflow.datastage">
+    <children iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing" name="Processing" bundleName="com.ibm.datatools.etl.dataflow.datastage">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Copy" name="Copy" label="Copy" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/datastage.oplib/DataStage/DSBaseOperator" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true">
+        <definitionParams type="com.ibm.datatools.etl.datastage.dataflow.codegen.IDSTranslator" name="dsTranslator" value="com.ibm.datatools.etl.datastage.dataflow.codegen.CopyTranslator"/>
+        <propertyList name="force" label="forceExecution" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="Boolean"/>
+        <codeGeneratorClass bundleName="com.ibm.datatools.etl.datastage.dataflow.codegen" className="com.ibm.datatools.etl.datastage.dataflow.codegen.DataStageBaseCodeGenerator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Copy::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.datastage" rule="BY_IN_LINK_REF"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Copy::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.datastage" upperBound="-1" rule="BY_PARAMS" numMaxOutLinks="1">
+          <definitionParams type="property" name="output::output::selectedColumnsSS"/>
+          <propertyList name="selectedColumnsVT" label="selectedColumnsVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="VirtualTable"/>
+          <propertyList name="selectedColumnsSS" label="selectedColumnsSS" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect">
+            <definitionParams type="input" name="input" usageType="mapFrom" label="Copy.InputColumns"/>
+            <definitionParams type="property" name="output::output::selectedColumnsVT" usageType="mapTo" label="Copy.OutputColumns"/>
+            <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          </propertyList>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialTarget" name="SequentialTarget" label="SequentialTarget" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/datastage.oplib/DataStage/DSBaseOperator" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true">
+        <definitionParams type="com.ibm.datatools.etl.datastage.dataflow.codegen.IDSTranslator" name="dsTranslator" value="com.ibm.datatools.etl.datastage.dataflow.codegen.SequentialTargetTranslator"/>
+        <propertyList name="columnDelimiter" label="ColumnDelimiter" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="columnDelimiterType" defaultValueLiteral="comma"/>
+        <propertyList name="rowDelimiter" label="RowDelimiter" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="rowDelimiterType" defaultValueLiteral="end"/>
+        <propertyList name="stringDelimiter" label="StrDelimiter" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="quoteType" defaultValueLiteral="double"/>
+        <propertyList name="rejectAction" label="On Error" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="rejectType" defaultValueLiteral="continue"/>
+        <propertyList name="reportProgress" label="Report Progress" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="Boolean" defaultValueLiteral="False"/>
+        <propertyList name="appendFile" label="Append" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="Boolean"/>
+        <propertyList name="firstLineColumnName" label="First Line Column Name" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="Boolean" defaultValueLiteral="False"/>
+        <propertyList name="tgtFieldList" label="tgtFieldList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="VirtualTable"/>
+        <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="VirtualTable"/>
+        <propertyList name="subSelect" label="subSelect" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom"/>
+          <definitionParams type="property" name="subsetVT" usageType="mapTo"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="fileFormat" label="fileFormat" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="FileFormatDescriptor">
+          <definitionParams type="property" name="subsetVT"/>
+        </propertyList>
+        <propertyList name="file" label="file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="File"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" optional="true">
+          <definitionParams name="OutputPort_USAGE_RULE" value=""/>
+          <definitionParams name="columnDelimiter" value=",+." description="this is a description"/>
+          <definitionParams name="disable" value="289"/>
+          <definitionParams name="file::invalidExtensions" value="exe,bin,zip"/>
+          <definitionParams name="stringTerminator" value="[\\'\\t]"/>
+        </propertyList>
+        <codeGeneratorClass bundleName="com.ibm.datatools.etl.datastage.dataflow.codegen" className="com.ibm.datatools.etl.datastage.dataflow.codegen.DataStageBaseCodeGenerator"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.datastage.dataflow.codegen" className="com.ibm.datatools.etl.datastage.dataflow.validate.SequentialTargetValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialTarget::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.datastage" rule="BY_IN_LINK_REF"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialTarget::output::discard" name="discard" label="discard" bundleName="com.ibm.datatools.etl.dataflow.datastage" numMinLinks="0" numMaxOutLinks="0">
+          <definitionParams type="input" name="input"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource" name="SequentialSource" label="SequentialSource" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/datastage.oplib/DataStage/DSBaseOperator" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true">
+        <definitionParams type="com.ibm.datatools.etl.datastage.dataflow.codegen.IDSTranslator" name="dsTranslator" value="com.ibm.datatools.etl.datastage.dataflow.codegen.SequentialSourceTranslator"/>
+        <propertyList name="fileFormat" label="Details.FileFormat.Format" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="FileFormatDescriptor"/>
+        <propertyList name="file" label="file" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="File"/>
+        <propertyList name="columnDelimiter" label="ColumnDelimiter" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="columnDelimiterType" defaultValueLiteral="comma"/>
+        <propertyList name="rowDelimiter" label="RowDelimiter" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="rowDelimiterType" defaultValueLiteral="end"/>
+        <propertyList name="stringDelimiter" label="StrDelimiter" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="quoteType" defaultValueLiteral="double"/>
+        <propertyList name="rejectAction" label="On Error" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="rejectType" defaultValueLiteral="continue"/>
+        <propertyList name="reportProgress" label="Report Progress" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="Boolean" defaultValueLiteral="False"/>
+        <propertyList name="firstLineColumnName" label="First Line Column Name" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="Boolean" defaultValueLiteral="False"/>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" optional="true">
+          <definitionParams name="OutputPort_USAGE_RULE" value="output"/>
+          <definitionParams name="fieldDelimiters" value="[;.\t]" description="regexp of valid delimters"/>
+          <definitionParams name="file::invalidExtensions" value="zip,exe,bin"/>
+          <definitionParams name="invalidExtensions" value="zip,exe,bin"/>
+          <definitionParams name="rowDelimiters" value="[;,.]" description="regexp of valid delimters"/>
+        </propertyList>
+        <propertyList name="columnSelectList" label="columnSelectList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="VirtualTable"/>
+        <propertyList name="subSelect" label="subSelect" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect">
+          <definitionParams type="property" name="fileFormat" usageType="mapFrom" label="InputFile_Fields"/>
+          <definitionParams type="property" name="columnSelectList" usageType="mapTo" label="Subset_of_Fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <codeGeneratorClass bundleName="com.ibm.datatools.etl.datastage.dataflow.codegen" className="com.ibm.datatools.etl.datastage.dataflow.codegen.DataStageBaseCodeGenerator"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.datastage.dataflow.codegen" className="com.ibm.datatools.etl.datastage.dataflow.validate.SequentialTargetValidator"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.datastage" rule="BY_PARAMS" numMaxOutLinks="1">
+          <definitionParams type="property" name="output::output::outputColumns"/>
+          <propertyList name="InputColumn" label="InputColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect"/>
+          <propertyList name="SelectedColumns" label="SelectedColumns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="VirtualTable"/>
+          <propertyList name="outputColumns" label="outputColumns" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect">
+            <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+            <definitionParams type="property" name="output::output::SelectedColumns" usageType="mapTo" label="output"/>
+            <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+            <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+            <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          </propertyList>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::output::discard" name="discard" label="discard" bundleName="com.ibm.datatools.etl.dataflow.datastage" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="boolean" name="Validate_Port" value="false" usageType="semantics"/>
+          <definitionParams type="property" name="output::discard::discardColumns"/>
+          <propertyList name="InputColumn" label="InputColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect"/>
+          <propertyList name="SelectedColumns" label="SelectedColumns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="VirtualTable"/>
+          <propertyList name="discardColumns" label="discardColumns" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="SubSelect">
+            <definitionParams type="property" name="fileFormat" usageType="mapFrom"/>
+            <definitionParams type="property" name="output::discard::SelectedColumns" usageType="mapTo" label="discard"/>
+            <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+            <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+            <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+            <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+            <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          </propertyList>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Transform" name="Transform" label="Transform" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/datastage.oplib/DataStage/DSBaseOperator" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true">
+        <definitionParams type="com.ibm.datatools.etl.datastage.dataflow.codegen.IDSTranslator" name="dsTranslator" value="com.ibm.datatools.etl.datastage.dataflow.codegen.TransformTranslator"/>
+        <propertyList name="project" label="project" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="ProjectExpression">
+          <definitionParams type="input" name="input" label="ChooseFromInputTable"/>
+        </propertyList>
+        <codeGeneratorClass bundleName="com.ibm.datatools.etl.datastage.dataflow.codegen" className="com.ibm.datatools.etl.datastage.dataflow.codegen.DataStageBaseCodeGenerator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Transform::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.datastage" rule="BY_IN_LINK_REF"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Transform::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.datastage" rule="BY_PARAMS" numMaxOutLinks="1">
+          <definitionParams type="property" name="project"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Copy::output::output::selectedColumnsSS">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::output::output::outputColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::output::discard::discardColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="discard" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Transform::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::fileFormat">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.0/@children.0/@definitionList.2"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="outputColumns" fIDef="//@children.0/@children.0/@definitionList.2/@outputList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="discardColumns" fIDef="//@children.0/@children.0/@definitionList.2/@outputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::columnSelectList">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::output::output::SelectedColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="outputColumns" fIDef="//@children.0/@children.0/@definitionList.2/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialSource::output::discard::SelectedColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="discardColumns" fIDef="//@children.0/@children.0/@definitionList.2/@outputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialTarget::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="fileFormat" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Copy::output::output::selectedColumnsVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="selectedColumnsSS" fIDef="//@children.0/@children.0/@definitionList.0/@outputList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/SequentialTarget::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="discard" fIDef="//@children.0/@children.0/@definitionList.1"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="subSelect" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Copy::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="selectedColumnsSS" fIDef="//@children.0/@children.0/@definitionList.0/@outputList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/copseqtran.oplib/DataStage/Processing/Transform::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="rejectType" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true" emfClassName="rejectTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="continue" usageType="enumLiteral" label="Continue"/>
+    <definitionParams name="fail" usageType="enumLiteral" label="Fail"/>
+  </propertyTypeList>
+  <propertyTypeList name="rowDelimiterType" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true" emfClassName="rowDelimiterTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="comma" usageType="enumLiteral" label="','"/>
+    <definitionParams name="whitespace" usageType="enumLiteral" label="ws"/>
+    <definitionParams name="end" usageType="enumLiteral" label="end"/>
+    <definitionParams name="none" usageType="enumLiteral" label="none"/>
+    <definitionParams name="null" usageType="enumLiteral" label="null"/>
+    <definitionParams name="tab" usageType="enumLiteral" label="'\t'"/>
+  </propertyTypeList>
+  <propertyTypeList name="columnDelimiterType" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true" emfClassName="columnDelimiterTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="comma" usageType="enumLiteral" label="','"/>
+    <definitionParams name="whitespace" usageType="enumLiteral" label="ws"/>
+    <definitionParams name="end" usageType="enumLiteral" label="end"/>
+    <definitionParams name="none" usageType="enumLiteral" label="none"/>
+    <definitionParams name="null" usageType="enumLiteral" label="null"/>
+    <definitionParams name="tab" usageType="enumLiteral" label="'\t'"/>
+  </propertyTypeList>
+  <propertyTypeList name="quoteType" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true" emfClassName="quoteTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="single" usageType="enumLiteral" label="single"/>
+    <definitionParams name="double" usageType="enumLiteral" label="double"/>
+    <definitionParams name="none" usageType="enumLiteral" label="none"/>
+  </propertyTypeList>
+  <propertyTypeList name="missingFileType" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true" emfClassName="missingFileTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="okay" usageType="enumLiteral" label="Okay"/>
+    <definitionParams name="error" usageType="enumLiteral" label="Error"/>
+    <definitionParams name=" " usageType="enumLiteral" label="Depends"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

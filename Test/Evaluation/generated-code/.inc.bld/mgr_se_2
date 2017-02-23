@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srcmgt:SourceElement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:srcmgt="com.ibm.datatools.dwe.srcmgt.nsuri" saveLocation="Evaluation/generated-code/.inc.bld/mgr_se_2" genId="2" location="/Evaluation/data-flows/Question2B.etlmetadataxmi" syncTimeStamp="1487843917431">
+  <actionMap key="val">
+    <value actionType="val" syncTimeStamp="1487843917431" lastStatus="SUCCESS">
+      <sourceActionInfo>
+        <resultEObjectsMap key="valMsg">
+          <value saveLocation="Evaluation/generated-code/.inc.bld/mgr_se_2_sa_val_valMsg"/>
+        </resultEObjectsMap>
+      </sourceActionInfo>
+    </value>
+  </actionMap>
+  <actionMap key="cgen">
+    <value actionType="cgen" syncTimeStamp="1487843917431" lastStatus="SUCCESS">
+      <sourceActionInfo>
+        <resultEObjectsMap key="cgenMsg">
+          <value saveLocation="Evaluation/generated-code/.inc.bld/mgr_se_2_sa_cgen_cgenMsg"/>
+        </resultEObjectsMap>
+        <resultEObjectsMap key="cgenEpgs">
+          <value saveLocation="Evaluation/generated-code/.inc.bld/mgr_se_2_sa_cgen_cgenEpgs"/>
+        </resultEObjectsMap>
+        <resultStringsMap key="CURRENT_RESOURCE_GEN_CODE_DIR" value="Evaluation/generated-code/.inc.bld/data-flows.Question2B/out"/>
+        <resultStringsMap key="EXECUTE_HOME_DIR" value="Evaluation/generated-code/.inc.bld/data-flows.Question2B"/>
+      </sourceActionInfo>
+    </value>
+  </actionMap>
+</srcmgt:SourceElement>

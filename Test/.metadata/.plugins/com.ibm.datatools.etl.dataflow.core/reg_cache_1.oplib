@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="mining.core" description="Mining ETL Data Flow Operator Library" label="mining.core" bundleName="com.ibm.datatools.datamining.etl.codegen" lastModified="0" nsURI="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib" fileName="mining.oplib">
+  <children iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform" name="Transform" bundleName="com.ibm.datatools.datamining.etl.codegen">
+    <children iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining" name="Mining" bundleName="com.ibm.datatools.datamining.etl.codegen">
+      <definitionList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator" name="ScoringOperator" label="ScoringOperator" bundleName="com.ibm.datatools.datamining.etl.codegen" registered="true">
+        <propertyList name="scorer" label="scorer" bundleName="com.ibm.datatools.datamining.etl.codegen" type="Scorer"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="modelSigMapping" label="modelSigMapping" bundleName="com.ibm.datatools.datamining.etl.codegen" type="ColumnMap">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="AvailableInputColumns"/>
+          <definitionParams type="property" name="modelSignature" usageType="mapTo" label="ModelSignature"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" optional="true">
+          <definitionParams name="modelSigMapping::VALIDMAP_ENABLE" value="false"/>
+        </propertyList>
+        <propertyList name="carryOverColumns" label="carryOverColumns" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="carryOverSelection" label="carryOverSelection" bundleName="com.ibm.datatools.datamining.etl.codegen" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="carryOverColumns" usageType="mapTo" label="Output_fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="resultSpecItems" label="resultSpecItems" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="miningValues" label="miningValues" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.etl.handlers.ScorerChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.etl.codegen.ScoringCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.etl.metadata" className="com.ibm.datatools.datamining.etl.validators.ScorerValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="carryOverSelection"/>
+          <definitionParams type="property" name="resultSpecItems"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/Tester" name="Tester" label="Tester" bundleName="com.ibm.datatools.datamining.etl.codegen" registered="true">
+        <propertyList name="model" label="model" bundleName="com.ibm.datatools.datamining.etl.codegen" type="MiningModel"/>
+        <propertyList name="modelSignature" label="modelSignature" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="modelSigMapping" label="modelSigMapping" bundleName="com.ibm.datatools.datamining.etl.codegen" type="ColumnMap">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="AvailableInputColumns"/>
+          <definitionParams type="property" name="modelSignature" usageType="mapTo" label="ModelSignature"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byName" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" optional="true">
+          <definitionParams name="modelSigMapping::VALIDMAP_ENABLE" value="false"/>
+        </propertyList>
+        <propertyList name="targetFieldValue" label="targetFieldValue" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <propertyList name="targetFieldValues" label="targetFieldValues" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.etl.handlers.TesterChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.etl.codegen.TesterCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.etl.metadata" className="com.ibm.datatools.datamining.etl.validators.TesterValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/Tester::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.etl.codegen">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/Tester::output::quality" name="quality" label="quality" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="quality">
+            <columns name="QUALITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="RANKING" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="ACCURACY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="RELIABILITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/Tester::output::gains_chart" name="gains_chart" label="gains" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="gains_chart">
+            <columns name="ROWCOUNT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="SUMACTUAL" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="THRESHOLD" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations" name="FindDeviations" label="FindDeviations" bundleName="com.ibm.datatools.datamining.etl.codegen" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <propertyList name="optionalParameters" label="optionalParameters" bundleName="com.ibm.datatools.datamining.etl.codegen" optional="true" defaultValueLiteral=""/>
+        <propertyList name="carryOverColumns" label="carryOverColumns" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="additionalColumns" label="additionalColumns" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="carryOverSelection" label="carryOverSelection" bundleName="com.ibm.datatools.datamining.etl.codegen" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="carryOverColumns" usageType="mapTo" label="Output_fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.etl.handlers.FindDeviationsChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.etl.codegen.FindDeviationsCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.etl.metadata" className="com.ibm.datatools.datamining.etl.validators.FindDeviationsValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.etl.codegen">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="carryOverSelection"/>
+          <definitionParams type="property" name="additionalColumns"/>
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindRules" name="FindRules" label="FindRules" bundleName="com.ibm.datatools.datamining.etl.codegen" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <propertyList name="optionalParameters" label="optionalParameters" bundleName="com.ibm.datatools.datamining.etl.codegen" optional="true" defaultValueLiteral=""/>
+        <propertyList name="groupColumn" label="groupColumn" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualColumn"/>
+        <propertyList name="groupColumnSelection" label="groupColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="groupColumn" usageType="mapTo" label="Output_field"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="nbRules" label="nbRules" bundleName="com.ibm.datatools.datamining.etl.codegen" type="int" defaultValueLiteral="100"/>
+        <propertyList name="minConfidence" label="minConfidence" bundleName="com.ibm.datatools.datamining.etl.codegen" type="float"/>
+        <changeHandlerClass className="com.ibm.datatools.datamining.etl.handlers.FindRulesChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.etl.codegen.FindRulesCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.etl.metadata" className="com.ibm.datatools.datamining.etl.validators.FindRulesValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindRules::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.etl.codegen">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindRules::output::rule" name="rule" label="rule" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="rule">
+            <columns name="BODYID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="HEAD" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="LENGTH" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="SMALLINT" primitiveType="SMALLINT"/>
+            </columns>
+            <columns name="BODYTEXT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="SUPPORT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="CONFIDENCE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="DOUBLE" primitiveType="DOUBLE_PRECISION"/>
+            </columns>
+            <columns name="LIFT" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindRules::output::rulebody" name="rulebody" label="rulebody" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="rulebody">
+            <columns name="BODYID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="ITEMNAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+            <columns name="ITEM" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable" name="ClusterTable" label="ClusterTable" bundleName="com.ibm.datatools.datamining.etl.codegen" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <propertyList name="optionalParameters" label="optionalParameters" bundleName="com.ibm.datatools.datamining.etl.codegen" optional="true" defaultValueLiteral=""/>
+        <propertyList name="minClusterSize" label="minClusterSize" bundleName="com.ibm.datatools.datamining.etl.codegen" type="float"/>
+        <propertyList name="maxClusterSize" label="maxClusterSize" bundleName="com.ibm.datatools.datamining.etl.codegen" type="float"/>
+        <propertyList name="additionalColumns" label="additionalColumns" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="carryOverColumns" label="carryOverColumns" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="carryOverSelection" label="carryOverSelection" bundleName="com.ibm.datatools.datamining.etl.codegen" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="carryOverColumns" usageType="mapTo" label="Output_fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.etl.handlers.ClusterTableChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.etl.codegen.ClusterTableCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.etl.metadata" className="com.ibm.datatools.datamining.etl.validators.ClusterTableValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.etl.codegen">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::output::c_result" name="c_result" label="cresult" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="carryOverSelection"/>
+          <definitionParams type="property" name="additionalColumns"/>
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::output::clusters" name="clusters" label="clusters" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="STATIC" numMinLinks="0">
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <schema name="clusters">
+            <columns name="ID" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+            </columns>
+            <columns name="NAME" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+            </columns>
+            <columns name="SIZE" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:IntegerDataType" name="BIGINT" primitiveType="BIGINT"/>
+            </columns>
+            <columns name="HOMOGENEITY" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:ApproximateNumericDataType" name="REAL" primitiveType="REAL"/>
+            </columns>
+            <columns name="DESCRIPTION" description="" label="" defaultValue="">
+              <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="1024"/>
+            </columns>
+          </schema>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+      <definitionList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn" name="PredictColumn" label="PredictColumn" bundleName="com.ibm.datatools.datamining.etl.codegen" registered="true">
+        <propertyList name="modelName" label="modelName" variableAllowed="true" bundleName="com.ibm.datatools.datamining.etl.codegen"/>
+        <propertyList name="optionalParameters" label="optionalParameters" bundleName="com.ibm.datatools.datamining.etl.codegen" optional="true" defaultValueLiteral=""/>
+        <propertyList name="additionalColumns" label="additionalColumns" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="targetColumn" label="targetColumn" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualColumn"/>
+        <propertyList name="targetColumnSelection" label="targetColumnSelection" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="targetColumn" usageType="mapTo" label="Output_field"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="false" usageType="semantics"/>
+        </propertyList>
+        <propertyList name="carryOverColumns" label="carryOverColumns" hidden="true" bundleName="com.ibm.datatools.datamining.etl.codegen" type="VirtualTable"/>
+        <propertyList name="carryOverSelection" label="carryOverSelection" bundleName="com.ibm.datatools.datamining.etl.codegen" type="SubSelect">
+          <definitionParams type="input" name="input" usageType="mapFrom" label="Input_fields"/>
+          <definitionParams type="property" name="carryOverColumns" usageType="mapTo" label="Output_fields"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+          <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="autoAssign" value="byPosition" usageType="semantics"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.datamining.etl.handlers.PredictColumnChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.datamining.etl.codegen.PredictColumnCodeGen"/>
+        <validatorClass bundleName="com.ibm.datatools.datamining.etl.metadata" className="com.ibm.datatools.datamining.etl.validators.PredictColumnValidator"/>
+        <inputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::input::input" name="input" label="Input" bundleName="com.ibm.datatools.datamining.etl.codegen">
+          <stagingInfoList type="VIEW"/>
+        </inputList>
+        <outputList iD="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::output::output" name="output" label="Output" bundleName="com.ibm.datatools.datamining.etl.codegen" rule="BY_PARAMS" numMinLinks="0">
+          <definitionParams type="property" name="carryOverSelection"/>
+          <definitionParams type="property" name="additionalColumns"/>
+          <definitionParams name="VirtualTableNameChangeable" value="true" usageType="CodegenRewrite"/>
+          <definitionParams name="currentSchema" value="true" usageType="stageLocation"/>
+          <stagingInfoList type="VIEW"/>
+        </outputList>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::carryOverSelection">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::resultSpecItems">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations::carryOverSelection">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations::additionalColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::carryOverSelection">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="c_result" fIDef="//@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::additionalColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="c_result" fIDef="//@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::carryOverSelection">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.5"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::additionalColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.5"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::carryOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindRules::groupColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="groupColumnSelection" fIDef="//@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::targetColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetColumnSelection" fIDef="//@children.0/@children.0/@definitionList.5"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::carryOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.5"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::carryOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/Tester::modelSignature">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations::carryOverColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ScoringOperator::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.0/@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindRules::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="groupColumnSelection" fIDef="//@children.0/@children.0/@definitionList.3"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/PredictColumn::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetColumnSelection" fIDef="//@children.0/@children.0/@definitionList.5"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.5"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/ClusterTable::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.4"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/Tester::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="modelSigMapping" fIDef="//@children.0/@children.0/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/datamining/etl/metadata/mining.oplib/Transform/Mining/FindDeviations::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="carryOverSelection" fIDef="//@children.0/@children.0/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="Scorer" registered="true" emfClassName="Scorer" emfPkgUri="http:///com/ibm/datatools/datamining/etl/metadata/mining.ecore" wrapped="true"/>
+  <propertyTypeList name="MiningModel" registered="true" emfClassName="MiningModel" emfPkgUri="http:///com/ibm/datatools/datamining/etl/metadata/mining.ecore" wrapped="true"/>
+  <propertyTypeList name="float" emfClassName="EFloat" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0.0"/>
+  <propertyTypeList name="int" emfClassName="EInt" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral="0"/>
+  <propertyTypeList name="String" emfClassName="EString" emfPkgUri="http://www.eclipse.org/emf/2002/Ecore" primitive="true" defaultValueLiteral=""/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

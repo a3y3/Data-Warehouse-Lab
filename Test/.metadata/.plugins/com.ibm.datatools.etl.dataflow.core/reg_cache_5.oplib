@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatordefinition="http:///com/ibm/datatools/etl/operatordefinition.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="cflowops" description="Cflow Operators Library" label="cflowops" bundleName="com.ibm.datatools.etl.cflow.core" lastModified="0" nsURI="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib" fileName="etc/cflow.oplib">
+  <children iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.etl.cflow.core">
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" name="CflowBaseOp" label="CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true"/>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp" name="ActivityOp" label="ActivityOp" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" name="Activity" label="Activity" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph" name="StartGraph" label="Start" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::start" name="start" label="Start" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::on-error" name="on-error" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StartGraph::output::cleanup" name="cleanup" label="Cleanup" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/End" name="End" label="cflow_end" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <propertyList name="exitOption" label="exitOption" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="ExitOptionEnum"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/End::input::end" name="end" label="End" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ContinueIterator" name="ContinueIterator" label="cflow_continue" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ContinueIterator::input::end" name="end" label="Continue" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/BreakIterator" name="BreakIterator" label="cflow_break" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/BreakIterator::input::end" name="end" label="Break" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Fail" name="Fail" label="cflow_fail" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Fail::input::end" name="end" label="Fail" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity" name="ExternalActivity" label="ExternalActivity" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <propertyList name="inputParameters" description="ExternalActivity.inputParameters.desc" label="ExternalActivity.inputParameters.label" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignment" upperBound="-1">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.DataFlowActivityCodeGenerator"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ExternalActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity" name="DataFlowActivity" label="Data flow" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExternalActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="extItemRefProperty" value="dataFlowRef" usageType="codegen"/>
+      <propertyList name="dataFlowRef" label="Data flow" bundleName="com.ibm.datatools.etl.cflow.core" type="ExternalItemRef">
+        <definitionParams name="selectionType" value="dataFlow" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="selectionType" value="dataFlow" usageType="validation" label="Data flow"/>
+      </propertyList>
+      <propertyList name="inputParameters" description="ExternalActivity.inputParameters.desc" label="ExternalActivity.inputParameters.label" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignment" upperBound="-1">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.DataFlowActivityCodeGenerator"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ExternalActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity" name="CommonCommandActivity" label="Command" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" composite="true" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" resolverPropertyName="commandType">
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams value="Executable" usageType="compositionResolution" label="Executable"/>
+      <definitionParams name="runCodeType" value="EXECUTABLE" usageType="semantics"/>
+      <definitionParams value="FTP" usageType="compositionResolution" label="FTP"/>
+      <definitionParams name="runCodeType" value="FTP" usageType="semantics"/>
+      <propertyList name="commandType" description="Select the type of command that you want to run. FTP sends files to a server or receives files from a server using the file transfer protocol; an Executable is custom code." label="Command type" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="CommonCommandOperationType" defaultValueLiteral="Executable"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommonCommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@COMMAND"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the Executable." label="Output variable" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="remoteHost" label="Remote host" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.CommandActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.validators.CommandActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <opDefResolverMap key="Executable" value="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity"/>
+      <opDefResolverMap key="FTP" value="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity"/>
+      <resolverLabelMap key="Executable" value="Executable"/>
+      <resolverLabelMap key="FTP" value="FTP"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity" name="ExecutableActivity" label="Executable" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams value="Executable" usageType="compositionResolution" label="Executable"/>
+      <definitionParams name="runCodeType" value="EXECUTABLE" usageType="semantics"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@COMMAND"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the Executable." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="commandType" description="Select the type of command that you want to run. FTP sends files to a server or receives files from a server using the file transfer protocol; an Executable is custom code." label="Command type" bundleName="com.ibm.datatools.etl.cflow.core" type="CommonCommandOperationType" defaultValueLiteral="Executable"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommonCommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.CommandActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.validators.CommandActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity" name="FTPActivity" label="FTP" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams value="FTP" usageType="compositionResolution" label="FTP"/>
+      <definitionParams name="runCodeType" value="FTP" usageType="semantics"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <propertyList name="remoteHost" label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <propertyList name="commandType" description="Select the type of command that you want to run. FTP sends files to a server or receives files from a server using the file transfer protocol; an Executable is custom code." label="Command type" bundleName="com.ibm.datatools.etl.cflow.core" type="CommonCommandOperationType" defaultValueLiteral="Executable"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommonCommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.CommandActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.validators.CommandActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Email" name="Email" label="Email" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="runCodeType" value="EMAIL" usageType="semantics"/>
+      <propertyList name="subject" label="Subject" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@SUBJECT"/>
+      </propertyList>
+      <propertyList name="receipient" label="Recipient" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@RECIPIENT"/>
+      </propertyList>
+      <propertyList name="sender" label="Sender" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@SENDER"/>
+      </propertyList>
+      <propertyList name="message" label="Message" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@MESSAGE"/>
+      </propertyList>
+      <propertyList name="attachments" description="A comma delimited list of files to be sent as attachments on this email" label="Attachments" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <paramOption phase="RUNTIME" paramName="@ATTACHMENTS"/>
+      </propertyList>
+      <propertyList name="attachLog" description="Specify whether the runtime log should be attached to the email." label="Attach runtime log to email" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="Boolean">
+        <paramOption phase="RUNTIME" paramName="@ATTACHLOG"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="receipient::String_VALIDATE_REGEXP" value="^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]([,;]+\s*[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z])*\s*[,;]*$" description="com.ibm.datatools.etl.cflow.core::1015"/>
+        <definitionParams name="sender::String_VALIDATE_REGEXP" value="^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$" description="com.ibm.datatools.etl.cflow.core::1015"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Email::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Email::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Email::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Email::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StoredProcedure" name="StoredProcedure" label="StoredProcedure.label" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="epgBlockType" value="TXN" usageType="semantics"/>
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams name="runCodeType" value="JDBCC" usageType="semantics"/>
+      <propertyList name="storedProcedure" label="Stored procedure" bundleName="com.ibm.datatools.etl.cflow.core" type="DBProcedure">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="dbConn" description="Specify the database connection to use for running the stored procedure inside the database: either a fixed value (actual database connection name) or a variable. By defining the connection as a variable, you can defer the definition of the database connection until a later phase in the life cycle of the application." label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="inputArgs" description="IN and INOUT parameters for the stored procedure invocation. Use fixed values or choose appropriate variables." label="IN Parameters" bundleName="com.ibm.datatools.etl.cflow.core" type="SQLTypesToItemTypeList">
+        <definitionParams type="property" name="storedProcedure" usageType="inputArgs"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="outputArgs" description="INOUT and OUT parameters for the stored procedure. The variables bound to these parameters are assigned the output values from the invocation of the stored procedure. " label="OUT Parameters" bundleName="com.ibm.datatools.etl.cflow.core" type="SQLTypesToItemTypeList">
+        <definitionParams type="property" name="storedProcedure" usageType="outputArgs"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.SPActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.SPActivityCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.validators.SPActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StoredProcedure::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StoredProcedure::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StoredProcedure::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StoredProcedure::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileWait" name="FileWait" label="File Wait" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="runCodeType" value="FILEWAIT" usageType="semantics"/>
+      <propertyList name="fileName" label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="ifExists" label="File existence" bundleName="com.ibm.datatools.etl.cflow.core" type="FileExistenceType">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="checkEvery" label="Check every (seconds)" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="5">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@SLEEPTIME"/>
+      </propertyList>
+      <propertyList name="checkFor" label="Check for (seconds)" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@WAITTIME"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="checkEvery::Integer_VALIDATE_LESS" value="1" description="com.ibm.datatools.etl.cflow.core::1020"/>
+        <definitionParams name="checkFor::Integer_VALIDATE_LESS" value="0" description="com.ibm.datatools.etl.cflow.core::1021"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileWait::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileWait::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileWait::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileWait::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSubFlow" name="IteratorSubFlow" label="Iterator" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="subFlowFileExpand" value="etc/IteratorSubFlow.cfsubflow" usageType="addSemantics"/>
+      <operatorBean className="SubFlowOperator" pkgNsURI="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/EndIterator" name="EndIterator" label="EndIterator" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ActivityOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.EndIteratorChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/EndIterator::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/EndIterator::input::startRef" name="startRef" label="Start Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/EndIterator::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/EndIterator::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/EndIterator::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/MultiBranchOp" name="MultiBranchOp" label="MultiBranchOp" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" bundleName="com.ibm.datatools.etl.cflow.core" registered="true"/>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" name="IteratorSwitch" label="Iterator" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp" composite="true" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" resolverPropertyName="iterationType">
+      <definitionParams type="property" name="iterationType" usageType="compositionRule"/>
+      <definitionParams value="FixedCountIterator" usageType="compositionResolution" label="Repeat loop a fixed number of times"/>
+      <definitionParams value="FileReaderIterator" usageType="compositionResolution" label="Repeat loop for each delimited data item in a file"/>
+      <definitionParams value="DirListIterator" usageType="compositionResolution" label="Repeat loop for each file in a directory"/>
+      <propertyList name="assignToVariable" description="Type the name of an existing variable or use the Variable Manager to select one. For each iteration, the value of the variable is set and can be used in operators inside the processing loop. Alternatively, you can use the Variable Manager to create a new variable." label="Iteration variable" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="VariableAssignOnly">
+        <paramOption paramName="@ASSIGNVAR"/>
+      </propertyList>
+      <propertyList name="iterationType" description="Select the type of iteration that you want performed. Specify that you want the loop repeated for: every data item listed in the file; all the files that are in the directory; a specific number of times." label="Iteration action" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="IterationOperationType" defaultValueLiteral="FixedCountIterator"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <propertyList name="startCount" description="Type the integer that you want the iterator operator to start counting with." label="Start count" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="0">
+        <paramOption phase="RUNTIME" paramName="@STARTCOUNT"/>
+      </propertyList>
+      <propertyList name="endCount" description="Type the last number that you want the iterator operator to count. This number must be an integer." label="End count" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="1">
+        <paramOption phase="RUNTIME" paramName="@ENDCOUNT"/>
+      </propertyList>
+      <propertyList name="stepBy" description="Type the number that you want the iterator operator to increment the count by. This number must be an integer." label="Step increment" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="1">
+        <paramOption phase="RUNTIME" paramName="@STEPBY"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true"/>
+      <propertyList name="fileName" description="Type the name of the file that contains a list of data items or click Browse to select the file." label="File name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="delimiter" description="Type the character that is used to delimit or separate one item in the list from another item." label="Iteration delimiter" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@DELIMIT"/>
+      </propertyList>
+      <propertyList name="dirName" description="Type the name of the directory that contains a list of files or click Browse to select the directory." label="Directory name" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Directory">
+        <paramOption phase="RUNTIME" paramName="@PATH"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.IteratorChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch::output::endRef" name="endRef" label="End Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch::output::next" name="next" label="Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <opDefResolverMap key="FixedCountIterator" value="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FixedCountIterator"/>
+      <opDefResolverMap key="FileReaderIterator" value="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileReaderIterator"/>
+      <opDefResolverMap key="DirListIterator" value="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DirListIterator"/>
+      <resolverLabelMap key="FixedCountIterator" value="Repeat loop a fixed number of times"/>
+      <resolverLabelMap key="FileReaderIterator" value="Repeat loop for each delimited data item in a file"/>
+      <resolverLabelMap key="DirListIterator" value="Repeat loop for each file in a directory"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FixedCountIterator" name="FixedCountIterator" label="FixedCountIterator" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams value="FixedCountIterator" usageType="compositionResolution" label="Repeat loop a fixed number of times"/>
+      <definitionParams type="property" name="iterationType" usageType="compositionRule"/>
+      <propertyList name="startCount" description="Type the integer that you want the iterator operator to start counting with." label="Start count" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="0">
+        <paramOption phase="RUNTIME" paramName="@STARTCOUNT"/>
+      </propertyList>
+      <propertyList name="endCount" description="Type the last number that you want the iterator operator to count. This number must be an integer." label="End count" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="1">
+        <paramOption phase="RUNTIME" paramName="@ENDCOUNT"/>
+      </propertyList>
+      <propertyList name="stepBy" description="Type the number that you want the iterator operator to increment the count by. This number must be an integer." label="Step increment" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="int" defaultValueLiteral="1">
+        <paramOption phase="RUNTIME" paramName="@STEPBY"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true"/>
+      <propertyList name="assignToVariable" description="Type the name of an existing variable or use the Variable Manager to select one. For each iteration, the value of the variable is set and can be used in operators inside the processing loop. Alternatively, you can use the Variable Manager to create a new variable." label="Iteration variable" bundleName="com.ibm.datatools.etl.cflow.core" type="VariableAssignOnly">
+        <paramOption paramName="@ASSIGNVAR"/>
+      </propertyList>
+      <propertyList name="iterationType" description="Select the type of iteration that you want performed. Specify that you want the loop repeated for: every data item listed in the file; all the files that are in the directory; a specific number of times." label="Iteration action" bundleName="com.ibm.datatools.etl.cflow.core" type="IterationOperationType" defaultValueLiteral="FixedCountIterator"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.IteratorChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.cflow.core" className="com.ibm.datatools.etl.cflow.validators.FixedCountValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FixedCountIterator::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FixedCountIterator::output::endRef" name="endRef" label="End Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FixedCountIterator::output::next" name="next" label="Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileReaderIterator" name="FileReaderIterator" label="FileReaderIterator" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams value="FileReaderIterator" usageType="compositionResolution" label="Repeat loop for each delimited data item in a file"/>
+      <definitionParams type="property" name="iterationType" usageType="compositionRule"/>
+      <propertyList name="fileName" description="Type the name of the file that contains a list of data items or click Browse to select the file." label="File name" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="delimiter" description="Type the character that is used to delimit or separate one item in the list from another item." label="Iteration delimiter" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@DELIMIT"/>
+      </propertyList>
+      <propertyList name="assignToVariable" description="Type the name of an existing variable or use the Variable Manager to select one. For each iteration, the value of the variable is set and can be used in operators inside the processing loop. Alternatively, you can use the Variable Manager to create a new variable." label="Iteration variable" bundleName="com.ibm.datatools.etl.cflow.core" type="VariableAssignOnly">
+        <paramOption paramName="@ASSIGNVAR"/>
+      </propertyList>
+      <propertyList name="iterationType" description="Select the type of iteration that you want performed. Specify that you want the loop repeated for: every data item listed in the file; all the files that are in the directory; a specific number of times." label="Iteration action" bundleName="com.ibm.datatools.etl.cflow.core" type="IterationOperationType" defaultValueLiteral="FixedCountIterator"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.IteratorChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileReaderIterator::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileReaderIterator::output::endRef" name="endRef" label="End Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FileReaderIterator::output::next" name="next" label="Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DirListIterator" name="DirListIterator" label="DirListIterator" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" compositeDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/IteratorSwitch" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams value="DirListIterator" usageType="compositionResolution" label="Repeat loop for each file in a directory"/>
+      <definitionParams type="property" name="iterationType" usageType="compositionRule"/>
+      <propertyList name="dirName" description="Type the name of the directory that contains a list of files or click Browse to select the directory." label="Directory name" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Directory">
+        <paramOption phase="RUNTIME" paramName="@PATH"/>
+      </propertyList>
+      <propertyList name="assignToVariable" description="Type the name of an existing variable or use the Variable Manager to select one. For each iteration, the value of the variable is set and can be used in operators inside the processing loop. Alternatively, you can use the Variable Manager to create a new variable." label="Iteration variable" bundleName="com.ibm.datatools.etl.cflow.core" type="VariableAssignOnly">
+        <paramOption paramName="@ASSIGNVAR"/>
+      </propertyList>
+      <propertyList name="iterationType" description="Select the type of iteration that you want performed. Specify that you want the loop repeated for: every data item listed in the file; all the files that are in the directory; a specific number of times." label="Iteration action" bundleName="com.ibm.datatools.etl.cflow.core" type="IterationOperationType" defaultValueLiteral="FixedCountIterator"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.IteratorChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DirListIterator::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DirListIterator::output::endRef" name="endRef" label="End Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DirListIterator::output::next" name="next" label="Loop" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity" name="CommandActivity" label="Command" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" composite="true" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" resolverPropertyName="commandType">
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.cflow.handlers.CommandActivityMigrationHandler" usageType="upgradeHandler"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="remoteHost" label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2SQLScript" name="DB2SQLScript" label="DB2 SQL Script" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.cflow.handlers.CommandActivityMigrationHandler" usageType="upgradeHandler"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType" defaultValueLiteral="DB2SQLScript"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="remoteHost" label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2SQLScript::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2SQLScript::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2SQLScript::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2SQLScript::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2Shell" name="DB2Shell" label="DB2 Shell" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="runCodeType" value="SHELL" usageType="semantics"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.cflow.handlers.CommandActivityMigrationHandler" usageType="upgradeHandler"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType" defaultValueLiteral="DB2Shell"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="remoteHost" label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2Shell::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2Shell::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2Shell::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2Shell::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Executable" name="Executable" label="Executable" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.cflow.handlers.CommandActivityMigrationHandler" usageType="upgradeHandler"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType" defaultValueLiteral="Executable"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="remoteHost" label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Executable::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Executable::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Executable::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Executable::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTP" name="FTP" label="FTP" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity" bundleName="com.ibm.datatools.etl.cflow.core" registered="true">
+      <definitionParams name="runCodeType" value="FTP" usageType="semantics"/>
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.cflow.handlers.CommandActivityMigrationHandler" usageType="upgradeHandler"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType" defaultValueLiteral="FTP"/>
+      <propertyList name="commandType" label="commandType" bundleName="com.ibm.datatools.etl.cflow.core" type="CommandOperationType"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" optional="true">
+        <definitionParams name="executableLocation::invalidExtensions" value="" usageType="validation"/>
+      </propertyList>
+      <propertyList name="remoteHost" label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="Machine">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="fromLocation" label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@REMOTEFILE"/>
+      </propertyList>
+      <propertyList name="toLocation" label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPDirection">
+        <paramOption phase="RUNTIME" paramName="@OPERATION"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.etl.cflow.core" type="FTPMode">
+        <paramOption phase="RUNTIME" paramName="@FTPTYPE"/>
+      </propertyList>
+      <propertyList name="isZOSHost" label="FTP server on z/OS host" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@ISZOSHOST"/>
+      </propertyList>
+      <propertyList name="lrecl" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="1">
+        <definitionParams name="min" value="1" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECL"/>
+      </propertyList>
+      <propertyList name="lreclWithU" description="Type an integer value that specifies the logical record length of the data set. The record length can range from 1 to 32760. The default value is 1." label="Record length" bundleName="com.ibm.datatools.etl.cflow.core" type="Integer" defaultValueLiteral="0">
+        <definitionParams name="min" value="0" usageType="semantics"/>
+        <definitionParams name="max" value="32760" usageType="semantics"/>
+        <paramOption phase="RUNTIME" paramName="@LRECLWITHZERO"/>
+      </propertyList>
+      <propertyList name="recfm" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmOption">
+        <paramOption phase="RUNTIME" paramName="@RECFM"/>
+      </propertyList>
+      <propertyList name="recfmForBinary" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmBinaryOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMBINARY"/>
+      </propertyList>
+      <propertyList name="recfmForAscii" label="Record format" bundleName="com.ibm.datatools.etl.cflow.core" type="RecfmAsciiOption">
+        <paramOption phase="RUNTIME" paramName="@RECFMASCII"/>
+      </propertyList>
+      <propertyList name="defineTransType" description="Specify another data transfer type, in addition to ASCII and Binary." label="Specify another data transfer type" bundleName="com.ibm.datatools.etl.cflow.core" type="DynamicBoolean">
+        <paramOption phase="RUNTIME" paramName="@DEFINETRANSTYPE"/>
+      </propertyList>
+      <propertyList name="transType" description="Specify the data transfer type, the type you input must be an effective FTP TYPE subcommand, such as: u 2." label="Data transfer type" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@TRANSTYPE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTP::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTP::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTP::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTP::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList xsi:type="com.ibm.datatools.etl.operatordefinition:CompositeOperatorDefinition" iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2CommandActivity" name="DB2CommandActivity" label="DB2CommandActivity.label" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" composite="true" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" resolverPropertyName="commandType">
+      <definitionParams type="property" name="commandType" usageType="compositionRule"/>
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.cflow.handlers.CommandActivityMigrationHandler" usageType="upgradeHandler"/>
+      <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+      <propertyList name="commandType" description="Select the type of command that you want to run. A DB2 SQL script is a script that can include SQL statements that are run by the DB2 engine; a DB2 shell can include any command that you can type at a DB2 prompt." label="Command type" bundleName="com.ibm.datatools.etl.cflow.core" type="DB2CommandOperationType"/>
+      <propertyList name="targetOPLabel" label="targetOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.cflow.core" type="ConcatString">
+        <definitionParams type="property" name="commandType" usageType="concat"/>
+        <definitionParams name="suffixContainerID" value="true" usageType="semantics"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+        <definitionParams name="separator" value="_" usageType="semantics"/>
+        <definitionParams name="defaultValue" value="CommandActivity" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="executableLocation" label="Executable location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="arguments" label="Executable arguments" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core">
+        <paramOption phase="RUNTIME" paramName="@ARGUMENTS"/>
+      </propertyList>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable.  The value of the variable will be set to the resulting return code from the DB2 Shell." label="Output variable" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="sqlScriptLocation" label="SQL script location" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="File">
+        <paramOption phase="RUNTIME" paramName="@FILE"/>
+      </propertyList>
+      <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" defaultValueLiteral=";">
+        <definitionParams name="maxLen" value="2" usageType="semantics"/>
+        <paramOption paramName="StatementTerminationCharacter"/>
+      </propertyList>
+      <propertyList name="dbConn" label="DB2 connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="DBServer">
+        <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2CommandActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2CommandActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2CommandActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2CommandActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <dataFlowDefinitionList iD="ControlFlow" name="ControlFlow">
+    <definitionParams name="com.ibm.datatools.etl.cflow.core" value="com.ibm.datatools.etl.cflow.codegen.CodeGenMain" usageType="flowCodeGenerator"/>
+    <definitionParams name="cflowxmi" usageType="flowFileExtension"/>
+    <definitionParams name="Debugger" value="com.ibm.datatools.etl.cflow.EPGControlFlowDebugger" usageType="debugging"/>
+    <definitionParams name="CanvasTracer" value="com.ibm.datatools.etl.dataflow.ui.ControlFlowExecutionListener" usageType="executing"/>
+    <definitionParams name="ExecViewTracer" value="com.ibm.datatools.etl.dataflow.ui.ControlFlowExecutionViewListener" usageType="executing"/>
+    <definitionParams name="CompatibleFlows" value="ControlFlow|SubProcess" usageType="editing"/>
+    <definitionParams name="GenerateNewFlowsForSelection" value="ControlFlow|SubProcess" usageType="editing"/>
+    <definitionParams name="FlowDragAndDrop_CopyOperators_SrcFlowType" value="cflowxmi|sflowxmi" usageType="editing"/>
+    <definitionParams name="FlowDragAndDrop_CreateRefOperator_SrcFlowType" value="sflowxmi::{http:///com/ibm/datatools/sqw/subprocess/subprocess.oplib/SubProcessActivity}||etlmetadataxmi|idsdataflowxmi|zdataflowxmi::{http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DataFlowActivity}" usageType="editing"/>
+    <definitionParams name="disableInputLinkValidation" value="true" usageType="validation"/>
+    <propertyList name="exampleCFlowProp" hidden="true"/>
+    <propertyList name="breakPoints" hidden="true" optional="true" upperBound="-1"/>
+    <propertyList name="logLevel" label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+    <propertyList name="traceLevel" label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+    <operatorBean className="DataFlow" pkgNsURI="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  </dataFlowDefinitionList>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/StoredProcedure::storedProcedure">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputArgs" fIDef="//@children.0/@definitionList.14"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="outputArgs" fIDef="//@children.0/@definitionList.14"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2Shell::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.25"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTP::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.27"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2CommandActivity::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.28"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/FTPActivity::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.12"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommandActivity::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.23"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CommonCommandActivity::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.10"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Executable::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.26"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/ExecutableActivity::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.11"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/DB2SQLScript::commandType">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="targetOPLabel" fIDef="//@children.0/@definitionList.24"/>
+  </dependenciesOnPropMap>
+  <propertyTypeList name="ExitOptionEnum" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="ExitOptionEnumEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="STOP" usageType="enumLiteral" label="Stop"/>
+    <definitionParams name="CONTINUE" usageType="enumLiteral" label="Continue"/>
+  </propertyTypeList>
+  <propertyTypeList name="IterationOperationType" registered="true" emfClassName="IterationOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="CommonCommandOperationType" registered="true" emfClassName="CommonCommandOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+  </propertyTypeList>
+  <propertyTypeList name="LogLevel" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="LogLevelEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="0" usageType="enumLiteral" label="Info"/>
+    <definitionParams name="1" usageType="enumLiteral" label="Warning"/>
+    <definitionParams name="2" usageType="enumLiteral" label="Error"/>
+    <definitionParams name="sqlPrimitiveType" value="INTEGER" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="IntegerDataType" usageType="sqlModelTypeMap"/>
+  </propertyTypeList>
+  <propertyTypeList name="TraceLevel" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="TraceLevelEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams name="0" usageType="enumLiteral" label="None"/>
+    <definitionParams name="1" usageType="enumLiteral" label="Methods"/>
+    <definitionParams name="2" usageType="enumLiteral" label="Content"/>
+    <definitionParams name="3" usageType="enumLiteral" label="Both"/>
+    <definitionParams name="sqlPrimitiveType" value="INTEGER" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="IntegerDataType" usageType="sqlModelTypeMap"/>
+  </propertyTypeList>
+  <propertyTypeList name="FTPDirection" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="FTPDirectionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="GET" usageType="enumLiteral" label="Get"/>
+    <definitionParams name="PUT" usageType="enumLiteral" label="Put"/>
+  </propertyTypeList>
+  <propertyTypeList name="FTPMode" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="FTPModeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+    <definitionParams name="Binary" usageType="enumLiteral" label="Binary"/>
+    <definitionParams name="Ascii" usageType="enumLiteral" label="ASCII"/>
+  </propertyTypeList>
+  <propertyTypeList name="FileExistenceType" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="FileExistenceTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="Exists" usageType="enumLiteral" label="Check that the file exists"/>
+    <definitionParams name="NotExist" usageType="enumLiteral" label="Check that the file does not exist"/>
+  </propertyTypeList>
+  <propertyTypeList name="RecfmOption" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="RecfmOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="VB" usageType="enumLiteral" label="VB"/>
+    <definitionParams name="FB" usageType="enumLiteral" label="FB"/>
+    <definitionParams name="V" usageType="enumLiteral" label="V"/>
+    <definitionParams name="F" usageType="enumLiteral" label="F"/>
+  </propertyTypeList>
+  <propertyTypeList name="RecfmBinaryOption" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="RecfmBinaryOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="FB" usageType="enumLiteral" label="FB"/>
+    <definitionParams name="F" usageType="enumLiteral" label="F"/>
+  </propertyTypeList>
+  <propertyTypeList name="RecfmAsciiOption" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="RecfmAsciiOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="U" usageType="enumLiteral" label="U"/>
+    <definitionParams name="VB" usageType="enumLiteral" label="VB"/>
+    <definitionParams name="FB" usageType="enumLiteral" label="FB"/>
+    <definitionParams name="V" usageType="enumLiteral" label="V"/>
+    <definitionParams name="F" usageType="enumLiteral" label="F"/>
+  </propertyTypeList>
+  <propertyTypeList name="CommandOperationType" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="CommandOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+    <definitionParams name="DB2SQLScript" usageType="enumLiteral" label="DB2SQLScript"/>
+    <definitionParams name="DB2Shell" usageType="enumLiteral" label="DB2Shell"/>
+    <definitionParams name="Executable" usageType="enumLiteral" label="Executable"/>
+    <definitionParams name="FTP" usageType="enumLiteral" label="FTP"/>
+  </propertyTypeList>
+  <propertyTypeList name="DB2CommandOperationType" bundleName="com.ibm.datatools.etl.cflow.core" registered="true" emfClassName="DB2CommandOperationTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+    <definitionParams name="DB2SQLScript" usageType="enumLiteral" label="DB2SQLScript"/>
+    <definitionParams name="DB2Shell" usageType="enumLiteral" label="DB2Shell"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

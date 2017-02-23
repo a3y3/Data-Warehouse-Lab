@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commontypes:SGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commontypes="com.ibm.datatools.dwe.emf.commontypes.nsuri" root="//@nodesMap.0/@value">
+  <nodesMap key="0">
+    <value xsi:type="commontypes:SGraphNode" nodeID="0" outEdgeList="//@edgesMap.0/@value" graph="/">
+      <childNodesMap key="/Evaluation/data-flows/Question2A.etlmetadataxmi" value="//@nodesMap.1/@value"/>
+    </value>
+  </nodesMap>
+  <nodesMap key="/Evaluation/data-flows/Question2A.etlmetadataxmi">
+    <value xsi:type="commontypes:SGraphNode" nodeID="/Evaluation/data-flows/Question2A.etlmetadataxmi" inEdgeList="//@edgesMap.0/@value" graph="/">
+      <parentNodesMap key="0" value="//@nodesMap.0/@value"/>
+    </value>
+  </nodesMap>
+  <edgesMap key="0,/Evaluation/data-flows/Question2A.etlmetadataxmi">
+    <value edgeID="0,/Evaluation/data-flows/Question2A.etlmetadataxmi" to="//@nodesMap.1/@value" from="//@nodesMap.0/@value"/>
+  </edgesMap>
+</commontypes:SGraph>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="EPG DF Nodes" description="Execution Plan Graph Node Library" label="EPG DF Nodes" bundleName="com.ibm.datatools.etl.epg.flow" lastModified="0" nsURI="http:///com/ibm/datatools/etl/epgdf.oplib" fileName="etc/epgdf.oplib">
+  <children iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG" name="EPG" bundleName="com.ibm.datatools.etl.epg.flow">
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgBaseOp" name="EpgBaseOp" label="EpgBaseOp" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" name="ConnectedNode" label="ConnectedNode" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgBaseOp" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Block" name="Block" label="Block" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Block::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Block::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndBlock" name="EndBlock" label="End Block" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndBlock::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndBlock::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Graph" name="Graph" label="Graph" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgBaseOp" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Graph::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Graph::output::catch" name="catch" label="catch" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Graph::output::finally" name="finally" label="finally" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndGraph" name="EndGraph" label="End Graph" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgBaseOp" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndGraph::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try" name="Try" label="Try" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try::output::catch" name="catch" label="catch" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try::output::finally" name="finally" label="finally" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTry" name="EndTry" label="End Try" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndBlock" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTry::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTry::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Txn" name="Txn" label="Txn" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="dbName" label="Database connection" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Txn::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Txn::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Txn::output::catch" name="catch" label="catch" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Txn::output::finally" name="finally" label="finally" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTxn" name="EndTxn" label="End Txn" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTry" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTxn::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTxn::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Session" name="Session" label="Session" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Txn" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="dbName" label="Database connection" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Session::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Session::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Session::output::catch" name="catch" label="catch" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Session::output::finally" name="finally" label="finally" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndSession" name="EndSession" label="End Session" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndTxn" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndSession::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndSession::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump" name="Jump" label="Jump" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="jumpType" label="jumpType" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Break" name="Break" label="Break" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="jumpType" label="jumpType" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Break::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Break::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Continue" name="Continue" label="Break" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="jumpType" label="jumpType" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Continue::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Continue::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Unravel" name="Unravel" label="Break" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="jumpType" label="jumpType" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Unravel::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Unravel::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/FatalError" name="FatalError" label="Break" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Jump" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="jumpType" label="jumpType" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/FatalError::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/FatalError::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgRef" name="EpgRef" label="EPG Reference" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgRef::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EpgRef::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit" name="CodeUnit" label="CodeUnit" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ConnectedNode" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="runArgs" label="Arguments" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/JavaCodeUnit" name="JavaCodeUnit" label="Java " extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="className" label="className" hidden="true" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="bundleName" label="bundleName" hidden="true" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="runArgs" label="Arguments" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/JavaCodeUnit::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/JavaCodeUnit::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/SQLCodeUnit" name="SQLCodeUnit" label="SQL " extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="code" label="Code" bundleName="com.ibm.datatools.etl.epg.flow" type="epgdf.CodeRef"/>
+      <propertyList name="runArgs" label="Arguments" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/SQLCodeUnit::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/SQLCodeUnit::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/SQLScriptCodeUnit" name="SQLScriptCodeUnit" label="SQL Script " extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="code" label="Code" bundleName="com.ibm.datatools.etl.epg.flow" type="epgdf.CodeRef"/>
+      <propertyList name="runArgs" label="Arguments" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/SQLScriptCodeUnit::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/SQLScriptCodeUnit::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ShellCodeUnit" name="ShellCodeUnit" label="Shell" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/CodeUnit" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="runArgs" label="Arguments" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ShellCodeUnit::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/ShellCodeUnit::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Iterator" name="Iterator" label="Iterator" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Try" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Iterator::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Iterator::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Iterator::output::catch" name="catch" label="catch" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/Iterator::output::finally" name="finally" label="finally" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndIterator" name="EndIterator" label="End Iterator" extendsDefinitionID="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndBlock" bundleName="com.ibm.datatools.etl.epg.flow" registered="true">
+      <propertyList name="epgRefNodeID" label="EPG Node Reference " editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+      <inputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndIterator::input::in" name="in" label="in" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/epgdf.oplib/EPG/EndIterator::output::next" name="next" label="next" bundleName="com.ibm.datatools.etl.epg.flow" rule="IMPLEMENTATION" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <dataFlowDefinitionList iD="epgdf.EPGFlow" name="epgdf.EPGFlow">
+    <definitionParams name="Debugger" value="com.ibm.datatools.etl.epg.flow.EPGFlowDebugger" usageType="debugging"/>
+    <definitionParams name="CanvasTracer" value="com.ibm.datatools.etl.dataflow.ui.EPGFlowExecutionListener" usageType="executing"/>
+    <definitionParams name="ExecViewTracer" value="com.ibm.datatools.etl.dataflow.ui.ControlFlowExecutionViewListener" usageType="executing"/>
+    <propertyList name="epgRef" hidden="true" type="epgdf.EPGraph"/>
+    <propertyList name="epgFileName" hidden="true"/>
+    <propertyList name="srcFlowFile" label="Source Flow" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+    <propertyList name="phase" label="Execution Phase" editable="false" bundleName="com.ibm.datatools.etl.epg.flow"/>
+    <propertyList name="breakPoints" hidden="true" optional="true" upperBound="-1"/>
+    <operatorBean className="DataFlow" pkgNsURI="http:///com/ibm/datatools/etl/dataflow.ecore"/>
+  </dataFlowDefinitionList>
+  <propertyTypeList name="epgdf.CodeRef" registered="true" emfClassName="CodeUnit" emfPkgUri="http:///com/ibm/datatools/etl/codeunit.ecore" wrapped="true" referenceOnly="true"/>
+  <propertyTypeList name="epgdf.EPGNode" registered="true" emfClassName="EPGNode" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGBlock" registered="true" emfClassName="EPGBlock" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGAction" registered="true" emfClassName="EPGAction" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGAssign" registered="true" emfClassName="EPGAssign" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGCodeUnit" registered="true" emfClassName="EPGCodeUnit" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGErrorHandlingBlock" registered="true" emfClassName="EPGErrorHandlingBlock" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGIteratorBlock" registered="true" emfClassName="EPGIteratorBlock" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGJump" registered="true" emfClassName="EPGJump" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGraph" registered="true" emfClassName="EPGraph" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true" referenceOnly="true"/>
+  <propertyTypeList name="epgdf.EPGRef" registered="true" emfClassName="EPGRef" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGSession" registered="true" emfClassName="EPGSession" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGStartNode" registered="true" emfClassName="EPGStartNode" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGEndNode" registered="true" emfClassName="EPGEndNode" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGTry" registered="true" emfClassName="EPGTry" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGTXN" registered="true" emfClassName="EPGTXN" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGLog" registered="true" emfClassName="EPGLog" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+  <propertyTypeList name="epgdf.EPGStatus" registered="true" emfClassName="EPGStatus" emfPkgUri="http:///com/ibm/datatools/etl/epg.ecore" wrapped="true"/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="ParallelControlFlowOplib" description="Library of Control Flow Operators with Parallel Execution" label="ParallelControlFlowOplib" bundleName="com.ibm.datatools.sqw.cflow.parallel" lastModified="0" nsURI="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib" fileName="etc/pcflow.oplib">
+  <children iD="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.sqw.cflow.parallel">
+    <definitionList iD="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity" name="ParallelControlFlowActivity" label="Parallel Container" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.sqw.cflow.parallel" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.sqw.cflow.parallel.ParallelActivityMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="etloperators" description="Sort the activities in the order they should be executed.  Note: this sequence is only relevant if the Execution property is set to Sequential" label="Activity sequence" bundleName="com.ibm.datatools.sqw.cflow.parallel" type="ParallelContainerActivity" upperBound="-1"/>
+      <propertyList name="executionOrder" label="Execution" bundleName="com.ibm.datatools.sqw.cflow.parallel" type="ExecutionOrder" defaultValueLiteral="parallel">
+        <paramOption phase="RUNTIME" paramName="@EXECUTIONORDER"/>
+      </propertyList>
+      <propertyList name="logOption" label="Logging" bundleName="com.ibm.datatools.sqw.cflow.parallel" type="LogOption" defaultValueLiteral="same_log">
+        <paramOption phase="RUNTIME" paramName="@LOGOPTION"/>
+      </propertyList>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.sqw.cflow.parallel.ParallelActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.sqw.cflow.parallel.ParallelActivityCodeGenerator"/>
+      <validatorClass className="com.ibm.datatools.sqw.cflow.parallel.ParallelActivityValidator"/>
+      <operatorBean className="ParallelActivity" pkgNsURI="com.ibm.datatools.sqw.flow.parallel.nsuri"/>
+      <inputList iD="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="com.ibm.datatools.sqw.cflow.parallel.pcflow.oplib/Flow/ParallelControlFlowActivity::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <propertyTypeList name="ExecutionOrder" bundleName="com.ibm.datatools.sqw.cflow.parallel" registered="true" emfClassName="ExecutionOrderEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="parallel" usageType="enumLiteral" label="Parallel"/>
+    <definitionParams name="sequential" usageType="enumLiteral" label="Sequential"/>
+  </propertyTypeList>
+  <propertyTypeList name="LogOption" bundleName="com.ibm.datatools.sqw.cflow.parallel" registered="true" emfClassName="LogOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="same_log" usageType="enumLiteral" label="Use the same log file for all activities"/>
+    <definitionParams name="separate_log" usageType="enumLiteral" label="Use a separate log file for each activity"/>
+  </propertyTypeList>
+  <propertyTypeList name="ParallelContainerActivity" extendsDefinitionID="ETLOperator" registered="true" emfClassName="ParallelContainerActivity" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib"/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

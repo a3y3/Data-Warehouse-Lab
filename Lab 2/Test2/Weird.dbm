@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/7.5.2.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB2Model="http:///com/ibm/db/models/db2/db2.ecore" xmlns:LUW="http:///com/ibm/db/models/db2/luw.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:datanotation="http:///datanotation.ecore">
+  <LUW:LUWDatabase xmi:id="_xYSFcOkvEeai8tosxnMw8A" name="Database" vendor="DB2 UDB" version="V9.7" schemas="_xaXwIOkvEeai8tosxnMw8A"/>
+  <DB2Model:DB2Schema xmi:id="_xaXwIOkvEeai8tosxnMw8A" name="Schema2" tables="_5TS0MOkvEeai8tosxnMw8A" database="_xYSFcOkvEeai8tosxnMw8A">
+    <eAnnotations xmi:id="_xaXwIekvEeai8tosxnMw8A" source="diagram">
+      <contents xsi:type="datanotation:DataDiagram" xmi:id="_xaXwIukvEeai8tosxnMw8A" type="IE_CrowFoot" name="Diagram1" viewKind="ProjectExplorer" notation="IE_CrowFoot" kind="Physical">
+        <styles xsi:type="datanotation:DataAttributeStyle" xmi:id="_xaXwI-kvEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataCompartmentStyle" xmi:id="_xaXwJOkvEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataDisplayStyle" xmi:id="_xaXwJekvEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataDiagramRelationshipStyle" xmi:id="_xaXwJukvEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataShapeNameStyle" xmi:id="_xaXwJ-kvEeai8tosxnMw8A"/>
+        <styles xsi:type="datanotation:DataDiagramFormattingStyle" xmi:id="_xaXwKOkvEeai8tosxnMw8A"/>
+        <element xsi:nil="true"/>
+      </contents>
+    </eAnnotations>
+  </DB2Model:DB2Schema>
+  <LUW:LUWTable xmi:id="_5TS0MOkvEeai8tosxnMw8A" name="TestTable" schema="_xaXwIOkvEeai8tosxnMw8A">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_6vu9AOkvEeai8tosxnMw8A" name="Number" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_8HINwOkvEeai8tosxnMw8A" name="NUMERIC" primitiveType="NUMERIC"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_8eIYgOkvEeai8tosxnMw8A" name="TestTable_PK" members="_6vu9AOkvEeai8tosxnMw8A"/>
+  </LUW:LUWTable>
+</xmi:XMI>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.dataflow.view:ETLFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.dataflow.view="http:///com/ibm/datatools/etl/dataflow/view.ecore">
+  <elements xsi:type="com.ibm.datatools.etl.dataflow.view:ETLOperator" x="70" y="79" height="-1" width="-1" type="http:///com/ibm/datatools/etl/dataflow/core.oplib/Extract/DBSources/TableSelect">
+    <outputs type="OutputPort">
+      <fields name="EMPLOYEE_NAME">
+        <input/>
+        <output type="OutputPort"/>
+      </fields>
+      <fields name="COMPANY_NAME">
+        <input/>
+        <output type="OutputPort"/>
+      </fields>
+      <fields name="SALARY">
+        <input/>
+        <output type="OutputPort"/>
+      </fields>
+      <operatorPort href="Question 8.etlmetadataxmi#//@operatorMap.0/@value/@outputPortMap.0/@value"/>
+    </outputs>
+    <operator href="Question 8.etlmetadataxmi#//@operatorMap.0/@value"/>
+  </elements>
+  <dataflow href="Question 8.etlmetadataxmi#/"/>
+</com.ibm.datatools.etl.dataflow.view:ETLFlow>

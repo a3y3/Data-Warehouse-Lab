@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="GenericSQLOplibs" description="Generic SQL operators" label="GenericSQLOplibs" bundleName="com.ibm.datatools.etl.genericsql.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib" fileName="genericsql.oplib">
+  <children iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.etl.genericsql.oplib">
+    <children iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow/Transform" name="Transform" bundleName="com.ibm.datatools.etl.genericsql.oplib">
+      <definitionList iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow/Transform/GenericSQLOperator" name="GenericSQLOperator" label="GenericSQLOperator" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.genericsql.oplib" registered="true">
+        <definitionParams name="runCodeType" value="SQLSCRIPT" usageType="semantics"/>
+        <definitionParams name="dbNameProperty" value="dbConn" usageType="semantics"/>
+        <propertyList name="SQLText" label="SQL statements" variableAllowed="true" bundleName="com.ibm.datatools.etl.genericsql.oplib" type="SQLText">
+          <paramOption paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="stmTerminator" description="You can change the statement termination character for SQL statements, which defaults to a semicolon (;). Change the semicolon if your code uses a different character (such as the @ character) to terminate one or more SQL statements. Single and double quotation marks and the newline character are not allowed." label="Statement termination character" bundleName="com.ibm.datatools.etl.genericsql.oplib" optional="true" defaultValueLiteral=";">
+          <definitionParams name="maxLen" value="2" usageType="semantics"/>
+          <paramOption paramName="StatementTerminationCharacter"/>
+        </propertyList>
+        <propertyList name="dbConn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.genericsql.oplib" type="DBServer">
+          <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+          <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+        </propertyList>
+        <propertyList name="executionOptions" label="Execution option" bundleName="com.ibm.datatools.etl.genericsql.oplib" type="ExecutionOption" defaultValueLiteral="0">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+        <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+        <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+          <paramOption phase="OTHER" paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+          <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+        </propertyList>
+        <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+        <codeGeneratorClass className="com.ibm.datatools.etl.genericsql.oplib.codegenerators.GenericSQLOperatorCodeGenerator"/>
+        <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+        <inputList iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow/Transform/GenericSQLOperator::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+        <outputList iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow/Transform/GenericSQLOperator::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+        <outputList iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow/Transform/GenericSQLOperator::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+        <outputList iD="http:///com/ibm/datatools/etl/genericsql/oplib/genericsql.oplib/Flow/Transform/GenericSQLOperator::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      </definitionList>
+    </children>
+  </children>
+  <propertyTypeList name="ExecutionOption" bundleName="com.ibm.datatools.etl.genericsql.oplib" registered="true" emfClassName="ExecutionOptionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="0" usageType="enumLiteral" label="Run SQL statements from the DB2 command line"/>
+    <definitionParams name="1" usageType="enumLiteral" label="Run SQL statements through JDBC"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

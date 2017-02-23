@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srcmgt:SourceMgr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:srcmgt="com.ibm.datatools.dwe.srcmgt.nsuri" saveLocation="newReverseEnginnering/generated-code/.inc.bld/mgr" genId="13">
+  <sourceMap key="/newReverseEnginnering/data-flows/test.etlmetadataxmi">
+    <value href="mgr_se_1#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Example1.etlmetadataxmi">
+    <value href="mgr_se_2#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question1.etlmetadataxmi">
+    <value href="mgr_se_3#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question2.etlmetadataxmi">
+    <value href="mgr_se_4#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question3.etlmetadataxmi">
+    <value href="mgr_se_5#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 4.etlmetadataxmi">
+    <value href="mgr_se_6#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 12.etlmetadataxmi">
+    <value href="mgr_se_7#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 6.etlmetadataxmi">
+    <value href="mgr_se_8#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 7.etlmetadataxmi">
+    <value href="mgr_se_9#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 8.etlmetadataxmi">
+    <value href="mgr_se_10#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 9.etlmetadataxmi">
+    <value href="mgr_se_11#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/Question 1.etlmetadataxmi">
+    <value href="mgr_se_12#/"/>
+  </sourceMap>
+  <sourceMap key="/newReverseEnginnering/data-flows/CHK.etlmetadataxmi">
+    <value href="mgr_se_13#/"/>
+  </sourceMap>
+</srcmgt:SourceMgr>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="Custom SQL Query" description="SQL Query Source operator Library" label="Custom SQL Query" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib" fileName="sqlquerysource.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract" name="Extract" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib">
+    <children iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/db2z" name="db2z" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/db2z/SQLQuerySource" name="SQLQuerySource" label="SQLQuerySource" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySourceBase" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" registered="true">
+        <propertyList name="accessMethod" description="Access a source table from the SQL execution database or other databases using JDBC " label="Location" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+        <propertyList name="dbconn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="DBServer">
+          <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+        </propertyList>
+        <propertyList name="columnExpressions" description="SQLQuerySource.SourceColumnsExpression.desc" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="ProjectExpression"/>
+        <propertyList name="resultColumns" description="Result columns of the SELECT statement" label="Result columns" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="VirtualTable"/>
+        <propertyList name="SQLStatement" label="SELECT Statement" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="SQLCode">
+          <paramOption paramName="@IGNORE"/>
+        </propertyList>
+        <propertyList name="sqlEmbeddable" description="Select this check box so that at run time the Design Studio creates a nested SELECT statement to pass the result of the specified SELECT statement query to the next operator in the data flow." label="SELECT statement can be nested in a bigger SQL statement" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true" type="Boolean" defaultValueLiteral="true"/>
+        <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.SQLQuerySourceChangeHandler"/>
+        <validatorClass bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.validation.SQLQuerySourceValidator"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/db2z/SQLQuerySource::output::output" name="output" label="output " bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" rule="BY_PARAMS">
+          <definitionParams type="property" name="resultColumns"/>
+        </outputList>
+      </definitionList>
+    </children>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySourceBase" name="SQLQuerySourceBase" label="SQLQuerySourceBase" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" registered="true">
+      <propertyList name="accessMethod" description="Access a source table from the SQL execution database or other databases using JDBC " label="Location" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+      <propertyList name="dbconn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="DBServer">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="columnExpressions" description="SQLQuerySource.SourceColumnsExpression.desc" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="ProjectExpression"/>
+      <propertyList name="resultColumns" description="Result columns of the SELECT statement" label="Result columns" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="VirtualTable"/>
+      <propertyList name="SQLStatement" label="SELECT Statement" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="SQLCode">
+        <paramOption paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="sqlEmbeddable" description="Select this check box so that at run time the Design Studio creates a nested SELECT statement to pass the result of the specified SELECT statement query to the next operator in the data flow." label="SELECT statement can be nested in a bigger SQL statement" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true" type="Boolean" defaultValueLiteral="true"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.SQLQuerySourceChangeHandler"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.validation.SQLQuerySourceValidator"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySourceBase::output::output" name="output" label="output " bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="resultColumns"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySource" name="SQLQuerySource" label="SQLQuerySource" extendsDefinitionID="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySourceBase" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.SQLQuerySourceUpgradeHandler" usageType="upgradeHandler"/>
+      <propertyList name="createTempTable" label="createTempTable" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="boolean" defaultValueLiteral="true"/>
+      <propertyList name="stagingTableName" description="Details.stagingTableName.desc" label="Details.stagingTableName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true"/>
+      <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true"/>
+      <propertyList name="tempTableSpace" description="Details.tableSpace.temp.desc" label="Details.tempTableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true"/>
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true" type="VirtualTable"/>
+      <propertyList name="partitioningKeys" label="Details.partioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true" type="SubSelect">
+        <definitionParams type="output" name="output" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Details.selectedKeys"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="accessMethod" description="Access a source table from the SQL execution database or other databases using JDBC " label="Location" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="AccessMethod" defaultValueLiteral="LOCAL"/>
+      <propertyList name="dbconn" label="Database connection" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="DBServer">
+        <paramOption phase="RUNTIME" paramName="@RESOURCE"/>
+      </propertyList>
+      <propertyList name="columnExpressions" description="SQLQuerySource.SourceColumnsExpression.desc" label="Source Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="ProjectExpression"/>
+      <propertyList name="resultColumns" description="Result columns of the SELECT statement" label="Result columns" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="VirtualTable"/>
+      <propertyList name="SQLStatement" label="SELECT Statement" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" type="SQLCode">
+        <paramOption paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="sqlEmbeddable" description="Select this check box so that at run time the Design Studio creates a nested SELECT statement to pass the result of the specified SELECT statement query to the next operator in the data flow." label="SELECT statement can be nested in a bigger SQL statement" bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" optional="true" type="Boolean" defaultValueLiteral="true"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.SQLQuerySourceChangeHandler"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.validation.SQLQuerySourceValidator"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib.rewriter.SQLQuerySourceRewriter"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySource::output::output" name="output" label="output " bundleName="com.ibm.datatools.etl.dataflow.sqlquerysource.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="resultColumns"/>
+      </outputList>
+    </definitionList>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySourceBase::resultColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySource::resultColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/db2z/SQLQuerySource::resultColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySource::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnOutputMap key="http:///com/ibm/datatools/etl/dataflow/sqlquerysource.oplib/Extract/SQLQuerySource::output">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.1"/>
+  </dependenciesOnOutputMap>
+</com.ibm.datatools.etl.operatorlibrary:Library>

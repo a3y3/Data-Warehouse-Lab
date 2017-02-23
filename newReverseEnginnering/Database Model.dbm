@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/7.5.2.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB2Model="http:///com/ibm/db/models/db2/db2.ecore" xmlns:LUW="http:///com/ibm/db/models/db2/luw.ecore" xmlns:SQLAccessControl="http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore">
+  <LUW:LUWDatabase xmi:id="_jFAN0O6lEea10_TGQ1mPIw" name="GSDBIT3" vendor="DB2 UDB" version="V9.7" schemas="_jGpMkO6lEea10_TGQ1mPIw" authorizationIds="_jGpMke6lEea10_TGQ1mPIw _jGpM2e6lEea10_TGQ1mPIw _jGpNTe6lEea10_TGQ1mPIw _jGpM2O6lEea10_TGQ1mPIw _jGpNUu6lEea10_TGQ1mPIw" groups="_jGpNT-6lEea10_TGQ1mPIw" bufferpools="_jGpNVe6lEea10_TGQ1mPIw _jGpNVO6lEea10_TGQ1mPIw" tablespaces="_jGpNTO6lEea10_TGQ1mPIw _jGpNUe6lEea10_TGQ1mPIw">
+    <eAnnotations xmi:id="_jFAN0e6lEea10_TGQ1mPIw" source="ConnectionURI">
+      <details xmi:id="_jFAN0u6lEea10_TGQ1mPIw" key="ConnectionKey" value="GSDBIT3"/>
+    </eAnnotations>
+  </LUW:LUWDatabase>
+  <DB2Model:DB2Schema xmi:id="_jGpMkO6lEea10_TGQ1mPIw" name="UNIVERS" privileges="_jGpMm-6lEea10_TGQ1mPIw _jGpMse6lEea10_TGQ1mPIw _jGpMyO6lEea10_TGQ1mPIw _jGpMnu6lEea10_TGQ1mPIw _jGpMsO6lEea10_TGQ1mPIw _jGpMyu6lEea10_TGQ1mPIw" indices="_jGpNSe6lEea10_TGQ1mPIw _jGpNXu6lEea10_TGQ1mPIw _jGpNgu6lEea10_TGQ1mPIw _jGpNj-6lEea10_TGQ1mPIw _jGpNmu6lEea10_TGQ1mPIw" tables="_jGpNKe6lEea10_TGQ1mPIw _jGpNVu6lEea10_TGQ1mPIw _jGpNYO6lEea10_TGQ1mPIw _jGpNke6lEea10_TGQ1mPIw _jGpNlO6lEea10_TGQ1mPIw _jGpNl-6lEea10_TGQ1mPIw _jGpNhe6lEea10_TGQ1mPIw _jGpNH-6lEea10_TGQ1mPIw" database="_jFAN0O6lEea10_TGQ1mPIw" owner="_jGpMke6lEea10_TGQ1mPIw"/>
+  <SQLAccessControl:User xmi:id="_jGpMke6lEea10_TGQ1mPIw" name="ITSTUDENTA2" description="" ownedSchema="_jGpMkO6lEea10_TGQ1mPIw" Database="_jFAN0O6lEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_jGpMku6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMk-6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMlO6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMle6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMlu6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMl-6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMmO6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMme6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMmu6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMm-6lEea10_TGQ1mPIw" grantable="true" action="ALTERIN" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpMkO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMnO6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMne6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMnu6lEea10_TGQ1mPIw" grantable="true" action="ALTERIN" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpMkO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMn-6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMoO6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMoe6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMou6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMo-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMpO6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMpe6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMpu6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMp-6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMqO6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMqe6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMqu6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMq-6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMrO6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMre6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMru6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMr-6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMsO6lEea10_TGQ1mPIw" grantable="true" action="CREATEIN" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpMkO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMse6lEea10_TGQ1mPIw" grantable="true" action="CREATEIN" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpMkO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMsu6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMs-6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMtO6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMte6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMtu6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMt-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMuO6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMue6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMuu6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMu-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMvO6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMve6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMvu6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMv-6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMwO6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMwe6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMwu6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMw-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMxO6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMxe6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMxu6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMx-6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMyO6lEea10_TGQ1mPIw" grantable="true" action="DROPIN" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpMkO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMye6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMyu6lEea10_TGQ1mPIw" grantable="true" action="DROPIN" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpMkO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMy-6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMzO6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMze6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMzu6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpMz-6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM0O6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM0e6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM0u6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM0-6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM1O6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM1e6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM1u6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM1-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2e6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+  </SQLAccessControl:User>
+  <SQLAccessControl:User xmi:id="_jGpM2O6lEea10_TGQ1mPIw" name="SYSIBM" Database="_jFAN0O6lEea10_TGQ1mPIw" grantedPrivilege="_jGpM2u6lEea10_TGQ1mPIw _jGpM2-6lEea10_TGQ1mPIw _jGpM3O6lEea10_TGQ1mPIw _jGpM3e6lEea10_TGQ1mPIw _jGpM3u6lEea10_TGQ1mPIw _jGpM3-6lEea10_TGQ1mPIw _jGpM4O6lEea10_TGQ1mPIw _jGpM4e6lEea10_TGQ1mPIw _jGpM4u6lEea10_TGQ1mPIw _jGpM4-6lEea10_TGQ1mPIw _jGpM5O6lEea10_TGQ1mPIw _jGpM5e6lEea10_TGQ1mPIw _jGpMm-6lEea10_TGQ1mPIw _jGpM5u6lEea10_TGQ1mPIw _jGpM5-6lEea10_TGQ1mPIw _jGpM6O6lEea10_TGQ1mPIw _jGpM6e6lEea10_TGQ1mPIw _jGpM6u6lEea10_TGQ1mPIw _jGpM6-6lEea10_TGQ1mPIw _jGpM7O6lEea10_TGQ1mPIw _jGpM7e6lEea10_TGQ1mPIw _jGpM7u6lEea10_TGQ1mPIw _jGpM7-6lEea10_TGQ1mPIw _jGpM8O6lEea10_TGQ1mPIw _jGpM8e6lEea10_TGQ1mPIw _jGpM8u6lEea10_TGQ1mPIw _jGpM8-6lEea10_TGQ1mPIw _jGpM9O6lEea10_TGQ1mPIw _jGpM9e6lEea10_TGQ1mPIw _jGpM9u6lEea10_TGQ1mPIw _jGpM9-6lEea10_TGQ1mPIw _jGpM-O6lEea10_TGQ1mPIw _jGpM-e6lEea10_TGQ1mPIw _jGpM-u6lEea10_TGQ1mPIw _jGpM--6lEea10_TGQ1mPIw _jGpM_O6lEea10_TGQ1mPIw _jGpMse6lEea10_TGQ1mPIw _jGpM_e6lEea10_TGQ1mPIw _jGpM_u6lEea10_TGQ1mPIw _jGpM_-6lEea10_TGQ1mPIw _jGpNAO6lEea10_TGQ1mPIw _jGpNAe6lEea10_TGQ1mPIw _jGpNAu6lEea10_TGQ1mPIw _jGpNA-6lEea10_TGQ1mPIw _jGpNBO6lEea10_TGQ1mPIw _jGpNBe6lEea10_TGQ1mPIw _jGpNBu6lEea10_TGQ1mPIw _jGpNB-6lEea10_TGQ1mPIw _jGpNU-6lEea10_TGQ1mPIw _jGpNCO6lEea10_TGQ1mPIw _jGpNCe6lEea10_TGQ1mPIw _jGpNCu6lEea10_TGQ1mPIw _jGpNC-6lEea10_TGQ1mPIw _jGpNDO6lEea10_TGQ1mPIw _jGpNDe6lEea10_TGQ1mPIw _jGpNDu6lEea10_TGQ1mPIw _jGpMyO6lEea10_TGQ1mPIw _jGpNTu6lEea10_TGQ1mPIw _jGpND-6lEea10_TGQ1mPIw _jGpNEO6lEea10_TGQ1mPIw _jGpNEe6lEea10_TGQ1mPIw _jGpNEu6lEea10_TGQ1mPIw _jGpNE-6lEea10_TGQ1mPIw _jGpNFO6lEea10_TGQ1mPIw _jGpNFe6lEea10_TGQ1mPIw _jGpNFu6lEea10_TGQ1mPIw _jGpNF-6lEea10_TGQ1mPIw _jGpNGO6lEea10_TGQ1mPIw _jGpNGe6lEea10_TGQ1mPIw _jGpNGu6lEea10_TGQ1mPIw _jGpNG-6lEea10_TGQ1mPIw _jGpNHO6lEea10_TGQ1mPIw _jGpNHe6lEea10_TGQ1mPIw _jGpNHu6lEea10_TGQ1mPIw"/>
+  <SQLAccessControl:User xmi:id="_jGpM2e6lEea10_TGQ1mPIw" name="ITSTUDENTB1" description="" Database="_jFAN0O6lEea10_TGQ1mPIw" grantedPrivilege="_jGpMku6lEea10_TGQ1mPIw _jGpMk-6lEea10_TGQ1mPIw _jGpMlO6lEea10_TGQ1mPIw _jGpMle6lEea10_TGQ1mPIw _jGpMlu6lEea10_TGQ1mPIw _jGpMl-6lEea10_TGQ1mPIw _jGpMmO6lEea10_TGQ1mPIw _jGpMme6lEea10_TGQ1mPIw _jGpMmu6lEea10_TGQ1mPIw _jGpMnO6lEea10_TGQ1mPIw _jGpMne6lEea10_TGQ1mPIw _jGpMnu6lEea10_TGQ1mPIw _jGpMn-6lEea10_TGQ1mPIw _jGpMoO6lEea10_TGQ1mPIw _jGpMoe6lEea10_TGQ1mPIw _jGpMou6lEea10_TGQ1mPIw _jGpMo-6lEea10_TGQ1mPIw _jGpMpO6lEea10_TGQ1mPIw _jGpMpe6lEea10_TGQ1mPIw _jGpMpu6lEea10_TGQ1mPIw _jGpMp-6lEea10_TGQ1mPIw _jGpMqO6lEea10_TGQ1mPIw _jGpMqe6lEea10_TGQ1mPIw _jGpMqu6lEea10_TGQ1mPIw _jGpMq-6lEea10_TGQ1mPIw _jGpMrO6lEea10_TGQ1mPIw _jGpMre6lEea10_TGQ1mPIw _jGpMru6lEea10_TGQ1mPIw _jGpMr-6lEea10_TGQ1mPIw _jGpMsO6lEea10_TGQ1mPIw _jGpMsu6lEea10_TGQ1mPIw _jGpMs-6lEea10_TGQ1mPIw _jGpMtO6lEea10_TGQ1mPIw _jGpMte6lEea10_TGQ1mPIw _jGpMtu6lEea10_TGQ1mPIw _jGpMt-6lEea10_TGQ1mPIw _jGpMuO6lEea10_TGQ1mPIw _jGpMue6lEea10_TGQ1mPIw _jGpMuu6lEea10_TGQ1mPIw _jGpMu-6lEea10_TGQ1mPIw _jGpMvO6lEea10_TGQ1mPIw _jGpMve6lEea10_TGQ1mPIw _jGpMvu6lEea10_TGQ1mPIw _jGpMv-6lEea10_TGQ1mPIw _jGpMwO6lEea10_TGQ1mPIw _jGpMwe6lEea10_TGQ1mPIw _jGpMwu6lEea10_TGQ1mPIw _jGpMw-6lEea10_TGQ1mPIw _jGpMxO6lEea10_TGQ1mPIw _jGpMxe6lEea10_TGQ1mPIw _jGpMxu6lEea10_TGQ1mPIw _jGpMx-6lEea10_TGQ1mPIw _jGpMye6lEea10_TGQ1mPIw _jGpMyu6lEea10_TGQ1mPIw _jGpMy-6lEea10_TGQ1mPIw _jGpMzO6lEea10_TGQ1mPIw _jGpMze6lEea10_TGQ1mPIw _jGpMzu6lEea10_TGQ1mPIw _jGpMz-6lEea10_TGQ1mPIw _jGpM0O6lEea10_TGQ1mPIw _jGpM0e6lEea10_TGQ1mPIw _jGpM0u6lEea10_TGQ1mPIw _jGpM0-6lEea10_TGQ1mPIw _jGpM1O6lEea10_TGQ1mPIw _jGpM1e6lEea10_TGQ1mPIw _jGpM1u6lEea10_TGQ1mPIw _jGpM1-6lEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_jGpM2u6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM2-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM3O6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM3e6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM3u6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM3-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM4O6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNXu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM4e6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM4u6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM4-6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM5O6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM5e6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNgu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM5u6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM5-6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM6O6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM6e6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM6u6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM6-6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM7O6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM7e6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM7u6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM7-6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM8O6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM8e6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM8u6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM8-6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM9O6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM9e6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM9u6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM9-6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM-O6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNSe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM-e6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM-u6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM--6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM_O6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM_e6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM_u6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpM_-6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNAO6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNAe6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNAu6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNA-6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNBO6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNBe6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNBu6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNB-6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNCO6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNCe6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNCu6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNC-6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNhe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNDO6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNDe6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNke6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNDu6lEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpND-6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNEO6lEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNEe6lEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNKe6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNEu6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNE-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNYO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNFO6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNFe6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNFu6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNF-6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNlO6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNGO6lEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNGe6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNVu6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNGu6lEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNG-6lEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNl-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNHO6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNj-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNHe6lEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNH-6lEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_jGpNHu6lEea10_TGQ1mPIw" action="CONTROL" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNmu6lEea10_TGQ1mPIw"/>
+  </SQLAccessControl:User>
+  <LUW:LUWTable xmi:id="_jGpNH-6lEea10_TGQ1mPIw" name="TEXT" privileges="_jGpM2-6lEea10_TGQ1mPIw _jGpM9e6lEea10_TGQ1mPIw _jGpNB-6lEea10_TGQ1mPIw _jGpNHe6lEea10_TGQ1mPIw _jGpM8u6lEea10_TGQ1mPIw _jGpNCO6lEea10_TGQ1mPIw _jGpM2u6lEea10_TGQ1mPIw _jGpM8-6lEea10_TGQ1mPIw _jGpMw-6lEea10_TGQ1mPIw _jGpMku6lEea10_TGQ1mPIw _jGpMp-6lEea10_TGQ1mPIw _jGpMvu6lEea10_TGQ1mPIw _jGpM1e6lEea10_TGQ1mPIw _jGpMpO6lEea10_TGQ1mPIw _jGpMte6lEea10_TGQ1mPIw _jGpMzO6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" index="_jGpNmu6lEea10_TGQ1mPIw" referencingForeignKeys="_jGpNPe6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNIO6lEea10_TGQ1mPIw" name="BOOK_ISBN" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNIe6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNIu6lEea10_TGQ1mPIw" name="TITLE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNI-6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNJO6lEea10_TGQ1mPIw" name="PUBLISH">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNJe6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNJu6lEea10_TGQ1mPIw" name="AUTHOR">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNJ-6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_jGpNKO6lEea10_TGQ1mPIw" name="TEXT_PK" members="_jGpNIO6lEea10_TGQ1mPIw" ForeignKey="_jGpNPe6lEea10_TGQ1mPIw"/>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_jGpNKe6lEea10_TGQ1mPIw" name="BOOK_ADOPTION" privileges="_jGpM_e6lEea10_TGQ1mPIw _jGpNEO6lEea10_TGQ1mPIw _jGpM5O6lEea10_TGQ1mPIw _jGpM_O6lEea10_TGQ1mPIw _jGpNDu6lEea10_TGQ1mPIw _jGpM5-6lEea10_TGQ1mPIw _jGpM3e6lEea10_TGQ1mPIw _jGpNEe6lEea10_TGQ1mPIw _jGpMo-6lEea10_TGQ1mPIw _jGpMtO6lEea10_TGQ1mPIw _jGpMy-6lEea10_TGQ1mPIw _jGpMne6lEea10_TGQ1mPIw _jGpMr-6lEea10_TGQ1mPIw _jGpMxe6lEea10_TGQ1mPIw _jGpMk-6lEea10_TGQ1mPIw _jGpMqO6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" index="_jGpNSe6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNKu6lEea10_TGQ1mPIw" name="CNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNK-6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNLO6lEea10_TGQ1mPIw" name="SEM">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNLe6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNLu6lEea10_TGQ1mPIw" name="BOOK_ISBN" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNL-6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_jGpNMO6lEea10_TGQ1mPIw" name="BOOK_ADOPTION_PK" members="_jGpNKu6lEea10_TGQ1mPIw _jGpNLu6lEea10_TGQ1mPIw"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_jGpNMe6lEea10_TGQ1mPIw" name="BOOK_ADOPTION_COURSE_FK" members="_jGpNKu6lEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_jGpNXe6lEea10_TGQ1mPIw" referencedTable="_jGpNVu6lEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_jGpNMu6lEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_jGpNM-6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNNO6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNNe6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNNu6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNN-6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNOO6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNOe6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNOu6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNO-6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNPO6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_jGpNPe6lEea10_TGQ1mPIw" name="BOOK_ADOPTION_TEXT_FK" members="_jGpNLu6lEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_jGpNKO6lEea10_TGQ1mPIw" referencedTable="_jGpNH-6lEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_jGpNPu6lEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_jGpNP-6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNQO6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNQe6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNQu6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNQ-6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNRO6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNRe6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNRu6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNR-6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNSO6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_jGpNSe6lEea10_TGQ1mPIw" name="BOOK_ADOPTION_PK" privileges="_jGpM-O6lEea10_TGQ1mPIw" Schema="_jGpMkO6lEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_jGpNKe6lEea10_TGQ1mPIw" tablespace="_jGpNTO6lEea10_TGQ1mPIw">
+    <members xmi:id="_jGpNSu6lEea10_TGQ1mPIw" column="_jGpNKu6lEea10_TGQ1mPIw"/>
+    <members xmi:id="_jGpNS-6lEea10_TGQ1mPIw" column="_jGpNLu6lEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTableSpace xmi:id="_jGpNTO6lEea10_TGQ1mPIw" name="USERSPACE1" privileges="_jGpNTu6lEea10_TGQ1mPIw" tablespaceType="LARGE" managementType="DATABASE_MANAGED" extentSize="32" preFetchSize="-1" overhead="7.5" transferRate="0.06" recoverDroppedTableOn="true" pageSize="SIXTEEN_K" group="_jGpNT-6lEea10_TGQ1mPIw" bufferPool="_jGpNVe6lEea10_TGQ1mPIw" regularDataTables="_jGpNKe6lEea10_TGQ1mPIw _jGpNVu6lEea10_TGQ1mPIw _jGpNYO6lEea10_TGQ1mPIw _jGpNke6lEea10_TGQ1mPIw _jGpNlO6lEea10_TGQ1mPIw _jGpNl-6lEea10_TGQ1mPIw _jGpNhe6lEea10_TGQ1mPIw _jGpNH-6lEea10_TGQ1mPIw" database="_jFAN0O6lEea10_TGQ1mPIw" indexes="_jGpNSe6lEea10_TGQ1mPIw _jGpNXu6lEea10_TGQ1mPIw _jGpNgu6lEea10_TGQ1mPIw _jGpNj-6lEea10_TGQ1mPIw _jGpNmu6lEea10_TGQ1mPIw"/>
+  <SQLAccessControl:Group xmi:id="_jGpNTe6lEea10_TGQ1mPIw" name="PUBLIC" description="" Database="_jFAN0O6lEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_jGpNTu6lEea10_TGQ1mPIw" action="USE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNTO6lEea10_TGQ1mPIw"/>
+  </SQLAccessControl:Group>
+  <LUW:LUWPartitionGroup xmi:id="_jGpNT-6lEea10_TGQ1mPIw" name="IBMDEFAULTGROUP" partitions="_jGpNUO6lEea10_TGQ1mPIw" tableSpaces="_jGpNTO6lEea10_TGQ1mPIw _jGpNUe6lEea10_TGQ1mPIw" database="_jFAN0O6lEea10_TGQ1mPIw"/>
+  <LUW:LUWDatabasePartition xmi:id="_jGpNUO6lEea10_TGQ1mPIw" group="_jGpNT-6lEea10_TGQ1mPIw"/>
+  <LUW:LUWTableSpace xmi:id="_jGpNUe6lEea10_TGQ1mPIw" name="GOSALES_TS" privileges="_jGpNU-6lEea10_TGQ1mPIw" extentSize="32" preFetchSize="-1" overhead="7.5" transferRate="0.06" recoverDroppedTableOn="true" pageSize="SIXTEEN_K" group="_jGpNT-6lEea10_TGQ1mPIw" bufferPool="_jGpNVO6lEea10_TGQ1mPIw" database="_jFAN0O6lEea10_TGQ1mPIw"/>
+  <SQLAccessControl:User xmi:id="_jGpNUu6lEea10_TGQ1mPIw" name="DB2ADMIN" description="" Database="_jFAN0O6lEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_jGpNU-6lEea10_TGQ1mPIw" grantable="true" action="USE" grantor="_jGpM2O6lEea10_TGQ1mPIw" object="_jGpNUe6lEea10_TGQ1mPIw"/>
+  </SQLAccessControl:User>
+  <LUW:LUWBufferPool xmi:id="_jGpNVO6lEea10_TGQ1mPIw" name="GOSALES_BP" size="250" pageSize="SIXTEEN_K" blockSize="0" tableSpaces="_jGpNUe6lEea10_TGQ1mPIw" database="_jFAN0O6lEea10_TGQ1mPIw"/>
+  <LUW:LUWBufferPool xmi:id="_jGpNVe6lEea10_TGQ1mPIw" name="IBMDEFAULTBP" size="-2" pageSize="SIXTEEN_K" blockSize="0" tableSpaces="_jGpNTO6lEea10_TGQ1mPIw" database="_jFAN0O6lEea10_TGQ1mPIw"/>
+  <LUW:LUWTable xmi:id="_jGpNVu6lEea10_TGQ1mPIw" name="COURSE" privileges="_jGpNGe6lEea10_TGQ1mPIw _jGpM7-6lEea10_TGQ1mPIw _jGpNAu6lEea10_TGQ1mPIw _jGpNFe6lEea10_TGQ1mPIw _jGpM6u6lEea10_TGQ1mPIw _jGpNBe6lEea10_TGQ1mPIw _jGpNGO6lEea10_TGQ1mPIw _jGpM7O6lEea10_TGQ1mPIw _jGpMvO6lEea10_TGQ1mPIw _jGpM0-6lEea10_TGQ1mPIw _jGpMoe6lEea10_TGQ1mPIw _jGpMuO6lEea10_TGQ1mPIw _jGpMz-6lEea10_TGQ1mPIw _jGpMnO6lEea10_TGQ1mPIw _jGpMru6lEea10_TGQ1mPIw _jGpMxO6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" index="_jGpNXu6lEea10_TGQ1mPIw" referencingForeignKeys="_jGpNMe6lEea10_TGQ1mPIw _jGpNau6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNV-6lEea10_TGQ1mPIw" name="CNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNWO6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNWe6lEea10_TGQ1mPIw" name="CNAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNWu6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNW-6lEea10_TGQ1mPIw" name="DEPT">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNXO6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_jGpNXe6lEea10_TGQ1mPIw" name="COURSE_PK" members="_jGpNV-6lEea10_TGQ1mPIw" ForeignKey="_jGpNMe6lEea10_TGQ1mPIw _jGpNau6lEea10_TGQ1mPIw"/>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_jGpNXu6lEea10_TGQ1mPIw" name="COURSE_PK" privileges="_jGpM4O6lEea10_TGQ1mPIw" Schema="_jGpMkO6lEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_jGpNVu6lEea10_TGQ1mPIw" tablespace="_jGpNTO6lEea10_TGQ1mPIw">
+    <members xmi:id="_jGpNX-6lEea10_TGQ1mPIw" column="_jGpNV-6lEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTable xmi:id="_jGpNYO6lEea10_TGQ1mPIw" name="ENROLL" privileges="_jGpNE-6lEea10_TGQ1mPIw _jGpM6O6lEea10_TGQ1mPIw _jGpM_u6lEea10_TGQ1mPIw _jGpND-6lEea10_TGQ1mPIw _jGpM4-6lEea10_TGQ1mPIw _jGpM_-6lEea10_TGQ1mPIw _jGpNEu6lEea10_TGQ1mPIw _jGpM5u6lEea10_TGQ1mPIw _jGpMt-6lEea10_TGQ1mPIw _jGpMzu6lEea10_TGQ1mPIw _jGpMmu6lEea10_TGQ1mPIw _jGpMsu6lEea10_TGQ1mPIw _jGpMx-6lEea10_TGQ1mPIw _jGpMlu6lEea10_TGQ1mPIw _jGpMq-6lEea10_TGQ1mPIw _jGpMv-6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" index="_jGpNgu6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNYe6lEea10_TGQ1mPIw" name="REGNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNYu6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNY-6lEea10_TGQ1mPIw" name="CNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNZO6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNZe6lEea10_TGQ1mPIw" name="SEM">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNZu6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="1"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNZ-6lEea10_TGQ1mPIw" name="BOOK_ISBN">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNaO6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_jGpNae6lEea10_TGQ1mPIw" name="ENROLL_PK" members="_jGpNYe6lEea10_TGQ1mPIw _jGpNY-6lEea10_TGQ1mPIw"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_jGpNau6lEea10_TGQ1mPIw" name="ENROLL_COURSE_FK" members="_jGpNY-6lEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_jGpNXe6lEea10_TGQ1mPIw" referencedTable="_jGpNVu6lEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_jGpNa-6lEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_jGpNbO6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNbe6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNbu6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNb-6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNcO6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNce6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNcu6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNc-6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNdO6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNde6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_jGpNdu6lEea10_TGQ1mPIw" name="ENROLL_STUDENT_FK" members="_jGpNYe6lEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_jGpNju6lEea10_TGQ1mPIw" referencedTable="_jGpNhe6lEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_jGpNd-6lEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_jGpNeO6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNee6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNeu6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNe-6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNfO6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNfe6lEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_jGpNfu6lEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_jGpNf-6lEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_jGpNgO6lEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_jGpNge6lEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_jGpNgu6lEea10_TGQ1mPIw" name="ENROLL_PK" privileges="_jGpM5e6lEea10_TGQ1mPIw" Schema="_jGpMkO6lEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_jGpNYO6lEea10_TGQ1mPIw" tablespace="_jGpNTO6lEea10_TGQ1mPIw">
+    <members xmi:id="_jGpNg-6lEea10_TGQ1mPIw" column="_jGpNYe6lEea10_TGQ1mPIw"/>
+    <members xmi:id="_jGpNhO6lEea10_TGQ1mPIw" column="_jGpNY-6lEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTable xmi:id="_jGpNhe6lEea10_TGQ1mPIw" name="STUDENT" privileges="_jGpM3-6lEea10_TGQ1mPIw _jGpM9-6lEea10_TGQ1mPIw _jGpNCe6lEea10_TGQ1mPIw _jGpM3O6lEea10_TGQ1mPIw _jGpM9O6lEea10_TGQ1mPIw _jGpNC-6lEea10_TGQ1mPIw _jGpM3u6lEea10_TGQ1mPIw _jGpM9u6lEea10_TGQ1mPIw _jGpMxu6lEea10_TGQ1mPIw _jGpMlO6lEea10_TGQ1mPIw _jGpMqe6lEea10_TGQ1mPIw _jGpMwO6lEea10_TGQ1mPIw _jGpM1u6lEea10_TGQ1mPIw _jGpMpe6lEea10_TGQ1mPIw _jGpMue6lEea10_TGQ1mPIw _jGpM0O6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" index="_jGpNj-6lEea10_TGQ1mPIw" referencingForeignKeys="_jGpNdu6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNhu6lEea10_TGQ1mPIw" name="REGNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNh-6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNiO6lEea10_TGQ1mPIw" name="SNAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNie6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNiu6lEea10_TGQ1mPIw" name="DEPT">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNi-6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNjO6lEea10_TGQ1mPIw" name="MAJOR">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNje6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_jGpNju6lEea10_TGQ1mPIw" name="STUDENT_PK" members="_jGpNhu6lEea10_TGQ1mPIw" ForeignKey="_jGpNdu6lEea10_TGQ1mPIw"/>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_jGpNj-6lEea10_TGQ1mPIw" name="STUDENT_PK" privileges="_jGpNHO6lEea10_TGQ1mPIw" Schema="_jGpMkO6lEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_jGpNhe6lEea10_TGQ1mPIw" tablespace="_jGpNTO6lEea10_TGQ1mPIw">
+    <members xmi:id="_jGpNkO6lEea10_TGQ1mPIw" column="_jGpNhu6lEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTable xmi:id="_jGpNke6lEea10_TGQ1mPIw" name="R1" privileges="_jGpM--6lEea10_TGQ1mPIw _jGpNDe6lEea10_TGQ1mPIw _jGpM4e6lEea10_TGQ1mPIw _jGpM-e6lEea10_TGQ1mPIw _jGpNCu6lEea10_TGQ1mPIw _jGpM4u6lEea10_TGQ1mPIw _jGpM-u6lEea10_TGQ1mPIw _jGpNDO6lEea10_TGQ1mPIw _jGpMme6lEea10_TGQ1mPIw _jGpMre6lEea10_TGQ1mPIw _jGpMwu6lEea10_TGQ1mPIw _jGpMle6lEea10_TGQ1mPIw _jGpMqu6lEea10_TGQ1mPIw _jGpMve6lEea10_TGQ1mPIw _jGpM1O6lEea10_TGQ1mPIw _jGpMou6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNku6lEea10_TGQ1mPIw" name="SNAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNk-6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_jGpNlO6lEea10_TGQ1mPIw" name="R2" privileges="_jGpNF-6lEea10_TGQ1mPIw _jGpM7e6lEea10_TGQ1mPIw _jGpNAO6lEea10_TGQ1mPIw _jGpNFO6lEea10_TGQ1mPIw _jGpM6e6lEea10_TGQ1mPIw _jGpNA-6lEea10_TGQ1mPIw _jGpNFu6lEea10_TGQ1mPIw _jGpM6-6lEea10_TGQ1mPIw _jGpMu-6lEea10_TGQ1mPIw _jGpM0e6lEea10_TGQ1mPIw _jGpMn-6lEea10_TGQ1mPIw _jGpMtu6lEea10_TGQ1mPIw _jGpMze6lEea10_TGQ1mPIw _jGpMmO6lEea10_TGQ1mPIw _jGpMrO6lEea10_TGQ1mPIw _jGpMwe6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNle6lEea10_TGQ1mPIw" name="COUNT">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jGpNlu6lEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="1"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_jGpNl-6lEea10_TGQ1mPIw" name="R3" privileges="_jGpM8e6lEea10_TGQ1mPIw _jGpNBu6lEea10_TGQ1mPIw _jGpNGu6lEea10_TGQ1mPIw _jGpM7u6lEea10_TGQ1mPIw _jGpNAe6lEea10_TGQ1mPIw _jGpNG-6lEea10_TGQ1mPIw _jGpM8O6lEea10_TGQ1mPIw _jGpNBO6lEea10_TGQ1mPIw _jGpM1-6lEea10_TGQ1mPIw _jGpMpu6lEea10_TGQ1mPIw _jGpMuu6lEea10_TGQ1mPIw _jGpM0u6lEea10_TGQ1mPIw _jGpMoO6lEea10_TGQ1mPIw _jGpMs-6lEea10_TGQ1mPIw _jGpMye6lEea10_TGQ1mPIw _jGpMl-6lEea10_TGQ1mPIw" schema="_jGpMkO6lEea10_TGQ1mPIw" regularDataTableSpace="_jGpNTO6lEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jGpNmO6lEea10_TGQ1mPIw" name="TITLE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_jGpNme6lEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_jGpNmu6lEea10_TGQ1mPIw" name="TEXT_PK" privileges="_jGpNHu6lEea10_TGQ1mPIw" Schema="_jGpMkO6lEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_jGpNH-6lEea10_TGQ1mPIw" tablespace="_jGpNTO6lEea10_TGQ1mPIw">
+    <members xmi:id="_jGpNm-6lEea10_TGQ1mPIw" column="_jGpNIO6lEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+</xmi:XMI>

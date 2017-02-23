@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commontypes:SGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commontypes="com.ibm.datatools.dwe.emf.commontypes.nsuri" root="//@nodesMap.0/@value">
+  <nodesMap key="0">
+    <value xsi:type="commontypes:SGraphNode" nodeID="0" graph="/"/>
+  </nodesMap>
+</commontypes:SGraph>

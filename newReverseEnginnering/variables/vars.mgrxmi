@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.variables:VariablesManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.variables="http:///com/ibm/datatools/etl/variables.ecore" projectName="newReverseEnginnering">
+  <Variable key="${RESERVED/CURRENT_TIMESTAMP}">
+    <value href="RESERVED.varxmi#//@variableTable.0/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/START_TIMESTAMP}">
+    <value href="RESERVED.varxmi#//@variableTable.1/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/TIME}">
+    <value href="RESERVED.varxmi#//@variableTable.2/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/DATE}">
+    <value href="RESERVED.varxmi#//@variableTable.3/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/DAY}">
+    <value href="RESERVED.varxmi#//@variableTable.4/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/DAYNAME}">
+    <value href="RESERVED.varxmi#//@variableTable.5/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/DAYNAME_SHORT}">
+    <value href="RESERVED.varxmi#//@variableTable.6/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/MONTH}">
+    <value href="RESERVED.varxmi#//@variableTable.7/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/MONTHNAME}">
+    <value href="RESERVED.varxmi#//@variableTable.8/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/MONTHNAME_SHORT}">
+    <value href="RESERVED.varxmi#//@variableTable.9/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/YEAR}">
+    <value href="RESERVED.varxmi#//@variableTable.10/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/USER_NAME}">
+    <value href="RESERVED.varxmi#//@variableTable.11/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/USER_HOME}">
+    <value href="RESERVED.varxmi#//@variableTable.12/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/USER_DIR}">
+    <value href="RESERVED.varxmi#//@variableTable.13/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/APP_NAME}">
+    <value href="RESERVED.varxmi#//@variableTable.14/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/INSTANCE_NAME}">
+    <value href="RESERVED.varxmi#//@variableTable.15/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/PROC_NAME}">
+    <value href="RESERVED.varxmi#//@variableTable.16/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/MISC_DIR}">
+    <value href="RESERVED.varxmi#//@variableTable.17/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/RUN_ID}">
+    <value href="RESERVED.varxmi#//@variableTable.18/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/SYS_DB_RESOURCE(database_name,property)}">
+    <value href="RESERVED.varxmi#//@variableTable.19/@value"/>
+  </Variable>
+  <Variable key="${RESERVED/SYS_DB_RESOURCE(database_name,PASSWORD)}">
+    <value href="RESERVED.varxmi#//@variableTable.20/@value"/>
+  </Variable>
+</com.ibm.datatools.etl.variables:VariablesManager>

@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/7.5.2.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB2Model="http:///com/ibm/db/models/db2/db2.ecore" xmlns:LUW="http:///com/ibm/db/models/db2/luw.ecore" xmlns:SQLAccessControl="http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:datanotation="http:///datanotation.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation">
+  <LUW:LUWDatabase xmi:id="_mqGhsO6kEea10_TGQ1mPIw" name="GSDBIT3" vendor="DB2 UDB" version="V9.7" schemas="_msLlUO6kEea10_TGQ1mPIw" authorizationIds="_msLlme6kEea10_TGQ1mPIw _msLlUe6kEea10_TGQ1mPIw _msLl_u6kEea10_TGQ1mPIw _msLlmO6kEea10_TGQ1mPIw _msLmA-6kEea10_TGQ1mPIw" groups="_msLmAO6kEea10_TGQ1mPIw" bufferpools="_msLmBu6kEea10_TGQ1mPIw _msLmBe6kEea10_TGQ1mPIw" tablespaces="_msLl_e6kEea10_TGQ1mPIw _msLmAu6kEea10_TGQ1mPIw">
+    <eAnnotations xmi:id="_mqGhse6kEea10_TGQ1mPIw" source="ConnectionURI">
+      <details xmi:id="_mqGhsu6kEea10_TGQ1mPIw" key="ConnectionKey" value="GSDBIT3"/>
+    </eAnnotations>
+  </LUW:LUWDatabase>
+  <DB2Model:DB2Schema xmi:id="_msLlUO6kEea10_TGQ1mPIw" name="UNIVERS" privileges="_msLljO6kEea10_TGQ1mPIw _msLlXu6kEea10_TGQ1mPIw _msLlcu6kEea10_TGQ1mPIw _msLlke6kEea10_TGQ1mPIw _msLlX-6kEea10_TGQ1mPIw _msLlc-6kEea10_TGQ1mPIw" indices="_msLmHe6kEea10_TGQ1mPIw _msLmKO6kEea10_TGQ1mPIw _msLl-u6kEea10_TGQ1mPIw _msLmRu6kEea10_TGQ1mPIw _msLmNO6kEea10_TGQ1mPIw" tables="_msLmB-6kEea10_TGQ1mPIw _msLmIO6kEea10_TGQ1mPIw _msLl4u6kEea10_TGQ1mPIw _msLl3-6kEea10_TGQ1mPIw _msLmNu6kEea10_TGQ1mPIw _msLmOe6kEea10_TGQ1mPIw _msLmPO6kEea10_TGQ1mPIw _msLmKu6kEea10_TGQ1mPIw" database="_mqGhsO6kEea10_TGQ1mPIw" owner="_msLlUe6kEea10_TGQ1mPIw">
+    <eAnnotations xmi:id="_m0raAO6kEea10_TGQ1mPIw" source="overviewDiagram">
+      <contents xsi:type="datanotation:DataDiagram" xmi:id="_m0raAe6kEea10_TGQ1mPIw" type="IE_CrowFoot" name="UNIVERS" viewKind="ProjectExplorer" notation="IE_CrowFoot" kind="Physical">
+        <children xmi:id="_nI8Z0O6kEea10_TGQ1mPIw" element="_msLl3-6kEea10_TGQ1mPIw">
+          <children xmi:id="_nI8Z0-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nI8Z1u6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nI8Z1-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nI8Z1O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nI8Z1e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK0O6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK0e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK0u6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK0-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK1O6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK1e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK1u6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK1-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nI8Z0e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nI8Z0u6kEea10_TGQ1mPIw"/>
+        </children>
+        <children xmi:id="_nJGK2O6kEea10_TGQ1mPIw" element="_msLmNu6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJGK2-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJGK3u6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJGK3-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJGK3O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGK3e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK4O6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK4e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK4u6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK4-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK5O6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK5e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK5u6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK5-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJGK2e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGK2u6kEea10_TGQ1mPIw" x="3170"/>
+        </children>
+        <children xmi:id="_nJGK6O6kEea10_TGQ1mPIw" element="_msLmOe6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJGK6-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJGK7u6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJGK7-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJGK7O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGK7e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK8O6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK8e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK8u6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK8-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK9O6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK9e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGK9u6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGK9-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJGK6e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGK6u6kEea10_TGQ1mPIw" x="13631"/>
+        </children>
+        <children xmi:id="_nJGK-O6kEea10_TGQ1mPIw" element="_msLmIO6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJGK--6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJGK_u6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJGK_-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJGK_O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGK_e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLAO6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLAe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLAu6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLA-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLBO6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLBe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLBu6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLB-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJGK-e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGK-u6kEea10_TGQ1mPIw" x="9510"/>
+        </children>
+        <children xmi:id="_nJGLCO6kEea10_TGQ1mPIw" element="_msLmB-6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJGLC-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJGLDu6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJGLD-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJGLDO6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGLDe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLEO6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLEe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLEu6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLE-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLFO6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLFe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLFu6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLF-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJGLCe6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGLCu6kEea10_TGQ1mPIw" x="6974" y="2219"/>
+        </children>
+        <children xmi:id="_nJGLGO6kEea10_TGQ1mPIw" element="_msLmKu6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJGLG-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJGLHu6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJGLH-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJGLHO6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGLHe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLIO6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLIe6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJGLIu6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJGLI-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP70O6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP70e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP70u6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP70-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJGLGe6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJGLGu6kEea10_TGQ1mPIw" x="6340"/>
+        </children>
+        <children xmi:id="_nJP71O6kEea10_TGQ1mPIw" element="_msLl4u6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJP71-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJP72u6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJP72-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJP72O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJP72e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP73O6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP73e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP73u6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP73-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP74O6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP74e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP74u6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP74-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJP71e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJP71u6kEea10_TGQ1mPIw" x="13314" y="2219"/>
+        </children>
+        <children xmi:id="_nJP75O6kEea10_TGQ1mPIw" element="_msLmPO6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJP75-6kEea10_TGQ1mPIw" type="TableName">
+            <children xmi:id="_nJP76u6kEea10_TGQ1mPIw" type="DiagramName"/>
+            <children xmi:id="_nJP76-6kEea10_TGQ1mPIw" type="Description"/>
+            <styles xsi:type="notation:FontStyle" xmi:id="_nJP76O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJP76e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP77O6kEea10_TGQ1mPIw" visible="false" type="Key.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP77e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP77u6kEea10_TGQ1mPIw" visible="false" type="Column.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP77-6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP78O6kEea10_TGQ1mPIw" visible="false" type="Index.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP78e6kEea10_TGQ1mPIw"/>
+          </children>
+          <children xmi:id="_nJP78u6kEea10_TGQ1mPIw" visible="false" type="Trigger.Compartment">
+            <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_nJP78-6kEea10_TGQ1mPIw"/>
+          </children>
+          <styles xsi:type="datanotation:TableStyle" xmi:id="_nJP75e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJP75u6kEea10_TGQ1mPIw" x="16801"/>
+        </children>
+        <styles xsi:type="datanotation:DataAttributeStyle" xmi:id="_m0raAu6kEea10_TGQ1mPIw"/>
+        <styles xsi:type="datanotation:DataCompartmentStyle" xmi:id="_m0raA-6kEea10_TGQ1mPIw" showKeyCompartment="false" showNonKeyCompartment="false"/>
+        <styles xsi:type="datanotation:DataDisplayStyle" xmi:id="_m0raBO6kEea10_TGQ1mPIw"/>
+        <styles xsi:type="datanotation:DataDiagramRelationshipStyle" xmi:id="_m0raBe6kEea10_TGQ1mPIw"/>
+        <styles xsi:type="datanotation:DataShapeNameStyle" xmi:id="_m0raBu6kEea10_TGQ1mPIw"/>
+        <styles xsi:type="datanotation:DataDiagramFormattingStyle" xmi:id="_m0raB-6kEea10_TGQ1mPIw"/>
+        <element xsi:nil="true"/>
+        <edges xmi:id="_nJi2wO6kEea10_TGQ1mPIw" element="_msLmD-6kEea10_TGQ1mPIw" source="_nJGK-O6kEea10_TGQ1mPIw" target="_nJGLCO6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJi2w-6kEea10_TGQ1mPIw" type="ForeignKey.Name.Label">
+            <children xmi:id="_nJi2xe6kEea10_TGQ1mPIw" type="FKRelationshipName">
+              <children xmi:id="_nJi2yO6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJi2ye6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJi2xu6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJi2x-6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJi2xO6kEea10_TGQ1mPIw" y="-186"/>
+          </children>
+          <children xmi:id="_nJi2yu6kEea10_TGQ1mPIw" type="Child.RoleName">
+            <children xmi:id="_nJi2zO6kEea10_TGQ1mPIw" type="ChildRoleName">
+              <children xmi:id="_nJi2z-6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJi20O6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJi2ze6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJi2zu6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJi2y-6kEea10_TGQ1mPIw" x="-265" y="-662"/>
+          </children>
+          <children xmi:id="_nJi20e6kEea10_TGQ1mPIw" type="Parent.RoleName">
+            <children xmi:id="_nJi20-6kEea10_TGQ1mPIw" type="ParentRoleName">
+              <children xmi:id="_nJi21u6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJi21-6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJi21O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJi21e6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJi20u6kEea10_TGQ1mPIw" y="-397"/>
+          </children>
+          <children xmi:id="_nJi22O6kEea10_TGQ1mPIw" type="Child.ReferentialIntegrity">
+            <children xmi:id="_nJi22u6kEea10_TGQ1mPIw" type="ChildRiName">
+              <children xmi:id="_nJi23e6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJi23u6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJi22-6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJi23O6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJi22e6kEea10_TGQ1mPIw" x="264" y="661"/>
+          </children>
+          <styles xsi:type="datanotation:DataLineStyle" xmi:id="_nJi2we6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_nJi2wu6kEea10_TGQ1mPIw" points="[0, 0, 1224, -1586]$[0, 793, 1224, -793]$[-1223, 793, 1, -793]$[-1223, 1586, 1, 0]"/>
+          <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-MO6kEea10_TGQ1mPIw" id="(0.5,1.0)"/>
+          <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-Me6kEea10_TGQ1mPIw" id="(0.66648793,0.0)"/>
+        </edges>
+        <edges xmi:id="_nJsAsO6kEea10_TGQ1mPIw" element="_msLmFu6kEea10_TGQ1mPIw" source="_nJGLGO6kEea10_TGQ1mPIw" target="_nJGLCO6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJsAs-6kEea10_TGQ1mPIw" type="ForeignKey.Name.Label">
+            <children xmi:id="_nJsAte6kEea10_TGQ1mPIw" type="FKRelationshipName">
+              <children xmi:id="_nJsAuO6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsAue6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsAtu6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsAt-6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsAtO6kEea10_TGQ1mPIw" y="-186"/>
+          </children>
+          <children xmi:id="_nJsAuu6kEea10_TGQ1mPIw" type="Child.RoleName">
+            <children xmi:id="_nJsAvO6kEea10_TGQ1mPIw" type="ChildRoleName">
+              <children xmi:id="_nJsAv-6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsAwO6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsAve6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsAvu6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsAu-6kEea10_TGQ1mPIw" x="-265" y="-662"/>
+          </children>
+          <children xmi:id="_nJsAwe6kEea10_TGQ1mPIw" type="Parent.RoleName">
+            <children xmi:id="_nJsAw-6kEea10_TGQ1mPIw" type="ParentRoleName">
+              <children xmi:id="_nJsAxu6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsAx-6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsAxO6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsAxe6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsAwu6kEea10_TGQ1mPIw" y="-397"/>
+          </children>
+          <children xmi:id="_nJsAyO6kEea10_TGQ1mPIw" type="Child.ReferentialIntegrity">
+            <children xmi:id="_nJsAyu6kEea10_TGQ1mPIw" type="ChildRiName">
+              <children xmi:id="_nJsAze6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsAzu6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsAy-6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsAzO6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsAye6kEea10_TGQ1mPIw" x="264" y="661"/>
+          </children>
+          <styles xsi:type="datanotation:DataLineStyle" xmi:id="_nJsAse6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_nJsAsu6kEea10_TGQ1mPIw" points="[0, 0, -1222, -1586]$[0, 793, -1222, -793]$[1223, 793, 1, -793]$[1223, 1586, 1, 0]"/>
+          <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-Nu6kEea10_TGQ1mPIw" id="(0.5,1.0)"/>
+          <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-N-6kEea10_TGQ1mPIw" id="(0.33324397,0.0)"/>
+        </edges>
+        <edges xmi:id="_nJsAz-6kEea10_TGQ1mPIw" element="_msLl7O6kEea10_TGQ1mPIw" source="_nJGK-O6kEea10_TGQ1mPIw" target="_nJP71O6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJsA0u6kEea10_TGQ1mPIw" type="ForeignKey.Name.Label">
+            <children xmi:id="_nJsA1O6kEea10_TGQ1mPIw" type="FKRelationshipName">
+              <children xmi:id="_nJsA1-6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsA2O6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsA1e6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsA1u6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsA0-6kEea10_TGQ1mPIw" y="-186"/>
+          </children>
+          <children xmi:id="_nJsA2e6kEea10_TGQ1mPIw" type="Child.RoleName">
+            <children xmi:id="_nJsA2-6kEea10_TGQ1mPIw" type="ChildRoleName">
+              <children xmi:id="_nJsA3u6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsA3-6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsA3O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsA3e6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsA2u6kEea10_TGQ1mPIw" x="-265" y="-662"/>
+          </children>
+          <children xmi:id="_nJsA4O6kEea10_TGQ1mPIw" type="Parent.RoleName">
+            <children xmi:id="_nJsA4u6kEea10_TGQ1mPIw" type="ParentRoleName">
+              <children xmi:id="_nJsA5e6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsA5u6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsA4-6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsA5O6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsA4e6kEea10_TGQ1mPIw" y="-397"/>
+          </children>
+          <children xmi:id="_nJsA5-6kEea10_TGQ1mPIw" type="Child.ReferentialIntegrity">
+            <children xmi:id="_nJsA6e6kEea10_TGQ1mPIw" type="ChildRiName">
+              <children xmi:id="_nJsA7O6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsA7e6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsA6u6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsA6-6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsA6O6kEea10_TGQ1mPIw" x="264" y="661"/>
+          </children>
+          <styles xsi:type="datanotation:DataLineStyle" xmi:id="_nJsA0O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_nJsA0e6kEea10_TGQ1mPIw" points="[0, 0, -2584, -1586]$[0, 793, -2584, -793]$[2584, 793, 0, -793]$[2584, 1586, 0, 0]"/>
+          <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-Mu6kEea10_TGQ1mPIw" id="(0.75,1.0)"/>
+          <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-M-6kEea10_TGQ1mPIw" id="(0.33333334,0.0)"/>
+        </edges>
+        <edges xmi:id="_nJsA7u6kEea10_TGQ1mPIw" element="_msLl8-6kEea10_TGQ1mPIw" source="_nJP75O6kEea10_TGQ1mPIw" target="_nJP71O6kEea10_TGQ1mPIw">
+          <children xmi:id="_nJsA8e6kEea10_TGQ1mPIw" type="ForeignKey.Name.Label">
+            <children xmi:id="_nJsA8-6kEea10_TGQ1mPIw" type="FKRelationshipName">
+              <children xmi:id="_nJsA9u6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsA9-6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsA9O6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsA9e6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsA8u6kEea10_TGQ1mPIw" y="-186"/>
+          </children>
+          <children xmi:id="_nJsA-O6kEea10_TGQ1mPIw" type="Child.RoleName">
+            <children xmi:id="_nJsA-u6kEea10_TGQ1mPIw" type="ChildRoleName">
+              <children xmi:id="_nJsA_e6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsA_u6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsA--6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsA_O6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsA-e6kEea10_TGQ1mPIw" x="-265" y="-662"/>
+          </children>
+          <children xmi:id="_nJsA_-6kEea10_TGQ1mPIw" type="Parent.RoleName">
+            <children xmi:id="_nJsBAe6kEea10_TGQ1mPIw" type="ParentRoleName">
+              <children xmi:id="_nJsBBO6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsBBe6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsBAu6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsBA-6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsBAO6kEea10_TGQ1mPIw" y="-397"/>
+          </children>
+          <children xmi:id="_nJsBBu6kEea10_TGQ1mPIw" type="Child.ReferentialIntegrity">
+            <children xmi:id="_nJsBCO6kEea10_TGQ1mPIw" type="ChildRiName">
+              <children xmi:id="_nJsBC-6kEea10_TGQ1mPIw" type="DiagramName"/>
+              <children xmi:id="_nJsBDO6kEea10_TGQ1mPIw" type="Description"/>
+              <styles xsi:type="notation:FontStyle" xmi:id="_nJsBCe6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nJsBCu6kEea10_TGQ1mPIw"/>
+            </children>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_nJsBB-6kEea10_TGQ1mPIw" x="264" y="661"/>
+          </children>
+          <styles xsi:type="datanotation:DataLineStyle" xmi:id="_nJsA7-6kEea10_TGQ1mPIw" fontName="Segoe UI"/>
+          <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_nJsA8O6kEea10_TGQ1mPIw" points="[0, 0, 3166, -1586]$[0, 793, 3166, -793]$[-3166, 793, 0, -793]$[-3166, 1586, 0, 0]"/>
+          <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-NO6kEea10_TGQ1mPIw" id="(0.49980104,1.0)"/>
+          <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_nM9-Ne6kEea10_TGQ1mPIw" id="(0.6666667,0.0)"/>
+        </edges>
+      </contents>
+    </eAnnotations>
+  </DB2Model:DB2Schema>
+  <SQLAccessControl:User xmi:id="_msLlUe6kEea10_TGQ1mPIw" name="ITSTUDENTA2" description="" ownedSchema="_msLlUO6kEea10_TGQ1mPIw" Database="_mqGhsO6kEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_msLlUu6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlU-6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlVO6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlVe6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlVu6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlV-6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlWO6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlWe6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlWu6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlW-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlXO6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlXe6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlXu6kEea10_TGQ1mPIw" grantable="true" action="CREATEIN" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLlUO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlX-6kEea10_TGQ1mPIw" grantable="true" action="CREATEIN" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLlUO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlYO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlYe6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlYu6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlY-6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlZO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlZe6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlZu6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlZ-6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlaO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlae6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlau6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLla-6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlbO6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlbe6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlbu6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlb-6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlcO6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlce6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlcu6kEea10_TGQ1mPIw" grantable="true" action="DROPIN" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLlUO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlc-6kEea10_TGQ1mPIw" grantable="true" action="DROPIN" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLlUO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLldO6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlde6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLldu6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLld-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLleO6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlee6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLleu6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLle-6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlfO6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlfe6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlfu6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlf-6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlgO6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlge6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlgu6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlg-6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlhO6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlhe6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlhu6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlh-6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLliO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlie6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLliu6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLli-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLljO6kEea10_TGQ1mPIw" grantable="true" action="ALTERIN" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLlUO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlje6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlju6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlj-6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlkO6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlke6kEea10_TGQ1mPIw" grantable="true" action="ALTERIN" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLlUO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlku6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlk-6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLllO6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlle6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLllu6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLll-6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlme6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+  </SQLAccessControl:User>
+  <SQLAccessControl:User xmi:id="_msLlmO6kEea10_TGQ1mPIw" name="SYSIBM" Database="_mqGhsO6kEea10_TGQ1mPIw" grantedPrivilege="_msLlmu6kEea10_TGQ1mPIw _msLlm-6kEea10_TGQ1mPIw _msLlnO6kEea10_TGQ1mPIw _msLlne6kEea10_TGQ1mPIw _msLlnu6kEea10_TGQ1mPIw _msLln-6kEea10_TGQ1mPIw _msLloO6kEea10_TGQ1mPIw _msLloe6kEea10_TGQ1mPIw _msLlou6kEea10_TGQ1mPIw _msLlo-6kEea10_TGQ1mPIw _msLlpO6kEea10_TGQ1mPIw _msLlpe6kEea10_TGQ1mPIw _msLlpu6kEea10_TGQ1mPIw _msLlp-6kEea10_TGQ1mPIw _msLlqO6kEea10_TGQ1mPIw _msLlqe6kEea10_TGQ1mPIw _msLlqu6kEea10_TGQ1mPIw _msLlq-6kEea10_TGQ1mPIw _msLlXu6kEea10_TGQ1mPIw _msLlrO6kEea10_TGQ1mPIw _msLlre6kEea10_TGQ1mPIw _msLlru6kEea10_TGQ1mPIw _msLlr-6kEea10_TGQ1mPIw _msLlsO6kEea10_TGQ1mPIw _msLlse6kEea10_TGQ1mPIw _msLlsu6kEea10_TGQ1mPIw _msLls-6kEea10_TGQ1mPIw _msLltO6kEea10_TGQ1mPIw _msLlte6kEea10_TGQ1mPIw _msLltu6kEea10_TGQ1mPIw _msLlt-6kEea10_TGQ1mPIw _msLluO6kEea10_TGQ1mPIw _msLlue6kEea10_TGQ1mPIw _msLluu6kEea10_TGQ1mPIw _msLlu-6kEea10_TGQ1mPIw _msLlvO6kEea10_TGQ1mPIw _msLlve6kEea10_TGQ1mPIw _msLlvu6kEea10_TGQ1mPIw _msLlv-6kEea10_TGQ1mPIw _msLlcu6kEea10_TGQ1mPIw _msLlwO6kEea10_TGQ1mPIw _msLlwe6kEea10_TGQ1mPIw _msLlwu6kEea10_TGQ1mPIw _msLlw-6kEea10_TGQ1mPIw _msLlxO6kEea10_TGQ1mPIw _msLlxe6kEea10_TGQ1mPIw _msLmBO6kEea10_TGQ1mPIw _msLlxu6kEea10_TGQ1mPIw _msLlx-6kEea10_TGQ1mPIw _msLlyO6kEea10_TGQ1mPIw _msLlye6kEea10_TGQ1mPIw _msLlyu6kEea10_TGQ1mPIw _msLly-6kEea10_TGQ1mPIw _msLlzO6kEea10_TGQ1mPIw _msLlze6kEea10_TGQ1mPIw _msLlzu6kEea10_TGQ1mPIw _msLl_-6kEea10_TGQ1mPIw _msLlz-6kEea10_TGQ1mPIw _msLl0O6kEea10_TGQ1mPIw _msLl0e6kEea10_TGQ1mPIw _msLl0u6kEea10_TGQ1mPIw _msLl0-6kEea10_TGQ1mPIw _msLl1O6kEea10_TGQ1mPIw _msLl1e6kEea10_TGQ1mPIw _msLl1u6kEea10_TGQ1mPIw _msLl1-6kEea10_TGQ1mPIw _msLljO6kEea10_TGQ1mPIw _msLl2O6kEea10_TGQ1mPIw _msLl2e6kEea10_TGQ1mPIw _msLl2u6kEea10_TGQ1mPIw _msLl2-6kEea10_TGQ1mPIw _msLl3O6kEea10_TGQ1mPIw _msLl3e6kEea10_TGQ1mPIw _msLl3u6kEea10_TGQ1mPIw"/>
+  <SQLAccessControl:User xmi:id="_msLlme6kEea10_TGQ1mPIw" name="ITSTUDENTB1" description="" Database="_mqGhsO6kEea10_TGQ1mPIw" grantedPrivilege="_msLlUu6kEea10_TGQ1mPIw _msLlU-6kEea10_TGQ1mPIw _msLlVO6kEea10_TGQ1mPIw _msLlVe6kEea10_TGQ1mPIw _msLlVu6kEea10_TGQ1mPIw _msLlV-6kEea10_TGQ1mPIw _msLlWO6kEea10_TGQ1mPIw _msLlWe6kEea10_TGQ1mPIw _msLlWu6kEea10_TGQ1mPIw _msLlW-6kEea10_TGQ1mPIw _msLlXO6kEea10_TGQ1mPIw _msLlXe6kEea10_TGQ1mPIw _msLlX-6kEea10_TGQ1mPIw _msLlYO6kEea10_TGQ1mPIw _msLlYe6kEea10_TGQ1mPIw _msLlYu6kEea10_TGQ1mPIw _msLlY-6kEea10_TGQ1mPIw _msLlZO6kEea10_TGQ1mPIw _msLlZe6kEea10_TGQ1mPIw _msLlZu6kEea10_TGQ1mPIw _msLlZ-6kEea10_TGQ1mPIw _msLlaO6kEea10_TGQ1mPIw _msLlae6kEea10_TGQ1mPIw _msLlau6kEea10_TGQ1mPIw _msLla-6kEea10_TGQ1mPIw _msLlbO6kEea10_TGQ1mPIw _msLlbe6kEea10_TGQ1mPIw _msLlbu6kEea10_TGQ1mPIw _msLlb-6kEea10_TGQ1mPIw _msLlcO6kEea10_TGQ1mPIw _msLlce6kEea10_TGQ1mPIw _msLlc-6kEea10_TGQ1mPIw _msLldO6kEea10_TGQ1mPIw _msLlde6kEea10_TGQ1mPIw _msLldu6kEea10_TGQ1mPIw _msLld-6kEea10_TGQ1mPIw _msLleO6kEea10_TGQ1mPIw _msLlee6kEea10_TGQ1mPIw _msLleu6kEea10_TGQ1mPIw _msLle-6kEea10_TGQ1mPIw _msLlfO6kEea10_TGQ1mPIw _msLlfe6kEea10_TGQ1mPIw _msLlfu6kEea10_TGQ1mPIw _msLlf-6kEea10_TGQ1mPIw _msLlgO6kEea10_TGQ1mPIw _msLlge6kEea10_TGQ1mPIw _msLlgu6kEea10_TGQ1mPIw _msLlg-6kEea10_TGQ1mPIw _msLlhO6kEea10_TGQ1mPIw _msLlhe6kEea10_TGQ1mPIw _msLlhu6kEea10_TGQ1mPIw _msLlh-6kEea10_TGQ1mPIw _msLliO6kEea10_TGQ1mPIw _msLlie6kEea10_TGQ1mPIw _msLliu6kEea10_TGQ1mPIw _msLli-6kEea10_TGQ1mPIw _msLlje6kEea10_TGQ1mPIw _msLlju6kEea10_TGQ1mPIw _msLlj-6kEea10_TGQ1mPIw _msLlkO6kEea10_TGQ1mPIw _msLlke6kEea10_TGQ1mPIw _msLlku6kEea10_TGQ1mPIw _msLlk-6kEea10_TGQ1mPIw _msLllO6kEea10_TGQ1mPIw _msLlle6kEea10_TGQ1mPIw _msLllu6kEea10_TGQ1mPIw _msLll-6kEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_msLlmu6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlm-6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlnO6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlne6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlnu6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLln-6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLloO6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl-u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLloe6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlou6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlo-6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlpO6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlpe6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlpu6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlp-6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlqO6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlqe6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlqu6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlq-6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlrO6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlre6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlru6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlr-6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlsO6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlse6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlsu6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLls-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLltO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlte6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLltu6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlt-6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLluO6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlue6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLluu6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlu-6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlvO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlve6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlvu6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlv-6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlwO6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlwe6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlwu6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlw-6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlxO6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlxe6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlxu6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlx-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlyO6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlye6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlyu6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLly-6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmKu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlzO6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlze6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlzu6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLlz-6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl0O6kEea10_TGQ1mPIw" grantable="true" action="UPDATE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl0e6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmIO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl0u6kEea10_TGQ1mPIw" grantable="true" action="ALTER" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmNu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl0-6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl1O6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl1e6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmOe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl1u6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmB-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl1-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmRu6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl2O6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmHe6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl2e6kEea10_TGQ1mPIw" grantable="true" action="DELETE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl2u6kEea10_TGQ1mPIw" grantable="true" action="INDEX" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl2-6kEea10_TGQ1mPIw" action="CONTROL" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl3O6kEea10_TGQ1mPIw" grantable="true" action="INSERT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl3-6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl3e6kEea10_TGQ1mPIw" grantable="true" action="SELECT" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmPO6kEea10_TGQ1mPIw"/>
+    <receivedPrivilege xmi:id="_msLl3u6kEea10_TGQ1mPIw" grantable="true" action="REFERENCES" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl4u6kEea10_TGQ1mPIw"/>
+  </SQLAccessControl:User>
+  <LUW:LUWTable xmi:id="_msLl3-6kEea10_TGQ1mPIw" name="R1" privileges="_msLlx-6kEea10_TGQ1mPIw _msLlmu6kEea10_TGQ1mPIw _msLlse6kEea10_TGQ1mPIw _msLlxO6kEea10_TGQ1mPIw _msLl3O6kEea10_TGQ1mPIw _msLltO6kEea10_TGQ1mPIw _msLlxu6kEea10_TGQ1mPIw _msLlq-6kEea10_TGQ1mPIw _msLleO6kEea10_TGQ1mPIw _msLlje6kEea10_TGQ1mPIw _msLlWu6kEea10_TGQ1mPIw _msLlcO6kEea10_TGQ1mPIw _msLlhu6kEea10_TGQ1mPIw _msLlVu6kEea10_TGQ1mPIw _msLlae6kEea10_TGQ1mPIw _msLlfu6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLl4O6kEea10_TGQ1mPIw" name="SNAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLl4e6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_msLl4u6kEea10_TGQ1mPIw" name="ENROLL" privileges="_msLl1O6kEea10_TGQ1mPIw _msLlp-6kEea10_TGQ1mPIw _msLlw-6kEea10_TGQ1mPIw _msLl2u6kEea10_TGQ1mPIw _msLlre6kEea10_TGQ1mPIw _msLlxe6kEea10_TGQ1mPIw _msLl3u6kEea10_TGQ1mPIw _msLlsO6kEea10_TGQ1mPIw _msLlfO6kEea10_TGQ1mPIw _msLlk-6kEea10_TGQ1mPIw _msLlYu6kEea10_TGQ1mPIw _msLlee6kEea10_TGQ1mPIw _msLlUu6kEea10_TGQ1mPIw _msLlZu6kEea10_TGQ1mPIw _msLle-6kEea10_TGQ1mPIw _msLlkO6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" index="_msLl-u6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLl4-6kEea10_TGQ1mPIw" name="REGNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLl5O6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLl5e6kEea10_TGQ1mPIw" name="CNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLl5u6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLl5-6kEea10_TGQ1mPIw" name="SEM">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLl6O6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="1"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLl6e6kEea10_TGQ1mPIw" name="BOOK_ISBN">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLl6u6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_msLl6-6kEea10_TGQ1mPIw" name="ENROLL_PK" members="_msLl4-6kEea10_TGQ1mPIw _msLl5e6kEea10_TGQ1mPIw"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_msLl7O6kEea10_TGQ1mPIw" name="ENROLL_COURSE_FK" members="_msLl5e6kEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_msLmJ-6kEea10_TGQ1mPIw" referencedTable="_msLmIO6kEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_msLl7e6kEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_msLl7u6kEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_msLl7-6kEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_msLl8O6kEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_msLl8e6kEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_msLl8u6kEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_msLl8-6kEea10_TGQ1mPIw" name="ENROLL_STUDENT_FK" members="_msLl4-6kEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_msLmRe6kEea10_TGQ1mPIw" referencedTable="_msLmPO6kEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_msLl9O6kEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_msLl9e6kEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_msLl9u6kEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_msLl9-6kEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_msLl-O6kEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_msLl-e6kEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_msLl-u6kEea10_TGQ1mPIw" name="ENROLL_PK" privileges="_msLloO6kEea10_TGQ1mPIw" Schema="_msLlUO6kEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_msLl4u6kEea10_TGQ1mPIw" tablespace="_msLl_e6kEea10_TGQ1mPIw">
+    <members xmi:id="_msLl--6kEea10_TGQ1mPIw" column="_msLl4-6kEea10_TGQ1mPIw"/>
+    <members xmi:id="_msLl_O6kEea10_TGQ1mPIw" column="_msLl5e6kEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTableSpace xmi:id="_msLl_e6kEea10_TGQ1mPIw" name="USERSPACE1" privileges="_msLl_-6kEea10_TGQ1mPIw" tablespaceType="LARGE" managementType="DATABASE_MANAGED" extentSize="32" preFetchSize="-1" overhead="7.5" transferRate="0.06" recoverDroppedTableOn="true" pageSize="SIXTEEN_K" group="_msLmAO6kEea10_TGQ1mPIw" bufferPool="_msLmBu6kEea10_TGQ1mPIw" regularDataTables="_msLmB-6kEea10_TGQ1mPIw _msLmIO6kEea10_TGQ1mPIw _msLl4u6kEea10_TGQ1mPIw _msLl3-6kEea10_TGQ1mPIw _msLmNu6kEea10_TGQ1mPIw _msLmOe6kEea10_TGQ1mPIw _msLmPO6kEea10_TGQ1mPIw _msLmKu6kEea10_TGQ1mPIw" database="_mqGhsO6kEea10_TGQ1mPIw" indexes="_msLmHe6kEea10_TGQ1mPIw _msLmKO6kEea10_TGQ1mPIw _msLl-u6kEea10_TGQ1mPIw _msLmRu6kEea10_TGQ1mPIw _msLmNO6kEea10_TGQ1mPIw"/>
+  <SQLAccessControl:Group xmi:id="_msLl_u6kEea10_TGQ1mPIw" name="PUBLIC" description="" Database="_mqGhsO6kEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_msLl_-6kEea10_TGQ1mPIw" action="USE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLl_e6kEea10_TGQ1mPIw"/>
+  </SQLAccessControl:Group>
+  <LUW:LUWPartitionGroup xmi:id="_msLmAO6kEea10_TGQ1mPIw" name="IBMDEFAULTGROUP" partitions="_msLmAe6kEea10_TGQ1mPIw" tableSpaces="_msLl_e6kEea10_TGQ1mPIw _msLmAu6kEea10_TGQ1mPIw" database="_mqGhsO6kEea10_TGQ1mPIw"/>
+  <LUW:LUWDatabasePartition xmi:id="_msLmAe6kEea10_TGQ1mPIw" group="_msLmAO6kEea10_TGQ1mPIw"/>
+  <LUW:LUWTableSpace xmi:id="_msLmAu6kEea10_TGQ1mPIw" name="GOSALES_TS" privileges="_msLmBO6kEea10_TGQ1mPIw" extentSize="32" preFetchSize="-1" overhead="7.5" transferRate="0.06" recoverDroppedTableOn="true" pageSize="SIXTEEN_K" group="_msLmAO6kEea10_TGQ1mPIw" bufferPool="_msLmBe6kEea10_TGQ1mPIw" database="_mqGhsO6kEea10_TGQ1mPIw"/>
+  <SQLAccessControl:User xmi:id="_msLmA-6kEea10_TGQ1mPIw" name="DB2ADMIN" description="" Database="_mqGhsO6kEea10_TGQ1mPIw">
+    <receivedPrivilege xmi:id="_msLmBO6kEea10_TGQ1mPIw" grantable="true" action="USE" grantor="_msLlmO6kEea10_TGQ1mPIw" object="_msLmAu6kEea10_TGQ1mPIw"/>
+  </SQLAccessControl:User>
+  <LUW:LUWBufferPool xmi:id="_msLmBe6kEea10_TGQ1mPIw" name="GOSALES_BP" size="250" pageSize="SIXTEEN_K" blockSize="0" tableSpaces="_msLmAu6kEea10_TGQ1mPIw" database="_mqGhsO6kEea10_TGQ1mPIw"/>
+  <LUW:LUWBufferPool xmi:id="_msLmBu6kEea10_TGQ1mPIw" name="IBMDEFAULTBP" size="-2" pageSize="SIXTEEN_K" blockSize="0" tableSpaces="_msLl_e6kEea10_TGQ1mPIw" database="_mqGhsO6kEea10_TGQ1mPIw"/>
+  <LUW:LUWTable xmi:id="_msLmB-6kEea10_TGQ1mPIw" name="BOOK_ADOPTION" privileges="_msLlzO6kEea10_TGQ1mPIw _msLlpe6kEea10_TGQ1mPIw _msLluu6kEea10_TGQ1mPIw _msLlz-6kEea10_TGQ1mPIw _msLloe6kEea10_TGQ1mPIw _msLlwO6kEea10_TGQ1mPIw _msLl1u6kEea10_TGQ1mPIw _msLlqu6kEea10_TGQ1mPIw _msLld-6kEea10_TGQ1mPIw _msLlku6kEea10_TGQ1mPIw _msLlYe6kEea10_TGQ1mPIw _msLldu6kEea10_TGQ1mPIw _msLliu6kEea10_TGQ1mPIw _msLlYO6kEea10_TGQ1mPIw _msLlb-6kEea10_TGQ1mPIw _msLlhe6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" index="_msLmHe6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmCO6kEea10_TGQ1mPIw" name="CNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmCe6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmCu6kEea10_TGQ1mPIw" name="SEM">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmC-6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmDO6kEea10_TGQ1mPIw" name="BOOK_ISBN" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmDe6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_msLmDu6kEea10_TGQ1mPIw" name="BOOK_ADOPTION_PK" members="_msLmCO6kEea10_TGQ1mPIw _msLmDO6kEea10_TGQ1mPIw"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_msLmD-6kEea10_TGQ1mPIw" name="BOOK_ADOPTION_COURSE_FK" members="_msLmCO6kEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_msLmJ-6kEea10_TGQ1mPIw" referencedTable="_msLmIO6kEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_msLmEO6kEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_msLmEe6kEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_msLmEu6kEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_msLmE-6kEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_msLmFO6kEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_msLmFe6kEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_msLmFu6kEea10_TGQ1mPIw" name="BOOK_ADOPTION_TEXT_FK" members="_msLmDO6kEea10_TGQ1mPIw" onDelete="CASCADE" uniqueConstraint="_msLmM-6kEea10_TGQ1mPIw" referencedTable="_msLmKu6kEea10_TGQ1mPIw">
+      <eAnnotations xmi:id="_msLmF-6kEea10_TGQ1mPIw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_msLmGO6kEea10_TGQ1mPIw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_msLmGe6kEea10_TGQ1mPIw" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_msLmGu6kEea10_TGQ1mPIw" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_msLmG-6kEea10_TGQ1mPIw" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_msLmHO6kEea10_TGQ1mPIw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_msLmHe6kEea10_TGQ1mPIw" name="BOOK_ADOPTION_PK" privileges="_msLl2O6kEea10_TGQ1mPIw" Schema="_msLlUO6kEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_msLmB-6kEea10_TGQ1mPIw" tablespace="_msLl_e6kEea10_TGQ1mPIw">
+    <members xmi:id="_msLmHu6kEea10_TGQ1mPIw" column="_msLmCO6kEea10_TGQ1mPIw"/>
+    <members xmi:id="_msLmH-6kEea10_TGQ1mPIw" column="_msLmDO6kEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTable xmi:id="_msLmIO6kEea10_TGQ1mPIw" name="COURSE" privileges="_msLlye6kEea10_TGQ1mPIw _msLlnO6kEea10_TGQ1mPIw _msLluO6kEea10_TGQ1mPIw _msLlzu6kEea10_TGQ1mPIw _msLln-6kEea10_TGQ1mPIw _msLlvO6kEea10_TGQ1mPIw _msLl0e6kEea10_TGQ1mPIw _msLlou6kEea10_TGQ1mPIw _msLlbu6kEea10_TGQ1mPIw _msLlg-6kEea10_TGQ1mPIw _msLlVO6kEea10_TGQ1mPIw _msLlce6kEea10_TGQ1mPIw _msLlh-6kEea10_TGQ1mPIw _msLlV-6kEea10_TGQ1mPIw _msLlau6kEea10_TGQ1mPIw _msLlf-6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" index="_msLmKO6kEea10_TGQ1mPIw" referencingForeignKeys="_msLmD-6kEea10_TGQ1mPIw _msLl7O6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmIe6kEea10_TGQ1mPIw" name="CNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmIu6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmI-6kEea10_TGQ1mPIw" name="CNAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmJO6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmJe6kEea10_TGQ1mPIw" name="DEPT">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmJu6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_msLmJ-6kEea10_TGQ1mPIw" name="COURSE_PK" members="_msLmIe6kEea10_TGQ1mPIw" ForeignKey="_msLmD-6kEea10_TGQ1mPIw _msLl7O6kEea10_TGQ1mPIw"/>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_msLmKO6kEea10_TGQ1mPIw" name="COURSE_PK" privileges="_msLlyO6kEea10_TGQ1mPIw" Schema="_msLlUO6kEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_msLmIO6kEea10_TGQ1mPIw" tablespace="_msLl_e6kEea10_TGQ1mPIw">
+    <members xmi:id="_msLmKe6kEea10_TGQ1mPIw" column="_msLmIe6kEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTable xmi:id="_msLmKu6kEea10_TGQ1mPIw" name="TEXT" privileges="_msLlnu6kEea10_TGQ1mPIw _msLltu6kEea10_TGQ1mPIw _msLlyu6kEea10_TGQ1mPIw _msLlm-6kEea10_TGQ1mPIw _msLlsu6kEea10_TGQ1mPIw _msLly-6kEea10_TGQ1mPIw _msLlne6kEea10_TGQ1mPIw _msLlte6kEea10_TGQ1mPIw _msLlgu6kEea10_TGQ1mPIw _msLlU-6kEea10_TGQ1mPIw _msLlZ-6kEea10_TGQ1mPIw _msLlgO6kEea10_TGQ1mPIw _msLllu6kEea10_TGQ1mPIw _msLlZO6kEea10_TGQ1mPIw _msLlde6kEea10_TGQ1mPIw _msLlie6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" index="_msLmNO6kEea10_TGQ1mPIw" referencingForeignKeys="_msLmFu6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmK-6kEea10_TGQ1mPIw" name="BOOK_ISBN" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmLO6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmLe6kEea10_TGQ1mPIw" name="TITLE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmLu6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmL-6kEea10_TGQ1mPIw" name="PUBLISH">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmMO6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmMe6kEea10_TGQ1mPIw" name="AUTHOR">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmMu6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_msLmM-6kEea10_TGQ1mPIw" name="TEXT_PK" members="_msLmK-6kEea10_TGQ1mPIw" ForeignKey="_msLmFu6kEea10_TGQ1mPIw"/>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_msLmNO6kEea10_TGQ1mPIw" name="TEXT_PK" privileges="_msLls-6kEea10_TGQ1mPIw" Schema="_msLlUO6kEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_msLmKu6kEea10_TGQ1mPIw" tablespace="_msLl_e6kEea10_TGQ1mPIw">
+    <members xmi:id="_msLmNe6kEea10_TGQ1mPIw" column="_msLmK-6kEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+  <LUW:LUWTable xmi:id="_msLmNu6kEea10_TGQ1mPIw" name="R2" privileges="_msLlve6kEea10_TGQ1mPIw _msLl0u6kEea10_TGQ1mPIw _msLlo-6kEea10_TGQ1mPIw _msLlt-6kEea10_TGQ1mPIw _msLlze6kEea10_TGQ1mPIw _msLlpu6kEea10_TGQ1mPIw _msLlu-6kEea10_TGQ1mPIw _msLl0O6kEea10_TGQ1mPIw _msLlW-6kEea10_TGQ1mPIw _msLlge6kEea10_TGQ1mPIw _msLll-6kEea10_TGQ1mPIw _msLlZe6kEea10_TGQ1mPIw _msLleu6kEea10_TGQ1mPIw _msLlj-6kEea10_TGQ1mPIw _msLlXe6kEea10_TGQ1mPIw _msLlbe6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmN-6kEea10_TGQ1mPIw" name="COUNT">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmOO6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="1"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_msLmOe6kEea10_TGQ1mPIw" name="R3" privileges="_msLlqe6kEea10_TGQ1mPIw _msLlv-6kEea10_TGQ1mPIw _msLl0-6kEea10_TGQ1mPIw _msLlpO6kEea10_TGQ1mPIw _msLlue6kEea10_TGQ1mPIw _msLl1e6kEea10_TGQ1mPIw _msLlqO6kEea10_TGQ1mPIw _msLlvu6kEea10_TGQ1mPIw _msLli-6kEea10_TGQ1mPIw _msLlWe6kEea10_TGQ1mPIw _msLlbO6kEea10_TGQ1mPIw _msLlhO6kEea10_TGQ1mPIw _msLlVe6kEea10_TGQ1mPIw _msLlaO6kEea10_TGQ1mPIw _msLlfe6kEea10_TGQ1mPIw _msLllO6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmOu6kEea10_TGQ1mPIw" name="TITLE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmO-6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_msLmPO6kEea10_TGQ1mPIw" name="STUDENT" privileges="_msLl2-6kEea10_TGQ1mPIw _msLlru6kEea10_TGQ1mPIw _msLl2e6kEea10_TGQ1mPIw _msLlrO6kEea10_TGQ1mPIw _msLlwe6kEea10_TGQ1mPIw _msLl3e6kEea10_TGQ1mPIw _msLlr-6kEea10_TGQ1mPIw _msLlwu6kEea10_TGQ1mPIw _msLlle6kEea10_TGQ1mPIw _msLlY-6kEea10_TGQ1mPIw _msLldO6kEea10_TGQ1mPIw _msLlju6kEea10_TGQ1mPIw _msLlXO6kEea10_TGQ1mPIw _msLliO6kEea10_TGQ1mPIw _msLlWO6kEea10_TGQ1mPIw _msLla-6kEea10_TGQ1mPIw" schema="_msLlUO6kEea10_TGQ1mPIw" index="_msLmRu6kEea10_TGQ1mPIw" referencingForeignKeys="_msLl8-6kEea10_TGQ1mPIw" regularDataTableSpace="_msLl_e6kEea10_TGQ1mPIw" partitionMode=" ">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmPe6kEea10_TGQ1mPIw" name="REGNO" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_msLmPu6kEea10_TGQ1mPIw" name="DECIMAL" primitiveType="DECIMAL" precision="4"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmP-6kEea10_TGQ1mPIw" name="SNAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmQO6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmQe6kEea10_TGQ1mPIw" name="DEPT">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmQu6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_msLmQ-6kEea10_TGQ1mPIw" name="MAJOR">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_msLmRO6kEea10_TGQ1mPIw" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_msLmRe6kEea10_TGQ1mPIw" name="STUDENT_PK" members="_msLmPe6kEea10_TGQ1mPIw" ForeignKey="_msLl8-6kEea10_TGQ1mPIw"/>
+  </LUW:LUWTable>
+  <LUW:LUWIndex xmi:id="_msLmRu6kEea10_TGQ1mPIw" name="STUDENT_PK" privileges="_msLl1-6kEea10_TGQ1mPIw" Schema="_msLlUO6kEea10_TGQ1mPIw" fillFactor="10" unique="true" systemGenerated="true" table="_msLmPO6kEea10_TGQ1mPIw" tablespace="_msLl_e6kEea10_TGQ1mPIw">
+    <members xmi:id="_msLmR-6kEea10_TGQ1mPIw" column="_msLmPe6kEea10_TGQ1mPIw"/>
+  </LUW:LUWIndex>
+</xmi:XMI>

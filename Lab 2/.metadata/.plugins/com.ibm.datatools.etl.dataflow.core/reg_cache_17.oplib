@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="dscflow.oplib" description="  Data Stage Activities for the Control Flow " label="dscflow.oplib" bundleName="com.ibm.datatools.etl.dataflow.datastage" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dscflow.oplib" fileName="dscflow.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage" name="DataStage" bundleName="com.ibm.datatools.etl.dataflow.datastage">
+    <definitionList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSJobSeq" name="DSJobSeq" label="DataStage Job" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true">
+      <definitionParams name="runCodeType" value="DSJOBSEQ" usageType="codegen"/>
+      <definitionParams name="activityClass" value="com.ibm.datatools.etl.dataflow.datastage.codegenerators.DSJobActivity" usageType="codegen"/>
+      <propertyList name="dsJob" label="Job sequence" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="DSJobReference"/>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.datastage.codegenerators.DSJobCodeGenerator"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSJobSeq::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSJobSeq::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSJobSeq::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSJobSeq::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSParallelJob" name="DSParallelJob" label="DataStage Parallel Job" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true">
+      <definitionParams name="runCodeType" value="DSJOB" usageType="codegen"/>
+      <definitionParams name="activityClass" value="com.ibm.datatools.etl.dataflow.datastage.codegenerators.DSJobActivity" usageType="codegen"/>
+      <propertyList name="dsJob" label="Parallel job" bundleName="com.ibm.datatools.etl.dataflow.datastage" type="DSParallelJobReference"/>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.datastage.codegenerators.DSJobCodeGenerator"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSParallelJob::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSParallelJob::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSParallelJob::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dscflow.oplib/DataStage/DSParallelJob::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <propertyTypeList name="DSServer" label="DataStage Server" extendsDefinitionID="TransientEnumValue" bundleName="com.ibm.datatools.etl.dataflow.datastage" registered="true" emfClassName="DSServer" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="enumProvider" value="com.ibm.datatools.etl.datastage.ServerEnumProvider" usageType="semantics"/>
+    <definitionParams name="allowVariableUse" value="true" usageType="semantics"/>
+    <definitionParams type="DataStageResource" name="resourceProfileProvider" value="com.ibm.datatools.etl.datastage.ServerResourceProfileProvider" usageType="semantics"/>
+    <definitionParams name="maxPhase" value="DEPLOYMENT" usageType="semantics"/>
+    <definitionParams name="sqlPrimitiveType" value="CHARACTER_VARYING" usageType="sqlModelPrimitiveTypeMap"/>
+    <definitionParams name="sqlType" value="CharacterStringDataType" usageType="sqlModelTypeMap"/>
+    <definitionParams name="sqlLength" value="254" usageType="sqlModelLengthDefault"/>
+  </propertyTypeList>
+  <propertyTypeList name="DSJobReference" registered="true" emfClassName="DataStageJob" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/datastage">
+    <definitionParams type="String" name="jobName" usageType="parameterizerItem" label="Job name:" description="Type the name of an existing DataStage job sequence. Names can be a maximum length of 700 characters, must begin with an alphabetic character, and can contain alphanumeric characters and underscores."/>
+    <definitionParams type="String" name="projectName" usageType="parameterizerItem" label="Project name:" description="Type the name of the DataStage project that contains the job sequence."/>
+    <definitionParams type="DSServer" name="dsServer" usageType="parameterizerItem" label="DataStage server:" description="Type the name of the server where the DataStage engine runs."/>
+  </propertyTypeList>
+  <propertyTypeList name="DSParallelJobReference" registered="true" emfClassName="DataStageParallelJob" emfPkgUri="http:///com/ibm/datatools/etl/dataflow/datastage">
+    <definitionParams type="String" name="jobName" usageType="parameterizerItem" label="Job name:" description="Type the name of an existing DataStage job sequence. Names can be a maximum length of 700 characters, must begin with an alphabetic character, and can contain alphanumeric characters and underscores."/>
+    <definitionParams type="String" name="projectName" usageType="parameterizerItem" label="Project name:" description="Type the name of the DataStage project that contains the job sequence."/>
+    <definitionParams type="DSServer" name="dsServer" usageType="parameterizerItem" label="DataStage server:" description="Type the name of the server where the DataStage engine runs."/>
+  </propertyTypeList>
+  <resourceTypeList iD="DataStageResource" name="DataStageResource" label="DataStage Resource" bundleName="com.ibm.datatools.etl.dataflow.datastage">
+    <propertyList name="serverName" label="Server" bundleName="com.ibm.datatools.etl.dataflow.datastage"/>
+    <operatorBean className="MachineProfile" pkgNsURI="http:///com/ibm/datatools/etl/coretypes/resources.ecore"/>
+  </resourceTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

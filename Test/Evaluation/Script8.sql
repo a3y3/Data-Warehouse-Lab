@@ -1,0 +1,8 @@
+--<ScriptOptions statementTerminator="!"/>
+
+CREATE TABLE EVALUATION090.RESULT2B (
+		ID NUMERIC(5 , 0),
+		FIRST_NAME VARCHAR(50)
+	)
+	DATA CAPTURE NONE!
+

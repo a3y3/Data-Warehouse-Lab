@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.datatools.etl.epg:EPGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.datatools.etl.codeunit="http:///com/ibm/datatools/etl/codeunit.ecore" xmlns:com.ibm.datatools.etl.common="http:///com/ibm/datatools/etl/common.ecore" xmlns:com.ibm.datatools.etl.epg="http:///com/ibm/datatools/etl/epg.ecore" xmlns:com.ibm.datatools.etl.log="http:///com/ibm/datatools/etl/log.ecore" itemName="FirstControlFlow" itemTag="" itemID="0" lastAssignedID="17" startNode="//@nodeMap.0/@value" endNode="//@nodeMap.1/@value" catchBlock="//@nodeMap.2/@value" finallyBlock="//@nodeMap.3/@value" executionPhase="RUNTIME" srcFlow="/newReverseEnginnering/control-flows/FirstControlFlow.cflowxmi">
+  <inputMap key="PREV_PORT">
+    <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+  </inputMap>
+  <outputMap key="NEXT_PORT">
+    <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+  </outputMap>
+  <nodeMap key="3">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_GRAPH" itemTag="/node3" itemID="3" lastAssignedID="3" nodeType="START_GRAPH">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+          <linkMap key="//@nodeMap.4/@value/@inputMap.0/@value" value="//@linkMap.1/@value"/>
+        </value>
+      </outputMap>
+      <outputMap key="END_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+          <linkMap key="//@nodeMap.1/@value/@inputMap.1/@value" value="//@linkMap.0/@value"/>
+        </value>
+      </outputMap>
+      <ArgumentTable key="OperatorIDs">
+        <value name="OperatorIDs">
+          <value xsi:type="com.ibm.datatools.etl.common:StringList">
+            <content>01</content>
+          </value>
+        </value>
+      </ArgumentTable>
+    </value>
+  </nodeMap>
+  <nodeMap key="4">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_GRAPH" itemTag="/node4" itemID="4" lastAssignedID="3" nodeType="END_GRAPH">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+          <linkMap key="//@nodeMap.6/@value/@outputMap.0/@value" value="//@linkMap.4/@value"/>
+        </value>
+      </inputMap>
+      <inputMap key="START_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+          <linkMap key="//@nodeMap.0/@value/@outputMap.1/@value" value="//@linkMap.0/@value"/>
+        </value>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+      </outputMap>
+    </value>
+  </nodeMap>
+  <nodeMap key="7">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGBlock" itemName="CATCH_BLOCK" itemTag="/graph7" itemID="7" lastAssignedID="6" nodeType="BLOCK" startNode="//@nodeMap.2/@value/@nodeMap.0/@value" endNode="//@nodeMap.2/@value/@nodeMap.1/@value">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+      </outputMap>
+      <nodeMap key="3">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_BLOCK" itemTag="/graph7/node3" itemID="3" lastAssignedID="3" nodeType="START_BLOCK">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+              <linkMap key="//@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.0/@value" value="//@nodeMap.2/@value/@linkMap.1/@value"/>
+            </value>
+          </outputMap>
+          <outputMap key="END_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+              <linkMap key="//@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.1/@value" value="//@nodeMap.2/@value/@linkMap.0/@value"/>
+            </value>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <nodeMap key="4">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_BLOCK" itemTag="/graph7/node4" itemID="4" lastAssignedID="3" nodeType="END_BLOCK">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+              <linkMap key="//@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.0/@value" value="//@nodeMap.2/@value/@linkMap.1/@value"/>
+            </value>
+          </inputMap>
+          <inputMap key="START_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+              <linkMap key="//@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.1/@value" value="//@nodeMap.2/@value/@linkMap.0/@value"/>
+            </value>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <linkMap key="5">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph7/link5" itemID="5" fromPort="//@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.1/@value"/>
+      </linkMap>
+      <linkMap key="6">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph7/link6" itemID="6" fromPort="//@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.0/@value"/>
+      </linkMap>
+      <defaultContext currNodeRef="//@nodeMap.2/@value/@nodeMap.0/@value" lastNodeRef="//@nodeMap.2/@value/@nodeMap.0/@value"/>
+    </value>
+  </nodeMap>
+  <nodeMap key="8">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGBlock" itemName="FINALLY_BLOCK" itemTag="/graph8" itemID="8" lastAssignedID="6" nodeType="BLOCK" startNode="//@nodeMap.3/@value/@nodeMap.0/@value" endNode="//@nodeMap.3/@value/@nodeMap.1/@value">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+      </outputMap>
+      <nodeMap key="3">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_BLOCK" itemTag="/graph8/node3" itemID="3" lastAssignedID="3" nodeType="START_BLOCK">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+              <linkMap key="//@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.0/@value" value="//@nodeMap.3/@value/@linkMap.1/@value"/>
+            </value>
+          </outputMap>
+          <outputMap key="END_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+              <linkMap key="//@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.1/@value" value="//@nodeMap.3/@value/@linkMap.0/@value"/>
+            </value>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <nodeMap key="4">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_BLOCK" itemTag="/graph8/node4" itemID="4" lastAssignedID="3" nodeType="END_BLOCK">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+              <linkMap key="//@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.0/@value" value="//@nodeMap.3/@value/@linkMap.1/@value"/>
+            </value>
+          </inputMap>
+          <inputMap key="START_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+              <linkMap key="//@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.1/@value" value="//@nodeMap.3/@value/@linkMap.0/@value"/>
+            </value>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <linkMap key="5">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph8/link5" itemID="5" fromPort="//@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.1/@value"/>
+      </linkMap>
+      <linkMap key="6">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph8/link6" itemID="6" fromPort="//@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.0/@value"/>
+      </linkMap>
+      <defaultContext currNodeRef="//@nodeMap.3/@value/@nodeMap.0/@value" lastNodeRef="//@nodeMap.3/@value/@nodeMap.0/@value"/>
+    </value>
+  </nodeMap>
+  <nodeMap key="9">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGBlock" itemName="PREP" itemTag="/graph9" itemID="9" lastAssignedID="6" nodeType="BLOCK" startNode="//@nodeMap.4/@value/@nodeMap.0/@value" endNode="//@nodeMap.4/@value/@nodeMap.1/@value">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+          <linkMap key="//@nodeMap.0/@value/@outputMap.0/@value" value="//@linkMap.1/@value"/>
+        </value>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+          <linkMap key="//@nodeMap.5/@value/@inputMap.0/@value" value="//@linkMap.2/@value"/>
+        </value>
+      </outputMap>
+      <nodeMap key="3">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_BLOCK" itemTag="/graph9/node3" itemID="3" lastAssignedID="3" nodeType="START_BLOCK">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+              <linkMap key="//@nodeMap.4/@value/@nodeMap.1/@value/@inputMap.0/@value" value="//@nodeMap.4/@value/@linkMap.1/@value"/>
+            </value>
+          </outputMap>
+          <outputMap key="END_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+              <linkMap key="//@nodeMap.4/@value/@nodeMap.1/@value/@inputMap.1/@value" value="//@nodeMap.4/@value/@linkMap.0/@value"/>
+            </value>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <nodeMap key="4">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_BLOCK" itemTag="/graph9/node4" itemID="4" lastAssignedID="3" nodeType="END_BLOCK">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+              <linkMap key="//@nodeMap.4/@value/@nodeMap.0/@value/@outputMap.0/@value" value="//@nodeMap.4/@value/@linkMap.1/@value"/>
+            </value>
+          </inputMap>
+          <inputMap key="START_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+              <linkMap key="//@nodeMap.4/@value/@nodeMap.0/@value/@outputMap.1/@value" value="//@nodeMap.4/@value/@linkMap.0/@value"/>
+            </value>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <linkMap key="5">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph9/link5" itemID="5" fromPort="//@nodeMap.4/@value/@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.4/@value/@nodeMap.1/@value/@inputMap.1/@value"/>
+      </linkMap>
+      <linkMap key="6">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph9/link6" itemID="6" fromPort="//@nodeMap.4/@value/@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.4/@value/@nodeMap.1/@value/@inputMap.0/@value"/>
+      </linkMap>
+      <defaultContext currNodeRef="//@nodeMap.4/@value/@nodeMap.0/@value" lastNodeRef="//@nodeMap.4/@value/@nodeMap.0/@value"/>
+    </value>
+  </nodeMap>
+  <nodeMap key="12">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGTry" itemName="Parallel_Container_02" itemTag="/graph12" itemID="12" lastAssignedID="11" nodeType="TRY" startNode="//@nodeMap.5/@value/@nodeMap.0/@value" endNode="//@nodeMap.5/@value/@nodeMap.1/@value" catchBlock="//@nodeMap.5/@value/@nodeMap.2/@value" finallyBlock="//@nodeMap.5/@value/@nodeMap.3/@value">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+          <linkMap key="//@nodeMap.4/@value/@outputMap.0/@value" value="//@linkMap.2/@value"/>
+        </value>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+          <linkMap key="//@nodeMap.6/@value/@inputMap.0/@value" value="//@linkMap.3/@value"/>
+        </value>
+      </outputMap>
+      <nodeMap key="3">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_TRY" itemTag="/graph12/node3" itemID="3" lastAssignedID="3" nodeType="START_TRY">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+              <linkMap key="//@nodeMap.5/@value/@nodeMap.4/@value/@inputMap.0/@value" value="//@nodeMap.5/@value/@linkMap.1/@value"/>
+            </value>
+          </outputMap>
+          <outputMap key="END_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+              <linkMap key="//@nodeMap.5/@value/@nodeMap.1/@value/@inputMap.1/@value" value="//@nodeMap.5/@value/@linkMap.0/@value"/>
+            </value>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <nodeMap key="4">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_TRY" itemTag="/graph12/node4" itemID="4" lastAssignedID="3" nodeType="END_TRY">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+              <linkMap key="//@nodeMap.5/@value/@nodeMap.4/@value/@outputMap.0/@value" value="//@nodeMap.5/@value/@linkMap.2/@value"/>
+            </value>
+          </inputMap>
+          <inputMap key="START_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+              <linkMap key="//@nodeMap.5/@value/@nodeMap.0/@value/@outputMap.1/@value" value="//@nodeMap.5/@value/@linkMap.0/@value"/>
+            </value>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+          </outputMap>
+        </value>
+      </nodeMap>
+      <nodeMap key="7">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGBlock" itemName="CATCH_BLOCK" itemTag="/graph12/graph7" itemID="7" lastAssignedID="6" nodeType="BLOCK" startNode="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value" endNode="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.1/@value">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+          </outputMap>
+          <ArgumentTable key="EndOperatorIDs">
+            <value name="EndOperatorIDs">
+              <value xsi:type="com.ibm.datatools.etl.common:StringList">
+                <content>03</content>
+              </value>
+            </value>
+          </ArgumentTable>
+          <nodeMap key="3">
+            <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_BLOCK" itemTag="/graph12/graph7/node3" itemID="3" lastAssignedID="3" nodeType="START_BLOCK">
+              <inputMap key="PREV_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+              </inputMap>
+              <outputMap key="NEXT_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.0/@value" value="//@nodeMap.5/@value/@nodeMap.2/@value/@linkMap.1/@value"/>
+                </value>
+              </outputMap>
+              <outputMap key="END_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.1/@value" value="//@nodeMap.5/@value/@nodeMap.2/@value/@linkMap.0/@value"/>
+                </value>
+              </outputMap>
+            </value>
+          </nodeMap>
+          <nodeMap key="4">
+            <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_BLOCK" itemTag="/graph12/graph7/node4" itemID="4" lastAssignedID="3" nodeType="END_BLOCK">
+              <inputMap key="PREV_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.0/@value" value="//@nodeMap.5/@value/@nodeMap.2/@value/@linkMap.1/@value"/>
+                </value>
+              </inputMap>
+              <inputMap key="START_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.1/@value" value="//@nodeMap.5/@value/@nodeMap.2/@value/@linkMap.0/@value"/>
+                </value>
+              </inputMap>
+              <outputMap key="NEXT_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+              </outputMap>
+            </value>
+          </nodeMap>
+          <linkMap key="5">
+            <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph12/graph7/link5" itemID="5" fromPort="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.1/@value"/>
+          </linkMap>
+          <linkMap key="6">
+            <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph12/graph7/link6" itemID="6" fromPort="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.1/@value/@inputMap.0/@value"/>
+          </linkMap>
+          <defaultContext currNodeRef="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value" lastNodeRef="//@nodeMap.5/@value/@nodeMap.2/@value/@nodeMap.0/@value"/>
+        </value>
+      </nodeMap>
+      <nodeMap key="8">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGBlock" itemName="FINALLY_BLOCK" itemTag="/graph12/graph8" itemID="8" lastAssignedID="6" nodeType="BLOCK" startNode="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value" endNode="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.1/@value">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+          </outputMap>
+          <nodeMap key="3">
+            <value xsi:type="com.ibm.datatools.etl.epg:EPGStartNode" itemName="START_BLOCK" itemTag="/graph12/graph8/node3" itemID="3" lastAssignedID="3" nodeType="START_BLOCK">
+              <inputMap key="PREV_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1"/>
+              </inputMap>
+              <outputMap key="NEXT_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.0/@value" value="//@nodeMap.5/@value/@nodeMap.3/@value/@linkMap.1/@value"/>
+                </value>
+              </outputMap>
+              <outputMap key="END_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="3">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.1/@value" value="//@nodeMap.5/@value/@nodeMap.3/@value/@linkMap.0/@value"/>
+                </value>
+              </outputMap>
+            </value>
+          </nodeMap>
+          <nodeMap key="4">
+            <value xsi:type="com.ibm.datatools.etl.epg:EPGEndNode" itemName="END_BLOCK" itemTag="/graph12/graph8/node4" itemID="4" lastAssignedID="3" nodeType="END_BLOCK">
+              <inputMap key="PREV_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.0/@value" value="//@nodeMap.5/@value/@nodeMap.3/@value/@linkMap.1/@value"/>
+                </value>
+              </inputMap>
+              <inputMap key="START_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="3">
+                  <linkMap key="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.1/@value" value="//@nodeMap.5/@value/@nodeMap.3/@value/@linkMap.0/@value"/>
+                </value>
+              </inputMap>
+              <outputMap key="NEXT_PORT">
+                <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2"/>
+              </outputMap>
+            </value>
+          </nodeMap>
+          <linkMap key="5">
+            <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph12/graph8/link5" itemID="5" fromPort="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.1/@value"/>
+          </linkMap>
+          <linkMap key="6">
+            <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph12/graph8/link6" itemID="6" fromPort="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.1/@value/@inputMap.0/@value"/>
+          </linkMap>
+          <defaultContext currNodeRef="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value" lastNodeRef="//@nodeMap.5/@value/@nodeMap.3/@value/@nodeMap.0/@value"/>
+        </value>
+      </nodeMap>
+      <nodeMap key="9">
+        <value xsi:type="com.ibm.datatools.etl.epg:EPGRef" itemName="Parallel_Container_02" itemTag="/graph12/node9" itemID="9" lastAssignedID="2" nodeType="EPG_REF_NODE" curNumTries="1" refID="02" refType="ParallelControlFlowActivity">
+          <inputMap key="PREV_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+              <linkMap key="//@nodeMap.5/@value/@nodeMap.0/@value/@outputMap.0/@value" value="//@nodeMap.5/@value/@linkMap.1/@value"/>
+            </value>
+          </inputMap>
+          <outputMap key="NEXT_PORT">
+            <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+              <linkMap key="//@nodeMap.5/@value/@nodeMap.1/@value/@inputMap.0/@value" value="//@nodeMap.5/@value/@linkMap.2/@value"/>
+            </value>
+          </outputMap>
+          <ArgumentTable key="@SKIPEXECUTION">
+            <value name="@SKIPEXECUTION">
+              <value xsi:type="com.ibm.datatools.etl.codeunit:CodeTemplate">
+                <statementList>
+                  <elementList text="false"/>
+                </statementList>
+              </value>
+            </value>
+          </ArgumentTable>
+          <externalEpgRef href="02_0.epg#/"/>
+        </value>
+      </nodeMap>
+      <linkMap key="5">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemTag="/graph12/link5" itemID="5" fromPort="//@nodeMap.5/@value/@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.5/@value/@nodeMap.1/@value/@inputMap.1/@value"/>
+      </linkMap>
+      <linkMap key="10">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="10" fromPort="//@nodeMap.5/@value/@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.5/@value/@nodeMap.4/@value/@inputMap.0/@value"/>
+      </linkMap>
+      <linkMap key="11">
+        <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="11" fromPort="//@nodeMap.5/@value/@nodeMap.4/@value/@outputMap.0/@value" toPort="//@nodeMap.5/@value/@nodeMap.1/@value/@inputMap.0/@value"/>
+      </linkMap>
+      <defaultContext currNodeRef="//@nodeMap.5/@value/@nodeMap.4/@value" lastNodeRef="//@nodeMap.5/@value/@nodeMap.0/@value"/>
+    </value>
+  </nodeMap>
+  <nodeMap key="15">
+    <value xsi:type="com.ibm.datatools.etl.epg:EPGJump" itemName="Fail_04" itemTag="/node15" itemID="15" lastAssignedID="2" nodeType="FAIL" jumpType="UNRAVEL">
+      <inputMap key="PREV_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeInput" itemID="1">
+          <linkMap key="//@nodeMap.5/@value/@outputMap.0/@value" value="//@linkMap.3/@value"/>
+        </value>
+      </inputMap>
+      <outputMap key="NEXT_PORT">
+        <value xsi:type="com.ibm.datatools.etl.log:LogNodeOutput" itemID="2">
+          <linkMap key="//@nodeMap.1/@value/@inputMap.0/@value" value="//@linkMap.4/@value"/>
+        </value>
+      </outputMap>
+      <ArgumentTable key="OperatorIDs">
+        <value name="OperatorIDs">
+          <value xsi:type="com.ibm.datatools.etl.common:StringList">
+            <content>04</content>
+          </value>
+        </value>
+      </ArgumentTable>
+    </value>
+  </nodeMap>
+  <linkMap key="5">
+    <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="5" fromPort="//@nodeMap.0/@value/@outputMap.1/@value" toPort="//@nodeMap.1/@value/@inputMap.1/@value"/>
+  </linkMap>
+  <linkMap key="10">
+    <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="10" fromPort="//@nodeMap.0/@value/@outputMap.0/@value" toPort="//@nodeMap.4/@value/@inputMap.0/@value"/>
+  </linkMap>
+  <linkMap key="13">
+    <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="13" fromPort="//@nodeMap.4/@value/@outputMap.0/@value" toPort="//@nodeMap.5/@value/@inputMap.0/@value"/>
+  </linkMap>
+  <linkMap key="16">
+    <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="16" fromPort="//@nodeMap.5/@value/@outputMap.0/@value" toPort="//@nodeMap.6/@value/@inputMap.0/@value"/>
+  </linkMap>
+  <linkMap key="17">
+    <value xsi:type="com.ibm.datatools.etl.log:LOGNodeLink" itemID="17" fromPort="//@nodeMap.6/@value/@outputMap.0/@value" toPort="//@nodeMap.1/@value/@inputMap.0/@value"/>
+  </linkMap>
+  <defaultContext currNodeRef="//@nodeMap.6/@value" lastNodeRef="//@nodeMap.0/@value"/>
+  <markedNodesList href="02_0.epg#//@nodeMap.5/@value"/>
+  <markedNodesList href="#//@nodeMap.5/@value/@nodeMap.4/@value"/>
+</com.ibm.datatools.etl.epg:EPGraph>

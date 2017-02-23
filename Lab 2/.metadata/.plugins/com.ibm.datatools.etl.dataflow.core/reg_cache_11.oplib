@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:com.ibm.datatools.etl.coretypes="http:///com/ibm/datatools/etl/coretypes.ecore" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="BI Operator Library" description="Data Warehousing related DataFlow Operator Library" label="BI Operator Library" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/etl/dataflow/bi.oplib" fileName="bi.oplib">
+  <children iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform" name="Transform" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib">
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup" name="KeyLookup" label="KeyLookup" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow/bi.common.oplib/Transform/KeyLookup" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.bi.handlers.KeyLookupMigrationHandler" usageType="upgradeHandler"/>
+      <propertyList name="stagingTableName" description="Details.stagingTableName.desc" label="Details.stagingTableName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="tempTableSpace" description="Details.tableSpace.temp.desc" label="Details.tempTableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="VirtualTable"/>
+      <propertyList name="partitioningKeys" label="Details.partioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="SubSelect">
+        <definitionParams type="input" name="data" usageType="mapFrom"/>
+        <definitionParams type="input" name="lookup" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="VirtualTable"/>
+      <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="SubSelect">
+        <definitionParams type="input" name="data" usageType="mapFrom"/>
+        <definitionParams type="input" name="lookup" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="conditionList" label="List of expressions" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="Condition" lowerBound="1" upperBound="-1"/>
+      <propertyList name="project" label="Select list" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="data"/>
+        <definitionParams type="input" name="lookup"/>
+      </propertyList>
+      <propertyList name="projectDiscard" label="Select list" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ProjectExpression">
+        <definitionParams type="input" name="data"/>
+        <definitionParams type="input" name="lookup"/>
+      </propertyList>
+      <propertyList name="domainType" description="Specify whether you expect a small or large number of discard rows in the data set. The small number of discards option is recommended when you expect fewer than 5 percent or 5000 total duplicate rows in the data set. Discards are the rows that do not match the condition. The discarded rows will be sent to the discard output port." label="Number of discards" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="TypeSizeEnum" defaultValueLiteral="SMALL"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.bi.handlers.KeyLookupChangeHandler"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::input::data" name="data" label="data" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::input::lookup" name="lookup" label="lookup" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" upperBound="-1"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::output::match" name="match" label="match" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="project"/>
+      </outputList>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::output::discard" name="discard" label="discard" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="BY_PARAMS">
+        <definitionParams type="property" name="projectDiscard"/>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Pivot" name="Pivot" label="Pivot" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow/bi.common.oplib/Transform/Pivot" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+      <propertyList name="dataGroup" label="dataGroup" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn"/>
+      <propertyList name="enableDataGroup" label="enableDataGroup" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="boolean"/>
+      <propertyList name="availableColumnList" label="availableColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1">
+        <definitionParams type="input" name="input"/>
+      </propertyList>
+      <propertyList name="pivotColumnList" label="pivotColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1"/>
+      <propertyList name="keyColumnList" label="keyColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1"/>
+      <propertyList name="dataColumnList" label="dataColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1"/>
+      <propertyList name="pivotRowList" label="pivotRowList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="PivotRow" upperBound="-1"/>
+      <propertyList name="dummyColumnList" label="dummyColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.bi.handlers.PivotChangeHandler"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" className="com.ibm.datatools.etl.dataflow.bi.validators.PivotValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Pivot::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Pivot::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="IMPLEMENTATION"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Unpivot" name="Unpivot" label="Unpivot" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow/bi.common.oplib/Transform/Unpivot" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+      <propertyList name="availableColumnList" label="availableColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1">
+        <definitionParams type="input" name="input"/>
+      </propertyList>
+      <propertyList name="dataGroup" label="dataGroup" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn"/>
+      <propertyList name="keyColumnList" label="keyColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1"/>
+      <propertyList name="unPivotColumnList" label="unPivotColumnList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn" upperBound="-1"/>
+      <propertyList name="unPivotRowList" label="unPivotRowList" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="UnPivotRow" upperBound="-1"/>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.bi.handlers.UnPivotChangeHandler"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" className="com.ibm.datatools.etl.dataflow.bi.validators.UnPivotValidator"/>
+      <rewriterClass className="com.ibm.datatools.etl.dataflow.bi.rewriters.UnPivotRewriter"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Unpivot::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Unpivot::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="IMPLEMENTATION"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter" name="Splitter" label="Splitter" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow/bi.common.oplib/Transform/Splitter" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+      <propertyList name="tempTableSpace" description="Details.tableSpace.temp.desc" label="Details.tempTableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="subsetVT" label="subsetVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="VirtualTable"/>
+      <propertyList name="partitioningKeys" label="Details.partioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="SubSelect">
+        <definitionParams type="input" name="input" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="subsetRangeVT" label="subsetRangeVT" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="VirtualTable"/>
+      <propertyList name="rangePartitioningKeys" label="Details.rangePartitioningKeys" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true" type="SubSelect">
+        <definitionParams type="input" name="input" usageType="mapFrom"/>
+        <definitionParams type="property" name="subsetRangeVT" usageType="mapTo" label="Selected Keys:"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="rangePartitionBoundary" description="Details.rangePartitionBoundary.desc" label="Details.rangePartitionBoundary" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="stagingTableName" description="Details.stagingTableName.desc" label="Details.stagingTableName" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="tableSpace" description="Details.tableSpace.desc" label="Details.tableSpace" hidden="true" variableAllowed="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true"/>
+      <propertyList name="outConditionList" label="List of expressions" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="Condition" referenceOnly="true" upperBound="-1">
+        <definitionParams type="property" name="output::output::splitCondition"/>
+        <definitionParams name="ValidationMessage" value="252"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.bi.handlers.SplitOperatorChangeHandler"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib"/>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" upperBound="-1" rule="BY_PARAMS">
+        <definitionParams type="property" name="output::output::project"/>
+        <propertyList name="project" label="Column expressions" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ProjectExpression">
+          <definitionParams type="input" name="input"/>
+        </propertyList>
+        <propertyList name="splitCondition" label="Condition" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="Condition">
+          <definitionParams type="input" name="input"/>
+        </propertyList>
+      </outputList>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace" name="KeyReplace" label="KeyReplace" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow/bi.common.oplib/Transform/KeyReplace" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+      <propertyList name="lookupNKToInputNKMap" label="Natural Keys Map" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ColumnMap">
+        <definitionParams type="property" name="input::lookup::naturalKeyColumns" usageType="mapFrom" label="Lookup Natural Keys"/>
+        <definitionParams type="input" name="input" usageType="mapTo" label="Fact Input Natural Keys"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        <definitionParams name="showMapToColumn" value="true" usageType="semantics"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.bi.handlers.KeyReplaceChangeHandler"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" className="com.ibm.datatools.etl.dataflow.bi.validators.KeyReplaceValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::input::lookup" name="lookup" label="lookup" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" upperBound="-1">
+        <propertyList name="naturalKeyColumns" label="Natural Key Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualTable"/>
+        <propertyList name="surrogateKeyColumn" label="Surrogate Key Column" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn"/>
+        <propertyList name="lookupColsClassification" label="Keys Classification" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ColumnMap">
+          <definitionParams type="input" name="lookup" usageType="mapFrom" label="Lookup table"/>
+          <definitionParams type="property" name="input::lookup::surrogateKeyColumn" usageType="mapTo" label="Surrogate Key Column" description="Shows the columns in the order that they will appear in the output table. The Surrogate key columns field represents a unique value or set of values that identifies each row in a table. Unlike natural keys, surrogate keys commonly consist of one or more meaningless integer values. The value must be meaningless to accommodate SCD type 2 tables and should be an integer for faster processing."/>
+          <definitionParams type="property" name="input::lookup::naturalKeyColumns" usageType="mapTo" label="Natural Key Columns" description="Shows the columns in the order that they will appear in the output table. The Natural key columns field represents a unique value or set of values that identifies each row in a table. Common natural keys contain meaningful identification values such as a customer number or store name."/>
+          <definitionParams name="updateMapToProperties" value="true" usageType="semantics"/>
+          <definitionParams name="updateMapToTableName" value="true" usageType="semantics"/>
+          <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+          <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+          <definitionParams name="resultProduced" value="false" usageType="semantics"/>
+        </propertyList>
+      </inputList>
+      <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="IMPLEMENTATION"/>
+    </definitionList>
+  </children>
+  <children iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target" name="Target" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib">
+    <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD" name="SCD" description="SCDOpDescription" label="SCD" extendsDefinitionID="http:///com.ibm.datatools.sqw/dataflow/bi.common.oplib/Target/SCD" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+      <definitionParams name="upgradeHandlerClassName" value="com.ibm.datatools.etl.dataflow.bi.handlers.SCDUpgradeHandler" usageType="upgradeHandler"/>
+      <definitionParams name="samplingDBTableRef" value="dimensionTable" usageType="sampling"/>
+      <propertyList name="scdType" description="Select Type 1 if you want to modify existing rows in the dimension table when their monitored column attributes change. Select Type 2 if you want to add new active versions of existing rows to the table and retain the old rows as well. For both SCD types, completely new incoming rows are added to the dimension table with new surrogate keys." label="SCD type" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="SCDType" defaultValueLiteral="1"/>
+      <propertyList name="dimensionTable" description="Select the dimension table that you want to update (the target table of the flow) " label="Dimension table" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="DBTable"/>
+      <propertyList name="naturalKeyColumns" label="Natural Key Columns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualTable"/>
+      <propertyList name="carryOverUpdateColumns" label="carryOverUpdateColumns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualTable"/>
+      <propertyList name="surrogateKeyColumn" label="Surrogate Key Column" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn"/>
+      <propertyList name="comparisonColumns" label="comparisonColumns" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualTable"/>
+      <propertyList name="startDateColumn" label="startDateColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn"/>
+      <propertyList name="endDateColumn" label="endDateColumn" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="VirtualColumn"/>
+      <propertyList name="dimColsClassification" description="Classify the columns of the target dimension table.  The columns that you do not classify are only carried over to the target table when the monitored columns change or new rows are added." label="Classify Target Columns" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ColumnMap">
+        <definitionParams type="property" name="dimensionTable" usageType="mapFrom" label="Dimension table"/>
+        <definitionParams type="property" name="naturalKeyColumns" usageType="mapTo" label="Natural Key Columns" description="One or more key columns with meaningful values that typically do not uniquely identify a row."/>
+        <definitionParams type="property" name="comparisonColumns" usageType="mapTo" label="Monitored Columns" description="The columns in the target table that you are monitoring for change in the dimension. When the attributes of any of the monitored columns change, the table rows are updated based on the Type 1 or Type 2 policy you selected. "/>
+        <definitionParams type="property" name="carryOverUpdateColumns" usageType="mapTo" label="Carry-Over Update Columns" description="Select the columns to be updated when a change to the monitored columns is not detected.  The Carry-Over Update columns field identifies the columns that should always be updated regardless of whether changes are made to the monitored columns.   "/>
+        <definitionParams type="property" name="surrogateKeyColumn" usageType="mapTo" label="Surrogate Key Column" description="A key column with generated, meaningless values. This column always uniquely identifies a row."/>
+        <definitionParams type="property" name="startDateColumn" usageType="mapTo" label="Start Date Column" description="Optional column in the target table that identifies when a record became active (for Type 2 history). Allowed date types are DATE and TIMESTAMP."/>
+        <definitionParams type="property" name="endDateColumn" usageType="mapTo" label="End Date Column" description="optional columns in the target table that identify when a record became inactive (for Type 2 history). Allowed date types are DATE and TIMESTAMP."/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        <definitionParams name="showMapToColumn" value="false" usageType="semantics"/>
+        <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+        <definitionParams name="allowAddingMapToColumns" value="true" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="inputToDimensionTableMap" description="Map the columns from the source table (the preceding operator's output) to the columns in the SCD target table. Use the Map by Name and Map by Position icons above the Available Columns list to automate this process.  A one-to-one mapping is not required; for example, the surrogate key column in your SCD table will not have a map-from column in the source table. " label="Map Source to Target" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ColumnMap">
+        <definitionParams type="input" name="input" usageType="mapFrom" label="Available Input Columns"/>
+        <definitionParams type="property" name="dimensionTable" usageType="mapTo" label="DimensionTable"/>
+        <definitionParams name="mapFromExclusiveAssignment" value="true" usageType="semantics"/>
+        <definitionParams name="showMapToColumn" value="true" usageType="semantics"/>
+        <definitionParams name="allowMapToExpressions" value="false" usageType="semantics"/>
+      </propertyList>
+      <propertyList name="surrogateKeyExpression" description="Enter the sequence expression that you want to use to generate surrogate key values for new rows. If you are using a DB2 identity column for surrogate keys or a sequence operator connected to the SCD target operator, leave the Surrogate Key Generator field blank. " label="Surrogate key expression" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="Expression">
+        <definitionParams type="input" name="input"/>
+        <definitionParams type="property" name="dimensionTable"/>
+      </propertyList>
+      <propertyList name="validationRigor" label="validationRigor" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" optional="true">
+        <definitionParams name="surrogateKeyExpression::expressionMandatory" value="FALSE"/>
+      </propertyList>
+      <propertyList name="endDateValue" description="Specify the optional value for the End Date column when new rows are inserted. This value is used if the mapping for the End Date column is not defined on the Column Mapping tab. Depending on the column data type 12/31/9999 or 9999-12-31-23.59.59.999999 is the default value. " label="End date value" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" defaultValueLiteral="12/31/9999"/>
+      <propertyList name="sourceOPLabel" label="sourceOPLabel" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ConcatString">
+        <definitionParams type="property" name="dimensionTable" usageType="concat"/>
+        <definitionParams name="updateContainerLabel" value="true" usageType="semantics"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.dataflow.bi.handlers.SCDChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.bi.codegenerators.SCDCodeGenerator"/>
+      <validatorClass bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" className="com.ibm.datatools.etl.dataflow.bi.validators.SCDValidator"/>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::input::input" name="input" label="input" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib">
+        <stagingInfoList type="PERSISTENT_TABLE" mode="UPDATEABLE"/>
+      </inputList>
+      <inputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::input::sequencecolumn" name="sequencecolumn" label="sequencecolumn" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="STATIC" columnLevel="true" numMinLinks="0">
+        <schema itemLabel="" name="sequence_input">
+          <columns xsi:type="com.ibm.datatools.etl.coretypes:VirtualColumn" itemLabel="" name="SEQUENCEVALUE" virtualType="INTEGER">
+            <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INTEGER" primitiveType="INTEGER"/>
+          </columns>
+        </schema>
+      </inputList>
+    </definitionList>
+  </children>
+  <children iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/InternalOperators" name="InternalOperators" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib">
+    <children iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/InternalOperators/Transform" name="Transform" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib">
+      <definitionList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/InternalOperators/Transform/PivotIDTableCOP" name="PivotIDTableCOP" label="PivotIDTableCOP" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true">
+        <propertyList name="numRows" label="numRows" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="int"/>
+        <propertyList name="dummyProject" label="dummyProject" hidden="true" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" type="ProjectExpression"/>
+        <codeGeneratorClass className="com.ibm.datatools.etl.dataflow.bi.codegenerators.PivotIDTableCOP"/>
+        <outputList iD="http:///com/ibm/datatools/etl/dataflow/bi.oplib/InternalOperators/Transform/PivotIDTableCOP::output::output" name="output" label="output" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" rule="IMPLEMENTATION"/>
+      </definitionList>
+    </children>
+  </children>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="match" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::projectDiscard">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="discard" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::output::output::project">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:OutputDefnItem" name="output" fIDef="//@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::dimensionTable">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputToDimensionTableMap" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="surrogateKeyExpression" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="sourceOPLabel" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::naturalKeyColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::comparisonColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::carryOverUpdateColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::surrogateKeyColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::startDateColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::endDateColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="dimColsClassification" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::subsetRangeVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::output::output::splitCondition">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="outConditionList" fIDef="//@children.0/@definitionList.3"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::input::lookup::naturalKeyColumns">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="lookupNKToInputNKMap" fIDef="//@children.0/@definitionList.4"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="lookupColsClassification" fIDef="//@children.0/@definitionList.4/@inputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::input::lookup::surrogateKeyColumn">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="lookupColsClassification" fIDef="//@children.0/@definitionList.4/@inputList.1"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::subsetVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnPropMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::subsetRangeVT">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnPropMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Unpivot::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="availableColumnList" fIDef="//@children.0/@definitionList.2"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Target/SCD::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="inputToDimensionTableMap" fIDef="//@children.1/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="surrogateKeyExpression" fIDef="//@children.1/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Pivot::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="availableColumnList" fIDef="//@children.0/@definitionList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/Splitter::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@definitionList.3"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.0/@definitionList.3/@outputList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="splitCondition" fIDef="//@children.0/@definitionList.3/@outputList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::input">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="lookupNKToInputNKMap" fIDef="//@children.0/@definitionList.4"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyReplace::lookup">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="lookupColsClassification" fIDef="//@children.0/@definitionList.4/@inputList.1"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::data">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="projectDiscard" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <dependenciesOnInputMap key="http:///com/ibm/datatools/etl/dataflow/bi.oplib/Transform/KeyLookup::lookup">
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="partitioningKeys" fIDef="//@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="rangePartitioningKeys" fIDef="//@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="project" fIDef="//@children.0/@definitionList.0"/>
+    <value xsi:type="com.ibm.datatools.etl.operatorlibrary:PropDefnItem" name="projectDiscard" fIDef="//@children.0/@definitionList.0"/>
+  </dependenciesOnInputMap>
+  <propertyTypeList name="SCDType" bundleName="com.ibm.datatools.etl.dataflow.bi.oplib" registered="true" emfClassName="SCDTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="1" usageType="enumLiteral" label="Type 1"/>
+    <definitionParams name="2" usageType="enumLiteral" label="Type 2"/>
+  </propertyTypeList>
+  <propertyTypeList name="TypeSizeEnum" emfClassName="enum">
+    <definitionParams name="SMALL" usageType="enumLiteral" label="SMALL"/>
+    <definitionParams name="LARGE" usageType="enumLiteral" label="LARGE"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

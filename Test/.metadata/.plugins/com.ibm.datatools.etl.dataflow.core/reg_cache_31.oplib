@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" name="SQWSshOplibs" description="SSH Operators for the Cflow Operators Library" label="SQWSshOplibs" bundleName="com.ibm.datatools.sqw.ssh.oplib" lastModified="0" nsURI="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib" fileName="etc/sqwssh.oplib">
+  <children iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow" name="Flow" bundleName="com.ibm.datatools.sqw.ssh.oplib">
+    <definitionList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand" name="SSHCommand" label="SSHCommand.label" extendsDefinitionID="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/Activity" bundleName="com.ibm.datatools.sqw.ssh.oplib" registered="true">
+      <propertyList name="remoteHost" description="Hostname or IP address of the remote server where the remote command will be executed." label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="Machine">
+        <paramOption phase="RUNTIME" paramName="remoteHost"/>
+      </propertyList>
+      <propertyList name="port" description="Port on the remote host where the SSH daemon runs." label="Port" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="int" defaultValueLiteral="22"/>
+      <propertyList name="connTimeout" description="Time to wait before the session expires (in milliseconds). A value of 0 means the session will never expire." label="Connection timeout" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="int"/>
+      <propertyList name="keyfile" description="Private key file for either public key or host-based authentication.&#xA;Key files and passphrases are never transmitted over the network." label="Private key file" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File"/>
+      <propertyList name="passphrase" description="Sets the passphrase for the user's key. The passphrase is&#xA;used to access the private key if the private key was encrypted." label="Passphrase" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="EncryptedString"/>
+      <propertyList name="knownHosts" description="Specify a file that contains the identities of all known hosts. &#xA;This file is used by the SSH protocol for validation. The known hosts&#xA;file is ignored if you select the Trust unknown hosts check box. " label="Known hosts" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File"/>
+      <propertyList name="trustUnknownHosts" description="Select this option if you want to trust hosts with unknown identities.&#xA;Selecting this option causes the file specified in the Known hosts field to be ignored." label="Trust unknown hosts" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.etl.cflow.codegen.BaseOpCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHExecute" name="SSHExecute" label="Secure Command" extendsDefinitionID="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand" bundleName="com.ibm.datatools.sqw.ssh.oplib" registered="true">
+      <definitionParams name="runCodeType" value="JAVA" usageType="semantics"/>
+      <definitionParams name="runtimeUnitBundle" value="com.ibm.datatools.sqw.ssh.runtime" usageType="semantics"/>
+      <definitionParams name="runtimeUnitClass" value="com.ibm.datatools.sqw.ssh.runtime.SSHExecute" usageType="semantics"/>
+      <propertyList name="remoteCommand" label="Command" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="File"/>
+      <propertyList name="outputVariableName" description="Use the Variable Manager (...) to create or select a variable. The value of the variable will be set to the resulting return code from the executable." label="Output variable" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="VariableAssignOnly"/>
+      <propertyList name="remoteHost" description="Hostname or IP address of the remote server where the remote command will be executed." label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="Machine">
+        <paramOption phase="RUNTIME" paramName="remoteHost"/>
+      </propertyList>
+      <propertyList name="port" description="Port on the remote host where the SSH daemon runs." label="Port" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="int" defaultValueLiteral="22"/>
+      <propertyList name="connTimeout" description="Time to wait before the session expires (in milliseconds). A value of 0 means the session will never expire." label="Connection timeout" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="int"/>
+      <propertyList name="keyfile" description="Private key file for either public key or host-based authentication.&#xA;Key files and passphrases are never transmitted over the network." label="Private key file" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File"/>
+      <propertyList name="passphrase" description="Sets the passphrase for the user's key. The passphrase is&#xA;used to access the private key if the private key was encrypted." label="Passphrase" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="EncryptedString"/>
+      <propertyList name="knownHosts" description="Specify a file that contains the identities of all known hosts. &#xA;This file is used by the SSH protocol for validation. The known hosts&#xA;file is ignored if you select the Trust unknown hosts check box. " label="Known hosts" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File"/>
+      <propertyList name="trustUnknownHosts" description="Select this option if you want to trust hosts with unknown identities.&#xA;Selecting this option causes the file specified in the Known hosts field to be ignored." label="Trust unknown hosts" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.etl.cflow.handlers.ActivityChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.sqw.ssh.codegen.SSHExecuteCodeGen"/>
+      <validatorClass className="com.ibm.datatools.etl.cflow.handlers.ActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHExecute::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHExecute::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHExecute::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHExecute::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+    <definitionList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SFTP" name="SFTP" label="Secure FTP" extendsDefinitionID="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SSHCommand" bundleName="com.ibm.datatools.sqw.ssh.oplib" registered="true">
+      <definitionParams name="runCodeType" value="JAVA" usageType="semantics"/>
+      <definitionParams name="runtimeUnitBundle" value="com.ibm.datatools.sqw.ssh.runtime" usageType="semantics"/>
+      <definitionParams name="runtimeUnitClass" value="com.ibm.datatools.sqw.ssh.runtime.SFTPActivity" usageType="semantics"/>
+      <propertyList name="direction" label="Transfer direction" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="SFTPDirection">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="localFileGet" description="A file name or directory name on the local host where the target file or set of files will be copied." label="Local file or directory" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="localFilePut" description="A file name on the local host. Glob expressions are permitted to qualify multiple files.&#xA;&#xA;For example, to send all the xml files in the /tmp/myXML directory with names starting with test, enter the following string:&#xA;&#xA;/tmp/myXML/test*.xml " label="Local file" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="remoteFileGet" description="A file name on the remote host. Glob expressions are permitted to qualify multiple files.&#xA;&#xA;For example, to get all the xml files in the /tmp/myXML directory with names starting with test, enter the following string:&#xA;&#xA;/tmp/myXML/test*.xml " label="Remote file" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="remoteFilePut" description="A file name or directory name on the remote host where the local file will be copied." label="Remote file or directory" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="mode" label="Mode" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="SFTPModeType">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="enableCompression" label="Enable compression" hidden="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="boolean" defaultValueLiteral="false">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="codeOptions" label="Command type" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="CodeOptions">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="generatedCommands" label="System-generated command" bundleName="com.ibm.datatools.sqw.ssh.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="ftpCommands" description="SFTP commands that will be executed (one per line).&#xA;The following commands are supported:&#xA;get, get-resume, get-append, put, put-resume, put-append, cd, lcd, ln, mkdir, lmkdir, rm, rmdir, chmod, chown, chgrp.&#xA;&#xA;Example: &#xA;put &quot;C:\Documents and Settings\jsmith\My Documents\*.zip&quot; /home/jsmith" label="User-defined commands" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="remoteHost" description="Hostname or IP address of the remote server where the remote command will be executed." label="Remote host" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="Machine">
+        <paramOption phase="RUNTIME" paramName="remoteHost"/>
+      </propertyList>
+      <propertyList name="port" description="Port on the remote host where the SSH daemon runs." label="Port" bundleName="com.ibm.datatools.sqw.ssh.oplib" type="int" defaultValueLiteral="22"/>
+      <propertyList name="connTimeout" description="Time to wait before the session expires (in milliseconds). A value of 0 means the session will never expire." label="Connection timeout" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="int"/>
+      <propertyList name="keyfile" description="Private key file for either public key or host-based authentication.&#xA;Key files and passphrases are never transmitted over the network." label="Private key file" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File"/>
+      <propertyList name="passphrase" description="Sets the passphrase for the user's key. The passphrase is&#xA;used to access the private key if the private key was encrypted." label="Passphrase" variableAllowed="true" variablePreferred="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="EncryptedString"/>
+      <propertyList name="knownHosts" description="Specify a file that contains the identities of all known hosts. &#xA;This file is used by the SSH protocol for validation. The known hosts&#xA;file is ignored if you select the Trust unknown hosts check box. " label="Known hosts" variableAllowed="true" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="File"/>
+      <propertyList name="trustUnknownHosts" description="Select this option if you want to trust hosts with unknown identities.&#xA;Selecting this option causes the file specified in the Known hosts field to be ignored." label="Trust unknown hosts" bundleName="com.ibm.datatools.sqw.ssh.oplib" optional="true" type="boolean" defaultValueLiteral="true"/>
+      <propertyList name="logLevel" description="Specify the level of detail of the information that is written to the log file. Info writes informational messages, warnings, and errors; warning writes warnings and errors; error writes only errors." label="Logging level" bundleName="com.ibm.datatools.etl.cflow.core" type="LogLevel" defaultValueLiteral="0"/>
+      <propertyList name="traceLevel" description="Specify the type of trace output that is generated. None generates no output. Method traces the processing flow through the methods. Use this option, for example, when you want to determine which nodes in the execution plan graph were run. Trace contents traces the SQL statements and commands that are run. Use when you want to know the actual values used for a variable in addition to the variable name. Trace both traces methods and contents." label="Tracing level" bundleName="com.ibm.datatools.etl.cflow.core" type="TraceLevel" defaultValueLiteral="0"/>
+      <propertyList name="skipLabel" description="Select the check box or set a boolean variable with a value of &quot;true&quot; to skip this operator when the flow is executed. The execution status of the skipped operator is assumed to be successful, and the flow continues with the next operator." label="Skip execution" bundleName="com.ibm.datatools.etl.cflow.core" optional="true" type="dummyLabel">
+        <paramOption phase="OTHER" paramName="@IGNORE"/>
+      </propertyList>
+      <propertyList name="activityDisabled" label="Set the execution status of this operator to successful and continue" variableAllowed="true" bundleName="com.ibm.datatools.etl.cflow.core" type="boolean">
+        <paramOption phase="RUNTIME" paramName="@SKIPEXECUTION"/>
+      </propertyList>
+      <changeHandlerClass className="com.ibm.datatools.sqw.ssh.handlers.SFTPChangeHandler"/>
+      <codeGeneratorClass className="com.ibm.datatools.sqw.ssh.codegen.SFTPCodeGen"/>
+      <validatorClass className="com.ibm.datatools.sqw.ssh.validators.SFTPActivityValidator"/>
+      <inputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SFTP::input::in" name="in" label="Input" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SFTP::output::on-success" name="on-success" label="On Success" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SFTP::output::on-failure" name="on-failure" label="On Failure" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+      <outputList iD="http:///com/ibm/datatools/sqw/ssh/oplib/sqwssh.oplib/Flow/SFTP::output::unconditional" name="unconditional" label="Unconditional" bundleName="com.ibm.datatools.etl.cflow.core" rule="IMPLEMENTATION" numMinLinks="0" numMaxOutLinks="1"/>
+    </definitionList>
+  </children>
+  <propertyTypeList name="SFTPModeType" bundleName="com.ibm.datatools.sqw.ssh.oplib" registered="true" emfClassName="SFTPModeTypeEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="OVERWRITE" usageType="enumLiteral" label="Overwrite"/>
+    <definitionParams name="RESUME" usageType="enumLiteral" label="Resume"/>
+    <definitionParams name="APPEND" usageType="enumLiteral" label="Append"/>
+  </propertyTypeList>
+  <propertyTypeList name="SFTPDirection" bundleName="com.ibm.datatools.sqw.ssh.oplib" registered="true" emfClassName="SFTPDirectionEEnum" emfPkgUri="dyn:///com/ibm/datatools/etl/core.oplib">
+    <definitionParams name="dynamicProviderSwitcher" value="true" usageType="semantics"/>
+    <definitionParams name="GET" usageType="enumLiteral" label="Get"/>
+    <definitionParams name="PUT" usageType="enumLiteral" label="Put"/>
+  </propertyTypeList>
+</com.ibm.datatools.etl.operatorlibrary:Library>

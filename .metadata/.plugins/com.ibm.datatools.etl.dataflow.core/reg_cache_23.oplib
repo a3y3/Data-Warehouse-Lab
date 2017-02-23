@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.ibm.datatools.etl.operatorlibrary:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.datatools.etl.operatorlibrary="http:///com/ibm/datatools/etl/operatorlibrary.ecore" bundleName="com.ibm.datatools.etl.deployment.prep" lastModified="0" nsURI="com.ibm.datatools.etl.deplprep.profiles.oplib" fileName="etc/profiles.oplib">
+  <complexTypeList iD="com.ibm.datatools.etl.deplprep.profiles.oplib.RunProfile" name="RunProfile" extendsDefinitionID="CoreRunProfile">
+    <propertyList name="sqlExecutionSchema" label="SQL execution schema:" variableAllowed="true" bundleName="com.ibm.datatools.etl.deployment.prep" optional="true" type="SchemaName"/>
+    <propertyList name="sqlExecutionDB" label="SQL execution database:" variableAllowed="true" bundleName="com.ibm.datatools.etl.deployment.prep" type="DBServer">
+      <definitionParams name="executionDBTypeOnly" value="true" usageType="instanceOption"/>
+    </propertyList>
+    <propertyList name="tmpDir" label="Temporary file(s) location:" bundleName="com.ibm.datatools.etl.deployment.prep" type="Directory"/>
+    <propertyList name="logDir" label="Log file directory: " bundleName="com.ibm.datatools.etl.deployment.prep" type="Directory"/>
+    <propertyList name="logPrefix" label="Log file prefix: " bundleName="com.ibm.datatools.etl.deployment.prep"/>
+    <propertyList name="writeStatistics" label="Write statistics:" bundleName="com.ibm.datatools.etl.deployment.prep" type="boolean" defaultValueLiteral="false"/>
+    <propertyList name="logFile" label="Log file: " bundleName="com.ibm.datatools.etl.deployment.prep" type="File"/>
+    <propertyList name="overwriteLog" label="Overwrite log:" bundleName="com.ibm.datatools.etl.deployment.prep" type="boolean" defaultValueLiteral="true"/>
+    <propertyList name="logLevel" label="Log level:" hidden="true" bundleName="com.ibm.datatools.etl.deployment.prep" type="LogLevel" defaultValueLiteral="0"/>
+    <propertyList name="traceLevel" label="Trace level:" bundleName="com.ibm.datatools.etl.deployment.prep" type="TraceLevel" defaultValueLiteral="0"/>
+  </complexTypeList>
+  <propertyTypeList name="CoreRunProfile" registered="true" emfClassName="RunProfile" emfPkgUri="http:///com/ibm/datatools/etl/runprofile.ecore"/>
+</com.ibm.datatools.etl.operatorlibrary:Library>

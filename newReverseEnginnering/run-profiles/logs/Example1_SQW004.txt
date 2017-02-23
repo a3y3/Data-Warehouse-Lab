@@ -1,0 +1,6 @@
+ Data-Flows  Feb 9, 2017 2:52:33 PM   SQW03415I: Flow execution started for SQW004 (/newReverseEnginnering/data-flows/Example1)
+ Data-Flows  Feb 9, 2017 2:52:33 PM   SQW38501I: Execution log file:  E:/140911090/newReverseEnginnering/run-profiles/logs/Example1_SQW004.txt
+ Data-Flows  Feb 9, 2017 2:52:33 PM   SQW38509I: Execution temporary work directory:  E:/140911090/newReverseEnginnering/run-profiles/tmp\Example1_SQW004
+ Data-Flows  Feb 9, 2017 2:52:34 PM   SQW38505E: Code validation warning encountered.
+ Data-Flows  Feb 9, 2017 2:52:34 PM   SQW03407E: Execution failed for instance SQW004 (/newReverseEnginnering/data-flows/Example1)
+ Data-Flows  Feb 9, 2017 2:52:34 PM   SQW38508I: Closing log file E:/140911090/newReverseEnginnering/run-profiles/logs/Example1_SQW004.txt.
