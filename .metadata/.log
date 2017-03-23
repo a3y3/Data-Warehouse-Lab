@@ -4132,3 +4132,43 @@ Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui
 
 !ENTRY org.eclipse.osgi 2 1 2017-02-23 14:25:35.564
 !MESSAGE NLS unused message: _ERROR_ILLEGAL_XML_CHAR in: com.ibm.ccl.xtt.sqlxml.ui.extract.messages
+!SESSION 2017-02-25 14:19:52.020 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows Vista x86-32 jvmwi3260sr5-20090519_35743 (JIT enabled, AOT enabled)
+J9VM - 20090519_035743_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+Command-line arguments:  -data E:\140911090 -os win32 -ws win32 -arch x86 -product com.ibm.datatools.sqw.product.ifwhluw.ifwhluw
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.817
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/schema.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/tables.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/constraints.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/expressions.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/statements.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-02-25 14:19:54.848
+!MESSAGE Both 'com.ibm.datatools.sqw.dataprep.models.pmmm' and 'org.eclipse.datatools.modelbase.sql' register a package for 'http:///org/eclipse/datatools/modelbase/sql/routines.ecore'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2017-02-25 14:20:01.598
+!MESSAGE There were unresolved dependencies for action provider extensions to a Common Navigator.
+Verify that the "dependsOn" attribute for each <actionProvider /> element is valid.
+Unresolved dependency specified for actionProvider: com.ibm.datatools.db2.util.ui.compressionActionProvider
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.Dimension_ColAttributes
+Unresolved dependency specified for actionProvider: com.ibm.datatools.project.ui.olap.FactsColMeasures

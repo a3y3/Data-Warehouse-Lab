@@ -1,0 +1,9 @@
+config.txt: Configuration file for the algorithm
+Line 1: Number of items
+Line 2: Number of transactions
+Line 3: Minimum support, 20 represents 20%
+
+transact.txt: Transaction database file
+Transaction 1 appears in row one
+Columns are separated by the delimiter (default is space)
+A "1" indicates that item is present in the transaction and a 0 indicates it is not.

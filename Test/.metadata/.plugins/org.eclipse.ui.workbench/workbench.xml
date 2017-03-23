@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" width="1024" x="26" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="167" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="DataFlowEditor" itemType="typeToolBarContribution" x="379" y="22"/>
+<coolItem id="org.eclipse.datatools.sqltools.data.internal.ui.editor.tableDataEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="ERPhysicalDiagramEditor" itemType="typeToolBarContribution" x="841" y="22"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="com.ibm.cic.licensing.common.ui.controlContribution" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1487841839742" focus="true" label="Workspace - Data Warehousing">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.ibm.datatools.project.ui.PhysicalModelEditor" name="Database Model.dbm" partName="Database Model.dbm" path="E:/140911090/Test/Evaluation/Database Model.dbm" title="Database Model.dbm" tooltip="\Evaluation\Database Model.dbm" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Evaluation/Database Model.dbm"/>
+</editor>
+<editor id="DataFlowEditor" name="Question2A.etlmetadataxmi" partName="Question2A" path="E:/140911090/Test/Evaluation/data-flows/Question2A.etlmetadataxmi" title="Question2A" tooltip="Evaluation/data-flows/Question2A (GSDBIT3 Online)" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Evaluation/data-flows/Question2A.etlmetadataxmi"/>
+</editor>
+<editor activePart="true" focus="true" id="DataFlowEditor" name="Question2B.etlmetadataxmi" partName="Question2B" path="E:/140911090/Test/Evaluation/data-flows/Question2B.etlmetadataxmi" title="Question2B" tooltip="Evaluation/data-flows/Question2B (GSDBIT3 Online)" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Evaluation/data-flows/Question2B.etlmetadataxmi"/>
+</editor>
+</editors>
+<views>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.JobStatusView" partName="Job Status"/>
+<view id="org.eclipse.datatools.sqltools.result.resultView" partName="SQL Results">
+<viewState columnWidth0="80" columnWidth1="80" columnWidth2="0" columnWidth3="80" columnWidth4="0" columnWidth5="0" columnWidth6="80"/>
+</view>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator"/>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
+<view id="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView" partName="Execution Status">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline"/>
+<view id="com.ibm.datatools.project.ui.projectExplorer" partName="Data Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
+</view>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" showCategories="true"/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors (1 item)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.DSSExplorer" partName="DataStage Servers"/>
+</views>
+<perspectives activePart="DataFlowEditor" activePerspective="com.ibm.datatools.dwe.BIPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.ibm.datatools.dwe.biperspective.BIPerspective" id="com.ibm.datatools.dwe.BIPerspective" label="Data Warehousing"/>
+<alwaysOnActionSet id="com.ibm.rational.welcome.core.webResourcesActionSet"/>
+<alwaysOnActionSet id="com.ibm.cic.licensing.common.ui.actionSet"/>
+<alwaysOnActionSet id="com.ibm.datatools.eclipse.help.menu.action.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.ETLActionSet_ImportDSParJob"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.ETLActionSet_VarMgmt"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.SQWActionSet_ResMgmt"/>
+<alwaysOnActionSet id="com.ibm.datatools.etl.ui.ETLActionSet"/>
+<alwaysOnActionSet id="com.ibm.datatools.sqw.migration.client.actions"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.datatools.sqltools.result.resultView"/>
+<show_view_action id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<show_view_action id="com.ibm.datatools.project.ui.projectExplorer"/>
+<new_wizard_action id="com.ibm.datatools.datamining.miningblox.prep.wizards.CreateMbloxWizard"/>
+<new_wizard_action id="com.ibm.datatools.datamining.miningeditor.wizards.MiningFlowCreationWizard"/>
+<new_wizard_action id="com.ibm.datatools.dwh.project.ui.dbdesignproject"/>
+<new_wizard_action id="com.ibm.datatools.dwh.project.ui.dwh_project_wizard"/>
+<new_wizard_action id="com.ibm.datatools.etl.controlflow.ui.wizard.new.controlflow"/>
+<new_wizard_action id="com.ibm.datatools.etl.dataflow.wizard.new.macro"/>
+<new_wizard_action id="com.ibm.datatools.etl.dataflow.wizard.new.dataflow"/>
+<new_wizard_action id="com.ibm.datatools.etl.deployment.prep.ui.wizards.BuildProfileWizard"/>
+<new_wizard_action id="com.ibm.datatools.etl.fileformat.ui.wizards.new"/>
+<new_wizard_action id="com.ibm.datatools.etl.resources.profile.ui.wizards.new"/>
+<new_wizard_action id="com.ibm.datatools.sqw.ui.wizards.NewModelWizard"/>
+<new_wizard_action id="com.ibm.datatools.sqw.solution.ui.wizards.SolutionCreationWizard"/>
+<new_wizard_action id="com.ibm.datatools.sqw.subprocess.wizard.new.subprocess"/>
+<new_wizard_action id="com.ibm.uima.pear.ui.wizards.ImportPearWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.oplib.ui.wizards.NewDictionaryWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.oplib.ui.wizards.NewRulesWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.oplib.ui.wizards.NewTermExtractionWizard"/>
+<new_wizard_action id="com.ibm.datatools.textanalytics.taxonomy.wizards.CreateTaxonomyWizard"/>
+<view id="com.ibm.datatools.project.ui.projectExplorer"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.DSSExplorer"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.datatools.sqltools.result.resultView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView"/>
+<view id="com.ibm.datatools.etl.ascrun.ui.core.views.JobStatusView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="com.ibm.datatools.project.ui.projectExplorer" appearance="2" expanded="2">
+<page content="com.ibm.datatools.project.ui.projectExplorer" label="Data Project Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7b527b52" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.60399336" ratioLeft="363" ratioRight="238" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.datatools.sqltools.result.resultView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.datatools.sqltools.result.resultView" label="SQL Results"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="com.ibm.datatools.dwe.common.ui.views.execution.ExecutionStatusView" label="Execution Status"/>
+<page content="com.ibm.datatools.etl.ascrun.ui.core.views.JobStatusView" label="Job Status"/>
+<page content="com.ibm.datatools.sqw.solution.ui.explorationview" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.6496599" ratioLeft="382" ratioRight="206" relationship="4" relative="topLeft">
+<folder activePageID="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" appearance="2" expanded="2">
+<page content="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="com.ibm.datatools.etl.ascrun.ui.core.views.DSSExplorer" label="DataStage Servers"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" path="/Evaluation/Database Model.dbm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/Evaluation/data-flows/Question2A.etlmetadataxmi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" path="/Evaluation/data-flows/Question2B.etlmetadataxmi"/>
+</editors>
+<item historyLabel="Database Model.dbm" index="0"/>
+<item historyLabel="Question2A" index="1"/>
+<item historyLabel="Question2B" index="2"/>
+<item historyLabel="Question2A" index="1"/>
+<item historyLabel="Question2B" index="2"/>
+<item historyLabel="Question2A" index="1"/>
+<item historyLabel="Question2A" index="1"/>
+<item historyLabel="Question2A" index="1"/>
+<item historyLabel="Question2A" index="1"/>
+<item historyLabel="Question2B" index="2"/>
+<item historyLabel="Question2B" index="2"/>
+<item historyLabel="Question2B" index="2"/>
+<item active="true" historyLabel="Question2B" index="2"/>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+<trimItem IMemento.internal.id="bottomLeft"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question2B.dataflowxmi" tooltip="Evaluation/data-flows/Question2B.dataflowxmi">
+<persistable path="/Evaluation/data-flows/Question2B.dataflowxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="DataFlowEditor" name="Question2A.dataflowxmi" tooltip="Evaluation/data-flows/Question2A.dataflowxmi">
+<persistable path="/Evaluation/data-flows/Question2A.dataflowxmi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.datatools.project.ui.PhysicalModelEditor" name="Database Model.dbm" tooltip="Evaluation/Database Model.dbm">
+<persistable path="/Evaluation/Database Model.dbm"/>
+</file>
+</mruList>
+</workbench>

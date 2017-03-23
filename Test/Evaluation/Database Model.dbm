@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--xtools2_universal_type_manager-->
-<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/7.5.2.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB2Model="http:///com/ibm/db/models/db2/db2.ecore" xmlns:LUW="http:///com/ibm/db/models/db2/luw.ecore" xmlns:datanotation="http:///datanotation.ecore">
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/7.5.2.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB2Model="http:///com/ibm/db/models/db2/db2.ecore" xmlns:LUW="http:///com/ibm/db/models/db2/luw.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:datanotation="http:///datanotation.ecore">
   <LUW:LUWDatabase xmi:id="_XS0_wfmnEeaOzOki8q6Czw" name="Database" vendor="DB2 UDB" version="V9.7" schemas="_XWjpMPmnEeaOzOki8q6Czw"/>
-  <DB2Model:DB2Schema xmi:id="_XWjpMPmnEeaOzOki8q6Czw" name="Schema" database="_XS0_wfmnEeaOzOki8q6Czw">
+  <DB2Model:DB2Schema xmi:id="_XWjpMPmnEeaOzOki8q6Czw" name="EVALUATION090" tables="_ZdkZAPmnEeaOzOki8q6Czw _rLdXEPmnEeaOzOki8q6Czw _Cor2gPmoEeaOzOki8q6Czw _qw5skPmoEeaOzOki8q6Czw _fNfzcPmrEeaOzOki8q6Czw _jTuMgPmsEeaOzOki8q6Czw" database="_XS0_wfmnEeaOzOki8q6Czw">
     <eAnnotations xmi:id="_XYMn8PmnEeaOzOki8q6Czw" source="diagram">
       <contents xsi:type="datanotation:DataDiagram" xmi:id="_XYMn8fmnEeaOzOki8q6Czw" type="IE_CrowFoot" name="Diagram1" viewKind="ProjectExplorer" notation="IE_CrowFoot" kind="Physical">
         <styles xsi:type="datanotation:DataAttributeStyle" xmi:id="_XYMn8vmnEeaOzOki8q6Czw"/>
@@ -15,4 +15,137 @@
       </contents>
     </eAnnotations>
   </DB2Model:DB2Schema>
+  <LUW:LUWTable xmi:id="_ZdkZAPmnEeaOzOki8q6Czw" name="ORDER090" schema="_XWjpMPmnEeaOzOki8q6Czw" referencingForeignKeys="_a3Y2MPmoEeaOzOki8q6Czw">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_bEPb4PmnEeaOzOki8q6Czw" name="ID" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_coF0QPmnEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_d_aMgPmnEeaOzOki8q6Czw" name="ORDER_DATE">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_fmYxYPmnEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_jfP5UPmnEeaOzOki8q6Czw" name="ORDER_NUMBER">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_khkR8PmnEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_lgTLEPmnEeaOzOki8q6Czw" name="TOTAL_AMT">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_mtCrAPmnEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_SghccPmpEeaOzOki8q6Czw" name="CUSTOMER_ID">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_U9Io0PmpEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_hE3hkPmnEeaOzOki8q6Czw" name="ORDER090_PK" members="_bEPb4PmnEeaOzOki8q6Czw" ForeignKey="_a3Y2MPmoEeaOzOki8q6Czw"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_P0G5gPmpEeaOzOki8q6Czw" name="ORDER090_CUSTOMER090_FK" members="_SghccPmpEeaOzOki8q6Czw" onDelete="CASCADE" uniqueConstraint="_uLGYAPmnEeaOzOki8q6Czw" referencedTable="_rLdXEPmnEeaOzOki8q6Czw">
+      <eAnnotations xmi:id="_P0G5gfmpEeaOzOki8q6Czw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_P0G5gvmpEeaOzOki8q6Czw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_P0G5g_mpEeaOzOki8q6Czw" key="FK_CHILD_MULTIPLICITY" value=""/>
+        <details xmi:id="_P0G5hPmpEeaOzOki8q6Czw" key="FK_CHILD_ROLE_NAME" value="Verb1"/>
+        <details xmi:id="_P0G5hfmpEeaOzOki8q6Czw" key="FK_PARENT_MULTIPLICITY" value=""/>
+        <details xmi:id="_P0G5hvmpEeaOzOki8q6Czw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_rLdXEPmnEeaOzOki8q6Czw" name="CUSTOMER090" schema="_XWjpMPmnEeaOzOki8q6Czw" referencingForeignKeys="_P0G5gPmpEeaOzOki8q6Czw">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_sNn-sPmnEeaOzOki8q6Czw" name="ID" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_tfSa4PmnEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_vPplQPmnEeaOzOki8q6Czw" name="FIRST_NAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_xzuEgPmnEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_09pC0PmnEeaOzOki8q6Czw" name="LAST_NAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_2VHzIPmnEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_3DAz4PmnEeaOzOki8q6Czw" name="CITY">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_6dn5kPmnEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_37y2APmnEeaOzOki8q6Czw" name="COUNTRY">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_68xTsPmnEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_4sX-YPmnEeaOzOki8q6Czw" name="PHONE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_7ffmQPmnEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_uLGYAPmnEeaOzOki8q6Czw" name="CUSTOMER090_PK" members="_sNn-sPmnEeaOzOki8q6Czw" ForeignKey="_P0G5gPmpEeaOzOki8q6Czw"/>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_Cor2gPmoEeaOzOki8q6Czw" name="ORDERITEM090" schema="_XWjpMPmnEeaOzOki8q6Czw">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_ESV78PmoEeaOzOki8q6Czw" name="ID" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_FGf8wPmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_GMZN0PmoEeaOzOki8q6Czw" name="ORDER_ID">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_JTVJkPmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_JvMmMPmoEeaOzOki8q6Czw" name="PRODUCT_ID">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_NAkQUPmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_N87K4PmoEeaOzOki8q6Czw" name="UNIT_PRICE" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_S1uF0PmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_mdNp0PmoEeaOzOki8q6Czw" name="QUANTITY">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_oX2xkPmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_Guz-YPmoEeaOzOki8q6Czw" name="ORDERITEM090_PK" members="_ESV78PmoEeaOzOki8q6Czw"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_a3Y2MPmoEeaOzOki8q6Czw" name="ORDERITEM090_ORDER090_FK" members="_GMZN0PmoEeaOzOki8q6Czw" onDelete="CASCADE" uniqueConstraint="_hE3hkPmnEeaOzOki8q6Czw" referencedTable="_ZdkZAPmnEeaOzOki8q6Czw">
+      <eAnnotations xmi:id="_a3Y2MfmoEeaOzOki8q6Czw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_a3Y2MvmoEeaOzOki8q6Czw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_a3Y2M_moEeaOzOki8q6Czw" key="FK_CHILD_MULTIPLICITY" value=""/>
+        <details xmi:id="_a3Y2NPmoEeaOzOki8q6Czw" key="FK_CHILD_ROLE_NAME" value="Verb1"/>
+        <details xmi:id="_a3Y2NfmoEeaOzOki8q6Czw" key="FK_PARENT_MULTIPLICITY" value=""/>
+        <details xmi:id="_a3Y2NvmoEeaOzOki8q6Czw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_rb7xIPmpEeaOzOki8q6Czw" name="ORDERITEM090_PRODUCT090_FK" members="_JvMmMPmoEeaOzOki8q6Czw" onDelete="CASCADE" uniqueConstraint="_t15uoPmoEeaOzOki8q6Czw" referencedTable="_qw5skPmoEeaOzOki8q6Czw">
+      <eAnnotations xmi:id="_rb7xIfmpEeaOzOki8q6Czw" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_rb7xIvmpEeaOzOki8q6Czw" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_rb7xI_mpEeaOzOki8q6Czw" key="FK_CHILD_MULTIPLICITY" value=""/>
+        <details xmi:id="_rb7xJPmpEeaOzOki8q6Czw" key="FK_CHILD_ROLE_NAME" value="Verb1"/>
+        <details xmi:id="_rb7xJfmpEeaOzOki8q6Czw" key="FK_PARENT_MULTIPLICITY" value=""/>
+        <details xmi:id="_rb7xJvmpEeaOzOki8q6Czw" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_qw5skPmoEeaOzOki8q6Czw" name="PRODUCT090" schema="_XWjpMPmnEeaOzOki8q6Czw" referencingForeignKeys="_rb7xIPmpEeaOzOki8q6Czw">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_sas78PmoEeaOzOki8q6Czw" name="ID" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_tTCSIPmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_uV8goPmoEeaOzOki8q6Czw" name="PRODUCT_NAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_vlXhIPmoEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_wiBWoPmoEeaOzOki8q6Czw" name="SUPPLIER_ID">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_zWCWYPmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_01HjgPmoEeaOzOki8q6Czw" name="UNIT_PRICE">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_4Rgx4PmoEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_5GHeoPmoEeaOzOki8q6Czw" name="PACKAGE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_6aURcPmoEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_7W9f4PmoEeaOzOki8q6Czw" name="IS_DISCONTINUED">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_8jj14PmoEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_t15uoPmoEeaOzOki8q6Czw" name="PRODUCT090_PK" members="_sas78PmoEeaOzOki8q6Czw" ForeignKey="_rb7xIPmpEeaOzOki8q6Czw"/>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_fNfzcPmrEeaOzOki8q6Czw" name="RESULT2A" schema="_XWjpMPmnEeaOzOki8q6Czw">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_hLa4sPmrEeaOzOki8q6Czw" name="ORDERID">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_jOQTIPmrEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_kCHZAPmrEeaOzOki8q6Czw" name="FIRST_NAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_mZXkQPmrEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_m6c4EPmrEeaOzOki8q6Czw" name="LAST_NAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_qZYdEPmrEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_q9vuYPmrEeaOzOki8q6Czw" name="CITY">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_r74xoPmrEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_scOekPmrEeaOzOki8q6Czw" name="COUNTRY">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_tfboAPmrEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_vQ17QPmrEeaOzOki8q6Czw" name="PHONE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_v9PuQPmrEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+  </LUW:LUWTable>
+  <LUW:LUWTable xmi:id="_jTuMgPmsEeaOzOki8q6Czw" name="RESULT2B" schema="_XWjpMPmnEeaOzOki8q6Czw">
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_kuxOMPmsEeaOzOki8q6Czw" name="ID">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_sExycPmsEeaOzOki8q6Czw" name="NUMERIC" primitiveType="NUMERIC" precision="5"/>
+    </columns>
+    <columns xsi:type="LUW:LUWColumn" xmi:id="_sst8MPmsEeaOzOki8q6Czw" name="FIRST_NAME">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_tlpIQPmsEeaOzOki8q6Czw" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+  </LUW:LUWTable>
 </xmi:XMI>

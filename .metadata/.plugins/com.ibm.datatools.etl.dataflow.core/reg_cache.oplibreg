@@ -912,9 +912,6 @@
   <propTypeTable key="double">
     <value href="reg_cache_35.oplib#//@propertyTypeList.10"/>
   </propTypeTable>
-  <propTypeTable key="com.ibm.datatools.etl.deplprep.profiles.oplib.RunProfile">
-    <value href="reg_cache_35.oplib#//@propertyTypeList.11"/>
-  </propTypeTable>
   <fDefTable key="http:///com/ibm/datatools/etl/cflow/core/cflow.oplib/Flow/CflowBaseOp">
     <value href="reg_cache_5.oplib#//@children.0/@definitionList.0"/>
   </fDefTable>
